@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logoImg from '@assets/1000x1000_White_and_blue._1775998200073.jpg';
+import logoImg from '@assets/V3_Grey_and_Blue_(5000_x_5000_px)_(400_x_200_px)_(4000_x_2000__1775998854478.jpg';
 
 export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,7 +52,7 @@ export function NavBar() {
           <img 
             src={logoImg} 
             alt="Brenscot Builders" 
-            className="h-14 md:h-18 w-auto object-contain transition-all duration-500 bg-white/10 p-1 rounded-sm"
+            className="h-16 md:h-20 w-auto object-contain transition-all duration-500"
           />
         </div>
 

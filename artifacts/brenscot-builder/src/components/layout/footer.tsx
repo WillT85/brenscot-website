@@ -1,4 +1,4 @@
-import logoImg from '@assets/1000x1000_White_and_blue._1775998200073.jpg';
+import logoImg from '@assets/V3_Grey_and_Blue_(5000_x_5000_px)_(400_x_200_px)_(4000_x_2000__1775998854478.jpg';
 
 export function Footer() {
   const scrollTo = (id: string) => {
