@@ -2,20 +2,20 @@ import { motion } from 'framer-motion';
 
 const services = [
   {
-    title: "Residential",
-    description: "Architecturally designed custom homes built with uncompromising quality and attention to detail. Every residence is a tailored masterpiece."
+    title: "Design & Construct",
+    description: "Fully integrated design and build solutions for warehouses, distribution centres, and industrial facilities. One point of contact from concept through to handover."
   },
   {
-    title: "Commercial",
-    description: "Striking, functional commercial spaces and boutique developments delivered on schedule to elevate your business presence."
+    title: "Industrial Construction",
+    description: "High-spec tilt-panel and structural steel construction for large-footprint industrial buildings. We self-perform critical trades to maintain schedule and quality."
   },
   {
-    title: "Renovations",
-    description: "Transformative extensions and high-end renovations that seamlessly integrate modern luxury with existing architectural character."
+    title: "Logistics & Distribution",
+    description: "Purpose-built facilities engineered for maximum operational efficiency — dock levellers, hardstand, truck courts, and high-bay racking integration by design."
   },
   {
-    title: "Management",
-    description: "Comprehensive project oversight. We handle every facet of the build from conception to handover, ensuring absolute perfection."
+    title: "Project Management",
+    description: "End-to-end project delivery oversight with rigorous programme management, transparent reporting, and a commitment to zero-defect handovers."
   }
 ];
 
@@ -26,10 +26,10 @@ export function Services() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12">
           <div className="max-w-2xl">
             <span className="text-white/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">Expertise</span>
-            <h2 className="text-5xl md:text-7xl font-serif leading-tight">Mastery in <br className="hidden md:block"/>every detail.</h2>
+            <h2 className="text-5xl md:text-7xl font-serif leading-tight">Built for <br className="hidden md:block"/>industry scale.</h2>
           </div>
           <p className="text-white/60 text-lg leading-relaxed max-w-md md:mb-4">
-            Our approach blends innovative construction techniques with traditional craftsmanship to create spaces of enduring value.
+            From greenfield industrial estates to complex brownfield redevelopments, we bring the systems and expertise to deliver on time and on budget.
           </p>
         </div>
 

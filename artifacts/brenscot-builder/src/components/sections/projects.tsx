@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import project1 from '@/assets/images/project-1.png';
 import project2 from '@/assets/images/project-2.png';
@@ -7,23 +7,27 @@ import project4 from '@/assets/images/project-4.png';
 
 const projects = [
   {
-    title: "The Horizon",
-    category: "New Build",
+    title: "Westgate Distribution Centre",
+    category: "Design & Construct",
+    area: "28,500 m²",
     image: project1,
   },
   {
-    title: "Lumina Residence",
-    category: "Interior",
+    title: "Meridian Industrial Estate",
+    category: "Industrial Development",
+    area: "62,000 m²",
     image: project2,
   },
   {
-    title: "Azure Point",
-    category: "Exterior",
+    title: "Apex Logistics Hub",
+    category: "Logistics Facility",
+    area: "41,200 m²",
     image: project3,
   },
   {
-    title: "Oakwood Estate",
-    category: "Renovation",
+    title: "ColdChain Processing Facility",
+    category: "Specialised Industrial",
+    area: "19,800 m²",
     image: project4,
   }
 ];
@@ -34,11 +38,10 @@ export function Projects() {
   return (
     <section id="projects" className="py-32 md:py-48 bg-white" ref={containerRef}>
       <div className="container mx-auto px-6 md:px-12 mb-20">
-        <span className="text-black/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">Collection</span>
-        <h2 className="text-5xl md:text-7xl font-serif text-black leading-tight">Featured <br className="hidden md:block"/>Landmarks.</h2>
+        <span className="text-black/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">Portfolio</span>
+        <h2 className="text-5xl md:text-7xl font-serif text-black leading-tight">Completed <br className="hidden md:block"/>Developments.</h2>
       </div>
 
-      {/* Horizontal Scrolling Container */}
       <div className="w-full overflow-x-auto hide-scrollbar snap-x snap-mandatory flex gap-8 px-6 md:px-12 pb-12 cursor-grab active:cursor-grabbing">
         {projects.map((project, index) => (
           <motion.div 
@@ -57,23 +60,21 @@ export function Projects() {
               className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
             />
             
-            {/* Hover overlay 'View Project' */}
             <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
               <span className="text-white text-xs font-bold uppercase tracking-[0.2em] border border-white/50 px-8 py-4 backdrop-blur-sm">
                 View Project
               </span>
             </div>
 
-            {/* Permanent Info Bottom Left */}
             <div className="absolute bottom-0 left-0 p-8 md:p-12 z-30 transition-transform duration-700 group-hover:-translate-y-4">
-              <span className="text-white/80 text-[10px] uppercase tracking-[0.3em] mb-4 block">
+              <span className="text-white/80 text-[10px] uppercase tracking-[0.3em] mb-2 block">
                 {project.category}
               </span>
-              <h3 className="text-3xl md:text-4xl font-serif text-white">{project.title}</h3>
+              <h3 className="text-3xl md:text-4xl font-serif text-white mb-2">{project.title}</h3>
+              <span className="text-white/60 text-[11px] uppercase tracking-[0.2em]">{project.area} GFA</span>
             </div>
           </motion.div>
         ))}
-        {/* Spacer at the end so last item can be scrolled past slightly */}
         <div className="snap-center shrink-0 w-[10vw]" />
       </div>
     </section>

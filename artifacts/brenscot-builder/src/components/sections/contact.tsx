@@ -24,21 +24,29 @@ export function Contact() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <span className="text-black/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">Inquiries</span>
-            <h2 className="text-5xl md:text-7xl font-serif mb-12 leading-tight">Start the <br/>conversation.</h2>
+            <h2 className="text-5xl md:text-7xl font-serif mb-12 leading-tight">Let's discuss <br/>your project.</h2>
             
             <div className="space-y-12">
               <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/50 mb-4">Office</h4>
+                <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/50 mb-4">Head Office</h4>
                 <p className="text-lg font-light leading-relaxed">
-                  142 Builder's Way, Suite 100<br/>
-                  Industrial District, ST 12345
+                  Level 5, 320 Industrial Drive<br/>
+                  Altona North, VIC 3025
                 </p>
               </div>
               
               <div>
                 <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/50 mb-4">Contact</h4>
-                <p className="text-lg font-light mb-2 hover:opacity-70 transition-opacity cursor-pointer">build@brenscotbuilder.com</p>
-                <p className="text-lg font-light hover:opacity-70 transition-opacity cursor-pointer">+61 555 123 456</p>
+                <p className="text-lg font-light mb-2 hover:opacity-70 transition-opacity cursor-pointer">enquiries@brenscotbuilders.com.au</p>
+                <p className="text-lg font-light hover:opacity-70 transition-opacity cursor-pointer">+61 3 9000 1234</p>
+              </div>
+
+              <div>
+                <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/50 mb-4">We Deliver Across</h4>
+                <p className="text-lg font-light leading-relaxed text-black/60">
+                  Victoria · New South Wales · Queensland<br/>
+                  South Australia · Western Australia
+                </p>
               </div>
             </div>
           </motion.div>
@@ -76,6 +84,14 @@ export function Contact() {
                   id="email" 
                   required 
                   placeholder="Email Address *"
+                  className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none" 
+                />
+              </div>
+              <div className="relative">
+                <input 
+                  type="text" 
+                  id="project-type" 
+                  placeholder="Project Type (e.g. Distribution Centre, Cold Storage)"
                   className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none" 
                 />
               </div>

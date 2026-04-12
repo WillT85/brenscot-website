@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 import aboutImage from '@/assets/images/about.png';
 
 const stats = [
-  { value: "15+", label: "Years Experience" },
-  { value: "120+", label: "Completed Projects" },
-  { value: "100%", label: "Client Satisfaction" }
+  { value: "20+", label: "Years Delivering" },
+  { value: "2.1M+", label: "Square Metres Built" },
+  { value: "$3.8B+", label: "Project Value" }
 ];
 
 export function About() {
@@ -22,7 +22,7 @@ export function About() {
           >
             <img 
               src={aboutImage} 
-              alt="Architectural materials and craftsmanship" 
+              alt="Brenscot industrial construction in progress" 
               className="w-full h-full object-cover"
             />
           </motion.div>
@@ -36,15 +36,15 @@ export function About() {
           >
             <span className="text-black/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">About Us</span>
             <h2 className="text-4xl md:text-6xl font-serif text-black mb-10 leading-tight">
-              Building legacies, <br />one frame at a time.
+              Shaping Australia's <br />industrial landscape.
             </h2>
             
             <div className="space-y-8 text-black/60 text-lg md:text-xl font-light leading-relaxed mb-16">
               <p>
-                Founded on the principle that exceptional architecture demands exceptional execution. We are builders who view construction not just as an assembly of materials, but as the physical realization of a vision.
+                Brenscot Builders is a specialist industrial developer and construction company with a 20-year track record in delivering high-performance warehouse, logistics, and manufacturing facilities across Australia.
               </p>
               <p>
-                Our reputation across Australia is built on uncompromising quality, transparent communication, and an obsessive attention to the finest architectural details. We don't just build homes; we craft landmarks.
+                We combine in-house design capability with expert site delivery, giving our clients a seamless, single-responsibility experience. From 5,000 m² standalone warehouses to 100,000 m²+ industrial estates — we build to the highest standard, every time.
               </p>
             </div>
             

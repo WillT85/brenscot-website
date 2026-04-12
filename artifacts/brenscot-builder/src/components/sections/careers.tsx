@@ -4,22 +4,28 @@ import { Plus, Minus, ArrowRight } from 'lucide-react';
 
 const openRoles = [
   {
-    title: "Senior Site Supervisor",
+    title: "Construction Manager – Industrial",
     type: "Full-time",
-    location: "On-site",
-    description: "Lead and coordinate daily site operations for high-end residential projects. You must have a meticulous eye for architectural details and a proven track record delivering $5M+ homes.",
+    location: "Various Sites, Australia",
+    description: "Lead end-to-end delivery of large-scale warehouse and industrial construction projects valued between $20M–$150M. You will have full programme, cost, and quality ownership and be experienced managing tilt-panel and structural steel construction.",
   },
   {
-    title: "Estimator / Quantity Surveyor",
+    title: "Senior Estimator",
     type: "Full-time",
-    location: "Office / Hybrid",
-    description: "Prepare accurate cost estimates and tender submissions for luxury residential and commercial construction projects. Deep understanding of premium materials required.",
+    location: "Head Office / Hybrid",
+    description: "Prepare detailed cost plans and tender submissions for industrial design and construct projects. You will have strong knowledge of civil, structural, and building trades with demonstrated experience in $20M+ industrial project estimating.",
   },
   {
-    title: "Master Carpenter",
+    title: "Site Engineer",
     type: "Full-time",
-    location: "Various Sites",
-    description: "Highly skilled tradesperson to execute complex timber framing and bespoke architectural joinery. Must be passionate about precision and delivering flawless finishes.",
+    location: "Various Sites, Australia",
+    description: "Support project delivery with technical oversight of structural, civil, and services trades on active industrial construction sites. Must be proficient in reading engineering drawings and managing RFI and NCR processes.",
+  },
+  {
+    title: "Development Manager",
+    type: "Full-time",
+    location: "Head Office",
+    description: "Drive new industrial development opportunities from site acquisition through planning, design, and project commencement. Requires experience in industrial or commercial property development and strong relationships with major occupiers and investors.",
   },
 ];
 
@@ -39,9 +45,9 @@ export function Careers() {
             className="lg:col-span-5"
           >
             <span className="text-white/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">Careers</span>
-            <h2 className="text-4xl md:text-6xl font-serif mb-8 leading-tight">Build with the best.</h2>
+            <h2 className="text-4xl md:text-6xl font-serif mb-8 leading-tight">Join the build.</h2>
             <p className="text-white/60 text-lg leading-relaxed font-light mb-12 max-w-md">
-              We seek perfectionists, craftsmen, and visionaries. If you are driven by architectural excellence and want to build Australia's most stunning homes, we want to hear from you.
+              We are always looking for driven, skilled people who want to work on significant industrial projects and build a long-term career with a company that values expertise and rewards results.
             </p>
             <p className="text-white/40 text-sm">
               Don't see your role?{' '}

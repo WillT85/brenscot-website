@@ -5,34 +5,34 @@ outputs = []
 id = "DpmJpNeLUQFPCDDTP2Pix"
 uri = "file://artifacts/brenscot-builder/src/assets/images/hero.png"
 type = "image"
-title = "Luxury home exterior at golden hour"
+title = "industrial warehouse hero"
 
 [[generated]]
 id = "tmFHrK0XeLGN-iZ-wvAN6"
 uri = "file://artifacts/brenscot-builder/src/assets/images/project-1.png"
 type = "image"
-title = "Luxury modern home exterior"
+title = "distribution centre exterior"
 
 [[generated]]
 id = "mc-BkY70f5Za_8eAAl5xj"
 uri = "file://artifacts/brenscot-builder/src/assets/images/project-2.png"
 type = "image"
-title = "Luxury home interior living room"
+title = "industrial estate aerial"
 
 [[generated]]
 id = "zuchp-cuu8cZSMilBMxO8"
 uri = "file://artifacts/brenscot-builder/src/assets/images/project-3.png"
 type = "image"
-title = "Luxury home infinity pool"
+title = "logistics hub facade"
 
 [[generated]]
 id = "A68zeXI9INfj2k071l1Ml"
 uri = "file://artifacts/brenscot-builder/src/assets/images/project-4.png"
 type = "image"
-title = "High-end luxury kitchen"
+title = "cold storage facility"
 
 [[generated]]
 id = "BuxOYamuQ9yil7QgraIU-"
 uri = "file://artifacts/brenscot-builder/src/assets/images/about.png"
 type = "image"
-title = "Architectural materials and details"
+title = "warehouse construction interior"

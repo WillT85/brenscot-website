@@ -12,11 +12,10 @@ export function Hero() {
 
   return (
     <section className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
-      {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
           src={heroImage} 
-          alt="Luxury modern home construction" 
+          alt="Modern industrial warehouse development" 
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/70" />
@@ -24,7 +23,6 @@ export function Hero() {
 
       <div className="relative z-10 container mx-auto px-6 md:px-12 flex flex-col items-center justify-center text-center mt-20">
         
-        {/* Massive Stacked Typography */}
         <div className="overflow-hidden flex flex-col items-center">
           <motion.h1 
             initial={{ y: "100%" }}
@@ -32,7 +30,7 @@ export function Hero() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-white font-serif uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter"
           >
-            BUILDING
+            INDUSTRIAL
           </motion.h1>
         </div>
         <div className="overflow-hidden flex flex-col items-center -mt-2 md:-mt-6">
@@ -42,7 +40,7 @@ export function Hero() {
             transition={{ duration: 1.2, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="text-white font-serif uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter"
           >
-            EXCELLENCE
+            PRECISION
           </motion.h1>
         </div>
 
@@ -53,7 +51,7 @@ export function Hero() {
           className="mt-12 flex flex-col items-center gap-8"
         >
           <p className="text-white/80 text-sm md:text-base tracking-[0.2em] uppercase font-medium max-w-xl text-center">
-            Award-winning luxury residential and commercial construction across Australia.
+            Delivering large-scale warehouse and industrial developments across Australia.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 mt-4">
@@ -61,7 +59,7 @@ export function Hero() {
               onClick={scrollToProjects}
               className="bg-white text-black px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-white/90 transition-colors"
             >
-              View Collection
+              View Projects
             </button>
             <button 
               onClick={scrollToContact}
@@ -74,7 +72,6 @@ export function Hero() {
 
       </div>
 
-      {/* Scroll indicator */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
