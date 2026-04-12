@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useLocation } from 'wouter';
 
 export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [location, setLocation] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,13 +15,30 @@ export function NavBar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollTo = (id: string) => {
+  const navigate = (link: { name: string; id: string; href?: string }) => {
     setMobileMenuOpen(false);
-    if (id === 'top') {
+    if (link.href) {
+      setLocation(link.href);
+      window.scrollTo({ top: 0 });
+      return;
+    }
+    if (location !== '/') {
+      setLocation('/');
+      setTimeout(() => {
+        if (link.id === 'top') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          const element = document.getElementById(link.id);
+          if (element) element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+      return;
+    }
+    if (link.id === 'top') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
-    const element = document.getElementById(id);
+    const element = document.getElementById(link.id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -27,7 +46,7 @@ export function NavBar() {
 
   const navLinks = [
     { name: 'Home', id: 'top' },
-    { name: 'Projects', id: 'projects' },
+    { name: 'Projects', id: 'projects', href: '/projects' },
     { name: 'About', id: 'about' },
     { name: 'Careers', id: 'careers' },
     { name: 'Partners', id: 'partners' },
@@ -45,7 +64,7 @@ export function NavBar() {
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         <div
           className="cursor-pointer flex-shrink-0"
-          onClick={() => scrollTo('top')}
+          onClick={() => navigate({ name: 'Home', id: 'top' })}
           data-testid="logo-home"
         >
           <div className="flex flex-col items-center leading-none select-none">
@@ -58,7 +77,7 @@ export function NavBar() {
           {navLinks.map((link) => (
             <button
               key={link.name}
-              onClick={() => scrollTo(link.id)}
+              onClick={() => navigate(link)}
               data-testid={`nav-${link.id}`}
               className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors whitespace-nowrap ${
                 link.name === 'Contact Us'
@@ -89,7 +108,7 @@ export function NavBar() {
           {navLinks.map((link) => (
             <button
               key={link.name}
-              onClick={() => scrollTo(link.id)}
+              onClick={() => navigate(link)}
               data-testid={`mobile-nav-${link.id}`}
               className={`text-left py-4 text-xs font-medium transition-colors uppercase tracking-[0.2em] border-b last:border-none ${
                 isScrolled
