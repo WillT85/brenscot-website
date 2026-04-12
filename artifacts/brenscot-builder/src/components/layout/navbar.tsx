@@ -63,8 +63,8 @@ export function NavBar() {
               data-testid={`nav-${link.id}`}
               className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors whitespace-nowrap ${
                 link.name === 'Contact Us'
-                  ? 'bg-white text-black px-6 py-3 hover:bg-white/90'
-                  : 'text-white hover:text-white/60'
+                  ? 'bg-[#C8A24A] text-white px-6 py-3 hover:bg-[#C8A24A]/85'
+                  : 'text-[#C8A24A] hover:text-[#C8A24A]/60'
               }`}
             >
               {link.name}
@@ -90,7 +90,7 @@ export function NavBar() {
               key={link.name}
               onClick={() => scrollTo(link.id)}
               data-testid={`mobile-nav-${link.id}`}
-              className="text-left py-4 text-xs font-medium text-white hover:text-white/60 transition-colors uppercase tracking-[0.2em] border-b border-white/5 last:border-none"
+              className="text-left py-4 text-xs font-medium text-[#C8A24A] hover:text-[#C8A24A]/60 transition-colors uppercase tracking-[0.2em] border-b border-white/5 last:border-none"
             >
               {link.name}
             </button>
