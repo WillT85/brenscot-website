@@ -12,12 +12,12 @@ export function Footer() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-16 mb-12 gap-12">
           <div>
-            <div className="flex flex-col items-start leading-none select-none mb-8">
+            <div className="flex items-baseline gap-3 leading-none select-none mb-8">
               <span className="font-serif text-white text-3xl font-bold tracking-[0.05em]">BRENSCOT</span>
-              <span className="text-white/60 text-[10px] tracking-[0.45em] font-light uppercase mt-1">BUILDERS</span>
+              <span className="text-white/60 text-[10px] tracking-[0.45em] font-light uppercase">BUILDERS</span>
             </div>
             <p className="text-white/40 text-sm max-w-sm font-light leading-relaxed">
-              Crafting architectural landmarks and luxury residences. Excellence built into every detail since 2008.
+              Large-scale industrial warehouses that lead from the ground up.
             </p>
           </div>
           
