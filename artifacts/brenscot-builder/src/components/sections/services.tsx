@@ -28,7 +28,7 @@ export function Services() {
             <h2 className="text-5xl md:text-7xl font-serif leading-tight">Built for <br className="hidden md:block"/>industry scale.</h2>
           </div>
           <p className="text-white/60 text-lg leading-relaxed max-w-md md:mb-4">
-            From greenfield industrial estates to complex brownfield redevelopments, we bring the systems and expertise to deliver on time and on budget.
+            High-quality industrial warehouse developments with precision, reliability, and efficiency. We are committed to building durable, future-ready spaces that support the growth of businesses across Queensland and beyond. Through strong partnerships, expert craftsmanship, and disciplined project delivery, we ensure every development is completed to the highest standard.
           </p>
         </div>
 
