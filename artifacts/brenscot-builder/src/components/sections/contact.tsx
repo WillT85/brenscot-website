@@ -23,7 +23,6 @@ export function Contact() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="text-black/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">Inquiries</span>
             <h2 className="text-5xl md:text-7xl font-serif mb-12 leading-tight">Let's discuss <br/>your project.</h2>
             
             <div className="space-y-12">
