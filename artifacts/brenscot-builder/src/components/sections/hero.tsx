@@ -28,7 +28,8 @@ export function Hero() {
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-white font-serif uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter"
+            className="text-white uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-extrabold tracking-tighter"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             BUILT TO
           </motion.h1>
@@ -38,7 +39,8 @@ export function Hero() {
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1.2, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="text-white font-serif uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter"
+            className="text-white uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-extrabold tracking-tighter"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             DOMINATE
           </motion.h1>
