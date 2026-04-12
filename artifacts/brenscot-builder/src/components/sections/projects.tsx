@@ -7,7 +7,7 @@ import project4 from '@/assets/images/project-4.png';
 
 const projects = [
   {
-    title: "566 Rode Rd, Chermside QLD 4032",
+    title: "566 Rode Rd, Chermside",
     category: "Premiere Commercial",
     area: "4,895 m²",
     description: "13 versatile warehouse units",
@@ -55,12 +55,12 @@ export function Projects() {
             transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="snap-center shrink-0 w-[85vw] md:w-[60vw] lg:w-[45vw] h-[60vh] md:h-[75vh] relative group overflow-hidden"
           >
-            <div className="absolute inset-0 bg-black/20 z-10 transition-colors duration-700 group-hover:bg-black/40" />
+            <div className="absolute inset-0 bg-black/10 z-10 transition-colors duration-700 group-hover:bg-black/30" />
             
             <img 
               src={project.image} 
               alt={project.title} 
-              className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
             />
             
             <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -69,12 +69,12 @@ export function Projects() {
               </span>
             </div>
 
-            <div className="absolute bottom-0 left-0 p-8 md:p-12 z-30 transition-transform duration-700 group-hover:-translate-y-4">
-              <span className="text-white/80 text-[10px] uppercase tracking-[0.3em] mb-2 block">
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 z-30 transition-transform duration-700 group-hover:-translate-y-4 bg-gradient-to-t from-black/60 via-black/20 to-transparent">
+              <span className="text-white/80 text-[10px] uppercase tracking-[0.3em] mb-3 block">
                 {project.category}
               </span>
-              <h3 className="text-3xl md:text-4xl font-serif text-white mb-2">{project.title}</h3>
-              <span className="text-white/60 text-[11px] uppercase tracking-[0.2em]">{project.area} {project.description && `· ${project.description}`}</span>
+              <h3 className="text-2xl md:text-3xl font-serif text-white mb-2 leading-snug">{project.title}</h3>
+              <span className="text-white/60 text-[10px] uppercase tracking-[0.2em]">{project.area} {project.description && `· ${project.description}`}</span>
             </div>
           </motion.div>
         ))}
