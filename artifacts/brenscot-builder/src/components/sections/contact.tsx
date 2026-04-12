@@ -29,8 +29,7 @@ export function Contact() {
               <div>
                 <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/50 mb-4">Head Office</h4>
                 <p className="text-lg font-light leading-relaxed">
-                  Level 5, 320 Industrial Drive<br/>
-                  Altona North, VIC 3025
+                  Clarke St Hendra, QLD 4011
                 </p>
               </div>
               
