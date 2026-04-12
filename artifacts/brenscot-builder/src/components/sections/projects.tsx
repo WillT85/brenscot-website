@@ -7,27 +7,31 @@ import project4 from '@/assets/images/project-4.png';
 
 const projects = [
   {
-    title: "Westgate Distribution Centre",
-    category: "Design & Construct",
-    area: "28,500 m²",
+    title: "566 Rode Rd, Chermside QLD 4032",
+    category: "Premiere Commercial",
+    area: "4,895 m²",
+    description: "13 versatile warehouse units",
     image: project1,
   },
   {
     title: "Meridian Industrial Estate",
     category: "Industrial Development",
     area: "62,000 m²",
+    description: "",
     image: project2,
   },
   {
     title: "Apex Logistics Hub",
     category: "Logistics Facility",
     area: "41,200 m²",
+    description: "",
     image: project3,
   },
   {
     title: "ColdChain Processing Facility",
     category: "Specialised Industrial",
     area: "19,800 m²",
+    description: "",
     image: project4,
   }
 ];
@@ -70,7 +74,7 @@ export function Projects() {
                 {project.category}
               </span>
               <h3 className="text-3xl md:text-4xl font-serif text-white mb-2">{project.title}</h3>
-              <span className="text-white/60 text-[11px] uppercase tracking-[0.2em]">{project.area} GFA</span>
+              <span className="text-white/60 text-[11px] uppercase tracking-[0.2em]">{project.area} {project.description && `· ${project.description}`}</span>
             </div>
           </motion.div>
         ))}
