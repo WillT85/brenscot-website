@@ -36,15 +36,15 @@ export function About() {
           >
             <span className="text-black/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">About Us</span>
             <h2 className="text-4xl md:text-6xl font-serif text-black mb-10 leading-tight">
-              Shaping Australia's <br />industrial landscape.
+              Large-scale industrial<br />warehouses that lead<br />from the ground up.
             </h2>
             
             <div className="space-y-8 text-black/60 text-lg md:text-xl font-light leading-relaxed mb-16">
               <p>
-                Brenscot Builders is a specialist industrial developer and construction company with a 20-year track record in delivering high-performance warehouse, logistics, and manufacturing facilities across Australia.
+                Brenscot is a Queensland-based commercial construction and property development company specialising in industrial warehouse projects. We focus on delivering high-performance facilities designed to meet the demands of modern logistics, manufacturing, and distribution.
               </p>
               <p>
-                We combine in-house design capability with expert site delivery, giving our clients a seamless, single-responsibility experience. From 5,000 m² standalone warehouses to 100,000 m²+ industrial estates — we build to the highest standard, every time.
+                With a commitment to precision, efficiency, and durability, we bring together industry expertise and disciplined project execution to deliver developments that perform—now and into the future.
               </p>
             </div>
             
