@@ -30,7 +30,7 @@ export function Hero() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-white font-serif uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter"
           >
-            INDUSTRIAL
+            BUILT TO
           </motion.h1>
         </div>
         <div className="overflow-hidden flex flex-col items-center -mt-2 md:-mt-6">
@@ -40,7 +40,7 @@ export function Hero() {
             transition={{ duration: 1.2, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="text-white font-serif uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter"
           >
-            PRECISION
+            DOMINATE
           </motion.h1>
         </div>
 
@@ -51,7 +51,7 @@ export function Hero() {
           className="mt-12 flex flex-col items-center gap-8"
         >
           <p className="text-white/80 text-sm md:text-base tracking-[0.2em] uppercase font-medium max-w-xl text-center">
-            Delivering large-scale warehouse and industrial developments across Australia.
+            Large-scale industrial warehouses that lead from the ground up.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 mt-4">
