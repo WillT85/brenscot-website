@@ -57,13 +57,13 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-6 mt-4">
             <button 
               onClick={scrollToProjects}
-              className="bg-white text-black px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-white/90 transition-colors"
+              className="bg-[#C8A24A] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A]/85 transition-colors"
             >
               View Projects
             </button>
             <button 
               onClick={scrollToContact}
-              className="border border-white/30 text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-colors"
+              className="border border-[#C8A24A] text-[#C8A24A] px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A] hover:text-white transition-colors"
             >
               Contact Us
             </button>
