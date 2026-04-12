@@ -40,10 +40,9 @@ export function Contact() {
               </div>
 
               <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/50 mb-4">We Deliver Across</h4>
+                <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/50 mb-4">Project Across</h4>
                 <p className="text-lg font-light leading-relaxed text-black/60">
-                  Victoria · New South Wales · Queensland<br/>
-                  South Australia · Western Australia
+                  South-East Queensland
                 </p>
               </div>
             </div>
