@@ -16,7 +16,7 @@ export function Footer() {
               <span className="font-serif text-white text-3xl font-bold tracking-[0.05em]">BRENSCOT</span>
               <span className="text-white/60 text-[10px] tracking-[0.45em] font-light uppercase">BUILDERS</span>
             </div>
-            <p className="text-white/40 text-sm max-w-sm font-light leading-relaxed">
+            <p className="text-white/40 text-sm font-light leading-relaxed whitespace-nowrap">
               Large-scale industrial warehouses that lead from the ground up.
             </p>
           </div>
