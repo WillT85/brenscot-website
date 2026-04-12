@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
 import project1 from '@assets/image_1776005185036.png';
-import project2 from '@/assets/images/project-2.png';
+import project2 from '@assets/13_02_extt_сс3_Post_Ps_1776005476200.jpg';
 import project3 from '@/assets/images/project-3.png';
 import project4 from '@/assets/images/project-4.png';
 
@@ -14,7 +14,7 @@ const projects = [
     image: project1,
   },
   {
-    title: "Meridian Industrial Estate",
+    title: "34-40 Robson St, Clontarf",
     category: "Industrial Development",
     area: "62,000 m²",
     description: "",
