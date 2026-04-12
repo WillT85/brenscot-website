@@ -1,4 +1,4 @@
-import { Hammer } from 'lucide-react';
+import logoImg from '@assets/1000x1000_White_and_blue._1775998200073.jpg';
 
 export function Footer() {
   return (
@@ -6,11 +6,8 @@ export function Footer() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 border-b border-border/10 pb-12">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6 text-secondary-foreground">
-              <div className="w-8 h-8 bg-primary text-primary-foreground flex items-center justify-center">
-                <Hammer className="w-4 h-4" />
-              </div>
-              <span className="font-serif font-bold text-xl tracking-tight">Brenscot Builder</span>
+            <div className="mb-6">
+              <img src={logoImg} alt="Brenscot Builders" className="h-20 w-auto object-contain brightness-0 invert" />
             </div>
             <p className="text-secondary-foreground/60 text-sm max-w-sm leading-relaxed">
               Quality craftsmanship, solid foundations, and personal service for residential and commercial projects. Building legacies from the ground up since 2008.

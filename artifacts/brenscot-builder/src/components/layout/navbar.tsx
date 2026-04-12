@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Hammer } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logoImg from '@assets/1000x1000_White_and_blue._1775998200073.jpg';
 
 export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,13 +40,10 @@ export function NavBar() {
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         <div 
-          className="flex items-center gap-3 cursor-pointer group"
+          className="cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          <div className="w-10 h-10 bg-primary text-primary-foreground flex items-center justify-center group-hover:bg-primary/90 transition-colors">
-            <Hammer className="w-5 h-5" />
-          </div>
-          <span className="font-serif font-bold text-xl tracking-tight">Brenscot Builder</span>
+          <img src={logoImg} alt="Brenscot Builders" className="h-14 w-auto object-contain" />
         </div>
 
         {/* Desktop Nav */}
