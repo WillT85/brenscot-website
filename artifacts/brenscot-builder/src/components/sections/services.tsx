@@ -25,7 +25,6 @@ export function Services() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12">
           <div className="max-w-2xl">
-            <span className="text-white/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">Expertise</span>
             <h2 className="text-5xl md:text-7xl font-serif leading-tight">Built for <br className="hidden md:block"/>industry scale.</h2>
           </div>
           <p className="text-white/60 text-lg leading-relaxed max-w-md md:mb-4">
