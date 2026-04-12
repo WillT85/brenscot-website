@@ -28,21 +28,19 @@ export function Hero() {
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-white uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            className="text-white font-serif uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter"
           >
-            INDUSTRIAL.
+            BUILDING
           </motion.h1>
         </div>
-        <div className="overflow-hidden flex flex-col items-center mt-2 md:mt-4">
+        <div className="overflow-hidden flex flex-col items-center -mt-2 md:-mt-6">
           <motion.h1 
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
             transition={{ duration: 1.2, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="text-white uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter"
-            style={{ fontFamily: "'Montserrat', sans-serif" }}
+            className="text-white font-serif uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter"
           >
-            DONE RIGHT.
+            EXCELLENCE
           </motion.h1>
         </div>
 
