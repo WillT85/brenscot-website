@@ -38,7 +38,6 @@ export function Projects() {
   return (
     <section id="projects" className="py-32 md:py-48 bg-white" ref={containerRef}>
       <div className="container mx-auto px-6 md:px-12 mb-20">
-        <span className="text-black/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">Portfolio</span>
         <h2 className="text-5xl md:text-7xl font-serif text-black leading-tight">Completed <br className="hidden md:block"/>Developments.</h2>
       </div>
 
