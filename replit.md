@@ -4,6 +4,16 @@
 
 pnpm workspace monorepo using TypeScript. Each package manages its own dependencies.
 
+## Artifacts
+
+### Brenscot Builder Website (`artifacts/brenscot-builder`)
+- A professional construction company website for Brenscot Builder
+- Single-page React + Vite app (presentation-first, no backend)
+- Serves at `/` (root)
+- Sections: Hero, Services, Projects, About, Process, Contact, Footer
+- Uses framer-motion for animations, lucide-react for icons
+- Color palette: warm off-whites, deep charcoals, terracotta/amber accent
+
 ## Stack
 
 - **Monorepo tool**: pnpm workspaces

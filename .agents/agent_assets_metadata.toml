@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "DpmJpNeLUQFPCDDTP2Pix"
+uri = "file://artifacts/brenscot-builder/src/assets/images/hero.png"
+type = "image"
+title = "modern home construction site"
+
+[[generated]]
+id = "tmFHrK0XeLGN-iZ-wvAN6"
+uri = "file://artifacts/brenscot-builder/src/assets/images/project-1.png"
+type = "image"
+title = "completed modern kitchen renovation"
+
+[[generated]]
+id = "mc-BkY70f5Za_8eAAl5xj"
+uri = "file://artifacts/brenscot-builder/src/assets/images/project-2.png"
+type = "image"
+title = "commercial building facade"
+
+[[generated]]
+id = "zuchp-cuu8cZSMilBMxO8"
+uri = "file://artifacts/brenscot-builder/src/assets/images/project-3.png"
+type = "image"
+title = "timber frame detail"
