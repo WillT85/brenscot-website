@@ -31,10 +31,10 @@ export function Hero() {
             className="text-white uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
-            BUILT TO
+            INDUSTRIAL.
           </motion.h1>
         </div>
-        <div className="overflow-hidden flex flex-col items-center -mt-2 md:-mt-6">
+        <div className="overflow-hidden flex flex-col items-center mt-2 md:mt-4">
           <motion.h1 
             initial={{ y: "100%" }}
             animate={{ y: 0 }}
@@ -42,7 +42,7 @@ export function Hero() {
             className="text-white uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
-            DOMINATE
+            DONE RIGHT.
           </motion.h1>
         </div>
 
