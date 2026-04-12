@@ -17,10 +17,12 @@ export function Footer() {
           <div>
             <h4 className="font-bold uppercase tracking-widest text-xs mb-6">Quick Links</h4>
             <ul className="space-y-4 text-sm text-secondary-foreground/60">
-              <li><button onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-primary transition-colors">Services</button></li>
+              <li><button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-primary transition-colors">Home</button></li>
               <li><button onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-primary transition-colors">Projects</button></li>
-              <li><button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-primary transition-colors">About Us</button></li>
-              <li><button onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-primary transition-colors">Our Process</button></li>
+              <li><button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-primary transition-colors">About</button></li>
+              <li><button onClick={() => document.getElementById('careers')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-primary transition-colors">Careers</button></li>
+              <li><button onClick={() => document.getElementById('partners')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-primary transition-colors">Partners</button></li>
+              <li><button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-primary transition-colors">Contact Us</button></li>
             </ul>
           </div>
 
