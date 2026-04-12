@@ -36,7 +36,7 @@ export function About() {
           >
             <span className="text-black/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">About Us</span>
             <h2 className="text-4xl md:text-6xl font-serif text-black mb-10 leading-tight">
-              Large-scale industrial<br />warehouses that lead<br />from the ground up.
+              Large-scale industrial warehouses that lead from the ground up.
             </h2>
             
             <div className="space-y-8 text-black/60 text-lg md:text-xl font-light leading-relaxed mb-16">
