@@ -38,7 +38,7 @@ export function Projects() {
   return (
     <section id="projects" className="py-20 md:py-32 bg-white" ref={containerRef}>
       <div className="container mx-auto px-6 md:px-12 mb-20">
-        <h2 className="text-5xl md:text-7xl font-serif text-black leading-tight">Projects & <br className="hidden md:block"/>Developments</h2>
+        <h2 className="text-5xl md:text-7xl font-serif text-black leading-tight">Projects and<br className="hidden md:block"/> Developments</h2>
       </div>
 
       <div className="w-full overflow-x-auto hide-scrollbar snap-x snap-mandatory flex gap-8 px-6 md:px-12 pb-12 cursor-grab active:cursor-grabbing">
