@@ -13,7 +13,7 @@ const partners = [
 
 export function Partners() {
   return (
-    <section id="partners" className="py-32 bg-[#0f0f0f] text-white border-t border-white/5">
+    <section id="partners" className="py-32 bg-[#0d1a2d] text-white border-t border-white/5">
       <div className="container mx-auto px-6 md:px-12 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

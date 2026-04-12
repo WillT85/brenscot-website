@@ -33,7 +33,7 @@ export function Careers() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="careers" className="py-32 md:py-48 bg-[#0a0a0a] text-white">
+    <section id="careers" className="py-32 md:py-48 bg-[#0b1526] text-white">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-8">
 

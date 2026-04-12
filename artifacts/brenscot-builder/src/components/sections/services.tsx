@@ -21,7 +21,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-32 md:py-48 bg-[#0f0f0f] text-white">
+    <section id="services" className="py-32 md:py-48 bg-[#0d1a2d] text-white">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12">
           <div className="max-w-2xl">

@@ -8,7 +8,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[#0a0a0a] text-white pt-24 pb-12 border-t border-white/10">
+    <footer className="bg-[#081220] text-white pt-24 pb-12 border-t border-white/10">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-16 mb-12 gap-12">
           <div>

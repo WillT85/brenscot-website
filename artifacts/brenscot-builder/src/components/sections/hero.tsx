@@ -11,7 +11,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
+    <section className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-[#0b1526]">
       <div className="absolute inset-0 z-0">
         <img 
           src={heroImage} 
