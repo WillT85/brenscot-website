@@ -1,56 +1,52 @@
-import { Home, Wrench, Building2, ClipboardCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const services = [
   {
-    title: "New Home Construction",
-    description: "From concept to keys in hand, we build custom homes tailored to your lifestyle with uncompromising attention to detail.",
-    icon: Home
+    title: "Residential",
+    description: "Architecturally designed custom homes built with uncompromising quality and attention to detail. Every residence is a tailored masterpiece."
   },
   {
-    title: "Renovations & Extensions",
-    description: "Breathe new life into your existing space. We seamlessly blend new additions with your home's original character.",
-    icon: Wrench
+    title: "Commercial",
+    description: "Striking, functional commercial spaces and boutique developments delivered on schedule to elevate your business presence."
   },
   {
-    title: "Commercial Projects",
-    description: "Functional, striking commercial spaces built on time and on budget to help your business thrive.",
-    icon: Building2
+    title: "Renovations",
+    description: "Transformative extensions and high-end renovations that seamlessly integrate modern luxury with existing architectural character."
   },
   {
-    title: "Project Management",
-    description: "Complete oversight of your build. We handle the trades, schedules, and materials so you don't have to.",
-    icon: ClipboardCheck
+    title: "Management",
+    description: "Comprehensive project oversight. We handle every facet of the build from conception to handover, ensuring absolute perfection."
   }
 ];
 
 export function Services() {
   return (
-    <section id="services" className="py-24 bg-secondary text-secondary-foreground">
+    <section id="services" className="py-32 md:py-48 bg-[#0f0f0f] text-white">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="max-w-3xl mb-16">
-          <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-4 block">Our Expertise</span>
-          <h2 className="text-4xl md:text-5xl font-serif mb-6">What we build.</h2>
-          <p className="text-secondary-foreground/70 text-lg leading-relaxed">
-            Whether we're pouring the foundation for a commercial complex or framing your family's forever home, our approach remains the same: honest work, done right the first time.
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12">
+          <div className="max-w-2xl">
+            <span className="text-white/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">Expertise</span>
+            <h2 className="text-5xl md:text-7xl font-serif leading-tight">Mastery in <br className="hidden md:block"/>every detail.</h2>
+          </div>
+          <p className="text-white/60 text-lg leading-relaxed max-w-md md:mb-4">
+            Our approach blends innovative construction techniques with traditional craftsmanship to create spaces of enduring value.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
           {services.map((service, index) => (
             <motion.div 
               key={service.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-background/5 border border-border/10 p-8 hover:bg-background/10 transition-colors group"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="relative group pt-8 border-t border-primary/40"
             >
-              <div className="w-14 h-14 bg-primary/10 text-primary flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-                <service.icon className="w-7 h-7" />
-              </div>
-              <h3 className="text-xl font-serif font-bold mb-4">{service.title}</h3>
-              <p className="text-secondary-foreground/70 leading-relaxed text-sm">
+              <div className="absolute top-0 left-0 w-0 h-[2px] bg-primary transition-all duration-700 ease-out group-hover:w-full -translate-y-[1px]" />
+              
+              <h3 className="text-2xl font-serif mb-6">{service.title}</h3>
+              <p className="text-white/50 leading-relaxed font-sans font-light">
                 {service.description}
               </p>
             </motion.div>

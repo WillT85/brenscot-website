@@ -1,68 +1,80 @@
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 import project1 from '@/assets/images/project-1.png';
 import project2 from '@/assets/images/project-2.png';
 import project3 from '@/assets/images/project-3.png';
+import project4 from '@/assets/images/project-4.png';
 
 const projects = [
   {
-    title: "Oakwood Residence",
-    category: "New Construction",
+    title: "The Horizon",
+    category: "New Build",
     image: project1,
-    description: "A luxury custom home featuring expansive timber framing and modern concrete finishes."
   },
   {
-    title: "Meridian Offices",
-    category: "Commercial",
+    title: "Lumina Residence",
+    category: "Interior",
     image: project2,
-    description: "Boutique commercial space blending raw industrial materials with contemporary design."
   },
   {
-    title: "Heritage Restoration",
-    category: "Renovation",
+    title: "Azure Point",
+    category: "Exterior",
     image: project3,
-    description: "Meticulous restoration of precise timber joints, preserving history while modernizing utility."
+  },
+  {
+    title: "Oakwood Estate",
+    category: "Renovation",
+    image: project4,
   }
 ];
 
 export function Projects() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
   return (
-    <section id="projects" className="py-24 bg-background">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div className="max-w-2xl">
-            <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-4 block">Showcase</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-foreground">Featured Projects.</h2>
-          </div>
-        </div>
+    <section id="projects" className="py-32 md:py-48 bg-white" ref={containerRef}>
+      <div className="container mx-auto px-6 md:px-12 mb-20">
+        <span className="text-black/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">Collection</span>
+        <h2 className="text-5xl md:text-7xl font-serif text-black leading-tight">Featured <br className="hidden md:block"/>Landmarks.</h2>
+      </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <motion.div 
-              key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="group cursor-pointer"
-            >
-              <div className="relative overflow-hidden mb-6 aspect-[4/3] bg-muted">
-                <div className="absolute inset-0 bg-secondary/20 group-hover:bg-transparent transition-colors z-10 duration-500" />
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out grayscale-[20%] group-hover:grayscale-0"
-                />
-              </div>
-              <span className="text-xs font-bold uppercase tracking-widest text-primary mb-2 block">
+      {/* Horizontal Scrolling Container */}
+      <div className="w-full overflow-x-auto hide-scrollbar snap-x snap-mandatory flex gap-8 px-6 md:px-12 pb-12 cursor-grab active:cursor-grabbing">
+        {projects.map((project, index) => (
+          <motion.div 
+            key={project.title}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="snap-center shrink-0 w-[85vw] md:w-[60vw] lg:w-[45vw] h-[60vh] md:h-[75vh] relative group overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-black/20 z-10 transition-colors duration-700 group-hover:bg-black/40" />
+            
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+            />
+            
+            {/* Hover overlay 'View Project' */}
+            <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <span className="text-white text-xs font-bold uppercase tracking-[0.2em] border border-white/50 px-8 py-4 backdrop-blur-sm">
+                View Project
+              </span>
+            </div>
+
+            {/* Permanent Info Bottom Left */}
+            <div className="absolute bottom-0 left-0 p-8 md:p-12 z-30 transition-transform duration-700 group-hover:-translate-y-4">
+              <span className="text-white/80 text-[10px] uppercase tracking-[0.3em] mb-4 block">
                 {project.category}
               </span>
-              <h3 className="text-2xl font-serif text-foreground mb-3">{project.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
-                {project.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+              <h3 className="text-3xl md:text-4xl font-serif text-white">{project.title}</h3>
+            </div>
+          </motion.div>
+        ))}
+        {/* Spacer at the end so last item can be scrolled past slightly */}
+        <div className="snap-center shrink-0 w-[10vw]" />
       </div>
     </section>
   );

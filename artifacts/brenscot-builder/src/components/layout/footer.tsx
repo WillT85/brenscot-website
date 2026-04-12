@@ -1,47 +1,38 @@
 import logoImg from '@assets/1000x1000_White_and_blue._1775998200073.jpg';
 
 export function Footer() {
+  const scrollTo = (id: string) => {
+    if (id === 'top') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <footer className="bg-secondary border-t border-border/10 text-secondary-foreground py-12">
+    <footer className="bg-[#0a0a0a] text-white pt-24 pb-12 border-t border-white/10">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 border-b border-border/10 pb-12">
-          <div className="lg:col-span-2">
-            <div className="mb-6">
-              <img src={logoImg} alt="Brenscot Builders" className="h-20 w-auto object-contain brightness-0 invert" />
-            </div>
-            <p className="text-secondary-foreground/60 text-sm max-w-sm leading-relaxed">
-              Quality craftsmanship, solid foundations, and personal service for residential and commercial projects. Building legacies from the ground up since 2008.
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-16 mb-12 gap-12">
+          <div>
+            <img src={logoImg} alt="Brenscot Builders" className="h-16 md:h-20 w-auto object-contain brightness-0 invert mb-8" />
+            <p className="text-white/40 text-sm max-w-sm font-light leading-relaxed">
+              Crafting architectural landmarks and luxury residences. Excellence built into every detail since 2008.
             </p>
           </div>
           
-          <div>
-            <h4 className="font-bold uppercase tracking-widest text-xs mb-6">Quick Links</h4>
-            <ul className="space-y-4 text-sm text-secondary-foreground/60">
-              <li><button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-primary transition-colors">Home</button></li>
-              <li><button onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-primary transition-colors">Projects</button></li>
-              <li><button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-primary transition-colors">About</button></li>
-              <li><button onClick={() => document.getElementById('careers')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-primary transition-colors">Careers</button></li>
-              <li><button onClick={() => document.getElementById('partners')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-primary transition-colors">Partners</button></li>
-              <li><button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-primary transition-colors">Contact Us</button></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-bold uppercase tracking-widest text-xs mb-6">Services</h4>
-            <ul className="space-y-4 text-sm text-secondary-foreground/60">
-              <li>New Construction</li>
-              <li>Renovations</li>
-              <li>Commercial Projects</li>
-              <li>Project Management</li>
-            </ul>
-          </div>
+          <nav className="flex flex-wrap gap-8 md:gap-12">
+            <button onClick={() => scrollTo('projects')} className="text-[10px] uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors">Projects</button>
+            <button onClick={() => scrollTo('about')} className="text-[10px] uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors">About</button>
+            <button onClick={() => scrollTo('careers')} className="text-[10px] uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors">Careers</button>
+            <button onClick={() => scrollTo('contact')} className="text-[10px] uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors">Contact</button>
+          </nav>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center text-xs text-secondary-foreground/40 gap-4">
-          <div>&copy; {new Date().getFullYear()} Brenscot Builder. All rights reserved.</div>
-          <div className="flex gap-6">
-            <span className="hover:text-secondary-foreground/80 cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-secondary-foreground/80 cursor-pointer">Terms of Service</span>
+        <div className="flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-white/30 gap-6">
+          <div>&copy; {new Date().getFullYear()} Brenscot Builder.</div>
+          <div className="flex gap-8">
+            <span className="hover:text-white transition-colors cursor-pointer">Privacy</span>
+            <span className="hover:text-white transition-colors cursor-pointer">Terms</span>
           </div>
         </div>
       </div>

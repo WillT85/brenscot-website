@@ -1,90 +1,116 @@
-import { motion } from 'framer-motion';
-import { Briefcase, ArrowRight } from 'lucide-react';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Plus, Minus, ArrowRight } from 'lucide-react';
 
 const openRoles = [
   {
-    title: "Site Supervisor",
+    title: "Senior Site Supervisor",
     type: "Full-time",
     location: "On-site",
-    description: "Lead and coordinate daily site operations, manage subcontractors, and ensure projects are delivered safely and on schedule.",
+    description: "Lead and coordinate daily site operations for high-end residential projects. You must have a meticulous eye for architectural details and a proven track record delivering $5M+ homes.",
   },
   {
     title: "Estimator / Quantity Surveyor",
     type: "Full-time",
     location: "Office / Hybrid",
-    description: "Prepare accurate cost estimates and tender submissions for residential and commercial construction projects.",
+    description: "Prepare accurate cost estimates and tender submissions for luxury residential and commercial construction projects. Deep understanding of premium materials required.",
   },
   {
-    title: "Carpenter & Joiner",
+    title: "Master Carpenter",
     type: "Full-time",
-    location: "On-site",
-    description: "Skilled tradesperson to work across new builds and renovation projects. Experience with framing, formwork, and finishing preferred.",
+    location: "Various Sites",
+    description: "Highly skilled tradesperson to execute complex timber framing and bespoke architectural joinery. Must be passionate about precision and delivering flawless finishes.",
   },
 ];
 
 export function Careers() {
-  return (
-    <section id="careers" className="py-24 bg-muted">
-      <div className="container mx-auto px-6 md:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-3xl mb-16"
-        >
-          <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-4 block">Join Our Team</span>
-          <h2 className="text-4xl md:text-5xl font-serif mb-6">Build your career with us.</h2>
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            We're always looking for skilled, motivated people to join the Brenscot Builders family. We invest in our people and value hard work, integrity, and a passion for quality.
-          </p>
-        </motion.div>
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {openRoles.map((role, index) => (
-            <motion.div
-              key={role.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-background border border-border p-8 group hover:border-primary transition-colors"
-            >
-              <div className="w-12 h-12 bg-primary/10 text-primary flex items-center justify-center mb-6">
-                <Briefcase className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-serif font-bold mb-2">{role.title}</h3>
-              <div className="flex gap-3 mb-4">
-                <span className="text-xs font-bold uppercase tracking-widest text-primary border border-primary/30 bg-primary/5 px-2 py-1">{role.type}</span>
-                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground border border-border px-2 py-1">{role.location}</span>
-              </div>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">{role.description}</p>
+  return (
+    <section id="careers" className="py-32 md:py-48 bg-[#0a0a0a] text-white">
+      <div className="container mx-auto px-6 md:px-12">
+        <div className="grid lg:grid-cols-12 gap-16 lg:gap-8">
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5"
+          >
+            <span className="text-white/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">Careers</span>
+            <h2 className="text-4xl md:text-6xl font-serif mb-8 leading-tight">Build with the best.</h2>
+            <p className="text-white/60 text-lg leading-relaxed font-light mb-12 max-w-md">
+              We seek perfectionists, craftsmen, and visionaries. If you are driven by architectural excellence and want to build Australia's most stunning homes, we want to hear from you.
+            </p>
+            <p className="text-white/40 text-sm">
+              Don't see your role?{' '}
               <button
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary hover:gap-3 transition-all"
-                data-testid={`button-apply-${index}`}
+                className="text-white hover:underline uppercase tracking-widest text-[10px] ml-2"
               >
-                Apply Now <ArrowRight className="w-4 h-4" />
+                Email Us
               </button>
-            </motion.div>
-          ))}
-        </div>
+            </p>
+          </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-muted-foreground text-sm"
-        >
-          Don't see a role that suits you?{' '}
-          <button
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            className="text-primary font-bold hover:underline"
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7"
           >
-            Send us your resume anyway
-          </button>{' '}
-          — we're always keen to meet good people.
-        </motion.p>
+            <div className="w-full border-t border-white/10">
+              {openRoles.map((role, index) => (
+                <div key={index} className="border-b border-white/10">
+                  <button
+                    className="w-full py-8 md:py-10 flex items-center justify-between text-left group"
+                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                    data-testid={`career-toggle-${index}`}
+                  >
+                    <div className="flex flex-col md:flex-row md:items-center gap-4 flex-1 pr-8">
+                      <span className="text-2xl md:text-3xl font-serif font-normal group-hover:text-white/70 transition-colors flex-1">{role.title}</span>
+                      <div className="flex gap-4 md:gap-8 text-[10px] uppercase tracking-[0.2em] text-white/50">
+                        <span>{role.location}</span>
+                        <span>{role.type}</span>
+                      </div>
+                    </div>
+                    <div className="text-white/50 group-hover:text-white transition-colors flex-shrink-0">
+                      {openIndex === index ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+                    </div>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {openIndex === index && (
+                      <motion.div
+                        key="content"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <div className="pb-10 pt-2">
+                          <p className="text-white/60 text-base md:text-lg font-light leading-relaxed mb-8 max-w-2xl">
+                            {role.description}
+                          </p>
+                          <button
+                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="inline-flex items-center gap-4 text-xs font-bold uppercase tracking-[0.2em] text-white hover:gap-6 transition-all border-b border-white pb-2"
+                            data-testid={`button-apply-${index}`}
+                          >
+                            Apply Now <ArrowRight className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );

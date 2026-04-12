@@ -8,7 +8,7 @@ export function NavBar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -37,10 +37,10 @@ export function NavBar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out border-b ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
         isScrolled
-          ? 'bg-background/95 backdrop-blur-md border-border shadow-sm'
-          : 'bg-background border-transparent'
+          ? 'bg-[#0a0a0a]/90 backdrop-blur-xl border-b border-white/5 py-4'
+          : 'bg-transparent py-8'
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -49,20 +49,24 @@ export function NavBar() {
           onClick={() => scrollTo('top')}
           data-testid="logo-home"
         >
-          <img src={logoImg} alt="Brenscot Builders" className="h-24 w-auto object-contain" />
+          <img 
+            src={logoImg} 
+            alt="Brenscot Builders" 
+            className="h-14 md:h-18 w-auto object-contain transition-all duration-500 bg-white/10 p-1 rounded-sm"
+          />
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+        <nav className="hidden md:flex items-center gap-8 lg:gap-12">
           {navLinks.map((link) => (
             <button
               key={link.name}
               onClick={() => scrollTo(link.id)}
               data-testid={`nav-${link.id}`}
-              className={`text-xs font-bold uppercase tracking-widest transition-colors whitespace-nowrap ${
+              className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors whitespace-nowrap ${
                 link.name === 'Contact Us'
-                  ? 'bg-primary text-primary-foreground px-5 py-3 hover:bg-primary/90'
-                  : 'text-foreground/80 hover:text-primary'
+                  ? 'bg-white text-black px-6 py-3 hover:bg-white/90'
+                  : 'text-white hover:text-white/60'
               }`}
             >
               {link.name}
@@ -72,7 +76,7 @@ export function NavBar() {
 
         {/* Mobile Nav Toggle */}
         <button
-          className="md:hidden text-foreground p-2"
+          className="md:hidden text-white p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           data-testid="button-mobile-menu"
         >
@@ -82,13 +86,13 @@ export function NavBar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border shadow-lg py-4 px-6 flex flex-col gap-2">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-[#0a0a0a] border-b border-white/10 py-6 px-6 flex flex-col gap-2 shadow-2xl">
           {navLinks.map((link) => (
             <button
               key={link.name}
               onClick={() => scrollTo(link.id)}
               data-testid={`mobile-nav-${link.id}`}
-              className="text-left py-3 text-sm font-bold text-foreground/80 hover:text-primary transition-colors uppercase tracking-widest border-b border-border/50"
+              className="text-left py-4 text-xs font-medium text-white hover:text-white/60 transition-colors uppercase tracking-[0.2em] border-b border-white/5 last:border-none"
             >
               {link.name}
             </button>

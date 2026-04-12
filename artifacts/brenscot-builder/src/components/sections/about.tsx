@@ -1,79 +1,69 @@
 import { motion } from 'framer-motion';
-import { HardHat, ShieldCheck, Ruler } from 'lucide-react';
+import aboutImage from '@/assets/images/about.png';
 
 const stats = [
   { value: "15+", label: "Years Experience" },
-  { value: "120+", label: "Projects Completed" },
+  { value: "120+", label: "Completed Projects" },
   { value: "100%", label: "Client Satisfaction" }
 ];
 
 export function About() {
   return (
-    <section id="about" className="py-24 bg-muted">
+    <section id="about" className="py-32 md:py-48 bg-white">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          
           <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, clipPath: "inset(100% 0 0 0)" }}
+            whileInView={{ opacity: 1, clipPath: "inset(0 0 0 0)" }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="relative h-[70vh] lg:h-[90vh] w-full order-2 lg:order-1"
           >
-            <span className="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-4 block">Our Story</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-6">A builder you can actually shake hands with.</h2>
-            <div className="space-y-6 text-muted-foreground text-lg leading-relaxed mb-10">
-              <p>
-                Founded on the principle that good work speaks for itself, Brenscot Builder isn't a faceless corporation. We are local builders who live in the communities we help build.
-              </p>
-              <p>
-                We don't cut corners, we don't hide behind jargon, and we don't leave a job until you're proud to call it yours. Our reputation is built into every foundation we pour and every beam we raise.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border">
-              {stats.map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-3xl font-serif text-foreground mb-2">{stat.value}</div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
-            </div>
+            <img 
+              src={aboutImage} 
+              alt="Architectural materials and craftsmanship" 
+              className="w-full h-full object-cover"
+            />
           </motion.div>
 
           <motion.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid gap-6"
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            className="order-1 lg:order-2"
           >
-            <div className="bg-background p-8 shadow-sm flex gap-6 items-start">
-              <div className="mt-1 bg-primary/10 p-3 text-primary">
-                <HardHat className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl font-serif font-bold mb-3">Hands-On Approach</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">Our site supervisors aren't just managers; they are master craftsmen who know every inch of your build.</p>
-              </div>
+            <span className="text-black/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">About Us</span>
+            <h2 className="text-4xl md:text-6xl font-serif text-black mb-10 leading-tight">
+              Building legacies, <br />one frame at a time.
+            </h2>
+            
+            <div className="space-y-8 text-black/60 text-lg md:text-xl font-light leading-relaxed mb-16">
+              <p>
+                Founded on the principle that exceptional architecture demands exceptional execution. We are builders who view construction not just as an assembly of materials, but as the physical realization of a vision.
+              </p>
+              <p>
+                Our reputation across Australia is built on uncompromising quality, transparent communication, and an obsessive attention to the finest architectural details. We don't just build homes; we craft landmarks.
+              </p>
             </div>
-            <div className="bg-background p-8 shadow-sm flex gap-6 items-start ml-0 md:ml-8">
-              <div className="mt-1 bg-primary/10 p-3 text-primary">
-                <Ruler className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl font-serif font-bold mb-3">Uncompromising Quality</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">We source premium materials and work only with trusted, specialized tradespeople who share our standards.</p>
-              </div>
-            </div>
-            <div className="bg-background p-8 shadow-sm flex gap-6 items-start">
-              <div className="mt-1 bg-primary/10 p-3 text-primary">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl font-serif font-bold mb-3">Transparent Communication</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">No surprises on your invoice. We keep you informed at every stage of the construction process.</p>
-              </div>
+            
+            <div className="grid grid-cols-3 gap-8 pt-12 border-t border-black/10">
+              {stats.map((stat, index) => (
+                <motion.div 
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 + (index * 0.1) }}
+                >
+                  <div className="text-3xl md:text-4xl font-serif text-black mb-4">{stat.value}</div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/50">{stat.label}</div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
