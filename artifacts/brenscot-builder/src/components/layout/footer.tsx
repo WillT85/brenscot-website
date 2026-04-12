@@ -1,5 +1,3 @@
-import logoImg from '@assets/V3_Grey_and_Blue_(5000_x_5000_px)_(400_x_200_px)_(4000_x_2000__1775998854478.jpg';
-
 export function Footer() {
   const scrollTo = (id: string) => {
     if (id === 'top') {
@@ -14,7 +12,10 @@ export function Footer() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end border-b border-white/10 pb-16 mb-12 gap-12">
           <div>
-            <img src={logoImg} alt="Brenscot Builders" className="h-16 md:h-20 w-auto object-contain brightness-0 invert mb-8" />
+            <div className="flex flex-col items-start leading-none select-none mb-8">
+              <span className="font-serif text-white text-3xl font-bold tracking-[0.05em]">BRENSCOT</span>
+              <span className="text-white/60 text-[10px] tracking-[0.45em] font-light uppercase mt-1">BUILDERS</span>
+            </div>
             <p className="text-white/40 text-sm max-w-sm font-light leading-relaxed">
               Crafting architectural landmarks and luxury residences. Excellence built into every detail since 2008.
             </p>

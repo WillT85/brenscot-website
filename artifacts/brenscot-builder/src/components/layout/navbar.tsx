@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logoImg from '@assets/V3_Grey_and_Blue_(5000_x_5000_px)_(400_x_200_px)_(4000_x_2000__1775998854478.jpg';
 
 export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,11 +48,10 @@ export function NavBar() {
           onClick={() => scrollTo('top')}
           data-testid="logo-home"
         >
-          <img 
-            src={logoImg} 
-            alt="Brenscot Builders" 
-            className="h-16 md:h-20 w-auto object-contain transition-all duration-500"
-          />
+          <div className="flex flex-col items-center leading-none select-none">
+            <span className="font-serif text-white text-2xl md:text-3xl font-bold tracking-[0.05em]">BRENSCOT</span>
+            <span className="text-white/80 text-[9px] md:text-[10px] tracking-[0.45em] font-light uppercase mt-0.5">BUILDERS</span>
+          </div>
         </div>
 
         {/* Desktop Nav */}
