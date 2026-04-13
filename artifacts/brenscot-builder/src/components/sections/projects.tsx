@@ -82,7 +82,7 @@ export function Projects() {
               className="group cursor-pointer"
             >
               <div className="relative overflow-hidden h-[35vh] md:h-[40vh]">
-                <div className="absolute inset-0 bg-black/5 z-10 transition-colors duration-700 group-hover:bg-black/20" />
+                <div className="absolute inset-0 bg-black/10 z-10 transition-colors duration-700 group-hover:bg-black/30" />
                 <img
                   src={project.image}
                   alt={project.title}
@@ -93,16 +93,15 @@ export function Projects() {
                     View Project
                   </span>
                 </div>
-              </div>
-
-              <div className="pt-6">
-                <span className="text-black/40 text-[10px] uppercase tracking-[0.3em] mb-2 block">
-                  {project.category}
-                </span>
-                <h3 className="text-2xl md:text-3xl font-serif text-black mb-2 leading-snug">{project.title}</h3>
-                <span className="text-black/50 text-[10px] uppercase tracking-[0.2em]">
-                  {project.area} {project.description && `· ${project.description}`}
-                </span>
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 z-30 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
+                  <span className="text-white/70 text-[9px] uppercase tracking-[0.3em] mb-1 block">
+                    {project.category}
+                  </span>
+                  <h3 className="text-lg md:text-xl font-serif text-white leading-snug">{project.title}</h3>
+                  <span className="text-white/50 text-[9px] uppercase tracking-[0.2em]">
+                    {project.area} {project.description && `· ${project.description}`}
+                  </span>
+                </div>
               </div>
             </motion.div>
           ))}
