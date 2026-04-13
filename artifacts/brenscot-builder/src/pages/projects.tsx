@@ -9,34 +9,42 @@ import project4 from '@/assets/images/project-4.png';
 const projects = [
   {
     title: "CHERMSIDE",
+    description: "566 Rode Rd, Chermside — Premiere commercial 4,895 m² development with 13 versatile warehouse units.",
     image: project1,
   },
   {
     title: "CLONTARF",
+    description: "34-40 Robson St, Clontarf — Large-scale industrial development spanning 62,000 m².",
     image: project2,
   },
   {
     title: "ZILLMERE",
+    description: "Industrial logistics facility delivering 41,200 m² of high-performance warehouse space.",
     image: project3,
   },
   {
     title: "WACOL",
+    description: "Specialised industrial facility comprising 19,800 m² of purpose-built warehouse infrastructure.",
     image: project4,
   },
   {
     title: "LOT 80 CABOOLTURE",
+    description: "Industrial development delivering 35,600 m² across a master-planned estate.",
     image: project1,
   },
   {
     title: "LOT 74 CABOOLTURE",
+    description: "Logistics facility with 52,400 m² of distribution and warehousing capacity.",
     image: project2,
   },
   {
     title: "LOT 82 CABOOLTURE",
+    description: "Design & construct project spanning 27,300 m² of commercial warehouse space.",
     image: project3,
   },
   {
     title: "LOT 84 CABOOLTURE",
+    description: "Premiere commercial development with 18,500 m² of industrial warehouse units.",
     image: project4,
   }
 ];
@@ -69,17 +77,17 @@ export default function ProjectsPage() {
 
       <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+          <div className="grid grid-cols-1 gap-16 md:gap-20">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="group cursor-pointer"
               >
-                <div className="relative overflow-hidden h-[50vh] md:h-[60vh]">
+                <div className="relative overflow-hidden h-[50vh] md:h-[70vh]">
                   <div className="absolute inset-0 bg-black/5 z-10 transition-colors duration-700 group-hover:bg-black/20" />
                   <img
                     src={project.image}
@@ -93,8 +101,9 @@ export default function ProjectsPage() {
                   </div>
                 </div>
 
-                <div className="absolute top-0 left-0 p-4 md:p-5 z-30">
-                  <h3 className="text-xs font-serif font-normal text-white tracking-wide uppercase">{project.title}</h3>
+                <div className="pt-6 md:pt-8">
+                  <h3 className="text-2xl md:text-4xl font-serif text-black mb-3 uppercase tracking-wide">{project.title}</h3>
+                  <p className="text-black/50 text-sm md:text-base font-light leading-relaxed max-w-2xl">{project.description}</p>
                 </div>
               </motion.div>
             ))}
