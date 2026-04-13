@@ -73,7 +73,7 @@ export function NavBar() {
           </div>
         </div>
 
-        <nav className="hidden md:flex items-center gap-8 lg:gap-12">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-12">
           {navLinks.map((link) => (
             <button
               key={link.name}
@@ -93,7 +93,7 @@ export function NavBar() {
         </nav>
 
         <button
-          className={`md:hidden p-2 transition-colors duration-500 ${isScrolled ? 'text-[#0b1526]' : 'text-white'}`}
+          className={`lg:hidden p-2 transition-colors duration-500 ${isScrolled ? 'text-[#0b1526]' : 'text-white'}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           data-testid="button-mobile-menu"
         >
@@ -102,7 +102,7 @@ export function NavBar() {
       </div>
 
       {mobileMenuOpen && (
-        <div className={`md:hidden absolute top-full left-0 right-0 border-b py-6 px-6 flex flex-col gap-2 shadow-2xl ${
+        <div className={`lg:hidden absolute top-full left-0 right-0 border-b py-6 px-6 flex flex-col gap-2 shadow-2xl ${
           isScrolled ? 'bg-white border-black/10' : 'bg-[#0a0a0a] border-white/10'
         }`}>
           {navLinks.map((link) => (
