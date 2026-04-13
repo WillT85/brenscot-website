@@ -49,7 +49,7 @@ export function NavBar() {
     { name: 'Projects', id: 'projects', href: '/projects' },
     { name: 'About', id: 'about', href: '/about' },
     { name: 'Careers', id: 'careers' },
-    { name: 'Partners', id: 'partners' },
+    { name: 'Partners', id: 'partners', href: '/partners' },
     { name: 'Contact Us', id: 'contact' },
   ];
 
