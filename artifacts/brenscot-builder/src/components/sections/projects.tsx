@@ -85,7 +85,7 @@ export function Projects() {
             onClick={() => { setLocation('/projects'); window.scrollTo({ top: 0 }); }}
             className="text-xs font-medium uppercase tracking-[0.2em] border border-black/20 text-black px-10 py-4 hover:bg-black hover:text-white transition-colors duration-300"
           >
-            View More Projects
+            View Developments
           </button>
         </div>
       </div>
