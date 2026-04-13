@@ -8,59 +8,35 @@ import project4 from '@/assets/images/project-4.png';
 
 const projects = [
   {
-    title: "566 Rode Rd, Chermside",
-    category: "Premiere Commercial",
-    area: "4,895 m²",
-    description: "13 versatile warehouse units",
+    title: "CHERMSIDE",
     image: project1,
   },
   {
-    title: "34-40 Robson St, Clontarf",
-    category: "Industrial Development",
-    area: "62,000 m²",
-    description: "",
+    title: "CLONTARF",
     image: project2,
   },
   {
-    title: "Apex Logistics Hub",
-    category: "Logistics Facility",
-    area: "41,200 m²",
-    description: "",
+    title: "ZILLMERE",
     image: project3,
   },
   {
-    title: "ColdChain Processing Facility",
-    category: "Specialised Industrial",
-    area: "19,800 m²",
-    description: "",
+    title: "WACOL",
     image: project4,
   },
   {
-    title: "Northgate Industrial Park",
-    category: "Industrial Development",
-    area: "35,600 m²",
-    description: "",
+    title: "LOT 80 CABOOLTURE",
     image: project1,
   },
   {
-    title: "Eagle Farm Distribution Centre",
-    category: "Logistics Facility",
-    area: "52,400 m²",
-    description: "",
+    title: "LOT 74 CABOOLTURE",
     image: project2,
   },
   {
-    title: "Brendale Commercial Estate",
-    category: "Design & Construct",
-    area: "27,300 m²",
-    description: "",
+    title: "LOT 82 CABOOLTURE",
     image: project3,
   },
   {
-    title: "Hemmant Warehouse Complex",
-    category: "Premiere Commercial",
-    area: "18,500 m²",
-    description: "",
+    title: "LOT 84 CABOOLTURE",
     image: project4,
   }
 ];
@@ -117,14 +93,8 @@ export default function ProjectsPage() {
                   </div>
                 </div>
 
-                <div className="pt-6">
-                  <span className="text-black/40 text-[10px] uppercase tracking-[0.3em] mb-2 block">
-                    {project.category}
-                  </span>
-                  <h3 className="text-2xl md:text-3xl font-serif text-black mb-2 leading-snug">{project.title}</h3>
-                  <span className="text-black/50 text-[10px] uppercase tracking-[0.2em]">
-                    {project.area} {project.description && `· ${project.description}`}
-                  </span>
+                <div className="absolute top-0 left-0 p-4 md:p-5 z-30">
+                  <h3 className="text-xs font-serif font-normal text-white tracking-wide uppercase">{project.title}</h3>
                 </div>
               </motion.div>
             ))}

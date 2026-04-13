@@ -6,59 +6,35 @@ import project4 from '@/assets/images/project-4.png';
 
 const projects = [
   {
-    title: "566 Rode Rd, Chermside",
-    category: "Premiere Commercial",
-    area: "4,895 m²",
-    description: "13 versatile warehouse units",
+    title: "CHERMSIDE",
     image: project1,
   },
   {
-    title: "34-40 Robson St, Clontarf",
-    category: "Industrial Development",
-    area: "62,000 m²",
-    description: "",
+    title: "CLONTARF",
     image: project2,
   },
   {
-    title: "Apex Logistics Hub",
-    category: "Logistics Facility",
-    area: "41,200 m²",
-    description: "",
+    title: "ZILLMERE",
     image: project3,
   },
   {
-    title: "ColdChain Processing Facility",
-    category: "Specialised Industrial",
-    area: "19,800 m²",
-    description: "",
+    title: "WACOL",
     image: project4,
   },
   {
-    title: "Northgate Industrial Park",
-    category: "Industrial Development",
-    area: "35,600 m²",
-    description: "",
+    title: "LOT 80 CABOOLTURE",
     image: project1,
   },
   {
-    title: "Eagle Farm Distribution Centre",
-    category: "Logistics Facility",
-    area: "52,400 m²",
-    description: "",
+    title: "LOT 74 CABOOLTURE",
     image: project2,
   },
   {
-    title: "Brendale Commercial Estate",
-    category: "Design & Construct",
-    area: "27,300 m²",
-    description: "",
+    title: "LOT 82 CABOOLTURE",
     image: project3,
   },
   {
-    title: "Hemmant Warehouse Complex",
-    category: "Premiere Commercial",
-    area: "18,500 m²",
-    description: "",
+    title: "LOT 84 CABOOLTURE",
     image: project4,
   }
 ];
