@@ -34,6 +34,34 @@ const projects = [
     area: "19,800 m²",
     description: "",
     image: project4,
+  },
+  {
+    title: "Northgate Industrial Park",
+    category: "Industrial Development",
+    area: "35,600 m²",
+    description: "",
+    image: project1,
+  },
+  {
+    title: "Eagle Farm Distribution Centre",
+    category: "Logistics Facility",
+    area: "52,400 m²",
+    description: "",
+    image: project2,
+  },
+  {
+    title: "Brendale Commercial Estate",
+    category: "Design & Construct",
+    area: "27,300 m²",
+    description: "",
+    image: project3,
+  },
+  {
+    title: "Hemmant Warehouse Complex",
+    category: "Premiere Commercial",
+    area: "18,500 m²",
+    description: "",
+    image: project4,
   }
 ];
 
