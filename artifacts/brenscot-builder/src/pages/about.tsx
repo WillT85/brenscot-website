@@ -146,6 +146,51 @@ export default function AboutPage() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="mb-16"
           >
+            <span className="text-black/50 font-sans uppercase tracking-[0.3em] text-[10px] mb-6 block">Our People</span>
+            <h2 className="text-4xl md:text-6xl font-serif text-black leading-tight">
+              Meet our team.
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+            {[
+              { name: "Michael Brennan", role: "Construction Director", initials: "MB" },
+              { name: "Lisa Nguyen", role: "Head of Design", initials: "LN" },
+              { name: "Tom Richards", role: "Project Manager", initials: "TR" },
+              { name: "Emma Scott", role: "Contracts Manager", initials: "ES" },
+              { name: "Daniel Cooper", role: "Site Supervisor", initials: "DC" },
+              { name: "Rachel Ward", role: "Finance Manager", initials: "RW" },
+              { name: "Chris Palmer", role: "Estimator", initials: "CP" },
+              { name: "Kate Sullivan", role: "Safety & Compliance", initials: "KS" },
+            ].map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                className="group"
+              >
+                <div className="relative h-[35vh] md:h-[45vh] bg-[#0b1526] overflow-hidden mb-5 flex items-center justify-center">
+                  <span className="text-white/20 font-serif text-5xl md:text-6xl group-hover:text-white/30 transition-colors duration-500">{member.initials}</span>
+                </div>
+                <h3 className="text-base md:text-lg font-medium text-black mb-1">{member.name}</h3>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-black/40">{member.role}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-32 bg-[#f8f8f8]">
+        <div className="container mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-16"
+          >
             <span className="text-black/50 font-sans uppercase tracking-[0.3em] text-[10px] mb-6 block">What Our Partners Say</span>
             <h2 className="text-4xl md:text-6xl font-serif text-black leading-tight">
               Trusted by industry leaders.
