@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useLocation } from 'wouter';
 import project1 from '@assets/image_1776005185036.png';
 import project2 from '@assets/13_02_extt_сс3_Post_Ps_1776005476200.jpg';
 import project3 from '@/assets/images/project-3.png';
@@ -40,6 +41,8 @@ const projects = [
 ];
 
 export function Projects() {
+  const [, setLocation] = useLocation();
+
   return (
     <section id="projects" className="py-20 md:py-32 bg-white">
       <div className="container mx-auto px-6 md:px-12 mb-16">
@@ -75,6 +78,15 @@ export function Projects() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <button
+            onClick={() => { setLocation('/projects'); window.scrollTo({ top: 0 }); }}
+            className="text-xs font-medium uppercase tracking-[0.2em] border border-black/20 text-black px-10 py-4 hover:bg-black hover:text-white transition-colors duration-300"
+          >
+            View More Projects
+          </button>
         </div>
       </div>
     </section>
