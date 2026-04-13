@@ -94,7 +94,7 @@ export function Projects() {
                   </span>
                 </div>
                 <div className="absolute top-0 left-0 p-4 md:p-5 z-30">
-                  <h3 className="text-xs font-sans font-medium text-white tracking-wide">{project.title}</h3>
+                  <h3 className="text-xs font-serif font-medium text-white tracking-wide">{project.title}</h3>
                 </div>
               </div>
             </motion.div>
