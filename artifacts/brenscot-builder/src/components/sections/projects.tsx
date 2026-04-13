@@ -93,8 +93,8 @@ export function Projects() {
                     View Project
                   </span>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5 z-30 bg-gradient-to-t from-black/60 to-transparent">
-                  <h3 className="text-xs font-sans font-medium text-[#C8A24A] tracking-wide">{project.title}</h3>
+                <div className="absolute top-0 left-0 p-4 md:p-5 z-30">
+                  <h3 className="text-xs font-sans font-medium text-white tracking-wide">{project.title}</h3>
                 </div>
               </div>
             </motion.div>
