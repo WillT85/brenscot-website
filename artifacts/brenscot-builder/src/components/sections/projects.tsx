@@ -71,7 +71,7 @@ export function Projects() {
       </div>
 
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -81,7 +81,7 @@ export function Projects() {
               transition={{ duration: 0.8, delay: (index % 2) * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="group cursor-pointer"
             >
-              <div className="relative overflow-hidden h-[40vh] md:h-[50vh]">
+              <div className="relative overflow-hidden h-[35vh] md:h-[40vh]">
                 <div className="absolute inset-0 bg-black/5 z-10 transition-colors duration-700 group-hover:bg-black/20" />
                 <img
                   src={project.image}
