@@ -25,10 +25,12 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - Serves at `/indevelop/`
 - Pages: Home (`/`), Our Story (`/our-story`), Portfolio (`/portfolio`), Community (`/community`), Our People (`/our-people`), News (`/news`), Contact (`/contact`)
 - Portfolio has filterable category tabs (All, Residential, Commercial, Retail, Industrial) and individual project detail pages at `/portfolio/:id`
-- Uses framer-motion for scroll animations, parallax, staggered entrances
-- Color palette: dark navy (#0C1B2A), gold/tan (#C9A96E), white/cream (#FAFAF8)
-- Fonts: Playfair Display (serif headings), Inter (body)
-- Inspired by Consolidated Properties Group design aesthetic
+- Uses framer-motion for scroll animations and page transitions
+- Color palette: white background, dark charcoal text (#2E3239), orange accent (#E8601C)
+- Fonts: Playfair Display (serif headings), Inter (body/nav)
+- Design inspired by Quintessential.com.au: clean white aesthetic, bright hero photos, orange rounded buttons, modern corporate feel
+- Navbar: white bg with dark text, orange rounded "Contact Us" CTA, transparent on hero pages
+- Contact page: Quintessential-style layout with hero banner, "Send us a message" heading, icon-based contact details, and comprehensive form
 - Contact form: client-side only mock submission
 
 ## Stack

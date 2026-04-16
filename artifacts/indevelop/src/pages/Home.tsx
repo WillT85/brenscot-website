@@ -15,34 +15,39 @@ export default function Home() {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-primary overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-overlay"
+      <section className="relative h-screen flex items-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroHome})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent" />
-        
-        <div className="relative z-10 text-center max-w-5xl px-8 mt-20">
-          <motion.h1 
+        <div className="absolute inset-0 bg-black/30" />
+
+        <div className="relative z-10 max-w-4xl px-8 md:px-16 mt-20">
+          <motion.h1
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
             variants={fadeIn}
-            className="text-5xl md:text-7xl font-serif mb-6 text-white leading-[1.1]"
+            className="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-[1.1] mb-6"
           >
-            Proudly developing high quality residential, commercial &amp; retail projects for 20+ years.
+            Proudly developing high quality residential, commercial & retail projects for <span className="text-secondary italic">20+ years.</span>
           </motion.h1>
-          
+
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.5 }}
             variants={fadeIn}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12"
+            className="flex flex-col sm:flex-row items-start gap-6 mt-10"
           >
+            <Link
+              href="/portfolio"
+              className="bg-secondary text-white text-sm font-semibold px-8 py-3.5 rounded-full hover:bg-secondary/90 transition-colors"
+            >
+              Learn More
+            </Link>
             <button
               className="inline-flex items-center gap-3 text-white/90 hover:text-white transition-colors group"
               data-testid="button-play-film"
@@ -51,55 +56,53 @@ export default function Home() {
               <span className="w-12 h-12 rounded-full border-2 border-white/60 flex items-center justify-center group-hover:border-white group-hover:bg-white/10 transition-all">
                 <Play size={18} className="ml-0.5" />
               </span>
-              <span className="text-xs uppercase tracking-[0.2em] font-semibold">Play Film</span>
+              <span className="text-sm font-medium">Play Film</span>
             </button>
           </motion.div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-24 bg-background text-primary">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 divide-y md:divide-y-0 md:divide-x divide-primary/10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
             {[
               { value: "$1.8B", label: "Portfolio Value" },
               { value: "25+", label: "Years Experience" },
               { value: "40", label: "Projects Delivered" },
               { value: "100%", label: "Commitment to Excellence" }
             ].map((stat, i) => (
-              <motion.div 
+              <motion.div
                 key={stat.label}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: i * 0.1 }}
                 variants={fadeIn}
-                className="text-center pt-8 md:pt-0"
+                className="text-center"
               >
-                <div className="text-5xl font-serif text-secondary mb-2">{stat.value}</div>
-                <div className="text-xs uppercase tracking-widest text-primary/60 font-medium">{stat.label}</div>
+                <div className="text-4xl md:text-5xl font-serif text-secondary mb-2">{stat.value}</div>
+                <div className="text-xs uppercase tracking-wider text-primary/50 font-medium">{stat.label}</div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="py-32 bg-muted">
+      <section className="py-24 bg-muted">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex justify-between items-end mb-16">
             <div>
-              <h2 className="text-xs uppercase tracking-widest text-secondary font-semibold mb-4">Featured Work</h2>
-              <h3 className="text-4xl font-serif text-primary">Signatures of the Skyline</h3>
+              <h2 className="text-xs uppercase tracking-wider text-secondary font-semibold mb-3">Featured Work</h2>
+              <h3 className="text-3xl md:text-4xl font-serif text-primary">Signatures of the Skyline</h3>
             </div>
-            <Link href="/portfolio" className="hidden md:inline-block text-xs uppercase tracking-widest font-semibold text-primary hover:text-secondary transition-colors border-b border-primary/20 pb-1 hover:border-secondary">
-              View All Projects
+            <Link href="/portfolio" className="hidden md:inline-block text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors">
+              View All Projects &rarr;
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredProjects.map((project, i) => (
-              <motion.div 
+              <motion.div
                 key={project.id}
                 initial="hidden"
                 whileInView="visible"
@@ -109,18 +112,18 @@ export default function Home() {
                 className="group cursor-pointer"
               >
                 <Link href={`/portfolio/${project.id}`}>
-                  <div className="relative aspect-[3/4] overflow-hidden bg-primary mb-6">
-                    <img 
-                      src={project.image} 
+                  <div className="relative aspect-[3/4] overflow-hidden bg-muted mb-6 rounded-lg">
+                    <img
+                      src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-primary text-[10px] uppercase tracking-widest px-3 py-1 font-semibold">
+                    <div className="absolute top-4 left-4 bg-secondary text-white text-[10px] uppercase tracking-widest px-3 py-1.5 font-semibold rounded-full">
                       {project.category}
                     </div>
                   </div>
                   <h4 className="text-xl font-serif text-primary mb-2 group-hover:text-secondary transition-colors">{project.title}</h4>
-                  <p className="text-primary/60 text-sm">{project.location}</p>
+                  <p className="text-primary/50 text-sm">{project.location}</p>
                 </Link>
               </motion.div>
             ))}

@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { MapPin, Phone, Mail } from "lucide-react";
 import heroContact from "@/assets/images/hero-contact.png";
 
 export default function Contact() {
@@ -19,93 +20,103 @@ export default function Contact() {
 
   return (
     <Layout>
-      <section className="relative pt-48 pb-32 bg-primary text-white">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-luminosity"
+      <section className="relative h-[50vh] min-h-[350px] flex items-end overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroContact})` }}
-        ></div>
-        <div className="relative max-w-7xl mx-auto px-8 z-10">
-          <motion.h1 
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative max-w-7xl mx-auto px-8 pb-12 w-full z-10">
+          <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-serif mb-6"
+            className="text-4xl md:text-6xl font-serif text-white"
           >
-            Get In Touch
+            Contact Us
           </motion.h1>
         </div>
       </section>
 
-      <section className="py-24 bg-background">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            
-            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
-              <h2 className="text-3xl font-serif text-primary mb-8">Head Office</h2>
-              <div className="space-y-8 text-foreground/80">
-                <div>
-                  <h3 className="text-xs uppercase tracking-widest text-secondary font-semibold mb-2">Address</h3>
-                  <p className="text-lg">
-                    Level 45, The Aurora Tower<br />
-                    1 Queen Street<br />
-                    Brisbane QLD 4000<br />
-                    Australia
-                  </p>
-                  <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="inline-block mt-4 text-xs uppercase tracking-widest font-semibold text-primary border-b border-primary/20 pb-1 hover:text-secondary hover:border-secondary transition-colors" data-testid="link-directions">
-                    Get Directions
-                  </a>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
+
+            <motion.div className="lg:col-span-4" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }}>
+              <h2 className="text-3xl font-serif text-primary mb-2">
+                Send us a <span className="text-secondary italic">message</span>
+              </h2>
+              <p className="text-primary/60 mb-10 leading-relaxed">
+                Send us a message and we will reply by the next business day.
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <MapPin size={20} className="text-secondary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-primary">Level 45, The Aurora Tower</p>
+                    <p className="text-primary/70">1 Queen Street, Brisbane QLD 4000</p>
+                  </div>
                 </div>
-                
-                <div>
-                  <h3 className="text-xs uppercase tracking-widest text-secondary font-semibold mb-2">Contact Details</h3>
-                  <p className="text-lg">
-                    <a href="tel:+61730000000" className="hover:text-secondary transition-colors">+61 (0)7 3000 0000</a><br />
-                    <a href="mailto:enquiries@indevelop.com.au" className="hover:text-secondary transition-colors">enquiries@indevelop.com.au</a>
-                  </p>
+                <div className="flex items-start gap-4">
+                  <Phone size={20} className="text-secondary mt-0.5 flex-shrink-0" />
+                  <a href="tel:+61730000000" className="text-primary hover:text-secondary transition-colors">+61 (0)7 3000 0000</a>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Mail size={20} className="text-secondary mt-0.5 flex-shrink-0" />
+                  <a href="mailto:enquiries@indevelop.com.au" className="text-primary hover:text-secondary transition-colors">enquiries@indevelop.com.au</a>
                 </div>
               </div>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
-              <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 md:p-12 shadow-xl border border-border" data-testid="form-contact">
-                <h3 className="text-2xl font-serif text-primary mb-8">Direct Enquiry</h3>
-                
-                <div className="space-y-4">
+            <motion.div className="lg:col-span-8" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.4 }}>
+              <form onSubmit={handleSubmit} className="space-y-8" data-testid="form-contact">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
-                    <label htmlFor="name" className="block text-xs uppercase tracking-widest text-primary/70 font-semibold mb-2">Full Name</label>
-                    <input required type="text" id="name" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary" data-testid="input-name" />
+                    <label htmlFor="firstName" className="block text-sm font-semibold text-primary mb-2">First Name</label>
+                    <input required type="text" id="firstName" placeholder="e.g. John" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary placeholder:text-primary/30 rounded-none" data-testid="input-name" />
                   </div>
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="email" className="block text-xs uppercase tracking-widest text-primary/70 font-semibold mb-2">Email</label>
-                      <input required type="email" id="email" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary" data-testid="input-email" />
-                    </div>
-                    <div>
-                      <label htmlFor="phone" className="block text-xs uppercase tracking-widest text-primary/70 font-semibold mb-2">Phone</label>
-                      <input type="tel" id="phone" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary" data-testid="input-phone" />
-                    </div>
+                  <div>
+                    <label htmlFor="surname" className="block text-sm font-semibold text-primary mb-2">Surname</label>
+                    <input type="text" id="surname" placeholder="e.g. Smith" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary placeholder:text-primary/30 rounded-none" />
                   </div>
+                </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
-                    <label htmlFor="reason" className="block text-xs uppercase tracking-widest text-primary/70 font-semibold mb-2">Reason for Contact</label>
+                    <label htmlFor="email" className="block text-sm font-semibold text-primary mb-2">Email</label>
+                    <input required type="email" id="email" placeholder="e.g. john@company.com.au" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary placeholder:text-primary/30 rounded-none" data-testid="input-email" />
+                  </div>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-semibold text-primary mb-2">Phone</label>
+                    <input type="tel" id="phone" placeholder="e.g. 0400 000 000" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary placeholder:text-primary/30 rounded-none" data-testid="input-phone" />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <label htmlFor="reason" className="block text-sm font-semibold text-primary mb-2">How can we help?</label>
                     <select required id="reason" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary appearance-none rounded-none" data-testid="select-reason">
-                      <option value="">Select an option</option>
+                      <option value="">Select one...</option>
                       <option value="investment">Investment Opportunities</option>
                       <option value="sales">Sales & Leasing</option>
                       <option value="media">Media & PR</option>
                       <option value="general">General Enquiry</option>
                     </select>
                   </div>
-
                   <div>
-                    <label htmlFor="message" className="block text-xs uppercase tracking-widest text-primary/70 font-semibold mb-2">Message</label>
-                    <textarea required id="message" rows={4} className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary resize-none" data-testid="input-message"></textarea>
+                    <label htmlFor="business" className="block text-sm font-semibold text-primary mb-2">Business Name</label>
+                    <input type="text" id="business" placeholder="Business Name*" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary placeholder:text-primary/30 rounded-none" />
                   </div>
                 </div>
 
-                <button 
-                  type="submit" 
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold text-primary mb-2">Message</label>
+                  <textarea required id="message" rows={4} placeholder="What's on your mind?*" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary resize-none placeholder:text-primary/30 rounded-none" data-testid="input-message"></textarea>
+                </div>
+
+                <button
+                  type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary text-white py-4 tracking-widest uppercase text-xs font-semibold hover:bg-secondary transition-colors disabled:opacity-50 mt-8"
+                  className="bg-secondary text-white py-3.5 px-10 rounded-full text-sm font-semibold hover:bg-secondary/90 transition-colors disabled:opacity-50"
                   data-testid="button-submit-contact"
                 >
                   {isSubmitting ? "Sending..." : "Submit Enquiry"}
@@ -115,7 +126,7 @@ export default function Contact() {
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="mt-6 p-4 bg-secondary/10 border border-secondary/30 text-primary text-center"
+                    className="mt-4 p-4 bg-secondary/10 border border-secondary/30 text-primary rounded-lg"
                     data-testid="text-form-success"
                   >
                     <p className="font-serif text-lg">Message Received</p>

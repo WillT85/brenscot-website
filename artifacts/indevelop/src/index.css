@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -36,52 +36,28 @@
 }
 
 :root {
-  --background: 60 14% 98%;
-  --foreground: 210 56% 11%;
+  --background: 0 0% 100%;
+  --foreground: 220 20% 20%;
   --card: 0 0% 100%;
-  --card-foreground: 210 56% 11%;
-  --card-border: 60 10% 90%;
+  --card-foreground: 220 20% 20%;
+  --card-border: 220 10% 90%;
   --popover: 0 0% 100%;
-  --popover-foreground: 210 56% 11%;
-  --popover-border: 60 10% 90%;
-  --primary: 210 56% 11%;
-  --primary-foreground: 60 14% 98%;
-  --secondary: 39 45% 61%;
-  --secondary-foreground: 210 56% 11%;
-  --muted: 60 10% 92%;
-  --muted-foreground: 210 20% 40%;
-  --accent: 39 45% 61%;
-  --accent-foreground: 60 14% 98%;
+  --popover-foreground: 220 20% 20%;
+  --popover-border: 220 10% 90%;
+  --primary: 220 20% 20%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 18 82% 51%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 220 14% 96%;
+  --muted-foreground: 220 10% 46%;
+  --accent: 18 82% 51%;
+  --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 60%;
-  --destructive-foreground: 60 14% 98%;
-  --border: 60 10% 85%;
-  --input: 60 10% 85%;
-  --ring: 39 45% 61%;
-  --radius: 0rem;
-}
-
-.dark {
-  --background: 210 56% 11%;
-  --foreground: 60 14% 98%;
-  --card: 210 50% 14%;
-  --card-foreground: 60 14% 98%;
-  --card-border: 210 30% 25%;
-  --popover: 210 50% 14%;
-  --popover-foreground: 60 14% 98%;
-  --popover-border: 210 30% 25%;
-  --primary: 39 45% 61%;
-  --primary-foreground: 210 56% 11%;
-  --secondary: 60 14% 98%;
-  --secondary-foreground: 210 56% 11%;
-  --muted: 210 40% 18%;
-  --muted-foreground: 210 20% 70%;
-  --accent: 39 45% 61%;
-  --accent-foreground: 210 56% 11%;
-  --destructive: 0 62% 30%;
-  --destructive-foreground: 60 14% 98%;
-  --border: 210 30% 25%;
-  --input: 210 30% 25%;
-  --ring: 39 45% 61%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 18 82% 51%;
+  --radius: 0.375rem;
 }
 
 @layer base {
