@@ -45,13 +45,13 @@ export function Layout({ children }: { children: ReactNode }) {
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
             ? "bg-white shadow-sm py-4"
             : "bg-transparent py-6"
         }`}
       >
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between">
+        <div className="w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex items-center justify-between">
           <Link href="/" className={`flex flex-col items-start leading-none z-10 transition-colors shrink-0 ${useWhiteText ? "text-white" : "text-primary"}`} data-testid="link-logo" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
             <span className="text-xl sm:text-2xl font-bold tracking-[0.12em] uppercase">INDEVELOP</span>
             <span className={`text-[8px] sm:text-[9px] tracking-[0.25em] uppercase font-medium mt-0.5 ${useWhiteText ? "text-white/70" : "text-primary/50"}`}>Property Developers</span>
