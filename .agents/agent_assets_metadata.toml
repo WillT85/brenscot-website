@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "DpmJpNeLUQFPCDDTP2Pix"
@@ -144,3 +143,39 @@ id = "0hwVh-PK8fPV2Kum0dIF2"
 uri = "file://artifacts/indevelop/src/assets/images/team-6.png"
 type = "image"
 title = "General Counsel headshot"
+
+[[outputs]]
+id = "jix48-LGWWdd-s4TXXOk6"
+uri = "file://attached_assets/stock_images/cards-bg_1.jpg"
+type = "image"
+title = "architectural detail wood texture building"
+
+[[outputs]]
+id = "Tg3UHK6XaYVIwKBHu3E1k"
+uri = "file://attached_assets/stock_images/cards-bg_2.jpg"
+type = "image"
+title = "architectural detail wood texture building"
+
+[[outputs]]
+id = "RMxnIvxBqTP5VcE3PnLjT"
+uri = "file://attached_assets/stock_images/cards-bg_3.jpg"
+type = "image"
+title = "architectural detail wood texture building"
+
+[[outputs]]
+id = "_tYgJ3A5SY6FmjT8hjPQa"
+uri = "file://attached_assets/stock_images/cards-section_1.jpg"
+type = "image"
+title = "modern luxury apartment building facade warm tones abstract"
+
+[[outputs]]
+id = "5Sw2t-Hnu131xuYR5FyMZ"
+uri = "file://attached_assets/stock_images/cards-section_2.jpg"
+type = "image"
+title = "modern luxury apartment building facade warm tones abstract"
+
+[[outputs]]
+id = "pSwDtP8DSjqR9tMKB7sFy"
+uri = "file://attached_assets/stock_images/cards-section_3.jpg"
+type = "image"
+title = "modern luxury apartment building facade warm tones abstract"

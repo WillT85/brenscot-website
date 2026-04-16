@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { projects } from "@/lib/data";
 
 import heroHome from "@/assets/images/hero-home.png";
+import cardsBg from "@/assets/images/cards-bg.jpg";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -56,7 +57,7 @@ export default function Home() {
       <section className="relative py-0">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroHome})` }}
+          style={{ backgroundImage: `url(${cardsBg})` }}
         />
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-7xl mx-auto px-8 py-24">
