@@ -175,14 +175,16 @@ export function Layout({ children }: { children: ReactNode }) {
             </ul>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-primary/10 text-xs text-primary/40 flex flex-col md:flex-row justify-between items-center">
+      </footer>
+      <div className="bg-[#1a1a2e] py-6 px-8">
+        <div className="max-w-7xl mx-auto text-xs text-white/40 flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {new Date().getFullYear()} Indevelop Pty Ltd. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <span className="hover:text-primary cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-primary cursor-pointer">Terms of Service</span>
+            <span className="hover:text-white cursor-pointer">Privacy Policy</span>
+            <span className="hover:text-white cursor-pointer">Terms of Service</span>
           </div>
         </div>
-      </footer>
+      </div>
     </div>
   );
 }
