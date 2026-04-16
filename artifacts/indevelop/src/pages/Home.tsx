@@ -125,10 +125,10 @@ export default function Home() {
                 href: "/our-story"
               },
               {
-                bg: "bg-[#3a3a3a]",
+                bg: "bg-secondary",
                 textColor: "text-white",
-                descColor: "text-white/70",
-                btnClass: "border-secondary text-secondary hover:bg-secondary hover:text-white",
+                descColor: "text-white/80",
+                btnClass: "border-white text-white hover:bg-white hover:text-secondary",
                 title: "Development",
                 description: "Creating purpose-led developments focused on design excellence, environmental sustainability, social benefits and inspirational built environments.",
                 href: "/portfolio"
