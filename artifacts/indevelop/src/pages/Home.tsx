@@ -10,6 +10,7 @@ import heroStory from "@/assets/images/hero-story.png";
 import heroCommunity from "@/assets/images/hero-community.png";
 import project7 from "@/assets/images/project-7.png";
 import project3 from "@/assets/images/project-3.png";
+import teamPhoto from "@/assets/images/team-1.png";
 import cardsBg from "@/assets/images/cards-bg-final.png";
 
 const fadeIn = {
@@ -296,6 +297,49 @@ export default function Home() {
                   Learn More &rarr;
                 </Link>
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-muted">
+        <div className="max-w-7xl mx-auto px-8 md:px-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              variants={fadeIn}
+            >
+              <div className="rounded-lg overflow-hidden">
+                <img
+                  src={teamPhoto}
+                  alt="The Indevelop team"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              variants={fadeIn}
+            >
+              <h2 className="text-xs uppercase tracking-wider text-secondary font-semibold mb-3">Careers</h2>
+              <h3 className="text-3xl md:text-4xl font-serif text-primary leading-snug mb-6">
+                Join the team <span className="text-secondary italic">today!</span>
+              </h3>
+              <p className="text-primary/60 leading-relaxed mb-8">
+                Challenge our thinking, deliver outstanding outcomes, and share our purpose and values.
+              </p>
+              <Link
+                href="/contact"
+                className="bg-secondary text-white text-sm font-semibold px-8 py-3.5 rounded-full hover:bg-secondary/90 transition-colors inline-block"
+              >
+                Find Out More
+              </Link>
             </motion.div>
           </div>
         </div>
