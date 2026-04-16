@@ -98,7 +98,7 @@ export default function Home() {
             variants={fadeIn}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif text-white leading-[1.1] mb-6"
           >
-            Proudly developing high quality residential, commercial & retail projects for <span className="text-secondary italic">20+ years.</span>
+            Built on quality. Defined by <span className="text-secondary italic">legacy.</span>
           </motion.h1>
 
           <motion.div
