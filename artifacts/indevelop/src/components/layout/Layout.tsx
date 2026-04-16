@@ -51,20 +51,20 @@ export function Layout({ children }: { children: ReactNode }) {
             : "bg-transparent py-6"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
-          <Link href="/" className={`flex flex-col items-start leading-none z-10 transition-colors ${useWhiteText ? "text-white" : "text-primary"}`} data-testid="link-logo" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-            <span className="text-2xl font-bold tracking-[0.12em] uppercase">INDEVELOP</span>
-            <span className={`text-[9px] tracking-[0.25em] uppercase font-medium mt-0.5 ${useWhiteText ? "text-white/70" : "text-primary/50"}`}>Property Developers</span>
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 flex items-center justify-between">
+          <Link href="/" className={`flex flex-col items-start leading-none z-10 transition-colors shrink-0 ${useWhiteText ? "text-white" : "text-primary"}`} data-testid="link-logo" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            <span className="text-xl sm:text-2xl font-bold tracking-[0.12em] uppercase">INDEVELOP</span>
+            <span className={`text-[8px] sm:text-[9px] tracking-[0.25em] uppercase font-medium mt-0.5 ${useWhiteText ? "text-white/70" : "text-primary/50"}`}>Property Developers</span>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-8">
             {NAV_LINKS.filter(l => l.label !== "Contact").map((link) => {
               const isActive = link.href === "/" ? location === "/" : location.startsWith(link.href);
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-[13px] font-medium transition-colors ${
+                  className={`text-[12px] xl:text-[13px] font-medium transition-colors whitespace-nowrap ${
                     isActive
                       ? "text-secondary"
                       : useWhiteText
@@ -79,7 +79,7 @@ export function Layout({ children }: { children: ReactNode }) {
             })}
             <Link
               href="/contact"
-              className="bg-secondary text-white text-[13px] font-semibold px-6 py-2.5 rounded-full hover:bg-secondary/90 transition-colors"
+              className="bg-secondary text-white text-[12px] xl:text-[13px] font-semibold px-5 xl:px-6 py-2.5 rounded-full hover:bg-secondary/90 transition-colors whitespace-nowrap"
               data-testid="link-nav-contact"
             >
               Contact Us

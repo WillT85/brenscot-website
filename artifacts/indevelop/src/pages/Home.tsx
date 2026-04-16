@@ -35,21 +35,21 @@ export default function Home() {
 
   return (
     <Layout>
-      <section className="relative h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen h-screen flex items-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroHome})` }}
         />
         <div className="absolute inset-0 bg-black/30" />
 
-        <div className="relative z-10 max-w-4xl px-8 md:px-16 mt-20">
+        <div className="relative z-10 w-full max-w-4xl px-6 sm:px-8 md:px-16 mt-20">
           <motion.h1
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
             variants={fadeIn}
-            className="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-[1.1] mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif text-white leading-[1.1] mb-6"
           >
             Proudly developing high quality residential, commercial & retail projects for <span className="text-secondary italic">20+ years.</span>
           </motion.h1>
