@@ -36,11 +36,58 @@ export default function Home() {
   return (
     <Layout>
       <section className="relative min-h-screen h-screen flex items-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroHome})` }}
+        <div className="absolute inset-0">
+          {Array.from({ length: 12 }).map((_, i) => {
+            const cols = 4;
+            const rows = 3;
+            const col = i % cols;
+            const row = Math.floor(i / cols);
+            const directions = [
+              { x: -150, y: -100 },
+              { x: 80, y: -150 },
+              { x: -100, y: 130 },
+              { x: 170, y: -70 },
+              { x: -130, y: -130 },
+              { x: 100, y: 150 },
+              { x: -170, y: 70 },
+              { x: 130, y: -100 },
+              { x: -70, y: 170 },
+              { x: 150, y: 100 },
+              { x: -100, y: -170 },
+              { x: 70, y: 130 },
+            ];
+            const d = directions[i];
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: d.x, y: d.y, scale: 1.15 }}
+                animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+                transition={{
+                  duration: 1.6,
+                  delay: 0.05 + i * 0.07,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                }}
+                className="absolute"
+                style={{
+                  left: `${(col / cols) * 100}%`,
+                  top: `${(row / rows) * 100}%`,
+                  width: `${(1 / cols) * 100 + 0.5}%`,
+                  height: `${(1 / rows) * 100 + 0.5}%`,
+                  backgroundImage: `url(${heroHome})`,
+                  backgroundSize: `${cols * 100}% ${rows * 100}%`,
+                  backgroundPosition: `${(col / (cols - 1)) * 100}% ${(row / (rows - 1)) * 100}%`,
+                  willChange: "transform, opacity",
+                }}
+              />
+            );
+          })}
+        </div>
+        <motion.div
+          className="absolute inset-0 bg-black/30"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.8, delay: 0.8 }}
         />
-        <div className="absolute inset-0 bg-black/30" />
 
         <div className="relative z-10 w-full max-w-4xl px-6 sm:px-8 md:px-16 mt-20">
           <motion.h1
