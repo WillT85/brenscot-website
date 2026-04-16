@@ -145,20 +145,20 @@ export function Layout({ children }: { children: ReactNode }) {
         </AnimatePresence>
       </main>
 
-      <footer className="bg-[#1a1a2e] text-white py-20 px-8">
+      <footer className="bg-white text-primary py-20 px-8 border-t border-primary/10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
             <div className="mb-6" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
               <h3 className="text-2xl font-bold tracking-[0.12em] uppercase leading-none">INDEVELOP</h3>
-              <span className="text-[9px] tracking-[0.25em] uppercase font-medium text-white/50 mt-0.5 block">Property Developers</span>
+              <span className="text-[9px] tracking-[0.25em] uppercase font-medium text-primary/50 mt-0.5 block">Property Developers</span>
             </div>
-            <p className="text-white/60 leading-relaxed max-w-sm text-sm">
+            <p className="text-primary/60 leading-relaxed max-w-sm text-sm">
               Premium Australian property development. Shaping the skyline of tomorrow with quiet authority and uncompromised quality.
             </p>
           </div>
           <div>
             <h4 className="text-sm font-semibold tracking-wider uppercase mb-6 text-secondary">Contact</h4>
-            <p className="text-white/60 leading-loose text-sm">
+            <p className="text-primary/60 leading-loose text-sm">
               Head Office<br />
               Brisbane QLD 4000<br />
               +61 (0)7 3000 0000<br />
@@ -167,7 +167,7 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
           <div>
             <h4 className="text-sm font-semibold tracking-wider uppercase mb-6 text-secondary">Navigation</h4>
-            <ul className="flex flex-col gap-3 text-sm text-white/60">
+            <ul className="flex flex-col gap-3 text-sm text-primary/60">
               <li><Link href="/our-story" className="hover:text-secondary transition-colors">Our Story</Link></li>
               <li><Link href="/portfolio" className="hover:text-secondary transition-colors">Portfolio</Link></li>
               <li><Link href="/our-people" className="hover:text-secondary transition-colors">Our People</Link></li>
@@ -175,11 +175,11 @@ export function Layout({ children }: { children: ReactNode }) {
             </ul>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/10 text-xs text-white/40 flex flex-col md:flex-row justify-between items-center">
+        <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-primary/10 text-xs text-primary/40 flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {new Date().getFullYear()} Indevelop Pty Ltd. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <span className="hover:text-white cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-white cursor-pointer">Terms of Service</span>
+            <span className="hover:text-primary cursor-pointer">Privacy Policy</span>
+            <span className="hover:text-primary cursor-pointer">Terms of Service</span>
           </div>
         </div>
       </footer>
