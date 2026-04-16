@@ -52,9 +52,9 @@ export function Layout({ children }: { children: ReactNode }) {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
-          <Link href="/" className={`flex flex-col items-start leading-none z-10 transition-colors ${useWhiteText ? "text-white" : "text-primary"}`} data-testid="link-logo">
-            <span className="text-xl font-sans font-bold tracking-[0.15em] uppercase">INDEVELOP</span>
-            <span className={`text-[8px] tracking-[0.3em] uppercase font-bold mt-0.5 font-sans ${useWhiteText ? "text-white/70" : "text-primary/50"}`}>Property Developers</span>
+          <Link href="/" className={`flex flex-col items-start leading-none z-10 transition-colors ${useWhiteText ? "text-white" : "text-primary"}`} data-testid="link-logo" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            <span className="text-2xl font-bold tracking-[0.12em] uppercase">INDEVELOP</span>
+            <span className={`text-[9px] tracking-[0.25em] uppercase font-medium mt-0.5 ${useWhiteText ? "text-white/70" : "text-primary/50"}`}>Property Developers</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
@@ -148,9 +148,9 @@ export function Layout({ children }: { children: ReactNode }) {
       <footer className="bg-[#1a1a2e] text-white py-20 px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <div className="mb-6">
-              <h3 className="font-sans text-xl font-bold tracking-[0.15em] uppercase leading-none">INDEVELOP</h3>
-              <span className="text-[8px] tracking-[0.3em] uppercase font-bold font-sans text-white/50 mt-0.5 block">Property Developers</span>
+            <div className="mb-6" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+              <h3 className="text-2xl font-bold tracking-[0.12em] uppercase leading-none">INDEVELOP</h3>
+              <span className="text-[9px] tracking-[0.25em] uppercase font-medium text-white/50 mt-0.5 block">Property Developers</span>
             </div>
             <p className="text-white/60 leading-relaxed max-w-sm text-sm">
               Premium Australian property development. Shaping the skyline of tomorrow with quiet authority and uncompromised quality.
