@@ -215,6 +215,44 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="relative py-24 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroHome})` }}
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 max-w-4xl mx-auto px-8 text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            variants={fadeIn}
+          >
+            <h2 className="text-xs uppercase tracking-wider text-secondary font-semibold mb-3">Get In Touch</h2>
+            <h3 className="text-3xl md:text-5xl font-serif text-white leading-snug mb-6">
+              Ready to Start Your Next <span className="text-secondary italic">Project?</span>
+            </h3>
+            <p className="text-white/70 leading-relaxed mb-10 max-w-2xl mx-auto">
+              Whether you're looking to invest, develop, or explore partnership opportunities, our team is ready to help bring your vision to life.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/contact"
+                className="bg-secondary text-white text-sm font-semibold px-10 py-3.5 rounded-full hover:bg-secondary/90 transition-colors"
+              >
+                Contact Us
+              </Link>
+              <Link
+                href="/portfolio"
+                className="border-2 border-white/40 text-white text-sm font-semibold px-10 py-3.5 rounded-full hover:border-white hover:bg-white/10 transition-colors"
+              >
+                View Our Work
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </Layout>
   );
 }
