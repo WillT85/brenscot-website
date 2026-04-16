@@ -47,14 +47,14 @@ export function Layout({ children }: { children: ReactNode }) {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white shadow-sm py-4"
+            ? "bg-[#2F455C] shadow-sm py-4"
             : "bg-transparent py-6"
         }`}
       >
         <div className="w-full mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 flex items-center justify-between">
-          <Link href="/" className={`flex flex-col items-start leading-none z-10 transition-colors shrink-0 ${useWhiteText ? "text-white" : "text-primary"}`} data-testid="link-logo" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+          <Link href="/" className="flex flex-col items-start leading-none z-10 transition-colors shrink-0 text-white" data-testid="link-logo" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
             <span className="text-xl sm:text-2xl font-bold tracking-[0.12em] uppercase">INDEVELOP</span>
-            <span className={`text-[8px] sm:text-[9px] tracking-[0.25em] uppercase font-medium mt-0.5 ${useWhiteText ? "text-white/70" : "text-primary/50"}`}>Property Developers</span>
+            <span className="text-[8px] sm:text-[9px] tracking-[0.25em] uppercase font-medium mt-0.5 text-white/70">Property Developers</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-4 xl:gap-8">
@@ -67,9 +67,7 @@ export function Layout({ children }: { children: ReactNode }) {
                   className={`text-[12px] xl:text-[13px] font-medium transition-colors whitespace-nowrap ${
                     isActive
                       ? "text-secondary"
-                      : useWhiteText
-                        ? "text-white/90 hover:text-white"
-                        : "text-primary/70 hover:text-primary"
+                      : "text-white/90 hover:text-white"
                   }`}
                   data-testid={`link-nav-${link.label.toLowerCase().replace(" ", "-")}`}
                 >
@@ -87,7 +85,7 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
 
           <button
-            className={`lg:hidden z-10 p-2 -mr-2 ${useWhiteText ? "text-white" : "text-primary"}`}
+            className="lg:hidden z-10 p-2 -mr-2 text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
