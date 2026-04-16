@@ -266,9 +266,9 @@ export default function Home() {
                 <img src={project7} alt="Urban green spaces" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="p-8">
-                <h4 className="text-xl font-serif text-primary mb-3">Urban Renewal & Green Spaces</h4>
+                <h4 className="text-xl font-serif text-primary mb-3">In Partnership with Brenscot Builders Pty Ltd</h4>
                 <p className="text-primary/60 text-sm leading-relaxed mb-6">
-                  Every Indevelop project incorporates significant public realm improvements. We create accessible green spaces, art installations, and pedestrian-friendly zones that invite connection.
+                  Delivering industrial developments with strength and precision. This collaboration brings together strategic development expertise and construction precision, strengthening our ability to deliver large-scale industrial warehouse projects with confidence and consistency.
                 </p>
                 <Link href="/community" className="text-secondary text-sm font-semibold hover:text-secondary/80 transition-colors">
                   Learn More &rarr;
