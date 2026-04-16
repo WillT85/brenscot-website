@@ -144,6 +144,12 @@ uri = "file://artifacts/indevelop/src/assets/images/team-6.png"
 type = "image"
 title = "General Counsel headshot"
 
+[[generated]]
+id = "mrhqGI0E7QIYuwD3FV8m_"
+uri = "file://artifacts/indevelop/src/assets/images/cards-bg-new.png"
+type = "image"
+title = "generated_image"
+
 [[outputs]]
 id = "jix48-LGWWdd-s4TXXOk6"
 uri = "file://attached_assets/stock_images/cards-bg_1.jpg"
@@ -179,3 +185,57 @@ id = "pSwDtP8DSjqR9tMKB7sFy"
 uri = "file://attached_assets/stock_images/cards-section_3.jpg"
 type = "image"
 title = "modern luxury apartment building facade warm tones abstract"
+
+[[outputs]]
+id = "SlnU8OxTr5-MobNMd2f6v"
+uri = "file://attached_assets/stock_images/warm-arch_1.jpg"
+type = "image"
+title = "wooden ceiling beams architecture abstract warm tones geometric angles overhead view"
+
+[[outputs]]
+id = "WtBHQefe1rizm5qOViWNM"
+uri = "file://attached_assets/stock_images/warm-arch_2.jpg"
+type = "image"
+title = "wooden ceiling beams architecture abstract warm tones geometric angles overhead view"
+
+[[outputs]]
+id = "xhe1D963OwWZ-IID8vGhG"
+uri = "file://attached_assets/stock_images/warm-arch_3.jpg"
+type = "image"
+title = "wooden ceiling beams architecture abstract warm tones geometric angles overhead view"
+
+[[outputs]]
+id = "UKkF45cSerhyT4fFbW_5m"
+uri = "file://attached_assets/stock_images/timber-bg_1.jpg"
+type = "image"
+title = "wooden slats timber architecture warm brown angular close up"
+
+[[outputs]]
+id = "dwzUzD_ctxJSAyGvvVRxy"
+uri = "file://attached_assets/stock_images/timber-bg_2.jpg"
+type = "image"
+title = "wooden slats timber architecture warm brown angular close up"
+
+[[outputs]]
+id = "PnX6jCc3SQGdI_1QiXwZe"
+uri = "file://attached_assets/stock_images/timber-bg_3.jpg"
+type = "image"
+title = "wooden slats timber architecture warm brown angular close up"
+
+[[outputs]]
+id = "mfvenLrYdN1ErmiAcB5bg"
+uri = "file://attached_assets/stock_images/wood-ceiling_1.jpg"
+type = "image"
+title = "interior wooden ceiling panels modern building looking up warm brown angular architectural detail"
+
+[[outputs]]
+id = "d6Idai41e484iEorwcs1N"
+uri = "file://attached_assets/stock_images/wood-ceiling_2.jpg"
+type = "image"
+title = "interior wooden ceiling panels modern building looking up warm brown angular architectural detail"
+
+[[outputs]]
+id = "iOr_MWFOBIWc4ISSQJUnD"
+uri = "file://attached_assets/stock_images/wood-ceiling_3.jpg"
+type = "image"
+title = "interior wooden ceiling panels modern building looking up warm brown angular architectural detail"
