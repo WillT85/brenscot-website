@@ -125,7 +125,7 @@ export default function Home() {
           <div className="flex justify-between items-end mb-16">
             <div>
               <h2 className="text-xs uppercase tracking-wider text-secondary font-semibold mb-3">Featured Work</h2>
-              <h3 className="text-3xl md:text-4xl font-serif text-primary">Signatures of the Skyline</h3>
+              <h3 className="text-3xl md:text-4xl font-serif text-primary">Defining Industrial Skylines</h3>
             </div>
             <Link href="/portfolio" className="hidden md:inline-block text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors">
               View All Projects &rarr;
