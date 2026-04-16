@@ -19,6 +19,18 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - Color palette: dark navy (#0b1526), gold accent (#C8A24A), white
 - Fonts: Playfair Display (serif headings), Barlow (body)
 
+### Indevelop Pty Ltd Website (`artifacts/indevelop`)
+- Premium property development company website for Indevelop Pty Ltd
+- Multi-page React + Vite app with wouter routing (presentation-first, no backend)
+- Serves at `/indevelop/`
+- Pages: Home (`/`), Our Story (`/our-story`), Portfolio (`/portfolio`), Community (`/community`), Our People (`/our-people`), News (`/news`), Contact (`/contact`)
+- Portfolio has filterable category tabs (All, Residential, Commercial, Retail, Industrial) and individual project detail pages at `/portfolio/:id`
+- Uses framer-motion for scroll animations, parallax, staggered entrances
+- Color palette: dark navy (#0C1B2A), gold/tan (#C9A96E), white/cream (#FAFAF8)
+- Fonts: Playfair Display (serif headings), Inter (body)
+- Inspired by Consolidated Properties Group design aesthetic
+- Contact form: client-side only mock submission
+
 ## Stack
 
 - **Monorepo tool**: pnpm workspaces

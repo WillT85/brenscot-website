@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/indevelop/"
+title = "Indevelop Pty Ltd"
+version = "1.0.0"
+id = "artifacts/indevelop"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/indevelop/" ]
+localPort = 25094
+
+[services.development]
+run = "pnpm --filter @workspace/indevelop run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/indevelop", "run", "build" ]
+publicDir = "artifacts/indevelop/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "25094"
+BASE_PATH = "/indevelop/"
