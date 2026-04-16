@@ -154,7 +154,7 @@ export function Layout({ children }: { children: ReactNode }) {
           </p>
         </div>
       </footer>
-      <div className="bg-[#1a1a2e] py-6 px-8">
+      <div className="bg-[#2F455C] py-6 px-8">
         <div className="max-w-7xl mx-auto text-xs text-white/40 flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {new Date().getFullYear()} Indevelop Pty Ltd. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
