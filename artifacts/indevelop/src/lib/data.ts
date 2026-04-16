@@ -17,7 +17,7 @@ import team6 from "@/assets/images/team-6.png";
 export const projects = [
   {
     id: "1",
-    title: "The Aurora Tower",
+    title: "Place Holder",
     category: "Residential",
     location: "Brisbane CBD",
     value: "$450M",
@@ -29,7 +29,7 @@ export const projects = [
   },
   {
     id: "2",
-    title: "Eagle Street Pier Revitalization",
+    title: "Place Holder",
     category: "Commercial",
     location: "Brisbane CBD",
     value: "$800M",
@@ -41,7 +41,7 @@ export const projects = [
   },
   {
     id: "3",
-    title: "Queens Plaza Retail",
+    title: "Place Holder",
     category: "Retail",
     location: "Queen Street Mall",
     value: "$120M",
