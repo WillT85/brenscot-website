@@ -7,12 +7,17 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 ## Artifacts
 
 ### Brenscot Builder Website (`artifacts/brenscot-builder`)
-- A professional construction company website for Brenscot Builder
-- Single-page React + Vite app (presentation-first, no backend)
+- Professional industrial warehouse developer website for Brenscot Builders
+- Multi-page React + Vite app with wouter routing (presentation-first, no backend)
 - Serves at `/` (root)
-- Sections: Hero, Services, Projects, About, Process, Contact, Footer
+- Pages: Home (`/`), Projects (`/projects`), About (`/about`), Partners (`/partners`), Contact (`/contact`)
+- Home sections: Hero, Video placeholder, Services, Projects grid, About, Careers, Partners, Footer
+- Contact page: clean white background, CPG-inspired minimal layout with "Get In Touch" heading, Head Office address, and underline-style form
+- NavBar supports `lightBackground` prop for white-background pages (e.g. Contact)
+- Navbar breakpoint: desktop nav at `lg:` (1024px+), hamburger below
 - Uses framer-motion for animations, lucide-react for icons
-- Color palette: warm off-whites, deep charcoals, terracotta/amber accent
+- Color palette: dark navy (#0b1526), gold accent (#C8A24A), white
+- Fonts: Playfair Display (serif headings), Barlow (body)
 
 ## Stack
 
