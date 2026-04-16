@@ -5,7 +5,7 @@ import { projects } from "@/lib/data";
 
 import heroHome from "@/assets/images/hero-home.png";
 import heroStory from "@/assets/images/hero-story.png";
-import cardsBg from "@/assets/images/cards-bg-new.png";
+import cardsBg from "@/assets/images/cards-bg-final.png";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
