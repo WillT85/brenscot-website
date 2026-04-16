@@ -332,7 +332,7 @@ export default function Home() {
                 Join the team <span className="text-secondary italic">today!</span>
               </h3>
               <p className="text-primary/60 leading-relaxed mb-8">
-                Challenge our thinking, deliver outstanding outcomes, and share our purpose and values.
+                Think boldly, deliver excellence, and uphold our shared purpose and values.
               </p>
               <Link
                 href="/contact"
