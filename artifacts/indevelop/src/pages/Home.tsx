@@ -120,6 +120,49 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-24 bg-muted">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="flex justify-between items-end mb-16">
+            <div>
+              <h2 className="text-xs uppercase tracking-wider text-secondary font-semibold mb-3">Featured Work</h2>
+              <h3 className="text-3xl md:text-4xl font-serif text-primary">Signatures of the Skyline</h3>
+            </div>
+            <Link href="/portfolio" className="hidden md:inline-block text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors">
+              View All Projects &rarr;
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {featuredProjects.map((project, i) => (
+              <motion.div
+                key={project.id}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.2 }}
+                variants={fadeIn}
+                className="group cursor-pointer"
+              >
+                <Link href={`/portfolio/${project.id}`}>
+                  <div className="relative aspect-[3/4] overflow-hidden bg-muted mb-6 rounded-lg">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-4 left-4 bg-secondary text-white text-[10px] uppercase tracking-widest px-3 py-1.5 font-semibold rounded-full">
+                      {project.category}
+                    </div>
+                  </div>
+                  <h4 className="text-xl font-serif text-primary mb-2 group-hover:text-secondary transition-colors">{project.title}</h4>
+                  <p className="text-primary/50 text-sm">{project.location}</p>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="relative py-0">
         <div className="absolute inset-0">
           <div
@@ -185,49 +228,6 @@ export default function Home() {
                     Learn More
                   </Link>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-muted">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="flex justify-between items-end mb-16">
-            <div>
-              <h2 className="text-xs uppercase tracking-wider text-secondary font-semibold mb-3">Featured Work</h2>
-              <h3 className="text-3xl md:text-4xl font-serif text-primary">Signatures of the Skyline</h3>
-            </div>
-            <Link href="/portfolio" className="hidden md:inline-block text-sm font-semibold text-secondary hover:text-secondary/80 transition-colors">
-              View All Projects &rarr;
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredProjects.map((project, i) => (
-              <motion.div
-                key={project.id}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.2 }}
-                variants={fadeIn}
-                className="group cursor-pointer"
-              >
-                <Link href={`/portfolio/${project.id}`}>
-                  <div className="relative aspect-[3/4] overflow-hidden bg-muted mb-6 rounded-lg">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                    <div className="absolute top-4 left-4 bg-secondary text-white text-[10px] uppercase tracking-widest px-3 py-1.5 font-semibold rounded-full">
-                      {project.category}
-                    </div>
-                  </div>
-                  <h4 className="text-xl font-serif text-primary mb-2 group-hover:text-secondary transition-colors">{project.title}</h4>
-                  <p className="text-primary/50 text-sm">{project.location}</p>
-                </Link>
               </motion.div>
             ))}
           </div>
