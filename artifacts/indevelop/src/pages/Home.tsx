@@ -2,7 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { projects } from "@/lib/data";
-import { Play } from "lucide-react";
+
 import heroHome from "@/assets/images/hero-home.png";
 
 const fadeIn = {
@@ -48,16 +48,6 @@ export default function Home() {
             >
               Learn More
             </Link>
-            <button
-              className="inline-flex items-center gap-3 text-white/90 hover:text-white transition-colors group"
-              data-testid="button-play-film"
-              aria-label="Play film"
-            >
-              <span className="w-12 h-12 rounded-full border-2 border-white/60 flex items-center justify-center group-hover:border-white group-hover:bg-white/10 transition-all">
-                <Play size={18} className="ml-0.5" />
-              </span>
-              <span className="text-sm font-medium">Play Film</span>
-            </button>
           </motion.div>
         </div>
       </section>
