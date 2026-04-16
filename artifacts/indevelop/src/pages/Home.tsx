@@ -116,9 +116,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                bg: "bg-white",
-                textColor: "text-primary",
-                descColor: "text-primary/60",
+                bg: "bg-secondary",
+                textColor: "text-white",
+                descColor: "text-white/80",
+                btnClass: "border-white text-white hover:bg-white hover:text-secondary",
                 title: "Invest",
                 description: "Across everything we do, we always put our investors first. We constantly earn and retain investor's trust by providing exceptional experiences and returns.",
                 href: "/our-story"
@@ -127,6 +128,7 @@ export default function Home() {
                 bg: "bg-[#3a3a3a]",
                 textColor: "text-white",
                 descColor: "text-white/70",
+                btnClass: "border-secondary text-secondary hover:bg-secondary hover:text-white",
                 title: "Development",
                 description: "Creating purpose-led developments focused on design excellence, environmental sustainability, social benefits and inspirational built environments.",
                 href: "/portfolio"
@@ -135,6 +137,7 @@ export default function Home() {
                 bg: "bg-[#0a4a4a]",
                 textColor: "text-white",
                 descColor: "text-white/70",
+                btnClass: "border-secondary text-secondary hover:bg-secondary hover:text-white",
                 title: "Assets",
                 description: "We regenerate buildings for our tenants, bringing them to their full potential and turning them into high-performing assets for investors.",
                 href: "/portfolio"
@@ -159,7 +162,7 @@ export default function Home() {
                 <div>
                   <Link
                     href={card.href}
-                    className="inline-block border-2 border-secondary text-secondary text-sm font-semibold px-8 py-2.5 rounded-full hover:bg-secondary hover:text-white transition-colors"
+                    className={`inline-block border-2 text-sm font-semibold px-8 py-2.5 rounded-full transition-colors ${card.btnClass}`}
                   >
                     Learn More
                   </Link>
