@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { projects } from "@/lib/data";
 
 import heroHome from "@/assets/images/hero-home.png";
+import heroStory from "@/assets/images/hero-story.png";
 import cardsBg from "@/assets/images/cards-bg-new.png";
 
 const fadeIn = {
@@ -53,6 +54,53 @@ export default function Home() {
         </div>
       </section>
 
+
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-8 md:px-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              variants={fadeIn}
+            >
+              <h2 className="text-xs uppercase tracking-wider text-secondary font-semibold mb-3">Our Story</h2>
+              <h3 className="text-3xl md:text-4xl font-serif text-primary leading-snug mb-6">
+                Building Communities with <span className="text-secondary italic">Purpose</span>
+              </h3>
+              <p className="text-primary/60 leading-relaxed mb-6">
+                Indevelop began with a singular vision: to create properties that speak for themselves. In an industry often defined by noise, we chose quiet authority. We believe that true luxury and premium quality are evident in the details — the materials chosen, the architectural rigor, and the foresight to understand what a community will need tomorrow.
+              </p>
+              <p className="text-primary/60 leading-relaxed mb-8">
+                Over the years, our portfolio has grown to encompass landmark residential towers, state-of-the-art commercial hubs, and strategic industrial estates. But our core philosophy remains unchanged: to deliver enduring value.
+              </p>
+              <Link
+                href="/our-story"
+                className="inline-block border-2 border-secondary text-secondary text-sm font-semibold px-8 py-2.5 rounded-full hover:bg-secondary hover:text-white transition-colors"
+              >
+                Read More
+              </Link>
+            </motion.div>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              variants={fadeIn}
+              className="relative"
+            >
+              <div className="rounded-lg overflow-hidden aspect-[4/5]">
+                <img
+                  src={heroStory}
+                  alt="Our Story"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
       <section className="relative py-0">
         <div
