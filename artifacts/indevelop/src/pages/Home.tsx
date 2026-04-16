@@ -116,10 +116,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                bg: "bg-secondary",
+                bg: "bg-[#3a3a3a]",
                 textColor: "text-white",
-                descColor: "text-white/80",
-                btnClass: "border-white text-white hover:bg-white hover:text-secondary",
+                descColor: "text-white/70",
+                btnClass: "border-secondary text-secondary hover:bg-secondary hover:text-white",
                 title: "Invest",
                 description: "Across everything we do, we always put our investors first. We constantly earn and retain investor's trust by providing exceptional experiences and returns.",
                 href: "/our-story"
