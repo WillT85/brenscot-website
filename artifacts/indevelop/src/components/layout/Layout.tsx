@@ -146,34 +146,14 @@ export function Layout({ children }: { children: ReactNode }) {
       </main>
 
       <footer className="bg-white text-primary py-20 px-8 border-t border-primary/10">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div className="md:col-span-2">
-            <Link href="/" className="flex flex-col items-start leading-none text-primary mb-6" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-              <span className="text-2xl font-bold tracking-[0.12em] uppercase">INDEVELOP</span>
-              <span className="text-[9px] tracking-[0.25em] uppercase font-medium text-primary/50 mt-0.5">Property Developers</span>
-            </Link>
-            <p className="text-primary/60 leading-relaxed max-w-sm text-sm">
-              Premium Australian property development. Shaping the skyline of tomorrow with quiet authority and uncompromised quality.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-sm font-semibold tracking-wider uppercase mb-6 text-secondary">Contact</h4>
-            <p className="text-primary/60 leading-loose text-sm">
-              Head Office<br />
-              Brisbane QLD 4000<br />
-              +61 (0)7 3000 0000<br />
-              enquiries@indevelop.com.au
-            </p>
-          </div>
-          <div>
-            <h4 className="text-sm font-semibold tracking-wider uppercase mb-6 text-secondary">Navigation</h4>
-            <ul className="flex flex-col gap-3 text-sm text-primary/60">
-              <li><Link href="/our-story" className="hover:text-secondary transition-colors">Our Story</Link></li>
-              <li><Link href="/portfolio" className="hover:text-secondary transition-colors">Portfolio</Link></li>
-              <li><Link href="/our-people" className="hover:text-secondary transition-colors">Our People</Link></li>
-              <li><Link href="/news" className="hover:text-secondary transition-colors">News</Link></li>
-            </ul>
-          </div>
+        <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
+          <Link href="/" className="flex flex-col items-center leading-none text-primary mb-6" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+            <span className="text-2xl font-bold tracking-[0.12em] uppercase">INDEVELOP</span>
+            <span className="text-[9px] tracking-[0.25em] uppercase font-medium text-primary/50 mt-0.5">Property Developers</span>
+          </Link>
+          <p className="text-primary/60 leading-relaxed max-w-md text-sm">
+            Premium Australian property development. Shaping the skyline of tomorrow with quiet authority and uncompromised quality.
+          </p>
         </div>
       </footer>
       <div className="bg-[#1a1a2e] py-6 px-8">
