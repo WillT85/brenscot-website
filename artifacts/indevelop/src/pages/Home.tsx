@@ -7,6 +7,9 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 import heroHome from "@/assets/images/hero-home.png";
 import heroStory from "@/assets/images/hero-story.png";
+import heroCommunity from "@/assets/images/hero-community.png";
+import project7 from "@/assets/images/project-7.png";
+import project3 from "@/assets/images/project-3.png";
 import cardsBg from "@/assets/images/cards-bg-final.png";
 
 const fadeIn = {
@@ -229,6 +232,75 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="relative py-24 overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroCommunity})` }}
+        />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 max-w-7xl mx-auto px-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            variants={fadeIn}
+            className="text-center mb-16"
+          >
+            <h2 className="text-xs uppercase tracking-wider text-secondary font-semibold mb-3">Community & Partnerships</h2>
+            <h3 className="text-3xl md:text-5xl font-serif text-white leading-snug">
+              Building <span className="text-secondary italic">More</span> Than Buildings
+            </h3>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              variants={fadeIn}
+              className="bg-white rounded-lg overflow-hidden"
+            >
+              <div className="aspect-[16/9] overflow-hidden">
+                <img src={project7} alt="Urban green spaces" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="p-8">
+                <h4 className="text-xl font-serif text-primary mb-3">Urban Renewal & Green Spaces</h4>
+                <p className="text-primary/60 text-sm leading-relaxed mb-6">
+                  Every Indevelop project incorporates significant public realm improvements. We create accessible green spaces, art installations, and pedestrian-friendly zones that invite connection.
+                </p>
+                <Link href="/community" className="text-secondary text-sm font-semibold hover:text-secondary/80 transition-colors">
+                  Learn More &rarr;
+                </Link>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.25 }}
+              variants={fadeIn}
+              className="bg-white rounded-lg overflow-hidden"
+            >
+              <div className="aspect-[16/9] overflow-hidden">
+                <img src={project3} alt="Local partnerships" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+              </div>
+              <div className="p-8">
+                <h4 className="text-xl font-serif text-primary mb-3">Local Partnerships</h4>
+                <p className="text-primary/60 text-sm leading-relaxed mb-6">
+                  We partner with local charities, arts organizations, and educational institutions. Our annual Indevelop Foundation grants provide critical funding for youth education and urban sustainability.
+                </p>
+                <Link href="/community" className="text-secondary text-sm font-semibold hover:text-secondary/80 transition-colors">
+                  Learn More &rarr;
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
