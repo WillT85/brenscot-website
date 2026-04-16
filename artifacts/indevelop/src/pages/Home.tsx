@@ -233,13 +233,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative py-24 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroCommunity})` }}
-        />
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 max-w-7xl mx-auto px-8">
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-8">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -249,7 +244,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-xs uppercase tracking-wider text-secondary font-semibold mb-3">Community & Partnerships</h2>
-            <h3 className="text-3xl md:text-5xl font-serif text-white leading-snug">
+            <h3 className="text-3xl md:text-5xl font-serif text-primary leading-snug">
               Building <span className="text-secondary italic">More</span> Than Buildings
             </h3>
           </motion.div>
