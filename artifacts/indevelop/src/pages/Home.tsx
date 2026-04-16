@@ -2,6 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { projects } from "@/lib/data";
+import { useState } from "react";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 import heroHome from "@/assets/images/hero-home.png";
 import heroStory from "@/assets/images/hero-story.png";
@@ -14,6 +16,18 @@ const fadeIn = {
 
 export default function Home() {
   const featuredProjects = projects.slice(0, 3);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setSubmitted(true);
+      setTimeout(() => setSubmitted(false), 4000);
+    }, 1000);
+  };
 
   return (
     <Layout>
@@ -215,42 +229,119 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="relative py-24 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroHome})` }}
-        />
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 max-w-4xl mx-auto px-8 text-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            variants={fadeIn}
-          >
-            <h2 className="text-xs uppercase tracking-wider text-secondary font-semibold mb-3">Get In Touch</h2>
-            <h3 className="text-3xl md:text-5xl font-serif text-white leading-snug mb-6">
-              Ready to Start Your Next <span className="text-secondary italic">Project?</span>
-            </h3>
-            <p className="text-white/70 leading-relaxed mb-10 max-w-2xl mx-auto">
-              Whether you're looking to invest, develop, or explore partnership opportunities, our team is ready to help bring your vision to life.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/contact"
-                className="bg-secondary text-white text-sm font-semibold px-10 py-3.5 rounded-full hover:bg-secondary/90 transition-colors"
-              >
-                Contact Us
-              </Link>
-              <Link
-                href="/portfolio"
-                className="border-2 border-white/40 text-white text-sm font-semibold px-10 py-3.5 rounded-full hover:border-white hover:bg-white/10 transition-colors"
-              >
-                View Our Work
-              </Link>
-            </div>
-          </motion.div>
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20">
+            <motion.div
+              className="lg:col-span-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              variants={fadeIn}
+            >
+              <h2 className="text-xs uppercase tracking-wider text-secondary font-semibold mb-3">Get In Touch</h2>
+              <h3 className="text-3xl md:text-4xl font-serif text-primary mb-2">
+                Send us a <span className="text-secondary italic">message</span>
+              </h3>
+              <p className="text-primary/60 mb-10 leading-relaxed">
+                Whether you're looking to invest, develop, or explore partnership opportunities, our team is ready to help.
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <MapPin size={20} className="text-secondary mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="text-primary">Level 45, The Aurora Tower</p>
+                    <p className="text-primary/70">1 Queen Street, Brisbane QLD 4000</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Phone size={20} className="text-secondary mt-0.5 flex-shrink-0" />
+                  <a href="tel:+61730000000" className="text-primary hover:text-secondary transition-colors">+61 (0)7 3000 0000</a>
+                </div>
+                <div className="flex items-start gap-4">
+                  <Mail size={20} className="text-secondary mt-0.5 flex-shrink-0" />
+                  <a href="mailto:enquiries@indevelop.com.au" className="text-primary hover:text-secondary transition-colors">enquiries@indevelop.com.au</a>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="lg:col-span-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              variants={fadeIn}
+            >
+              {submitted ? (
+                <div className="flex items-center justify-center h-full">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Mail size={28} className="text-secondary" />
+                    </div>
+                    <h4 className="text-2xl font-serif text-primary mb-2">Thank You</h4>
+                    <p className="text-primary/60">We'll be in touch within one business day.</p>
+                  </div>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <label htmlFor="home-firstName" className="block text-sm font-semibold text-primary mb-2">First Name</label>
+                      <input required type="text" id="home-firstName" placeholder="e.g. John" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary placeholder:text-primary/30 rounded-none" />
+                    </div>
+                    <div>
+                      <label htmlFor="home-surname" className="block text-sm font-semibold text-primary mb-2">Surname</label>
+                      <input type="text" id="home-surname" placeholder="e.g. Smith" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary placeholder:text-primary/30 rounded-none" />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <label htmlFor="home-email" className="block text-sm font-semibold text-primary mb-2">Email</label>
+                      <input required type="email" id="home-email" placeholder="e.g. john@company.com.au" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary placeholder:text-primary/30 rounded-none" />
+                    </div>
+                    <div>
+                      <label htmlFor="home-phone" className="block text-sm font-semibold text-primary mb-2">Phone</label>
+                      <input type="tel" id="home-phone" placeholder="e.g. 0400 000 000" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary placeholder:text-primary/30 rounded-none" />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <label htmlFor="home-reason" className="block text-sm font-semibold text-primary mb-2">How can we help?</label>
+                      <select required id="home-reason" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary appearance-none rounded-none">
+                        <option value="">Select one...</option>
+                        <option value="investment">Investment Opportunities</option>
+                        <option value="sales">Sales & Leasing</option>
+                        <option value="media">Media & PR</option>
+                        <option value="general">General Enquiry</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="home-business" className="block text-sm font-semibold text-primary mb-2">Business Name</label>
+                      <input type="text" id="home-business" placeholder="Business Name" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary placeholder:text-primary/30 rounded-none" />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="home-message" className="block text-sm font-semibold text-primary mb-2">Message</label>
+                    <textarea required id="home-message" rows={4} placeholder="What's on your mind?" className="w-full bg-transparent border-b border-border py-3 px-0 focus:outline-none focus:border-secondary transition-colors text-primary resize-none placeholder:text-primary/30 rounded-none"></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="bg-secondary text-white py-3.5 px-10 rounded-full text-sm font-semibold hover:bg-secondary/90 transition-colors disabled:opacity-50"
+                  >
+                    {isSubmitting ? "Sending..." : "Submit Enquiry"}
+                  </button>
+                </form>
+              )}
+            </motion.div>
+          </div>
         </div>
       </section>
     </Layout>
