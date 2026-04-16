@@ -148,10 +148,10 @@ export function Layout({ children }: { children: ReactNode }) {
       <footer className="bg-white text-primary py-20 px-8 border-t border-primary/10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <div className="mb-6" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
-              <h3 className="text-2xl font-bold tracking-[0.12em] uppercase leading-none">INDEVELOP</h3>
-              <span className="text-[9px] tracking-[0.25em] uppercase font-medium text-primary/50 mt-0.5 block">Property Developers</span>
-            </div>
+            <Link href="/" className="flex flex-col items-start leading-none text-primary mb-6" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+              <span className="text-2xl font-bold tracking-[0.12em] uppercase">INDEVELOP</span>
+              <span className="text-[9px] tracking-[0.25em] uppercase font-medium text-primary/50 mt-0.5">Property Developers</span>
+            </Link>
             <p className="text-primary/60 leading-relaxed max-w-sm text-sm">
               Premium Australian property development. Shaping the skyline of tomorrow with quiet authority and uncompromised quality.
             </p>
