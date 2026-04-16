@@ -92,7 +92,7 @@ export default function ProjectsPage() {
 
       <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="flex items-center gap-4 mb-16">
+          <div className="flex items-center gap-8 mb-16">
             {([
               { label: "All", value: "all" },
               { label: "Current", value: "current" },
@@ -101,10 +101,10 @@ export default function ProjectsPage() {
               <button
                 key={btn.value}
                 onClick={() => setFilter(btn.value)}
-                className={`text-xs font-medium uppercase tracking-[0.2em] px-8 py-3.5 transition-colors duration-300 ${
+                className={`text-sm transition-colors duration-300 ${
                   filter === btn.value
-                    ? "bg-[#C8A24A] text-white"
-                    : "border border-black/20 text-black hover:bg-black hover:text-white"
+                    ? "bg-[#C8A24A] text-white px-6 py-2 rounded-full"
+                    : "text-black/60 hover:text-black"
                 }`}
               >
                 {btn.label}
