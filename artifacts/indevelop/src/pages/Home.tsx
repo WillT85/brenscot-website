@@ -103,11 +103,15 @@ export default function Home() {
       </section>
 
       <section className="relative py-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${cardsBg})` }}
-        />
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0">
+          <div
+            className="h-1/2 bg-cover bg-center relative"
+            style={{ backgroundImage: `url(${cardsBg})` }}
+          >
+            <div className="absolute inset-0 bg-black/20" />
+          </div>
+          <div className="h-1/2 bg-white" />
+        </div>
         <div className="relative z-10 max-w-7xl mx-auto px-8 py-24">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
