@@ -52,31 +52,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            {[
-              { value: "$1.8B", label: "Portfolio Value" },
-              { value: "25+", label: "Years Experience" },
-              { value: "40", label: "Projects Delivered" },
-              { value: "100%", label: "Commitment to Excellence" }
-            ].map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.1 }}
-                variants={fadeIn}
-                className="text-center"
-              >
-                <div className="text-4xl md:text-5xl font-serif text-secondary mb-2">{stat.value}</div>
-                <div className="text-xs uppercase tracking-wider text-primary/50 font-medium">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       <section className="py-24 bg-muted">
         <div className="max-w-7xl mx-auto px-8">
