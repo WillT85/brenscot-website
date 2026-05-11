@@ -143,7 +143,7 @@ const sections: { heading: string; body: (string | { sub: string; items: string[
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-white font-sans">
-      <NavBar />
+      <NavBar lightBackground />
 
       <section className="relative pt-40 pb-16 md:pt-48 md:pb-20 overflow-hidden bg-[#0b1526]">
         <div
