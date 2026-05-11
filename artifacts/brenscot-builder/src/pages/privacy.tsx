@@ -143,15 +143,15 @@ const sections: { heading: string; body: (string | { sub: string; items: string[
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-white font-sans">
-      <NavBar lightBackground />
+      <NavBar />
 
-      <section className="pt-40 pb-16 md:pt-48 md:pb-20 bg-white border-b border-black/5">
+      <section className="pt-40 pb-16 md:pt-48 md:pb-20 bg-[#0b1526]">
         <div className="container mx-auto px-6 md:px-12">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-sans font-light text-[#0b1526] text-[40px] leading-[1.15] md:text-[60px] md:leading-[80px]"
+            className="font-sans font-light text-white text-[40px] leading-[1.15] md:text-[60px] md:leading-[80px]"
           >
             Privacy Policy
           </motion.h1>
@@ -159,7 +159,7 @@ export default function PrivacyPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[#0b1526]/60 text-sm md:text-base font-light mt-6 tracking-wide"
+            className="text-white/60 text-sm md:text-base font-light mt-6 tracking-wide"
           >
             Last updated: 11 May 2026
           </motion.p>
