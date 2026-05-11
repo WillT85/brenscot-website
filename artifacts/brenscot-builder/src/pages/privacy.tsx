@@ -151,7 +151,7 @@ export default function PrivacyPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-5xl md:text-6xl lg:text-7xl font-serif text-[#0b1526] leading-tight"
+            className="font-sans font-light text-[#0b1526] text-[40px] leading-[1.15] md:text-[60px] md:leading-[80px]"
           >
             Privacy Policy
           </motion.h1>
@@ -196,7 +196,7 @@ export default function PrivacyPage() {
                   viewport={{ once: true, margin: '-50px' }}
                   transition={{ duration: 0.7, delay: Math.min(idx * 0.04, 0.2), ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <h2 className="font-serif text-2xl md:text-[28px] text-[#0b1526] mb-5 leading-snug">
+                  <h2 className="font-sans font-normal text-[#0b1526] text-xl md:text-2xl mb-5 leading-snug">
                     {section.heading}
                   </h2>
                   <div className="space-y-4 text-[#0b1526]/75 text-[15px] font-light leading-[1.85]">
@@ -205,7 +205,7 @@ export default function PrivacyPage() {
                         const isSubheading = !item.includes('.') && item.length < 40;
                         if (isSubheading) {
                           return (
-                            <h3 key={i} className="font-serif text-lg text-[#0b1526] pt-4">
+                            <h3 key={i} className="font-sans font-medium text-base text-[#0b1526] pt-4">
                               {item}
                             </h3>
                           );
