@@ -40,13 +40,13 @@ export function Layout({ children }: { children: ReactNode }) {
   }, [mobileMenuOpen]);
 
   const isHeroPage = ["/", "/our-story", "/community", "/contact", "/news", "/our-people"].includes(location);
-  const useWhiteText = isHeroPage && !scrolled;
+  const solidNav = scrolled || !isHeroPage;
 
   return (
     <div className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden">
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
+          solidNav
             ? "bg-[#2F455C] shadow-sm py-4"
             : "bg-transparent py-6"
         }`}
