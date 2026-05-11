@@ -145,8 +145,37 @@ export default function PrivacyPage() {
     <div className="min-h-screen bg-white font-sans">
       <NavBar />
 
-      <section className="pt-40 pb-16 md:pt-48 md:pb-20 bg-[#0b1526]">
-        <div className="container mx-auto px-6 md:px-12">
+      <section className="relative pt-40 pb-16 md:pt-48 md:pb-20 overflow-hidden bg-[#0b1526]">
+        <div
+          className="absolute inset-0 opacity-90"
+          style={{
+            background:
+              'linear-gradient(120deg, #0b1526 0%, #1e3a8a 18%, #6d28d9 35%, #db2777 52%, #0891b2 70%, #15803d 85%, #0b1526 100%)',
+            backgroundSize: '300% 300%',
+            animation: 'iridescent-shift 14s ease-in-out infinite',
+            mixBlendMode: 'screen',
+          }}
+        />
+        <div
+          className="absolute inset-0 opacity-60"
+          style={{
+            background:
+              'conic-gradient(from 90deg at 50% 50%, rgba(139,92,246,0.5), rgba(236,72,153,0.45), rgba(56,189,248,0.5), rgba(16,185,129,0.4), rgba(250,204,21,0.35), rgba(139,92,246,0.5))',
+            filter: 'blur(60px)',
+            animation: 'iridescent-spin 22s linear infinite',
+          }}
+        />
+        <style>{`
+          @keyframes iridescent-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+          }
+          @keyframes iridescent-spin {
+            0% { transform: rotate(0deg) scale(1.2); }
+            100% { transform: rotate(360deg) scale(1.2); }
+          }
+        `}</style>
+        <div className="relative container mx-auto px-6 md:px-12">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
