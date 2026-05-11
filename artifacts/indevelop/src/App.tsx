@@ -8,6 +8,8 @@ import Community from "@/pages/Community";
 import OurPeople from "@/pages/OurPeople";
 import News from "@/pages/News";
 import Contact from "@/pages/Contact";
+import Privacy from "@/pages/Privacy";
+import Terms from "@/pages/Terms";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -21,6 +23,8 @@ function Router() {
       <Route path="/our-people" component={OurPeople} />
       <Route path="/news" component={News} />
       <Route path="/contact" component={Contact} />
+      <Route path="/privacy-policy" component={Privacy} />
+      <Route path="/terms-conditions" component={Terms} />
       <Route component={NotFound} />
     </Switch>
   );

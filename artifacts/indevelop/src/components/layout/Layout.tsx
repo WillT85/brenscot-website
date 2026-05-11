@@ -158,8 +158,8 @@ export function Layout({ children }: { children: ReactNode }) {
         <div className="max-w-7xl mx-auto text-xs text-white/40 flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {new Date().getFullYear()} Indevelop Pty Ltd. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <span className="hover:text-white cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-white cursor-pointer">Terms of Service</span>
+            <Link href="/privacy-policy" className="hover:text-white cursor-pointer">Privacy Policy</Link>
+            <Link href="/terms-conditions" className="hover:text-white cursor-pointer">Terms of Service</Link>
           </div>
         </div>
       </div>
