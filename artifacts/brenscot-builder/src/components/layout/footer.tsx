@@ -33,7 +33,7 @@ export function Footer() {
           <div>&copy; {new Date().getFullYear()} Brenscot Builder.</div>
           <div className="flex gap-8">
             <a href={`${import.meta.env.BASE_URL}privacy-policy`} className="hover:text-white transition-colors cursor-pointer">Privacy</a>
-            <span className="hover:text-white transition-colors cursor-pointer">Terms</span>
+            <a href={`${import.meta.env.BASE_URL}terms-conditions`} className="hover:text-white transition-colors cursor-pointer">Terms</a>
           </div>
         </div>
       </div>

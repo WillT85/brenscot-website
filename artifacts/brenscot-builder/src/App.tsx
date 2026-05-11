@@ -9,6 +9,7 @@ import AboutPage from "@/pages/about";
 import PartnersPage from "@/pages/partners";
 import ContactPage from "@/pages/contact";
 import PrivacyPage from "@/pages/privacy";
+import TermsPage from "@/pages/terms";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/partners" component={PartnersPage} />
       <Route path="/contact" component={ContactPage} />
       <Route path="/privacy-policy" component={PrivacyPage} />
+      <Route path="/terms-conditions" component={TermsPage} />
       <Route component={NotFound} />
     </Switch>
   );
