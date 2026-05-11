@@ -141,7 +141,7 @@ export default function ProjectsPage() {
                 <div className="pt-6 md:pt-8 flex items-start justify-between">
                   <div>
                     <h3 className="text-2xl md:text-4xl font-serif text-black mb-3 uppercase tracking-wide">{project.title}</h3>
-                    <p className="text-black/50 text-sm md:text-base font-light leading-relaxed max-w-2xl">{project.description}</p>
+                    <p className="text-black/50 text-sm md:text-base font-serif font-light leading-relaxed max-w-2xl">{project.description}</p>
                   </div>
                   <span className={`text-[10px] uppercase tracking-[0.2em] font-medium px-4 py-1.5 shrink-0 mt-2 ${
                     project.status === "current" ? "bg-[#C8A24A]/10 text-[#C8A24A]" : "bg-black/5 text-black/40"
