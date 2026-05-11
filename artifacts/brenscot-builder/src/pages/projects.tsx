@@ -83,7 +83,7 @@ export default function ProjectsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-white/40 text-lg font-light mt-8 max-w-xl"
+            className="text-white/40 text-lg font-serif font-light mt-8 max-w-xl"
           >
             A selection of industrial warehouse and commercial developments delivered across South-East Queensland.
           </motion.p>
@@ -143,7 +143,7 @@ export default function ProjectsPage() {
                     <h3 className="text-2xl md:text-4xl font-serif text-black mb-3 uppercase tracking-wide">{project.title}</h3>
                     <p className="text-black/50 text-sm md:text-base font-serif font-light leading-relaxed max-w-2xl">{project.description}</p>
                   </div>
-                  <span className={`text-[10px] uppercase tracking-[0.2em] font-medium px-4 py-1.5 shrink-0 mt-2 ${
+                  <span className={`text-[10px] uppercase tracking-[0.2em] font-serif px-4 py-1.5 shrink-0 mt-2 ${
                     project.status === "current" ? "bg-[#C8A24A]/10 text-[#C8A24A]" : "bg-black/5 text-black/40"
                   }`}>
                     {project.status}
