@@ -150,7 +150,7 @@ export default function PrivacyPage() {
           className="absolute left-0 right-0 bottom-0 top-28 md:top-32 opacity-90"
           style={{
             background:
-              'linear-gradient(120deg, #0b1526 0%, #1e3a8a 18%, #2563eb 35%, #0ea5e9 52%, #38bdf8 70%, #1e40af 85%, #0b1526 100%)',
+              'linear-gradient(120deg, #0b1526 0%, #1a2740 15%, #C8A24A 35%, #ffffff 50%, #C8A24A 65%, #1a2740 85%, #0b1526 100%)',
             backgroundSize: '300% 300%',
             animation: 'iridescent-shift 14s ease-in-out infinite',
             mixBlendMode: 'screen',
@@ -160,7 +160,7 @@ export default function PrivacyPage() {
           className="absolute left-0 right-0 bottom-0 top-28 md:top-32 opacity-60"
           style={{
             background:
-              'conic-gradient(from 90deg at 50% 50%, rgba(56,189,248,0.55), rgba(37,99,235,0.5), rgba(14,165,233,0.55), rgba(30,64,175,0.45), rgba(125,211,252,0.45), rgba(56,189,248,0.55))',
+              'conic-gradient(from 90deg at 50% 50%, rgba(200,162,74,0.55), rgba(255,255,255,0.4), rgba(11,21,38,0.6), rgba(200,162,74,0.5), rgba(255,255,255,0.35), rgba(200,162,74,0.55))',
             filter: 'blur(60px)',
             animation: 'iridescent-spin 22s linear infinite',
           }}
