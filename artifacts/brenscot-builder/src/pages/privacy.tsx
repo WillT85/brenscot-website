@@ -147,7 +147,7 @@ export default function PrivacyPage() {
 
       <section className="relative pt-40 pb-16 md:pt-48 md:pb-20 overflow-hidden bg-[#0b1526]">
         <div
-          className="absolute left-0 right-0 bottom-0 top-28 md:top-32 opacity-90"
+          className="absolute inset-0 opacity-90"
           style={{
             background:
               'linear-gradient(120deg, #0b1526 0%, #1a2740 15%, #C8A24A 35%, #ffffff 50%, #C8A24A 65%, #1a2740 85%, #0b1526 100%)',
@@ -157,7 +157,7 @@ export default function PrivacyPage() {
           }}
         />
         <div
-          className="absolute left-0 right-0 bottom-0 top-28 md:top-32 opacity-60"
+          className="absolute inset-0 opacity-60"
           style={{
             background:
               'conic-gradient(from 90deg at 50% 50%, rgba(200,162,74,0.55), rgba(255,255,255,0.4), rgba(11,21,38,0.6), rgba(200,162,74,0.5), rgba(255,255,255,0.35), rgba(200,162,74,0.55))',
