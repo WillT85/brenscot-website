@@ -8,6 +8,7 @@ import ProjectsPage from "@/pages/projects";
 import AboutPage from "@/pages/about";
 import PartnersPage from "@/pages/partners";
 import ContactPage from "@/pages/contact";
+import PrivacyPage from "@/pages/privacy";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ function Router() {
       <Route path="/about" component={AboutPage} />
       <Route path="/partners" component={PartnersPage} />
       <Route path="/contact" component={ContactPage} />
+      <Route path="/privacy-policy" component={PrivacyPage} />
       <Route component={NotFound} />
     </Switch>
   );
