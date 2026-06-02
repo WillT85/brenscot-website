@@ -23,7 +23,7 @@ export function Hero() {
 
       <div className="relative z-10 container mx-auto px-6 md:px-12 flex flex-col items-center justify-center text-center mt-20">
         
-        <h1 className="text-white font-serif uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter flex flex-col items-center">
+        <h1 className="text-white font-serif uppercase leading-[0.85] text-[11vw] md:text-[9vw] font-bold tracking-tighter flex flex-col items-center">
           <span className="flex pb-[0.08em]">
             {"BRENSCOT".split("").map((letter, i) => (
               <motion.span
