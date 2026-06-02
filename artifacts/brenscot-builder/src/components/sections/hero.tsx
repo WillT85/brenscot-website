@@ -53,7 +53,7 @@ export function Hero() {
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-[#C8A24A] font-serif uppercase text-3xl md:text-6xl font-bold tracking-[0.15em] whitespace-nowrap"
+                    className="text-[#C8A24A] font-serif uppercase text-xl md:text-3xl font-normal tracking-[0.15em] whitespace-nowrap"
                   >
                     Lead from
                   </motion.span>
@@ -62,7 +62,7 @@ export function Hero() {
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-[#C8A24A] font-serif uppercase text-3xl md:text-6xl font-bold tracking-[0.15em] whitespace-nowrap"
+                    className="text-[#C8A24A] font-serif uppercase text-xl md:text-3xl font-normal tracking-[0.15em] whitespace-nowrap"
                   >
                     the ground up
                   </motion.span>
