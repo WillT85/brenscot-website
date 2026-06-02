@@ -23,26 +23,34 @@ export function Hero() {
 
       <div className="relative z-10 container mx-auto px-6 md:px-12 flex flex-col items-center justify-center text-center mt-20">
         
-        <div className="overflow-hidden flex flex-col items-center">
-          <motion.h1 
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="text-white font-serif uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter"
-          >
-            BRENSCOT
-          </motion.h1>
-        </div>
-        <div className="overflow-hidden flex flex-col items-center -mt-2 md:-mt-6">
-          <motion.h1 
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            transition={{ duration: 1.2, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="text-white font-serif uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter"
-          >
-            BUILDERS
-          </motion.h1>
-        </div>
+        <h1 className="text-white font-serif uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter flex flex-col items-center">
+          <span className="flex overflow-hidden pb-[0.08em]">
+            {"BRENSCOT".split("").map((letter, i) => (
+              <motion.span
+                key={`b-${i}`}
+                initial={{ y: "-120%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                className="inline-block"
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </span>
+          <span className="flex overflow-hidden pb-[0.08em] -mt-2 md:-mt-6">
+            {"BUILDERS".split("").map((letter, i) => (
+              <motion.span
+                key={`u-${i}`}
+                initial={{ y: "-120%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.45 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                className="inline-block"
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </span>
+        </h1>
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
