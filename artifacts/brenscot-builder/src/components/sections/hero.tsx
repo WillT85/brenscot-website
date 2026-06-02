@@ -11,8 +11,8 @@ export function Hero() {
   useEffect(() => {
     const toBlack = setTimeout(() => setIntroPhase('black'), 3500);
     const toTagline = setTimeout(() => setIntroPhase('tagline'), 4000);
-    const toDone = setTimeout(() => setIntroPhase('done'), 8000);
-    const toVideo = setTimeout(() => setShowVideo(true), 10000);
+    const toDone = setTimeout(() => setIntroPhase('done'), 6000);
+    const toVideo = setTimeout(() => setShowVideo(true), 8000);
     return () => {
       clearTimeout(toBlack);
       clearTimeout(toTagline);
