@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { HardHat } from 'lucide-react';
 import heroImage from '@/assets/images/hero.png';
 
 export function Hero() {
@@ -27,27 +26,15 @@ export function Hero() {
         <h1 className="text-white font-serif uppercase leading-[0.85] text-[11vw] md:text-[9vw] font-bold tracking-tighter flex flex-col items-center">
           <span className="flex pb-[0.08em]">
             {"BRENSCOT".split("").map((letter, i) => (
-              <span key={`b-${i}`} className="relative inline-block">
-                {i === 7 && (
-                  <motion.span
-                    initial={{ y: "-70vh", opacity: 0, rotate: -90 }}
-                    animate={{ y: 0, opacity: 1, rotate: -90 }}
-                    transition={{ duration: 0.9, delay: 3.2, ease: [0.34, 1.4, 0.5, 1] }}
-                    className="absolute left-1/2 -translate-x-1/2 bottom-[70%] text-[#C8A24A] pointer-events-none"
-                    aria-hidden="true"
-                  >
-                    <HardHat className="w-[0.7em] h-[0.7em]" strokeWidth={1.5} />
-                  </motion.span>
-                )}
-                <motion.span
-                  initial={{ y: "-60vh", opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 1.3, delay: i * 0.18, ease: [0.34, 1.2, 0.64, 1] }}
-                  className="inline-block"
-                >
-                  {letter}
-                </motion.span>
-              </span>
+              <motion.span
+                key={`b-${i}`}
+                initial={{ y: "-60vh", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.3, delay: i * 0.18, ease: [0.34, 1.2, 0.64, 1] }}
+                className="inline-block"
+              >
+                {letter}
+              </motion.span>
             ))}
           </span>
           <span className="flex pb-[0.08em] -mt-2 md:-mt-5 text-[0.8em] text-[#C8A24A]">
