@@ -37,7 +37,7 @@ export function Hero() {
               </motion.span>
             ))}
           </span>
-          <span className="flex pb-[0.08em] -mt-2 md:-mt-5 text-[0.8em] text-[#C8A24A] overflow-hidden">
+          <span className="flex pb-[0.08em] -mt-2 md:-mt-5 text-[0.8em] text-[#5B9BD5] overflow-hidden">
             {"BUILDERS".split("").map((letter, i) => (
               <motion.span
                 key={`u-${i}`}
