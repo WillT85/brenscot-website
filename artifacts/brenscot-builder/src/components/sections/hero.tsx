@@ -30,10 +30,10 @@ export function Hero() {
               <span key={`b-${i}`} className="relative inline-block">
                 {i === 7 && (
                   <motion.span
-                    initial={{ y: "-70vh", opacity: 0, rotate: -18 }}
-                    animate={{ y: 0, opacity: 1, rotate: 0 }}
+                    initial={{ y: "-70vh", opacity: 0, rotate: -90 }}
+                    animate={{ y: 0, opacity: 1, rotate: -90 }}
                     transition={{ duration: 0.9, delay: 3.2, ease: [0.34, 1.4, 0.5, 1] }}
-                    className="absolute left-1/2 -translate-x-1/2 bottom-[70%] text-white pointer-events-none"
+                    className="absolute left-1/2 -translate-x-1/2 bottom-[70%] text-[#C8A24A] pointer-events-none"
                     aria-hidden="true"
                   >
                     <HardHat className="w-[0.7em] h-[0.7em]" strokeWidth={1.5} />
