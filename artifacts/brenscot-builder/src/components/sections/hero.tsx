@@ -3,11 +3,15 @@ import { useState, useEffect } from 'react';
 import heroImage from '@/assets/images/hero.png';
 
 export function Hero() {
-  const [showIntro, setShowIntro] = useState(true);
+  const [introPhase, setIntroPhase] = useState<'intro' | 'black' | 'done'>('intro');
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowIntro(false), 2000);
-    return () => clearTimeout(timer);
+    const toBlack = setTimeout(() => setIntroPhase('black'), 2000);
+    const toDone = setTimeout(() => setIntroPhase('done'), 2500);
+    return () => {
+      clearTimeout(toBlack);
+      clearTimeout(toDone);
+    };
   }, []);
 
   const scrollToProjects = () => {
@@ -21,21 +25,26 @@ export function Hero() {
   return (
     <section className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-[#0b1526]">
       <AnimatePresence>
-        {showIntro && (
+        {introPhase !== 'done' && (
           <motion.div
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black"
           >
-            <motion.h2
-              initial={{ opacity: 0, letterSpacing: "0.05em" }}
-              animate={{ opacity: 1, letterSpacing: "0.25em" }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-              className="text-white font-serif uppercase text-4xl md:text-6xl font-bold tracking-[0.25em]"
-            >
-              Brenscot
-            </motion.h2>
+            <AnimatePresence>
+              {introPhase === 'intro' && (
+                <motion.h2
+                  initial={{ opacity: 0, letterSpacing: "0.05em" }}
+                  animate={{ opacity: 1, letterSpacing: "0.25em" }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.2, ease: "easeOut" }}
+                  className="text-white font-serif uppercase text-4xl md:text-6xl font-bold tracking-[0.25em]"
+                >
+                  Brenscot
+                </motion.h2>
+              )}
+            </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>
