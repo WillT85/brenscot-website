@@ -1,20 +1,31 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import heroImage from '@/assets/images/hero.png';
+import heroVideo from '@assets/jovy_brenscot__1780396436240.mp4';
 
 export function Hero() {
   const [introPhase, setIntroPhase] = useState<'intro' | 'black' | 'tagline' | 'done'>('intro');
+  const [showVideo, setShowVideo] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const toBlack = setTimeout(() => setIntroPhase('black'), 3500);
     const toTagline = setTimeout(() => setIntroPhase('tagline'), 4000);
     const toDone = setTimeout(() => setIntroPhase('done'), 8000);
+    const toVideo = setTimeout(() => setShowVideo(true), 2000);
     return () => {
       clearTimeout(toBlack);
       clearTimeout(toTagline);
       clearTimeout(toDone);
+      clearTimeout(toVideo);
     };
   }, []);
+
+  useEffect(() => {
+    if (showVideo) {
+      videoRef.current?.play().catch(() => {});
+    }
+  }, [showVideo]);
 
   const scrollToProjects = () => {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
@@ -78,6 +89,18 @@ export function Hero() {
           src={heroImage} 
           alt="Modern industrial warehouse development" 
           className="w-full h-full object-cover"
+        />
+        <motion.video
+          ref={videoRef}
+          src={heroVideo}
+          muted
+          loop
+          playsInline
+          preload="auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: showVideo ? 1 : 0 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/70" />
       </div>
