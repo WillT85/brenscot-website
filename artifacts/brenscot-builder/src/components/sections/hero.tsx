@@ -3,13 +3,15 @@ import { useState, useEffect } from 'react';
 import heroImage from '@/assets/images/hero.png';
 
 export function Hero() {
-  const [introPhase, setIntroPhase] = useState<'intro' | 'black' | 'done'>('intro');
+  const [introPhase, setIntroPhase] = useState<'intro' | 'black' | 'tagline' | 'done'>('intro');
 
   useEffect(() => {
     const toBlack = setTimeout(() => setIntroPhase('black'), 3500);
-    const toDone = setTimeout(() => setIntroPhase('done'), 4000);
+    const toTagline = setTimeout(() => setIntroPhase('tagline'), 4000);
+    const toDone = setTimeout(() => setIntroPhase('done'), 8000);
     return () => {
       clearTimeout(toBlack);
+      clearTimeout(toTagline);
       clearTimeout(toDone);
     };
   }, []);
@@ -43,6 +45,28 @@ export function Hero() {
                 >
                   Brenscot
                 </motion.h2>
+              )}
+              {introPhase === 'tagline' && (
+                <div className="flex flex-wrap items-center justify-center gap-x-3 md:gap-x-4 px-6 overflow-hidden">
+                  <motion.span
+                    initial={{ x: "60vw", opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-[#C8A24A] font-serif uppercase text-3xl md:text-6xl font-bold tracking-[0.15em] whitespace-nowrap"
+                  >
+                    Lead from
+                  </motion.span>
+                  <motion.span
+                    initial={{ x: "-60vw", opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-[#C8A24A] font-serif uppercase text-3xl md:text-6xl font-bold tracking-[0.15em] whitespace-nowrap"
+                  >
+                    the ground up
+                  </motion.span>
+                </div>
               )}
             </AnimatePresence>
           </motion.div>
