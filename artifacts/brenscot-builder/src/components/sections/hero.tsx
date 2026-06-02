@@ -37,13 +37,13 @@ export function Hero() {
               </motion.span>
             ))}
           </span>
-          <span className="flex pb-[0.08em] -mt-2 md:-mt-5 text-[0.8em] text-[#C8A24A]">
+          <span className="flex pb-[0.08em] -mt-2 md:-mt-5 text-[0.8em] text-[#C8A24A] overflow-hidden">
             {"BUILDERS".split("").map((letter, i) => (
               <motion.span
                 key={`u-${i}`}
-                initial={{ y: "-60vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.7, delay: 1.9 + i * 0.06, ease: [0.34, 1.2, 0.64, 1] }}
+                initial={{ x: "-100vw", opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1.9 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
                 className="inline-block"
               >
                 {letter}
