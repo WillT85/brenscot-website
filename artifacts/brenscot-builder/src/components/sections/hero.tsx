@@ -6,8 +6,8 @@ export function Hero() {
   const [introPhase, setIntroPhase] = useState<'intro' | 'black' | 'done'>('intro');
 
   useEffect(() => {
-    const toBlack = setTimeout(() => setIntroPhase('black'), 2000);
-    const toDone = setTimeout(() => setIntroPhase('done'), 2500);
+    const toBlack = setTimeout(() => setIntroPhase('black'), 3500);
+    const toDone = setTimeout(() => setIntroPhase('done'), 4000);
     return () => {
       clearTimeout(toBlack);
       clearTimeout(toDone);
