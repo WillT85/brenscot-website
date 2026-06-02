@@ -39,7 +39,7 @@ export function Hero() {
                   animate={{ opacity: 1, letterSpacing: "0.25em" }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 1.2, ease: "easeOut" }}
-                  className="text-white font-serif uppercase text-4xl md:text-6xl font-bold tracking-[0.25em]"
+                  className="text-[#C8A24A] font-serif uppercase text-4xl md:text-6xl font-bold tracking-[0.25em]"
                 >
                   Brenscot
                 </motion.h2>
