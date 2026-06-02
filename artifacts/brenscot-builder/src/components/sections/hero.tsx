@@ -27,40 +27,40 @@ export function Hero() {
         <h1 className="text-white font-serif uppercase leading-[0.85] text-[11vw] md:text-[9vw] font-bold tracking-tighter flex flex-col items-center">
           <span className="flex pb-[0.08em]">
             {"BRENSCOT".split("").map((letter, i) => (
-              <motion.span
-                key={`b-${i}`}
-                initial={{ y: "-60vh", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1.3, delay: i * 0.18, ease: [0.34, 1.2, 0.64, 1] }}
-                className="inline-block"
-              >
-                {letter}
-              </motion.span>
-            ))}
-          </span>
-          <span className="flex pb-[0.08em] -mt-2 md:-mt-5 text-[0.8em] text-[#C8A24A]">
-            {"BUILDERS".split("").map((letter, i) => (
-              <span key={`u-${i}`} className="relative inline-block">
-                {i === 0 && (
+              <span key={`b-${i}`} className="relative inline-block">
+                {i === 7 && (
                   <motion.span
                     initial={{ y: "-70vh", opacity: 0, rotate: -18 }}
                     animate={{ y: 0, opacity: 1, rotate: 0 }}
                     transition={{ duration: 0.9, delay: 3.2, ease: [0.34, 1.4, 0.5, 1] }}
-                    className="absolute left-1/2 -translate-x-1/2 bottom-[58%] text-white pointer-events-none"
+                    className="absolute left-1/2 -translate-x-1/2 bottom-[70%] text-white pointer-events-none"
                     aria-hidden="true"
                   >
                     <HardHat className="w-[0.7em] h-[0.7em]" strokeWidth={1.5} />
                   </motion.span>
                 )}
                 <motion.span
-                  initial={{ x: "-100vw", opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 1.9 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                  initial={{ y: "-60vh", opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1.3, delay: i * 0.18, ease: [0.34, 1.2, 0.64, 1] }}
                   className="inline-block"
                 >
                   {letter}
                 </motion.span>
               </span>
+            ))}
+          </span>
+          <span className="flex pb-[0.08em] -mt-2 md:-mt-5 text-[0.8em] text-[#C8A24A]">
+            {"BUILDERS".split("").map((letter, i) => (
+              <motion.span
+                key={`u-${i}`}
+                initial={{ x: "-100vw", opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 1.9 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                className="inline-block"
+              >
+                {letter}
+              </motion.span>
             ))}
           </span>
         </h1>
