@@ -30,7 +30,7 @@ export function Hero() {
                 key={`b-${i}`}
                 initial={{ y: "-120%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.7, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 1.3, delay: i * 0.18, ease: [0.22, 1, 0.36, 1] }}
                 className="inline-block"
               >
                 {letter}
@@ -43,7 +43,7 @@ export function Hero() {
                 key={`u-${i}`}
                 initial={{ y: "-120%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.7, delay: 0.45 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.7, delay: 1.9 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
                 className="inline-block"
               >
                 {letter}
