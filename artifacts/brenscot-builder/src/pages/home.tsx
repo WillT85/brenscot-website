@@ -19,7 +19,7 @@ export default function Home() {
         <About />
         <Careers />
         <Partners />
-        <section className="bg-[#0d1a2d] h-[38px] w-full" />
+        <section className="bg-[#0d1a2d] h-[19px] w-full" />
         <Contact />
       </main>
       <Footer />
