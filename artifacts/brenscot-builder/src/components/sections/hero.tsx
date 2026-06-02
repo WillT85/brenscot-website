@@ -24,26 +24,26 @@ export function Hero() {
       <div className="relative z-10 container mx-auto px-6 md:px-12 flex flex-col items-center justify-center text-center mt-20">
         
         <h1 className="text-white font-serif uppercase leading-[0.85] text-[15vw] md:text-[12vw] font-bold tracking-tighter flex flex-col items-center">
-          <span className="flex overflow-hidden pb-[0.08em]">
+          <span className="flex pb-[0.08em]">
             {"BRENSCOT".split("").map((letter, i) => (
               <motion.span
                 key={`b-${i}`}
-                initial={{ y: "-120%", opacity: 0 }}
+                initial={{ y: "-60vh", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1.3, delay: i * 0.18, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 1.3, delay: i * 0.18, ease: [0.34, 1.2, 0.64, 1] }}
                 className="inline-block"
               >
                 {letter}
               </motion.span>
             ))}
           </span>
-          <span className="flex overflow-hidden pb-[0.08em] -mt-2 md:-mt-6">
+          <span className="flex pb-[0.08em] -mt-2 md:-mt-6">
             {"BUILDERS".split("").map((letter, i) => (
               <motion.span
                 key={`u-${i}`}
-                initial={{ y: "-120%", opacity: 0 }}
+                initial={{ y: "-60vh", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.7, delay: 1.9 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.7, delay: 1.9 + i * 0.06, ease: [0.34, 1.2, 0.64, 1] }}
                 className="inline-block"
               >
                 {letter}
