@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
 import heroImage from '@/assets/images/hero.png';
-import heroVideo from '@assets/jovy_brenscot__1780396436240.mp4';
+import heroVideo from '@assets/brenscot_hero.mp4';
 
 export function Hero() {
   const [introPhase, setIntroPhase] = useState<'intro' | 'black' | 'tagline' | 'done'>('intro');

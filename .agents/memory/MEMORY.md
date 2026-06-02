@@ -1,0 +1,1 @@
+- [Background video autoplay & sizing](hero-background-video.md) — muted JSX attr is unreliable for programmatic play(); set el.muted=true first; keep web bg videos small (faststart, no audio, compressed).
