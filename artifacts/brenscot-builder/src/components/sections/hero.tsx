@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { HardHat } from 'lucide-react';
 import heroImage from '@/assets/images/hero.png';
 
 export function Hero() {
@@ -37,17 +38,29 @@ export function Hero() {
               </motion.span>
             ))}
           </span>
-          <span className="flex pb-[0.08em] -mt-2 md:-mt-5 text-[0.8em] text-[#C8A24A] overflow-hidden">
+          <span className="flex pb-[0.08em] -mt-2 md:-mt-5 text-[0.8em] text-[#C8A24A]">
             {"BUILDERS".split("").map((letter, i) => (
-              <motion.span
-                key={`u-${i}`}
-                initial={{ x: "-100vw", opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 1.9 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-                className="inline-block"
-              >
-                {letter}
-              </motion.span>
+              <span key={`u-${i}`} className="relative inline-block">
+                {i === 0 && (
+                  <motion.span
+                    initial={{ y: "-70vh", opacity: 0, rotate: -18 }}
+                    animate={{ y: 0, opacity: 1, rotate: 0 }}
+                    transition={{ duration: 0.9, delay: 3.2, ease: [0.34, 1.4, 0.5, 1] }}
+                    className="absolute left-1/2 -translate-x-1/2 bottom-[58%] text-white pointer-events-none"
+                    aria-hidden="true"
+                  >
+                    <HardHat className="w-[0.7em] h-[0.7em]" strokeWidth={1.5} />
+                  </motion.span>
+                )}
+                <motion.span
+                  initial={{ x: "-100vw", opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 1.9 + i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                  className="inline-block"
+                >
+                  {letter}
+                </motion.span>
+              </span>
             ))}
           </span>
         </h1>
