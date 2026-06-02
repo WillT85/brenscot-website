@@ -22,8 +22,9 @@ export function Hero() {
   }, []);
 
   useEffect(() => {
-    if (showVideo) {
-      videoRef.current?.play().catch(() => {});
+    if (showVideo && videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {});
     }
   }, [showVideo]);
 
