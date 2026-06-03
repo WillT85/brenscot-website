@@ -5,6 +5,7 @@ import project2 from '@assets/13_02_extt_сс3_Post_Ps_1776005476200.jpg';
 import project3 from '@/assets/images/project-3.png';
 import project4 from '@/assets/images/project-4.png';
 import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
+import project3Video from '@assets/24_robertson_st_1780477602300.mp4';
 
 const projects = [
   {
@@ -19,6 +20,7 @@ const projects = [
   {
     title: "24 Robertson St, Brendale",
     image: project3,
+    video: project3Video,
   },
   {
     title: "34-36 Bell-Are Ave, Northgate",
