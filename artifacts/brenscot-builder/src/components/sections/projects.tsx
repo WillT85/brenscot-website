@@ -14,8 +14,8 @@ const projects = [
     video: project1Video,
   },
   {
-    title: "34-40 Robson St Clontarf",
-    image: project4,
+    title: "Rode Rd, Chermside",
+    image: project1,
   },
   {
     title: "24 Robertson St, Brendale",
@@ -24,20 +24,20 @@ const projects = [
     playbackRate: 0.25,
   },
   {
-    title: "535 Zillmere, Zillmere",
-    image: project3,
+    title: "34-40 Robson St Clontarf",
+    image: project4,
   },
   {
-    title: "Rode Rd, Chermside",
-    image: project1,
+    title: "535 Zillmere, Zillmere",
+    image: project3,
   },
   {
     title: "440 Progress Rd, Wacol",
     image: project2,
   },
   {
-    title: "Rode Rd, Chermside",
-    image: project1,
+    title: "59 Alta Road, Caboolture",
+    image: project2,
   },
   {
     title: "13 Wildily Road, Caboolture",
