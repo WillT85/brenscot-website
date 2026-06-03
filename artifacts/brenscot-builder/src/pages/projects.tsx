@@ -9,12 +9,6 @@ import project4 from '@/assets/images/project-4.png';
 
 const projects = [
   {
-    title: "CHERMSIDE",
-    description: "566 Rode Rd, Chermside — Premiere commercial 4,895 m² development with 13 versatile warehouse units.",
-    image: project1,
-    status: "current" as const,
-  },
-  {
     title: "CLONTARF",
     description: "34-40 Robson St, Clontarf — Large-scale industrial development spanning 62,000 m².",
     image: project2,
