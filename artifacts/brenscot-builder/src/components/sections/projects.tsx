@@ -7,35 +7,35 @@ import project4 from '@/assets/images/project-4.png';
 
 const projects = [
   {
-    title: "CHERMSIDE",
+    title: "15 King Court, North Lakes",
     image: project1,
   },
   {
-    title: "CLONTARF",
+    title: "59 Alta Road, Caboolture",
     image: project2,
   },
   {
-    title: "ZILLMERE",
+    title: "24 Robertson St, Brendale",
     image: project3,
   },
   {
-    title: "WACOL",
+    title: "34-36 Bell-Are Ave, Northgate",
     image: project4,
   },
   {
-    title: "LOT 80 CABOOLTURE",
+    title: "Rode Rd, Chermside",
     image: project1,
   },
   {
-    title: "LOT 74 CABOOLTURE",
+    title: "440 Progress Rd, Wacol",
     image: project2,
   },
   {
-    title: "LOT 82 CABOOLTURE",
+    title: "535 Zillmere, Zillmere",
     image: project3,
   },
   {
-    title: "LOT 84 CABOOLTURE",
+    title: "34-40 Robson St Clontarf",
     image: project4,
   }
 ];
