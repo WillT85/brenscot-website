@@ -6,7 +6,7 @@ import project3 from '@/assets/images/project-3.png';
 import project4 from '@/assets/images/project-4.png';
 import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
 import project3Video from '@assets/24_robertson_st_1780477602300.mp4';
-import chermsideImg from '@assets/566_Rode_Rd10_1780487174054.png';
+import chermsideImg from '@assets/566_Rode_Rd5_1780487252712.png';
 import zillmereImg from '@assets/clontarf_zillmere_trimmed.png';
 
 const projects = [
