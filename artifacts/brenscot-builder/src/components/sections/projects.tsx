@@ -14,8 +14,8 @@ const projects = [
     video: project1Video,
   },
   {
-    title: "59 Alta Road, Caboolture",
-    image: project2,
+    title: "34-40 Robson St Clontarf",
+    image: project4,
   },
   {
     title: "24 Robertson St, Brendale",
@@ -24,8 +24,8 @@ const projects = [
     playbackRate: 0.25,
   },
   {
-    title: "34-36 Bell-Are Ave, Northgate",
-    image: project4,
+    title: "535 Zillmere, Zillmere",
+    image: project3,
   },
   {
     title: "Rode Rd, Chermside",
@@ -36,12 +36,12 @@ const projects = [
     image: project2,
   },
   {
-    title: "535 Zillmere, Zillmere",
-    image: project3,
+    title: "Rode Rd, Chermside",
+    image: project1,
   },
   {
-    title: "34-40 Robson St Clontarf",
-    image: project4,
+    title: "13 Wildily Road, Caboolture",
+    image: project2,
   }
 ];
 
@@ -58,7 +58,7 @@ export function Projects() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
             <motion.div
-              key={project.title}
+              key={`${project.title}-${index}`}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
