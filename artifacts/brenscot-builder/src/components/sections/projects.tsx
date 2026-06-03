@@ -4,11 +4,13 @@ import project1 from '@assets/image_1776005185036.png';
 import project2 from '@assets/13_02_extt_сс3_Post_Ps_1776005476200.jpg';
 import project3 from '@/assets/images/project-3.png';
 import project4 from '@/assets/images/project-4.png';
+import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
 
 const projects = [
   {
     title: "15 King Court, North Lakes",
     image: project1,
+    video: project1Video,
   },
   {
     title: "59 Alta Road, Caboolture",
@@ -62,11 +64,23 @@ export function Projects() {
             >
               <div className="relative overflow-hidden h-[35vh] md:h-[40vh]">
                 <div className="absolute inset-0 bg-black/10 z-10 transition-colors duration-700 group-hover:bg-black/30" />
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
-                />
+                {project.video ? (
+                  <video
+                    src={project.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    ref={(el) => { if (el) el.muted = true; }}
+                    className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
+                  />
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
+                  />
+                )}
                 <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <span className="text-white text-xs font-bold uppercase tracking-[0.2em] border border-white/50 px-8 py-4 backdrop-blur-sm">
                     View Project
