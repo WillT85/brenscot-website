@@ -93,7 +93,7 @@ export function Projects() {
         <div className="mt-16 text-center">
           <button
             onClick={() => { setLocation('/projects'); window.scrollTo({ top: 0 }); }}
-            className="text-xs font-medium uppercase tracking-[0.2em] border border-[#0b1526] text-[#0b1526] bg-transparent px-10 py-4 hover:bg-[#0b1526] hover:text-white transition-colors duration-300"
+            className="text-xs font-medium uppercase tracking-[0.2em] border border-[#0b1526] text-[#0b1526] bg-transparent px-10 py-4 hover:bg-[#0b1526] hover:text-[#C8A24A] transition-colors duration-300"
           >
             View more Developments
           </button>
