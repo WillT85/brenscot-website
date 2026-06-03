@@ -7,6 +7,7 @@ import project4 from '@/assets/images/project-4.png';
 import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
 import project3Video from '@assets/24_robertson_st_1780477602300.mp4';
 import chermsideImg from '@assets/566_Rode_Rd12_1780485169754.png';
+import zillmereImg from '@assets/image1_1780486105202.jpg';
 
 const projects = [
   {
@@ -31,7 +32,7 @@ const projects = [
   },
   {
     title: "535 Zillmere, Zillmere",
-    image: project3,
+    image: zillmereImg,
   },
   {
     title: "440 Progress Rd, Wacol",
