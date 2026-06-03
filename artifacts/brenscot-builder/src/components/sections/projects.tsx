@@ -6,7 +6,7 @@ import project3 from '@/assets/images/project-3.png';
 import project4 from '@/assets/images/project-4.png';
 import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
 import project3Video from '@assets/24_robertson_st_1780477602300.mp4';
-import chermsideVideo from '@assets/rode_road_1780484484130.mp4';
+import chermsideImg from '@assets/566_Rode_Rd12_1780485169754.png';
 
 const projects = [
   {
@@ -16,9 +16,8 @@ const projects = [
   },
   {
     title: "566 Rode Rd, Chermside",
-    image: project1,
-    video: chermsideVideo,
-    playbackRate: 0.25,
+    image: chermsideImg,
+    cloudDrift: true,
   },
   {
     title: "24 Robertson St, Brendale",
@@ -85,6 +84,21 @@ export function Projects() {
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
+                  />
+                )}
+                {project.cloudDrift && (
+                  <motion.img
+                    src={project.image}
+                    alt=""
+                    aria-hidden
+                    className="absolute inset-0 w-full h-full object-cover brightness-110 contrast-105 pointer-events-none z-[5]"
+                    style={{
+                      WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 28%, transparent 50%)',
+                      maskImage: 'linear-gradient(to bottom, black 0%, black 28%, transparent 50%)',
+                    }}
+                    initial={{ scale: 1.14, x: '-1.1%' }}
+                    animate={{ scale: 1.14, x: ['-1.1%', '1.1%', '-1.1%'] }}
+                    transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
                   />
                 )}
                 <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
