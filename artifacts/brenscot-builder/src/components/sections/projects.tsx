@@ -95,8 +95,8 @@ export function Projects() {
                     aria-hidden
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105 pointer-events-none"
                     style={{
-                      WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, transparent 46%, black 56%, black 100%)',
-                      maskImage: 'linear-gradient(to bottom, transparent 0%, transparent 46%, black 56%, black 100%)',
+                      WebkitMaskImage: 'radial-gradient(ellipse 18% 42% at 50% 0%, transparent 0%, transparent 60%, black 92%)',
+                      maskImage: 'radial-gradient(ellipse 18% 42% at 50% 0%, transparent 0%, transparent 60%, black 92%)',
                     }}
                   />
                 )}
