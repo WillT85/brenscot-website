@@ -21,6 +21,7 @@ const projects = [
     title: "24 Robertson St, Brendale",
     image: project3,
     video: project3Video,
+    playbackRate: 0.25,
   },
   {
     title: "34-36 Bell-Are Ave, Northgate",
@@ -73,7 +74,7 @@ export function Projects() {
                     loop
                     muted
                     playsInline
-                    ref={(el) => { if (el) { el.muted = true; el.playbackRate = 0.5; } }}
+                    ref={(el) => { if (el) { el.muted = true; el.playbackRate = project.playbackRate ?? 0.5; } }}
                     className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
                   />
                 ) : (
