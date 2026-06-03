@@ -90,8 +90,10 @@ export function Projects() {
                   <div className="p-4 md:p-6">
                     <span className="text-white text-xs md:text-sm font-serif uppercase tracking-[0.25em]">Brenscot</span>
                   </div>
-                  <div className="mt-auto bg-[#0b1526]/70 text-white text-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] py-4">
-                    View Project
+                  <div className="flex-1 flex items-center justify-center">
+                    <span className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border border-white/50 px-6 py-3">
+                      View Project
+                    </span>
                   </div>
                 </div>
                 <div className="absolute bottom-0 right-0 z-30 px-4 md:px-5 pb-3 md:pb-4 text-right">
