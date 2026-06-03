@@ -14,10 +14,6 @@ const projects = [
     video: project1Video,
   },
   {
-    title: "Rode Rd, Chermside",
-    image: project1,
-  },
-  {
     title: "24 Robertson St, Brendale",
     image: project3,
     video: project3Video,
