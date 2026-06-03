@@ -26,7 +26,7 @@ const projects = [
     playbackRate: 0.25,
   },
   {
-    title: "34-40 Robson St Clontarf",
+    title: "Test",
     image: project4,
   },
   {
