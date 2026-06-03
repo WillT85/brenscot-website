@@ -18,7 +18,6 @@ const projects = [
   {
     title: "566 Rode Rd, Chermside",
     image: chermsideImg,
-    cloudDrift: true,
   },
   {
     title: "24 Robertson St, Brendale",
@@ -68,7 +67,7 @@ export function Projects() {
               transition={{ duration: 0.8, delay: (index % 2) * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="group cursor-pointer"
             >
-              <div className={`relative overflow-hidden h-[35vh] md:h-[40vh] ${project.cloudDrift ? 'bg-[#0b1526]' : ''}`}>
+              <div className="relative overflow-hidden h-[35vh] md:h-[40vh]">
                 <div className="absolute inset-0 bg-black/10 z-10 transition-colors duration-700 group-hover:bg-black/30" />
                 {project.video ? (
                   <video
@@ -84,22 +83,7 @@ export function Projects() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className={`w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105 ${project.cloudDrift ? 'scale-90' : ''}`}
-                  />
-                )}
-                {project.cloudDrift && (
-                  <motion.img
-                    src={project.image}
-                    alt=""
-                    aria-hidden
-                    className="absolute inset-0 w-full h-full object-cover brightness-110 contrast-105 pointer-events-none z-[5]"
-                    style={{
-                      WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 28%, transparent 50%)',
-                      maskImage: 'linear-gradient(to bottom, black 0%, black 28%, transparent 50%)',
-                    }}
-                    initial={{ scale: 0.9, x: '-1.1%' }}
-                    animate={{ scale: 0.9, x: ['-1.1%', '1.1%', '-1.1%'] }}
-                    transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
+                    className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
                   />
                 )}
                 <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
