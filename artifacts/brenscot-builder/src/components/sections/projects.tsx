@@ -18,6 +18,7 @@ const projects = [
     title: "566 Rode Rd, Chermside",
     image: project1,
     video: chermsideVideo,
+    playbackRate: 0.25,
   },
   {
     title: "24 Robertson St, Brendale",
