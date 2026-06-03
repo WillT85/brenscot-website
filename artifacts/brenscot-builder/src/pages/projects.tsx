@@ -125,14 +125,14 @@ export default function ProjectsPage() {
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
                   />
-                  <div className="absolute inset-0 z-20 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[#0b1526]/25 backdrop-blur-md">
+                  <div className="absolute inset-0 z-20 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[#0b1526]/15 backdrop-blur-sm">
                     <div className="p-6 md:p-8">
-                      <span className="text-white text-sm md:text-base font-serif uppercase tracking-[0.25em]">Brenscot</span>
-                    </div>
-                    <div className="flex-1 flex items-center justify-center pb-16 md:pb-20">
                       <span className="text-white text-xs font-bold uppercase tracking-[0.2em] border border-white/50 px-8 py-4">
                         View Project
                       </span>
+                    </div>
+                    <div className="flex-1 flex items-center justify-center">
+                      <span className="text-white text-2xl md:text-4xl font-serif uppercase tracking-[0.3em] drop-shadow">Brenscot</span>
                     </div>
                   </div>
                 </div>
