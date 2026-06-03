@@ -73,7 +73,7 @@ export function Projects() {
                     loop
                     muted
                     playsInline
-                    ref={(el) => { if (el) el.muted = true; }}
+                    ref={(el) => { if (el) { el.muted = true; el.playbackRate = 0.5; } }}
                     className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
                   />
                 ) : (
