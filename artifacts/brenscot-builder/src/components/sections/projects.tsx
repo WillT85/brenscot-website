@@ -91,7 +91,7 @@ export function Projects() {
                     <span className="text-white text-xs md:text-sm font-serif uppercase tracking-[0.25em]">Brenscot</span>
                   </div>
                   <div className="flex-1 flex items-center justify-center pb-10 md:pb-12">
-                    <span className="text-white text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-[#0b1526] px-6 py-3">
+                    <span className="text-[#0b1526] text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] bg-white px-6 py-3">
                       View Project
                     </span>
                   </div>
