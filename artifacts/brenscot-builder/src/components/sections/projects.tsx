@@ -86,10 +86,13 @@ export function Projects() {
                     className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
                   />
                 )}
-                <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span className="text-white text-xs font-bold uppercase tracking-[0.2em] border border-white/50 px-8 py-4 backdrop-blur-sm">
+                <div className="absolute inset-0 z-20 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[#0b1526]/25 backdrop-blur-md">
+                  <div className="p-4 md:p-6">
+                    <span className="text-white text-xs md:text-sm font-serif uppercase tracking-[0.25em]">Brenscot</span>
+                  </div>
+                  <div className="mt-auto bg-[#0b1526]/70 text-white text-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] py-4">
                     View Project
-                  </span>
+                  </div>
                 </div>
                 <div className="absolute bottom-0 right-0 z-30 px-4 md:px-5 pb-3 md:pb-4 text-right">
                   <h3 className="inline-block text-[10px] font-serif font-semibold text-white tracking-wide uppercase">
