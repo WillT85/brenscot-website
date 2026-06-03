@@ -19,6 +19,7 @@ const projects = [
     image: project1,
     video: chermsideVideo,
     playbackRate: 0.25,
+    staticBuilding: true,
   },
   {
     title: "24 Robertson St, Brendale",
@@ -85,6 +86,18 @@ export function Projects() {
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
+                  />
+                )}
+                {project.video && project.staticBuilding && (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    aria-hidden
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105 pointer-events-none"
+                    style={{
+                      WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, transparent 46%, black 56%, black 100%)',
+                      maskImage: 'linear-gradient(to bottom, transparent 0%, transparent 46%, black 56%, black 100%)',
+                    }}
                   />
                 )}
                 <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
