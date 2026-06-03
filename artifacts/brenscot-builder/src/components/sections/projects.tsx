@@ -30,7 +30,7 @@ const projects = [
     image: project4,
   },
   {
-    title: "535 Zillmere, Zillmere",
+    title: "34-40 Robson St Clontarf",
     image: zillmereImg,
   },
   {
