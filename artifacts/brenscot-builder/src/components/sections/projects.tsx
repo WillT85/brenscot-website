@@ -72,8 +72,9 @@ export function Projects() {
                     View Project
                   </span>
                 </div>
-                <div className="absolute bottom-0 left-0 p-4 md:p-5 z-30">
-                  <h3 className="text-xs font-serif font-normal text-[#0b1526] tracking-wide uppercase">
+                <div className="absolute bottom-0 left-0 right-0 z-30">
+                  <div className="absolute inset-0 bg-gradient-to-t from-white/85 via-white/50 to-transparent" />
+                  <h3 className="relative text-xs font-serif font-normal text-[#0b1526] tracking-wide uppercase p-4 md:p-5">
                     {project.title.split(/(\d+(?:-\d+)?)/g).map((part, i) =>
                       /\d/.test(part) ? (
                         <span key={i} className="font-sans font-medium tracking-normal tabular-nums">{part}</span>
