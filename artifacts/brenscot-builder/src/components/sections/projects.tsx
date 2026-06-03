@@ -6,6 +6,7 @@ import project3 from '@/assets/images/project-3.png';
 import project4 from '@/assets/images/project-4.png';
 import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
 import project3Video from '@assets/24_robertson_st_1780477602300.mp4';
+import chermsideVideo from '@assets/rode_road_1780484484130.mp4';
 
 const projects = [
   {
@@ -16,6 +17,7 @@ const projects = [
   {
     title: "566 Rode Rd, Chermside",
     image: project1,
+    video: chermsideVideo,
   },
   {
     title: "24 Robertson St, Brendale",
