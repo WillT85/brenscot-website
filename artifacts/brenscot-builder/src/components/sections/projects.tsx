@@ -69,7 +69,7 @@ export function Projects() {
                 />
                 <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <span className="flex flex-col items-center gap-1 text-white text-xs font-bold uppercase tracking-[0.2em] border border-white/50 px-8 py-4 backdrop-blur-sm">
-                    <span className="font-serif normal-case tracking-wide text-sm">Brenscot</span>
+                    <span className="font-serif font-bold normal-case tracking-wide text-sm text-[#0b1526]">Brenscot</span>
                     <span>View Project</span>
                   </span>
                 </div>
