@@ -129,7 +129,7 @@ export default function ProjectsPage() {
                     <div className="p-6 md:p-8">
                       <span className="text-white text-sm md:text-base font-serif uppercase tracking-[0.25em]">Brenscot</span>
                     </div>
-                    <div className="flex-1 flex items-center justify-center">
+                    <div className="flex-1 flex items-center justify-center pb-16 md:pb-20">
                       <span className="text-white text-xs font-bold uppercase tracking-[0.2em] border border-white/50 px-8 py-4">
                         View Project
                       </span>
