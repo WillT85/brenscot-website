@@ -73,7 +73,7 @@ export function Projects() {
                   </span>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 z-30 p-4 md:p-5">
-                  <h3 className="inline-block text-xs font-serif font-semibold text-white tracking-wide uppercase bg-black/20 backdrop-blur-sm border border-white/50 px-4 py-3">
+                  <h3 className="inline-block text-xs font-serif font-semibold text-white tracking-wide uppercase bg-black/20 backdrop-blur-sm px-4 py-3">
                     {project.title.split(/(\d+(?:-\d+)?)/g).map((part, i) =>
                       /\d/.test(part) ? (
                         <span key={i} className="font-sans font-medium tracking-normal tabular-nums">{part}</span>
