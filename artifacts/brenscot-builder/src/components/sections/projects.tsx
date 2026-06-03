@@ -8,6 +8,7 @@ import project3Video from '@assets/24_robertson_st_1780477602300.mp4';
 import chermsideImg from '@assets/566_Rode_Rd5_1780487252712.png';
 import zillmereImg from '@assets/clontarf_zillmere_trimmed.png';
 import northgateImg from '@assets/northgate_bellaire_trimmed.png';
+import altaRoadImg from '@assets/Screenshot_2026-06-04_070043_1780527659288.png';
 
 const projects = [
   {
@@ -39,7 +40,7 @@ const projects = [
   },
   {
     title: "59 Alta Road, Caboolture",
-    image: project2,
+    image: altaRoadImg,
   },
   {
     title: "13 Wildily Road, Caboolture",
