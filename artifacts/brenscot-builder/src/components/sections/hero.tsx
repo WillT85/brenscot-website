@@ -4,11 +4,17 @@ import heroImage from '@/assets/images/hero.png';
 import heroVideo from '@assets/brenscot_hero.mp4';
 
 export function Hero() {
-  const [introPhase, setIntroPhase] = useState<'intro' | 'black' | 'tagline' | 'done'>('intro');
-  const [showVideo, setShowVideo] = useState(false);
+  const introAlreadyPlayed =
+    typeof window !== 'undefined' && sessionStorage.getItem('brenscotIntroPlayed') === 'true';
+  const [introPhase, setIntroPhase] = useState<'intro' | 'black' | 'tagline' | 'done'>(
+    introAlreadyPlayed ? 'done' : 'intro'
+  );
+  const [showVideo, setShowVideo] = useState(introAlreadyPlayed);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    if (introAlreadyPlayed) return;
+    sessionStorage.setItem('brenscotIntroPlayed', 'true');
     const toBlack = setTimeout(() => setIntroPhase('black'), 3500);
     const toTagline = setTimeout(() => setIntroPhase('tagline'), 4000);
     const toDone = setTimeout(() => setIntroPhase('done'), 7000);
@@ -19,7 +25,7 @@ export function Hero() {
       clearTimeout(toDone);
       clearTimeout(toVideo);
     };
-  }, []);
+  }, [introAlreadyPlayed]);
 
   useEffect(() => {
     if (showVideo && videoRef.current) {
