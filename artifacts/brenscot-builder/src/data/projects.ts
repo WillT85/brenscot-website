@@ -14,7 +14,6 @@ import rode7 from '@assets/566_Rode_Rd7_1780545705142.png';
 import rode8 from '@assets/566_Rode_Rd1_1780545705142.png';
 import rode9 from '@assets/566_Rode_Rd2_1780545705144.png';
 import rode10 from '@assets/566_Rode_Rd4_1780545705146.png';
-import rode11 from '@assets/d064a9d2-7059-4d0a-a5e9-b48cb6985e1c_1780545714593.png';
 import rode12 from '@assets/af8ba881-f530-417d-86f4-6748a88dc5de_1780545716183.png';
 import rode13 from '@assets/566_Rode_Rd3_1780545723852.png';
 import zillmereImg from '@assets/clontarf_zillmere_trimmed.png';
@@ -96,7 +95,7 @@ export const projects: Project[] = [
     image: chermsideImg,
     description: "A landmark commercial and industrial development in one of Brisbane's key growth corridors, combining functional warehousing with contemporary design.",
     status: "completed",
-    gallery: [rode1, rode2, rode3, rode4, rode5, rode6, rode7, rode8, rode9, rode10, rode11, rode12, rode13],
+    gallery: [rode1, rode2, rode3, rode4, rode5, rode6, rode7, rode8, rode9, rode10, rode12, rode13],
   },
   {
     slug: "24-robertson-st-brendale",
