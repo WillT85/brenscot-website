@@ -89,7 +89,7 @@ export default function ProjectDetailPage() {
               </div>
             </div>
             <div className="lg:col-span-2">
-              <div className="lg:sticky lg:top-28 lg:border-l lg:border-black/10 lg:pl-12">
+              <div className="lg:sticky lg:top-28">
                 <h2 className="text-3xl md:text-5xl font-serif text-black leading-tight mb-6">Overview.</h2>
                 <p className="text-black/60 text-base md:text-lg font-serif font-light leading-relaxed mb-10">
                   {project.description}
