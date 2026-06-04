@@ -7,10 +7,19 @@ import chermsideImg from '@assets/566_Rode_Rd5_1780487252712.png';
 import zillmereImg from '@assets/clontarf_zillmere_trimmed.png';
 import northgateImg from '@assets/northgate_bellaire_trimmed.png';
 import altaRoadImg from '@assets/Screenshot_2026-06-04_070043_1780527659288.png';
-import altaRoadAerial1 from '@assets/alta_road_aerial_1.jpg';
-import altaRoadAerial2 from '@assets/alta_road_aerial_2.jpg';
-import altaRoadPhoto3 from '@assets/alta_road_photo_3.jpg';
-import altaRoadPhoto4 from '@assets/alta_road_photo_4.jpg';
+import altaG0 from '@assets/image0_1780537905156.png';
+import altaG1 from '@assets/image1_1780537905156.png';
+import altaG2 from '@assets/image2_1780537905157.png';
+import altaG3 from '@assets/image3_1780537905158.png';
+import altaG4 from '@assets/image4_1780537905158.jpg';
+import altaG5 from '@assets/image5_1780537905159.png';
+import altaG6 from '@assets/image6_1780537905159.jpg';
+import altaG7 from '@assets/image7_1780537905159.jpg';
+import altaG8 from '@assets/image8_1780537905160.jpg';
+import altaG9 from '@assets/image9_1780537905161.png';
+import altaG10 from '@assets/image10_1780537905153.jpg';
+import altaG11 from '@assets/image11_1780537905155.jpg';
+import altaG12 from '@assets/image12_1780537905155.jpg';
 import zillmereImg2 from '@assets/zillmere_aerial_trimmed.png';
 
 export type ProjectStatus = "completed" | "ongoing";
@@ -93,7 +102,7 @@ export const projects: Project[] = [
     title: "59 Alta Road, Caboolture",
     location: "Caboolture, QLD",
     image: altaRoadImg,
-    gallery: [altaRoadImg, altaRoadAerial1, altaRoadAerial2, altaRoadPhoto3, altaRoadPhoto4],
+    gallery: [altaG0, altaG1, altaG2, altaG4, altaG8, altaG11, altaG6, altaG7, altaG12, altaG10, altaG3, altaG9, altaG5],
     description: "A contemporary industrial estate offering versatile warehouse space designed to support a wide range of business operations.",
     status: "completed",
     keyInfo: {
