@@ -23,6 +23,11 @@ import altaG10 from '@assets/alta_clean10_1780600000000.jpg';
 import altaG11 from '@assets/alta_clean11_1780600000000.jpg';
 import altaG12 from '@assets/alta_clean12_1780600000000.jpg';
 import zillmereImg2 from '@assets/zillmere_aerial_trimmed.png';
+import king15G0 from '@assets/king15_g0_1780601600000.jpg';
+import king15G1 from '@assets/king15_g1_1780601600000.jpg';
+import king15G2 from '@assets/king15_g2_1780601600000.jpg';
+import king15G3 from '@assets/king15_g3_1780601600000.jpg';
+import king15G4 from '@assets/king15_g4_1780601600000.jpg';
 
 export type ProjectStatus = "completed" | "ongoing";
 
@@ -56,6 +61,7 @@ export const projects: Project[] = [
     location: "North Lakes, QLD",
     image: project1,
     video: project1Video,
+    gallery: [king15G0, king15G1, king15G2, king15G3, king15G4],
     description: "A premium industrial warehouse development delivering modern, high-clearance space designed for efficient logistics and distribution operations.",
     status: "completed",
   },
