@@ -32,3 +32,14 @@ verify serving (curl with `Range:` header → expect 206 video/mp4) and moov pos
 **How to apply:** Vite imports of large assets via `@assets` alias are emitted to
 `dist/public/assets/<name>-<hash>.mp4` and served by the static handler; the
 content hash is stable across builds for identical file content.
+
+## Card/thumbnail videos: poster + screenshot artifact
+For small autoplay `<video>` thumbnails (e.g. project cards), set `poster={staticImage}`
+so the card shows the photo instantly and never flashes a grey box if autoplay is
+delayed/blocked. Also call `el.play().catch(()=>{})` in the ref right after
+`el.muted = true` — the JSX `autoPlay` attribute alone is unreliable.
+
+**Why:** the agent's headless `app_preview` screenshot does NOT decode autoplay video —
+it captures the `<video>` element as a grey/blank box even when playback works fine in a
+real browser. A grey box in a screenshot is NOT proof the video is broken. The `poster`
+makes the screenshot (and any real-world autoplay hiccup) fall back to the static image.
