@@ -51,7 +51,7 @@ export default function ProjectsPage() {
                 onClick={() => setFilter(btn.value)}
                 className={`text-sm transition-colors duration-300 ${
                   filter === btn.value
-                    ? "bg-[#C8A24A] text-white px-6 py-2 rounded-full"
+                    ? "bg-[#C8A24A] text-white px-6 py-2"
                     : "text-black/60 hover:text-black"
                 }`}
               >
