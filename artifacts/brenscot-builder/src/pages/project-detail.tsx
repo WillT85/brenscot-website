@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useParams, Link } from 'wouter';
-import { ArrowLeft, MapPin, LandPlot, Ruler, Car, Building2, Flag, CalendarDays } from 'lucide-react';
+import { ArrowLeft, MapPin, LandPlot, Ruler, Car, Building2, Flag, Layers } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
@@ -24,7 +24,7 @@ export default function ProjectDetailPage() {
         { icon: LandPlot, label: 'Land area', value: info.landArea },
         { icon: Ruler, label: 'Floor area', value: info.floorArea },
         { icon: Car, label: 'Car spaces', value: info.carSpaces },
-        { icon: CalendarDays, label: 'Sold on', value: info.soldOn },
+        { icon: Layers, label: 'Number of units', value: info.units },
         { icon: Flag, label: 'Availability', value: info.availability },
         { icon: Building2, label: 'Construction status', value: project.status === 'ongoing' ? 'On going' : 'Completed' },
       ].filter((it) => it.value)

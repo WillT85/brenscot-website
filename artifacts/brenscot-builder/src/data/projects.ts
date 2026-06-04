@@ -20,7 +20,7 @@ export type KeyInfo = {
   floorArea?: string;
   carSpaces?: string;
   availability?: string;
-  soldOn?: string;
+  units?: string;
 };
 
 export type Project = {
@@ -101,7 +101,6 @@ export const projects: Project[] = [
       floorArea: "3100 m²",
       carSpaces: "33",
       availability: "SOLD",
-      soldOn: "24 Jan 2025",
     },
   },
   {
