@@ -6,7 +6,7 @@ import project3Video from '@assets/24_robertson_st_1780477602300.mp4';
 import chermsideImg from '@assets/566_Rode_Rd5_1780487252712.png';
 import zillmereImg from '@assets/clontarf_zillmere_trimmed.png';
 import northgateImg from '@assets/northgate_bellaire_trimmed.png';
-import altaRoadImg from '@assets/Screenshot_2026-06-04_070043_1780527659288.png';
+import altaRoadImg from '@assets/image1_1780539871284.png';
 import altaRoadVideo from '@assets/alta_hero_video_1780600100000.mp4';
 import altaG0 from '@assets/alta_clean0_1780600000000.jpg';
 import altaG1 from '@assets/alta_clean1_1780600000000.jpg';
