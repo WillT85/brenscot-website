@@ -24,9 +24,9 @@ export default function ProjectDetailPage() {
         { icon: LandPlot, label: 'Land area', value: info.landArea },
         { icon: Ruler, label: 'Floor area', value: info.floorArea },
         { icon: Car, label: 'Car spaces', value: info.carSpaces },
-        { icon: Building2, label: 'Construction status', value: project.status === 'ongoing' ? 'On going' : 'Completed' },
-        { icon: Flag, label: 'Availability', value: info.availability },
         { icon: CalendarDays, label: 'Sold on', value: info.soldOn },
+        { icon: Flag, label: 'Availability', value: info.availability },
+        { icon: Building2, label: 'Construction status', value: project.status === 'ongoing' ? 'On going' : 'Completed' },
       ].filter((it) => it.value)
     : [];
 
