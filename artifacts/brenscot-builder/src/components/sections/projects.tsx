@@ -1,53 +1,6 @@
 import { motion } from 'framer-motion';
 import { useLocation } from 'wouter';
-import project1 from '@assets/image_1776005185036.png';
-import project2 from '@assets/13_02_extt_сс3_Post_Ps_1776005476200.jpg';
-import project3 from '@/assets/images/project-3.png';
-import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
-import project3Video from '@assets/24_robertson_st_1780477602300.mp4';
-import chermsideImg from '@assets/566_Rode_Rd5_1780487252712.png';
-import zillmereImg from '@assets/clontarf_zillmere_trimmed.png';
-import northgateImg from '@assets/northgate_bellaire_trimmed.png';
-import altaRoadImg from '@assets/Screenshot_2026-06-04_070043_1780527659288.png';
-import zillmereImg2 from '@assets/zillmere_aerial_trimmed.png';
-
-const projects = [
-  {
-    title: "15 King Court, North Lakes",
-    image: project1,
-    video: project1Video,
-  },
-  {
-    title: "566 Rode Rd, Chermside",
-    image: chermsideImg,
-  },
-  {
-    title: "24 Robertson St, Brendale",
-    image: project3,
-    video: project3Video,
-    playbackRate: 0.25,
-  },
-  {
-    title: "34-36 Bell-Are Ave, Northgate",
-    image: northgateImg,
-  },
-  {
-    title: "34-40 Robson St Clontarf",
-    image: zillmereImg,
-  },
-  {
-    title: "13 Wildily Road, Caboolture",
-    image: project2,
-  },
-  {
-    title: "59 Alta Road, Caboolture",
-    image: altaRoadImg,
-  },
-  {
-    title: "535 Zillmere, Zillmere",
-    image: zillmereImg2,
-  }
-];
+import { projects } from '@/data/projects';
 
 export function Projects() {
   const [, setLocation] = useLocation();
@@ -67,6 +20,7 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, delay: (index % 2) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              onClick={() => { setLocation(`/projects/${project.slug}`); window.scrollTo({ top: 0 }); }}
               className="group cursor-pointer"
             >
               <div className="relative overflow-hidden h-[35vh] md:h-[40vh]">

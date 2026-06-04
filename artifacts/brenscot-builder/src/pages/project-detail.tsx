@@ -1,0 +1,128 @@
+import { motion } from 'framer-motion';
+import { useParams, useLocation, Link } from 'wouter';
+import { ArrowLeft, ArrowRight, MapPin } from 'lucide-react';
+import { NavBar } from '@/components/layout/navbar';
+import { Footer } from '@/components/layout/footer';
+import { projects, getProjectBySlug } from '@/data/projects';
+import NotFound from '@/pages/not-found';
+
+export default function ProjectDetailPage() {
+  const params = useParams();
+  const [, setLocation] = useLocation();
+  const slug = params.slug ?? '';
+  const project = getProjectBySlug(slug);
+
+  if (!project) {
+    return <NotFound />;
+  }
+
+  const index = projects.findIndex((p) => p.slug === slug);
+  const next = projects[(index + 1) % projects.length];
+
+  return (
+    <div className="min-h-screen bg-white font-sans">
+      <NavBar />
+
+      <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">
+        <div className="absolute inset-0 bg-black/30 z-10" />
+        {project.video ? (
+          <video
+            src={project.video}
+            autoPlay
+            loop
+            muted
+            playsInline
+            ref={(el) => { if (el) { el.muted = true; el.playbackRate = project.playbackRate ?? 0.5; } }}
+            className="w-full h-full object-cover brightness-110 contrast-105"
+          />
+        ) : (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover brightness-110 contrast-105"
+          />
+        )}
+        <div className="absolute inset-0 z-20 flex items-end">
+          <div className="container mx-auto px-6 md:px-12 pb-12 md:pb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="flex items-center gap-2 text-[#C8A24A] text-sm uppercase tracking-[0.2em] mb-4">
+                <MapPin className="w-4 h-4" />
+                {project.location}
+              </div>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-tight max-w-4xl">
+                {project.title}
+              </h1>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 md:py-28 bg-white">
+        <div className="container mx-auto px-6 md:px-12">
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-black/50 hover:text-[#0b1526] transition-colors duration-300 mb-12"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            All Developments
+          </Link>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20">
+            <div className="lg:col-span-2">
+              <h2 className="text-3xl md:text-5xl font-serif text-black leading-tight mb-8">Overview.</h2>
+              <p className="text-black/60 text-lg md:text-xl font-serif font-light leading-relaxed">
+                {project.description}
+              </p>
+            </div>
+            <div className="lg:border-l lg:border-black/10 lg:pl-12">
+              <div className="space-y-8">
+                <div>
+                  <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Location</span>
+                  <span className="text-lg font-serif text-black">{project.location}</span>
+                </div>
+                <div>
+                  <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Developer</span>
+                  <span className="text-lg font-serif text-black">Brenscot Builders</span>
+                </div>
+                <div>
+                  <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Sector</span>
+                  <span className="text-lg font-serif text-black">Industrial &amp; Commercial</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-20 md:pb-32 bg-white">
+        <div className="container mx-auto px-6 md:px-12">
+          <div
+            onClick={() => { setLocation(`/projects/${next.slug}`); window.scrollTo({ top: 0 }); }}
+            className="group relative overflow-hidden h-[40vh] md:h-[55vh] cursor-pointer"
+          >
+            <div className="absolute inset-0 bg-black/40 z-10 transition-colors duration-700 group-hover:bg-black/50" />
+            <img
+              src={next.image}
+              alt={next.title}
+              className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
+            />
+            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
+              <span className="text-[#C8A24A] text-xs uppercase tracking-[0.3em] mb-4">Next Development</span>
+              <h3 className="text-3xl md:text-5xl font-serif text-white mb-6">{next.title}</h3>
+              <span className="inline-flex items-center gap-2 text-white text-xs font-bold uppercase tracking-[0.2em] border border-white/50 px-8 py-4 transition-colors duration-300 group-hover:bg-[#0b1526] group-hover:border-[#0b1526]">
+                View Project
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
