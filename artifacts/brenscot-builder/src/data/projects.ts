@@ -7,6 +7,7 @@ import chermsideImg from '@assets/566_Rode_Rd5_1780487252712.png';
 import zillmereImg from '@assets/clontarf_zillmere_trimmed.png';
 import northgateImg from '@assets/northgate_bellaire_trimmed.png';
 import altaRoadImg from '@assets/alta_aerial_trimmed_1780601000000.png';
+import wildily13Img from '@assets/wildily13_aerial_1780601200000.jpg';
 import altaRoadVideo from '@assets/alta_hero_video_1780600100000.mp4';
 import altaG0 from '@assets/alta_clean0_1780600000000.jpg';
 import altaG1 from '@assets/alta_clean1_1780600000000.jpg';
@@ -96,7 +97,7 @@ export const projects: Project[] = [
     slug: "13-wildily-road-caboolture",
     title: "13 Wildily Road, Caboolture",
     location: "Caboolture, QLD",
-    image: project2,
+    image: wildily13Img,
     description: "An industrial development within a thriving growth region, delivering robust, future-ready warehouse and distribution facilities.",
     status: "completed",
   },
