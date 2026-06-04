@@ -38,13 +38,6 @@ export function Contact() {
                 <p className="text-lg font-light mb-2 hover:opacity-70 transition-opacity cursor-pointer">enquiries@brenscotbuilders.com.au</p>
                 <p className="text-lg font-light hover:opacity-70 transition-opacity cursor-pointer">+61 3 9000 1234</p>
               </div>
-
-              <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/50 mb-4">Project Across</h4>
-                <p className="text-lg font-light leading-relaxed text-black/60">
-                  South-East Queensland
-                </p>
-              </div>
             </div>
           </motion.div>
 
