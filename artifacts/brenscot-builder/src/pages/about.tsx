@@ -152,33 +152,15 @@ export default function AboutPage() {
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
-            {[
-              { name: "Michael Brennan", role: "Construction Director", initials: "MB" },
-              { name: "Lisa Nguyen", role: "Head of Design", initials: "LN" },
-              { name: "Tom Richards", role: "Project Manager", initials: "TR" },
-              { name: "Emma Scott", role: "Contracts Manager", initials: "ES" },
-              { name: "Daniel Cooper", role: "Site Supervisor", initials: "DC" },
-              { name: "Rachel Ward", role: "Finance Manager", initials: "RW" },
-              { name: "Chris Palmer", role: "Estimator", initials: "CP" },
-              { name: "Kate Sullivan", role: "Safety & Compliance", initials: "KS" },
-            ].map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                className="group"
-              >
-                <div className="relative h-[35vh] md:h-[45vh] bg-[#0b1526] overflow-hidden mb-5 flex items-center justify-center">
-                  <span className="text-white/20 font-serif text-5xl md:text-6xl group-hover:text-white/30 transition-colors duration-500">{member.initials}</span>
-                </div>
-                <h3 className="text-base md:text-lg font-medium text-black mb-1">{member.name}</h3>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-black/40">{member.role}</span>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="relative w-full h-[45vh] md:h-[65vh] bg-[#0b1526] overflow-hidden flex items-center justify-center"
+          >
+            <span className="text-white/20 font-serif text-2xl md:text-4xl tracking-[0.2em] uppercase">Team Photo Coming Soon</span>
+          </motion.div>
         </div>
       </section>
 
