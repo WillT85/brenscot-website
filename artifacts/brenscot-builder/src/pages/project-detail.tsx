@@ -100,19 +100,19 @@ export default function ProjectDetailPage() {
             <div className="lg:col-span-2">
               <div className="lg:sticky lg:top-28">
                 <h2 className="text-2xl md:text-3xl font-serif text-black leading-tight mb-6">{project.title}</h2>
-                <p className="text-black/60 text-base md:text-lg font-serif font-light leading-relaxed mb-10">
+                <p className="text-black/60 text-sm md:text-base font-serif font-light leading-relaxed mb-10">
                   {project.description}
                 </p>
                 {infoItems.length > 0 ? (
                   <div>
-                    <h3 className="text-xl md:text-2xl font-serif text-black mb-8">Key property information</h3>
+                    <h3 className="text-lg md:text-xl font-serif text-black mb-8">Key property information</h3>
                     <div className="grid grid-cols-2 gap-x-6 gap-y-8">
                       {infoItems.map(({ icon: Icon, label, value }) => (
                         <div key={label} className="flex gap-3">
-                          <Icon className="w-5 h-5 text-[#C8A24A] mt-0.5 shrink-0" strokeWidth={1.5} />
+                          <Icon className="w-4 h-4 text-[#C8A24A] mt-0.5 shrink-0" strokeWidth={1.5} />
                           <div>
-                            <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-1.5">{label}</span>
-                            <span className="text-base font-serif text-black">{value}</span>
+                            <span className="block text-[9px] uppercase tracking-[0.2em] text-black/40 mb-1.5">{label}</span>
+                            <span className="text-sm font-serif text-black">{value}</span>
                           </div>
                         </div>
                       ))}
@@ -121,20 +121,20 @@ export default function ProjectDetailPage() {
                 ) : (
                   <div className="space-y-8">
                     <div>
-                      <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Location</span>
-                      <span className="text-lg font-serif text-black">{project.location}</span>
+                      <span className="block text-[9px] uppercase tracking-[0.2em] text-black/40 mb-2">Location</span>
+                      <span className="text-sm font-serif text-black">{project.location}</span>
                     </div>
                     <div>
-                      <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Developer</span>
-                      <span className="text-lg font-serif text-black">Brenscot Builders</span>
+                      <span className="block text-[9px] uppercase tracking-[0.2em] text-black/40 mb-2">Developer</span>
+                      <span className="text-sm font-serif text-black">Brenscot Builders</span>
                     </div>
                     <div>
-                      <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Status</span>
-                      <span className="text-lg font-serif text-black capitalize">{project.status === 'ongoing' ? 'On going' : 'Completed'}</span>
+                      <span className="block text-[9px] uppercase tracking-[0.2em] text-black/40 mb-2">Status</span>
+                      <span className="text-sm font-serif text-black capitalize">{project.status === 'ongoing' ? 'On going' : 'Completed'}</span>
                     </div>
                     <div>
-                      <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Sector</span>
-                      <span className="text-lg font-serif text-black">Industrial &amp; Commercial</span>
+                      <span className="block text-[9px] uppercase tracking-[0.2em] text-black/40 mb-2">Sector</span>
+                      <span className="text-sm font-serif text-black">Industrial &amp; Commercial</span>
                     </div>
                   </div>
                 )}
