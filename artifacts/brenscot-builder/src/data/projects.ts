@@ -121,7 +121,7 @@ export const projects: Project[] = [
     playbackRate: 0.25,
     description: "A purpose-built industrial facility located in the established Brendale industrial precinct, engineered for durability and operational flexibility.",
     status: "completed",
-    gallery: [robertson0, robertson1, robertson2, robertson3, robertson4, robertson5, robertson6, robertson7, robertson8, robertson9, robertson10, robertson11, robertson12, robertson13, robertson14],
+    gallery: [robertson11, robertson12, robertson13, robertson14, robertson0, robertson1, robertson2, robertson3, robertson4, robertson5, robertson6, robertson7, robertson8, robertson9, robertson10],
   },
   {
     slug: "34-36-bell-are-ave-northgate",
