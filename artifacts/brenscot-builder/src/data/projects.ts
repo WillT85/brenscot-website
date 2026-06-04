@@ -100,7 +100,7 @@ export const projects: Project[] = [
       landArea: "0.63 ha (1.56 acres)",
       floorArea: "3100 m²",
       carSpaces: "33",
-      availability: "Vacant Possession",
+      availability: "SOLD",
       soldOn: "24 Jan 2025",
     },
   },
