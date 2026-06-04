@@ -20,11 +20,11 @@ export default function ProjectDetailPage() {
 
   const info = project.keyInfo;
   const infoItems: { icon: LucideIcon; label: string; value: string }[] = [
-    ...(info?.landArea ? [{ icon: LandPlot, label: 'Land area', value: info.landArea }] : []),
-    ...(info?.floorArea ? [{ icon: Ruler, label: 'Floor area', value: info.floorArea }] : []),
-    ...(info?.carSpaces ? [{ icon: Car, label: 'Car spaces', value: info.carSpaces }] : []),
-    ...(info?.units ? [{ icon: Layers, label: 'Number of units', value: info.units }] : []),
-    ...(info?.availability ? [{ icon: Flag, label: 'Availability', value: info.availability }] : []),
+    { icon: LandPlot, label: 'Land area', value: info?.landArea || '-' },
+    { icon: Ruler, label: 'Floor area', value: info?.floorArea || '-' },
+    { icon: Car, label: 'Car spaces', value: info?.carSpaces || '-' },
+    { icon: Layers, label: 'Number of units', value: info?.units || '-' },
+    { icon: Flag, label: 'Availability', value: info?.availability || '-' },
     { icon: Hammer, label: 'Construction status', value: project.status === 'ongoing' ? 'On going' : 'Completed' },
     { icon: MapPin, label: 'Location', value: project.location },
     { icon: Briefcase, label: 'Sector', value: 'Industrial & Commercial' },
