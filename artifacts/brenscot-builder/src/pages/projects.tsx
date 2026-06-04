@@ -1,11 +1,17 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation } from 'wouter';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { allProjects } from '@/data/projects';
 
+type Filter = "all" | "completed" | "ongoing";
+
 export default function ProjectsPage() {
   const [, setLocation] = useLocation();
+  const [filter, setFilter] = useState<Filter>("all");
+
+  const filtered = filter === "all" ? allProjects : allProjects.filter((p) => p.status === filter);
 
   return (
     <div className="min-h-screen bg-white font-sans">
@@ -34,14 +40,36 @@ export default function ProjectsPage() {
 
       <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12">
+          <div className="flex items-center gap-8 mb-16">
+            {([
+              { label: "All", value: "all" },
+              { label: "Completed", value: "completed" },
+              { label: "On going", value: "ongoing" },
+            ] as { label: string; value: Filter }[]).map((btn) => (
+              <button
+                key={btn.value}
+                onClick={() => setFilter(btn.value)}
+                className={`text-sm transition-colors duration-300 ${
+                  filter === btn.value
+                    ? "bg-[#C8A24A] text-white px-6 py-2 rounded-full"
+                    : "text-black/60 hover:text-black"
+                }`}
+              >
+                {btn.label}
+              </button>
+            ))}
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {allProjects.map((project, index) => (
+            <AnimatePresence mode="popLayout">
+            {filtered.map((project, index) => (
               <motion.div
-                key={`${project.title}-${index}`}
+                key={project.slug}
+                layout
                 initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, delay: (index % 2) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.6, delay: (index % 2) * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 onClick={() => { setLocation(`/projects/${project.slug}`); window.scrollTo({ top: 0 }); }}
                 className="group cursor-pointer"
               >
@@ -90,6 +118,7 @@ export default function ProjectsPage() {
                 </div>
               </motion.div>
             ))}
+            </AnimatePresence>
           </div>
         </div>
       </section>

@@ -9,6 +9,8 @@ import northgateImg from '@assets/northgate_bellaire_trimmed.png';
 import altaRoadImg from '@assets/Screenshot_2026-06-04_070043_1780527659288.png';
 import zillmereImg2 from '@assets/zillmere_aerial_trimmed.png';
 
+export type ProjectStatus = "completed" | "ongoing";
+
 export type Project = {
   slug: string;
   title: string;
@@ -17,6 +19,7 @@ export type Project = {
   video?: string;
   playbackRate?: number;
   description: string;
+  status: ProjectStatus;
 };
 
 export const projects: Project[] = [
@@ -27,6 +30,7 @@ export const projects: Project[] = [
     image: project1,
     video: project1Video,
     description: "A premium industrial warehouse development delivering modern, high-clearance space designed for efficient logistics and distribution operations.",
+    status: "completed",
   },
   {
     slug: "566-rode-rd-chermside",
@@ -34,6 +38,7 @@ export const projects: Project[] = [
     location: "Chermside, QLD",
     image: chermsideImg,
     description: "A landmark commercial and industrial development in one of Brisbane's key growth corridors, combining functional warehousing with contemporary design.",
+    status: "completed",
   },
   {
     slug: "24-robertson-st-brendale",
@@ -43,6 +48,7 @@ export const projects: Project[] = [
     video: project3Video,
     playbackRate: 0.25,
     description: "A purpose-built industrial facility located in the established Brendale industrial precinct, engineered for durability and operational flexibility.",
+    status: "completed",
   },
   {
     slug: "34-36-bell-are-ave-northgate",
@@ -50,6 +56,7 @@ export const projects: Project[] = [
     location: "Northgate, QLD",
     image: northgateImg,
     description: "A modern warehouse and commercial development offering well-connected, high-performance space close to major freight and transport routes.",
+    status: "completed",
   },
   {
     slug: "34-40-robson-st-clontarf",
@@ -57,6 +64,7 @@ export const projects: Project[] = [
     location: "Clontarf, QLD",
     image: zillmereImg,
     description: "A large-scale industrial development providing flexible warehouse units built to the highest standards of quality and functionality.",
+    status: "completed",
   },
   {
     slug: "13-wildily-road-caboolture",
@@ -64,6 +72,7 @@ export const projects: Project[] = [
     location: "Caboolture, QLD",
     image: project2,
     description: "An industrial development within a thriving growth region, delivering robust, future-ready warehouse and distribution facilities.",
+    status: "completed",
   },
   {
     slug: "59-alta-road-caboolture",
@@ -71,6 +80,7 @@ export const projects: Project[] = [
     location: "Caboolture, QLD",
     image: altaRoadImg,
     description: "A contemporary industrial estate offering versatile warehouse space designed to support a wide range of business operations.",
+    status: "ongoing",
   },
   {
     slug: "535-zillmere-zillmere",
@@ -78,6 +88,7 @@ export const projects: Project[] = [
     location: "Zillmere, QLD",
     image: zillmereImg2,
     description: "An industrial logistics facility delivering high-performance warehouse space with excellent access to Brisbane's transport network.",
+    status: "ongoing",
   },
 ];
 
@@ -87,36 +98,42 @@ export const extraProjects: Project[] = [
     title: "47 Noble Ave, Northgate",
     location: "Northgate, QLD",
     description: "A modern industrial development delivering high-quality warehouse space within Brisbane's established Northgate industrial precinct.",
+    status: "ongoing",
   },
   {
     slug: "lot-83-37-wildlily-road-caboolture",
     title: "Lot 83, 37 Wildlily Road, Caboolture",
     location: "Caboolture, QLD",
     description: "A purpose-built industrial facility within a master-planned estate, designed for flexible warehousing and distribution operations.",
+    status: "ongoing",
   },
   {
     slug: "lot-80-25-wildlily-road-caboolture",
     title: "Lot 80, 25 Wildlily Road, Caboolture",
     location: "Caboolture, QLD",
     description: "A robust, future-ready warehouse development located in one of South-East Queensland's fastest-growing industrial regions.",
+    status: "ongoing",
   },
   {
     slug: "lot-74-18-barr-road-caboolture",
     title: "Lot 74, 18 Barr Road, Caboolture",
     location: "Caboolture, QLD",
     description: "A versatile industrial development offering high-clearance warehouse space with excellent connectivity to major transport routes.",
+    status: "ongoing",
   },
   {
     slug: "lot-82-33-wildlily-road-caboolture",
     title: "Lot 82, 33 Wildlily Road, Caboolture",
     location: "Caboolture, QLD",
     description: "A contemporary design & construct project delivering quality commercial and industrial warehouse facilities.",
+    status: "ongoing",
   },
   {
     slug: "lot-84-mcnaught-road-caboolture",
     title: "Lot 84, Mcnaught Road, Caboolture",
     location: "Caboolture, QLD",
     description: "A premier industrial development providing modern, efficient warehouse units built to the highest standards.",
+    status: "ongoing",
   },
 ];
 
