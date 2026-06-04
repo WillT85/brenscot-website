@@ -137,6 +137,9 @@ export const projects: Project[] = [
     image: zillmereImg,
     description: "A large-scale industrial development providing flexible warehouse units built to the highest standards of quality and functionality.",
     status: "completed",
+    keyInfo: {
+      availability: "Open for Enquiry",
+    },
   },
   {
     slug: "13-wildily-road-caboolture",
