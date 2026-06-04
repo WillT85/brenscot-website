@@ -28,6 +28,20 @@ import king15G1 from '@assets/king15_g1_1780601600000.jpg';
 import king15G2 from '@assets/king15_g2_1780601600000.jpg';
 import king15G3 from '@assets/king15_g3_1780601600000.jpg';
 import king15G4 from '@assets/king15_g4_1780601600000.jpg';
+import king15N0 from '@assets/king15_n0_1780545200000.jpg';
+import king15N1 from '@assets/king15_n1_1780545200000.jpg';
+import king15N2 from '@assets/king15_n2_1780545200000.jpg';
+import king15N3 from '@assets/king15_n3_1780545200000.jpg';
+import king15N4 from '@assets/king15_n4_1780545200000.jpg';
+import king15N5 from '@assets/king15_n5_1780545200000.jpg';
+import king15N6 from '@assets/king15_n6_1780545200000.jpg';
+import king15N7 from '@assets/king15_n7_1780545200000.jpg';
+import king15N8 from '@assets/king15_n8_1780545200000.jpg';
+import king15N9 from '@assets/king15_n9_1780545200000.jpg';
+import king15N10 from '@assets/king15_n10_1780545200000.jpg';
+import king15N11 from '@assets/king15_n11_1780545200000.jpg';
+import king15N12 from '@assets/king15_n12_1780545200000.jpg';
+import king15N13 from '@assets/king15_n13_1780545200000.jpg';
 
 export type ProjectStatus = "completed" | "ongoing";
 
@@ -61,7 +75,7 @@ export const projects: Project[] = [
     location: "North Lakes, QLD",
     image: project1,
     video: project1Video,
-    gallery: [king15G0, king15G1, king15G2, king15G3, king15G4],
+    gallery: [king15G0, king15G1, king15G2, king15G3, king15G4, king15N0, king15N1, king15N2, king15N3, king15N4, king15N5, king15N6, king15N7, king15N8, king15N9, king15N10, king15N11, king15N12, king15N13],
     description: "A premium industrial warehouse development delivering modern, high-clearance space designed for efficient logistics and distribution operations.",
     status: "completed",
   },
