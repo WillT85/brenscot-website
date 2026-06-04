@@ -101,7 +101,7 @@ export const projects: Project[] = [
       floorArea: "3100 m²",
       carSpaces: "33",
       availability: "SOLD",
-      units: "Number of Unit",
+      units: "1",
     },
   },
   {
