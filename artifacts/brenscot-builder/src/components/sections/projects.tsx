@@ -36,16 +36,16 @@ const projects = [
     image: zillmereImg,
   },
   {
-    title: "535 Zillmere, Zillmere",
-    image: zillmereImg2,
+    title: "13 Wildily Road, Caboolture",
+    image: project2,
   },
   {
     title: "59 Alta Road, Caboolture",
     image: altaRoadImg,
   },
   {
-    title: "13 Wildily Road, Caboolture",
-    image: project2,
+    title: "535 Zillmere, Zillmere",
+    image: zillmereImg2,
   }
 ];
 
