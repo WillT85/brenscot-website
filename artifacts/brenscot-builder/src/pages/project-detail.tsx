@@ -3,7 +3,7 @@ import { useParams, useLocation, Link } from 'wouter';
 import { ArrowLeft, ArrowRight, MapPin } from 'lucide-react';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
-import { projects, getProjectBySlug } from '@/data/projects';
+import { allProjects, getProjectBySlug } from '@/data/projects';
 import NotFound from '@/pages/not-found';
 
 export default function ProjectDetailPage() {
@@ -16,8 +16,8 @@ export default function ProjectDetailPage() {
     return <NotFound />;
   }
 
-  const index = projects.findIndex((p) => p.slug === slug);
-  const next = projects[(index + 1) % projects.length];
+  const index = allProjects.findIndex((p) => p.slug === slug);
+  const next = allProjects[(index + 1) % allProjects.length];
 
   return (
     <div className="min-h-screen bg-white font-sans">
@@ -35,12 +35,14 @@ export default function ProjectDetailPage() {
             ref={(el) => { if (el) { el.muted = true; el.playbackRate = project.playbackRate ?? 0.5; } }}
             className="w-full h-full object-cover brightness-110 contrast-105"
           />
-        ) : (
+        ) : project.image ? (
           <img
             src={project.image}
             alt={project.title}
             className="w-full h-full object-cover brightness-110 contrast-105"
           />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-[#0b1526] to-[#16243d]" />
         )}
         <div className="absolute inset-0 z-20 flex items-end">
           <div className="container mx-auto px-6 md:px-12 pb-12 md:pb-20">
@@ -105,11 +107,15 @@ export default function ProjectDetailPage() {
             className="group relative overflow-hidden h-[40vh] md:h-[55vh] cursor-pointer"
           >
             <div className="absolute inset-0 bg-black/40 z-10 transition-colors duration-700 group-hover:bg-black/50" />
-            <img
-              src={next.image}
-              alt={next.title}
-              className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
-            />
+            {next.image ? (
+              <img
+                src={next.image}
+                alt={next.title}
+                className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-[#0b1526] to-[#16243d] transition-transform duration-1000 ease-out group-hover:scale-105" />
+            )}
             <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
               <span className="text-[#C8A24A] text-xs uppercase tracking-[0.3em] mb-4">Next Development</span>
               <h3 className="text-3xl md:text-5xl font-serif text-white mb-6">{next.title}</h3>

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useLocation } from 'wouter';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
-import { projects } from '@/data/projects';
+import { allProjects } from '@/data/projects';
 
 export default function ProjectsPage() {
   const [, setLocation] = useLocation();
@@ -35,7 +35,7 @@ export default function ProjectsPage() {
       <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {projects.map((project, index) => (
+            {allProjects.map((project, index) => (
               <motion.div
                 key={`${project.title}-${index}`}
                 initial={{ opacity: 0, y: 40 }}
@@ -57,12 +57,16 @@ export default function ProjectsPage() {
                       ref={(el) => { if (el) { el.muted = true; el.playbackRate = project.playbackRate ?? 0.5; } }}
                       className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
                     />
-                  ) : (
+                  ) : project.image ? (
                     <img
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
                     />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#0b1526] to-[#16243d] transition-transform duration-1000 ease-out group-hover:scale-105">
+                      <span className="text-[#C8A24A] text-[10px] uppercase tracking-[0.3em]">Coming Soon</span>
+                    </div>
                   )}
                   <div className="absolute inset-0 z-20 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[#0b1526]/15 backdrop-blur-sm">
                     <div className="flex-1 flex items-center justify-center">

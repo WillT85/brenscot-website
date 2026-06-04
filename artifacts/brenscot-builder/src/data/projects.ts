@@ -13,7 +13,7 @@ export type Project = {
   slug: string;
   title: string;
   location: string;
-  image: string;
+  image?: string;
   video?: string;
   playbackRate?: number;
   description: string;
@@ -81,6 +81,47 @@ export const projects: Project[] = [
   },
 ];
 
+export const extraProjects: Project[] = [
+  {
+    slug: "47-noble-ave-northgate",
+    title: "47 Noble Ave, Northgate",
+    location: "Northgate, QLD",
+    description: "A modern industrial development delivering high-quality warehouse space within Brisbane's established Northgate industrial precinct.",
+  },
+  {
+    slug: "lot-83-37-wildlily-road-caboolture",
+    title: "Lot 83, 37 Wildlily Road, Caboolture",
+    location: "Caboolture, QLD",
+    description: "A purpose-built industrial facility within a master-planned estate, designed for flexible warehousing and distribution operations.",
+  },
+  {
+    slug: "lot-80-25-wildlily-road-caboolture",
+    title: "Lot 80, 25 Wildlily Road, Caboolture",
+    location: "Caboolture, QLD",
+    description: "A robust, future-ready warehouse development located in one of South-East Queensland's fastest-growing industrial regions.",
+  },
+  {
+    slug: "lot-74-18-barr-road-caboolture",
+    title: "Lot 74, 18 Barr Road, Caboolture",
+    location: "Caboolture, QLD",
+    description: "A versatile industrial development offering high-clearance warehouse space with excellent connectivity to major transport routes.",
+  },
+  {
+    slug: "lot-82-33-wildlily-road-caboolture",
+    title: "Lot 82, 33 Wildlily Road, Caboolture",
+    location: "Caboolture, QLD",
+    description: "A contemporary design & construct project delivering quality commercial and industrial warehouse facilities.",
+  },
+  {
+    slug: "lot-84-mcnaught-road-caboolture",
+    title: "Lot 84, Mcnaught Road, Caboolture",
+    location: "Caboolture, QLD",
+    description: "A premier industrial development providing modern, efficient warehouse units built to the highest standards.",
+  },
+];
+
+export const allProjects: Project[] = [...projects, ...extraProjects];
+
 export function getProjectBySlug(slug: string): Project | undefined {
-  return projects.find((p) => p.slug === slug);
+  return allProjects.find((p) => p.slug === slug);
 }
