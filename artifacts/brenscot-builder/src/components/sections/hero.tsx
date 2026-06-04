@@ -16,10 +16,10 @@ export function Hero() {
   useEffect(() => {
     if (skipIntro) return;
     introHasPlayed = true;
-    const toBlack = setTimeout(() => setIntroPhase('black'), 3500);
-    const toTagline = setTimeout(() => setIntroPhase('tagline'), 4000);
-    const toDone = setTimeout(() => setIntroPhase('done'), 7000);
-    const toVideo = setTimeout(() => setShowVideo(true), 9000);
+    const toBlack = setTimeout(() => setIntroPhase('black'), 1600);
+    const toTagline = setTimeout(() => setIntroPhase('tagline'), 2000);
+    const toDone = setTimeout(() => setIntroPhase('done'), 3400);
+    const toVideo = setTimeout(() => setShowVideo(true), 3800);
     return () => {
       clearTimeout(toBlack);
       clearTimeout(toTagline);
