@@ -23,7 +23,6 @@ import robertson3 from '@assets/robertson_n3_1780546300000.jpg';
 import robertson4 from '@assets/robertson_n4_1780546300000.jpg';
 import robertson5 from '@assets/robertson_n5_1780546300000.jpg';
 import robertson6 from '@assets/robertson_n6_1780546300000.jpg';
-import robertson7 from '@assets/robertson_n7_1780546300000.jpg';
 import robertson8 from '@assets/robertson_n8_1780546300000.jpg';
 import robertson9 from '@assets/robertson_n9_1780546300000.jpg';
 import robertson10 from '@assets/robertson_n10_1780546300000.jpg';
@@ -121,7 +120,7 @@ export const projects: Project[] = [
     playbackRate: 0.25,
     description: "A purpose-built industrial facility located in the established Brendale industrial precinct, engineered for durability and operational flexibility.",
     status: "completed",
-    gallery: [robertson11, robertson12, robertson13, robertson14, robertson0, robertson1, robertson2, robertson3, robertson4, robertson5, robertson6, robertson7, robertson8, robertson9, robertson10],
+    gallery: [robertson11, robertson12, robertson13, robertson14, robertson0, robertson1, robertson2, robertson3, robertson4, robertson5, robertson6, robertson8, robertson9, robertson10],
   },
   {
     slug: "34-36-bell-are-ave-northgate",
