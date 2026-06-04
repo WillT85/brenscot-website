@@ -36,7 +36,7 @@ export default function ProjectDetailPage() {
       <NavBar />
 
       <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">
-        <div className="absolute inset-0 bg-black/30 z-10" />
+        {!project.video && <div className="absolute inset-0 bg-black/30 z-10" />}
         {project.video ? (
           <video
             src={project.video}
@@ -45,7 +45,7 @@ export default function ProjectDetailPage() {
             muted
             playsInline
             ref={(el) => { if (el) { el.muted = true; el.playbackRate = project.playbackRate ?? 0.5; } }}
-            className="w-full h-full object-cover brightness-110 contrast-105"
+            className="w-full h-full object-cover"
           />
         ) : project.image ? (
           <img
