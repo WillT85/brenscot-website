@@ -77,10 +77,6 @@ export default function ProjectDetailPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
             <div className="lg:col-span-3">
-              <h2 className="text-3xl md:text-5xl font-serif text-black leading-tight mb-8">Overview.</h2>
-              <p className="text-black/60 text-lg md:text-xl font-serif font-light leading-relaxed mb-12">
-                {project.description}
-              </p>
               <div className="space-y-6">
                 {galleryMedia.map((src, i) => (
                   <img
@@ -94,6 +90,10 @@ export default function ProjectDetailPage() {
             </div>
             <div className="lg:col-span-2">
               <div className="lg:sticky lg:top-28 lg:border-l lg:border-black/10 lg:pl-12">
+                <h2 className="text-3xl md:text-5xl font-serif text-black leading-tight mb-6">Overview.</h2>
+                <p className="text-black/60 text-base md:text-lg font-serif font-light leading-relaxed mb-10">
+                  {project.description}
+                </p>
                 <div className="space-y-8">
                   <div>
                     <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Location</span>
