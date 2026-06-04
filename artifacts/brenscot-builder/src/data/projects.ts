@@ -19,7 +19,6 @@ export type KeyInfo = {
   landArea?: string;
   floorArea?: string;
   carSpaces?: string;
-  propertyExtent?: string;
   tenureType?: string;
   soldOn?: string;
 };
@@ -96,12 +95,11 @@ export const projects: Project[] = [
     image: altaRoadImg,
     gallery: [altaRoadImg, altaRoadAerial1, altaRoadAerial2, altaRoadPhoto3, altaRoadPhoto4],
     description: "A contemporary industrial estate offering versatile warehouse space designed to support a wide range of business operations.",
-    status: "ongoing",
+    status: "completed",
     keyInfo: {
       landArea: "0.63 ha (1.56 acres)",
       floorArea: "3100 m²",
       carSpaces: "33",
-      propertyExtent: "Completed",
       tenureType: "Vacant Possession",
       soldOn: "24 Jan 2025",
     },
