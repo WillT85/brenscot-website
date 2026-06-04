@@ -1,3 +1,4 @@
 - [Background video autoplay & sizing](hero-background-video.md) — muted JSX attr is unreliable for programmatic play(); set el.muted=true first; keep web bg videos small (faststart, no audio, compressed).
 - [Image baked-in borders](image-baked-in-borders.md) — "not edge-to-edge" in an object-cover card usually means a frame baked into the image file; sample edge pixels, then `magick -trim`.
 - [Card vs hero media separation](brenscot-card-hero-media.md) — per-page hero media must not leak into shared project cards; use a detail-only field, keep cards on the shared field.
+- [Play-once intro / sessionStorage flag](intro-once-per-session.md) — don't recompute a persisted "already played" flag each render and use it as a useEffect dep; capture once via useState initializer + empty deps or timers get cleared mid-animation.

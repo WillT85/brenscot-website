@@ -4,8 +4,9 @@ import heroImage from '@/assets/images/hero.png';
 import heroVideo from '@assets/brenscot_hero.mp4';
 
 export function Hero() {
-  const introAlreadyPlayed =
-    typeof window !== 'undefined' && sessionStorage.getItem('brenscotIntroPlayed') === 'true';
+  const [introAlreadyPlayed] = useState(
+    () => typeof window !== 'undefined' && sessionStorage.getItem('brenscotIntroPlayed') === 'true'
+  );
   const [introPhase, setIntroPhase] = useState<'intro' | 'black' | 'tagline' | 'done'>(
     introAlreadyPlayed ? 'done' : 'intro'
   );
@@ -25,7 +26,8 @@ export function Hero() {
       clearTimeout(toDone);
       clearTimeout(toVideo);
     };
-  }, [introAlreadyPlayed]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (showVideo && videoRef.current) {
