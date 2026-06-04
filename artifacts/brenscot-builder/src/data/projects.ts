@@ -16,6 +16,7 @@ export type Project = {
   title: string;
   location: string;
   image?: string;
+  gallery?: string[];
   video?: string;
   playbackRate?: number;
   description: string;

@@ -19,6 +19,8 @@ export default function ProjectDetailPage() {
   const index = allProjects.findIndex((p) => p.slug === slug);
   const next = allProjects[(index + 1) % allProjects.length];
 
+  const galleryMedia = project.gallery ?? (project.image ? [project.image] : []);
+
   return (
     <div className="min-h-screen bg-white font-sans">
       <NavBar />
@@ -73,26 +75,48 @@ export default function ProjectDetailPage() {
             All Developments
           </Link>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-20">
-            <div className="lg:col-span-2">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
+            <div className="lg:col-span-3">
               <h2 className="text-3xl md:text-5xl font-serif text-black leading-tight mb-8">Overview.</h2>
-              <p className="text-black/60 text-lg md:text-xl font-serif font-light leading-relaxed">
+              <p className="text-black/60 text-lg md:text-xl font-serif font-light leading-relaxed mb-12">
                 {project.description}
               </p>
+              <div className="space-y-6">
+                {galleryMedia.map((src, i) => (
+                  <img
+                    key={i}
+                    src={src}
+                    alt={`${project.title} — view ${i + 1}`}
+                    className="w-full object-cover brightness-110 contrast-105"
+                  />
+                ))}
+              </div>
             </div>
-            <div className="lg:border-l lg:border-black/10 lg:pl-12">
-              <div className="space-y-8">
-                <div>
-                  <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Location</span>
-                  <span className="text-lg font-serif text-black">{project.location}</span>
-                </div>
-                <div>
-                  <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Developer</span>
-                  <span className="text-lg font-serif text-black">Brenscot Builders</span>
-                </div>
-                <div>
-                  <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Sector</span>
-                  <span className="text-lg font-serif text-black">Industrial &amp; Commercial</span>
+            <div className="lg:col-span-2">
+              <div className="lg:sticky lg:top-28 lg:border-l lg:border-black/10 lg:pl-12">
+                <div className="space-y-8">
+                  <div>
+                    <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Location</span>
+                    <span className="text-lg font-serif text-black">{project.location}</span>
+                  </div>
+                  <div>
+                    <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Developer</span>
+                    <span className="text-lg font-serif text-black">Brenscot Builders</span>
+                  </div>
+                  <div>
+                    <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Status</span>
+                    <span className="text-lg font-serif text-black capitalize">{project.status === 'ongoing' ? 'On going' : 'Completed'}</span>
+                  </div>
+                  <div>
+                    <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Sector</span>
+                    <span className="text-lg font-serif text-black">Industrial &amp; Commercial</span>
+                  </div>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center gap-2 bg-[#0b1526] text-white text-xs font-bold uppercase tracking-[0.2em] px-8 py-4 mt-4 transition-colors duration-300 hover:bg-[#C8A24A]"
+                  >
+                    Enquire
+                  </Link>
                 </div>
               </div>
             </div>
