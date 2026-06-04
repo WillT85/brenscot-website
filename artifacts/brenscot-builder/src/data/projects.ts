@@ -16,6 +16,21 @@ import rode9 from '@assets/566_Rode_Rd2_1780545705144.png';
 import rode10 from '@assets/566_Rode_Rd4_1780545705146.png';
 import rode12 from '@assets/af8ba881-f530-417d-86f4-6748a88dc5de_1780545716183.png';
 import rode13 from '@assets/566_Rode_Rd3_1780545723852.png';
+import robertson0 from '@assets/robertson_n0_1780546300000.jpg';
+import robertson1 from '@assets/robertson_n1_1780546300000.jpg';
+import robertson2 from '@assets/robertson_n2_1780546300000.jpg';
+import robertson3 from '@assets/robertson_n3_1780546300000.jpg';
+import robertson4 from '@assets/robertson_n4_1780546300000.jpg';
+import robertson5 from '@assets/robertson_n5_1780546300000.jpg';
+import robertson6 from '@assets/robertson_n6_1780546300000.jpg';
+import robertson7 from '@assets/robertson_n7_1780546300000.jpg';
+import robertson8 from '@assets/robertson_n8_1780546300000.jpg';
+import robertson9 from '@assets/robertson_n9_1780546300000.jpg';
+import robertson10 from '@assets/robertson_n10_1780546300000.jpg';
+import robertson11 from '@assets/robertson_n11_1780546300000.jpg';
+import robertson12 from '@assets/robertson_n12_1780546300000.jpg';
+import robertson13 from '@assets/robertson_n13_1780546300000.jpg';
+import robertson14 from '@assets/robertson_n14_1780546300000.jpg';
 import zillmereImg from '@assets/clontarf_zillmere_trimmed.png';
 import northgateImg from '@assets/northgate_bellaire_trimmed.png';
 import altaRoadImg from '@assets/alta_aerial_trimmed_1780601000000.png';
@@ -106,6 +121,7 @@ export const projects: Project[] = [
     playbackRate: 0.25,
     description: "A purpose-built industrial facility located in the established Brendale industrial precinct, engineered for durability and operational flexibility.",
     status: "completed",
+    gallery: [robertson0, robertson1, robertson2, robertson3, robertson4, robertson5, robertson6, robertson7, robertson8, robertson9, robertson10, robertson11, robertson12, robertson13, robertson14],
   },
   {
     slug: "34-36-bell-are-ave-northgate",
