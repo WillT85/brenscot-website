@@ -34,7 +34,7 @@ export function Contact() {
               </div>
               
               <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/50 mb-4">Contact</h4>
+                <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/50 mb-4">Contact Us</h4>
                 <p className="text-lg font-light mb-2 hover:opacity-70 transition-opacity cursor-pointer">enquiries@brenscotbuilders.com.au</p>
                 <p className="text-lg font-light hover:opacity-70 transition-opacity cursor-pointer">+61 3 9000 1234</p>
               </div>
