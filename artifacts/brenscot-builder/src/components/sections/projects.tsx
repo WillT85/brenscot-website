@@ -9,7 +9,7 @@ import chermsideImg from '@assets/566_Rode_Rd5_1780487252712.png';
 import zillmereImg from '@assets/clontarf_zillmere_trimmed.png';
 import northgateImg from '@assets/northgate_bellaire_trimmed.png';
 import altaRoadImg from '@assets/Screenshot_2026-06-04_070043_1780527659288.png';
-import zillmereImg2 from '@assets/Zillmere1png_1780531545133.png';
+import zillmereImg2 from '@assets/zillmere_aerial_trimmed.png';
 
 const projects = [
   {
