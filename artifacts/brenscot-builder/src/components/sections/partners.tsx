@@ -14,7 +14,7 @@ export function Partners() {
         >
           <span className="text-[#0b1526] font-sans uppercase tracking-[0.3em] text-xs md:text-sm mb-8 block">Trusted Partnership</span>
           <p className="text-[#C8A24A] text-2xl md:text-4xl font-light leading-relaxed mb-10">
-            In partnership with <span className="text-[#C8A24A] font-normal">Indevelop Pty Ltd</span> — delivering industrial developments with strength and precision.
+            In partnership with <span className="text-[#0b1526] font-normal">Indevelop Pty Ltd</span> — delivering industrial developments with strength and precision.
           </p>
           <p className="text-[#C8A24A] text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto">
             This collaboration brings together strategic development expertise and construction precision, strengthening our ability to deliver large-scale industrial warehouse projects with confidence and consistency.
