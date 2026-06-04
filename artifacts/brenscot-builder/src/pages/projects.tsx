@@ -52,7 +52,7 @@ export default function ProjectsPage() {
                 className={`text-[11px] uppercase tracking-[0.15em] transition-colors duration-300 ${
                   filter === btn.value
                     ? "bg-[#C8A24A] text-[#0b1526] font-bold px-4 py-1.5"
-                    : "text-[#0b1526]/60 hover:text-[#0b1526]"
+                    : "text-black hover:text-black/60"
                 }`}
               >
                 {btn.label}
