@@ -89,6 +89,7 @@ export default function ProjectsPage() {
                     <img
                       src={project.image}
                       alt={project.title}
+                      style={{ objectPosition: project.imagePosition }}
                       className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
                     />
                   ) : (

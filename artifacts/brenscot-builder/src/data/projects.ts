@@ -38,6 +38,7 @@ export type Project = {
   title: string;
   location: string;
   image?: string;
+  imagePosition?: string; // CSS object-position for the card image (default centered)
   gallery?: string[];
   video?: string; // shared media: shown on cards (home + Projects) AND detail hero
   heroVideo?: string; // detail-page hero only; never shown on cards
@@ -104,6 +105,7 @@ export const projects: Project[] = [
     title: "59 Alta Road, Caboolture",
     location: "Caboolture, QLD",
     image: altaRoadImg,
+    imagePosition: '65% center',
     heroVideo: altaRoadVideo,
     gallery: [altaG0, altaG1, altaG2, altaG4, altaG8, altaG11, altaG6, altaG7, altaG12, altaG10, altaG3, altaG9, altaG5],
     description: "A contemporary industrial estate offering versatile warehouse space designed to support a wide range of business operations.",
