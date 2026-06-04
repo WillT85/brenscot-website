@@ -49,10 +49,10 @@ export default function ProjectsPage() {
               <button
                 key={btn.value}
                 onClick={() => setFilter(btn.value)}
-                className={`text-sm transition-colors duration-300 ${
+                className={`text-sm uppercase tracking-[0.15em] transition-colors duration-300 ${
                   filter === btn.value
-                    ? "bg-[#C8A24A] text-white px-6 py-2"
-                    : "text-black/60 hover:text-black"
+                    ? "bg-[#C8A24A] text-[#0b1526] px-6 py-2"
+                    : "text-[#0b1526]/60 hover:text-[#0b1526]"
                 }`}
               >
                 {btn.label}
