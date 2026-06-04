@@ -30,6 +30,18 @@ import robertson11 from '@assets/robertson_n11_1780546300000.jpg';
 import robertson12 from '@assets/robertson_n12_1780546300000.jpg';
 import robertson13 from '@assets/robertson_n13_1780546300000.jpg';
 import robertson14 from '@assets/robertson_n14_1780546300000.jpg';
+import robson0 from '@assets/image6_1780546725723.jpg';
+import robson1 from '@assets/image3_1780546747690.jpg';
+import robson2 from '@assets/image13_1780546759834.jpg';
+import robson3 from '@assets/image19_1780546768572.jpg';
+import robson4 from '@assets/image21_1780546782994.jpg';
+import robson5 from '@assets/image23_1780546782994.jpg';
+import robson6 from '@assets/image4_1780546782996.jpg';
+import robson7 from '@assets/image5_1780546782997.jpg';
+import robson8 from '@assets/image7_1780546782997.jpg';
+import robson9 from '@assets/image9_1780546782998.jpg';
+import robson10 from '@assets/image10_1780546782998.jpg';
+import robson11 from '@assets/image12_1780546782999.jpg';
 import zillmereImg from '@assets/clontarf_zillmere_trimmed.png';
 import northgateImg from '@assets/northgate_bellaire_trimmed.png';
 import altaRoadImg from '@assets/alta_aerial_trimmed_1780601000000.png';
@@ -137,6 +149,7 @@ export const projects: Project[] = [
     image: zillmereImg,
     description: "A large-scale industrial development providing flexible warehouse units built to the highest standards of quality and functionality.",
     status: "completed",
+    gallery: [robson0, robson1, robson2, robson3, robson4, robson5, robson6, robson7, robson8, robson9, robson10, robson11],
     keyInfo: {
       availability: "Open for Enquiry",
     },
