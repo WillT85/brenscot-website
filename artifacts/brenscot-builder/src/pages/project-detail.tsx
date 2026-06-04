@@ -24,7 +24,7 @@ export default function ProjectDetailPage() {
         { icon: LandPlot, label: 'Land area', value: info.landArea },
         { icon: Ruler, label: 'Floor area', value: info.floorArea },
         { icon: Car, label: 'Car spaces', value: info.carSpaces },
-        { icon: Building2, label: 'Property extent', value: info.propertyExtent },
+        { icon: Building2, label: 'Construction status', value: info.propertyExtent },
         { icon: Flag, label: 'Tenure type', value: info.tenureType },
         { icon: CalendarDays, label: 'Sold on', value: info.soldOn },
       ].filter((it) => it.value)
