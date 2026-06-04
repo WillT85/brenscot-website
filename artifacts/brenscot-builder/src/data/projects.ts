@@ -4,6 +4,19 @@ import project3 from '@/assets/images/project-3.png';
 import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
 import project3Video from '@assets/24_robertson_st_1780477602300.mp4';
 import chermsideImg from '@assets/566_Rode_Rd5_1780487252712.png';
+import rode1 from '@assets/566_Rode_Rd12_1780545649913.png';
+import rode2 from '@assets/566_Rode_Rd13_1780545655150.png';
+import rode3 from '@assets/566_Rode_Rdpng_1780545657814.png';
+import rode4 from '@assets/566_Rode_Rd10_1780545665978.png';
+import rode5 from '@assets/566_Rode_Rd8_1780545691992.png';
+import rode6 from '@assets/566_Rode_Rd6_1780545705141.png';
+import rode7 from '@assets/566_Rode_Rd7_1780545705142.png';
+import rode8 from '@assets/566_Rode_Rd1_1780545705142.png';
+import rode9 from '@assets/566_Rode_Rd2_1780545705144.png';
+import rode10 from '@assets/566_Rode_Rd4_1780545705146.png';
+import rode11 from '@assets/d064a9d2-7059-4d0a-a5e9-b48cb6985e1c_1780545714593.png';
+import rode12 from '@assets/af8ba881-f530-417d-86f4-6748a88dc5de_1780545716183.png';
+import rode13 from '@assets/566_Rode_Rd3_1780545723852.png';
 import zillmereImg from '@assets/clontarf_zillmere_trimmed.png';
 import northgateImg from '@assets/northgate_bellaire_trimmed.png';
 import altaRoadImg from '@assets/alta_aerial_trimmed_1780601000000.png';
@@ -83,6 +96,7 @@ export const projects: Project[] = [
     image: chermsideImg,
     description: "A landmark commercial and industrial development in one of Brisbane's key growth corridors, combining functional warehousing with contemporary design.",
     status: "completed",
+    gallery: [rode1, rode2, rode3, rode4, rode5, rode6, rode7, rode8, rode9, rode10, rode11, rode12, rode13],
   },
   {
     slug: "24-robertson-st-brendale",
