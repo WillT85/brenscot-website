@@ -19,7 +19,7 @@ export type KeyInfo = {
   landArea?: string;
   floorArea?: string;
   carSpaces?: string;
-  tenureType?: string;
+  availability?: string;
   soldOn?: string;
 };
 
@@ -100,7 +100,7 @@ export const projects: Project[] = [
       landArea: "0.63 ha (1.56 acres)",
       floorArea: "3100 m²",
       carSpaces: "33",
-      tenureType: "Vacant Possession",
+      availability: "Vacant Possession",
       soldOn: "24 Jan 2025",
     },
   },
