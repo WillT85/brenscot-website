@@ -66,7 +66,7 @@ export default function ProjectDetailPage() {
       </section>
 
       <section className="py-16 md:py-28 bg-white">
-        <div className="container mx-auto px-6 md:px-12">
+        <div className="container mx-auto pl-4 pr-6 md:pl-6 md:pr-12">
           <Link
             href="/projects"
             className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-black/50 hover:text-[#0b1526] transition-colors duration-300 mb-12"
