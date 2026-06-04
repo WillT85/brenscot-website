@@ -1,65 +1,56 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import project1 from '@assets/image_1776005185036.png';
 import project2 from '@assets/13_02_extt_сс3_Post_Ps_1776005476200.jpg';
 import project3 from '@/assets/images/project-3.png';
-import project4 from '@/assets/images/project-4.png';
-import zillmereAerial from '@assets/zillmere_aerial_trimmed.png';
+import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
+import project3Video from '@assets/24_robertson_st_1780477602300.mp4';
+import chermsideImg from '@assets/566_Rode_Rd5_1780487252712.png';
+import zillmereImg from '@assets/clontarf_zillmere_trimmed.png';
+import northgateImg from '@assets/northgate_bellaire_trimmed.png';
+import altaRoadImg from '@assets/Screenshot_2026-06-04_070043_1780527659288.png';
+import zillmereImg2 from '@assets/zillmere_aerial_trimmed.png';
 
 const projects = [
   {
-    title: "CLONTARF",
-    description: "34-40 Robson St, Clontarf — Large-scale industrial development spanning 62,000 m².",
-    image: project2,
-    status: "current" as const,
-  },
-  {
-    title: "ZILLMERE",
-    description: "Industrial logistics facility delivering 41,200 m² of high-performance warehouse space.",
-    image: zillmereAerial,
-    status: "current" as const,
-  },
-  {
-    title: "WACOL",
-    description: "Specialised industrial facility comprising 19,800 m² of purpose-built warehouse infrastructure.",
-    image: project4,
-    status: "current" as const,
-  },
-  {
-    title: "LOT 80 CABOOLTURE",
-    description: "Industrial development delivering 35,600 m² across a master-planned estate.",
+    title: "15 King Court, North Lakes",
     image: project1,
-    status: "completed" as const,
+    video: project1Video,
   },
   {
-    title: "LOT 74 CABOOLTURE",
-    description: "Logistics facility with 52,400 m² of distribution and warehousing capacity.",
-    image: project2,
-    status: "completed" as const,
+    title: "566 Rode Rd, Chermside",
+    image: chermsideImg,
   },
   {
-    title: "LOT 82 CABOOLTURE",
-    description: "Design & construct project spanning 27,300 m² of commercial warehouse space.",
+    title: "24 Robertson St, Brendale",
     image: project3,
-    status: "completed" as const,
+    video: project3Video,
+    playbackRate: 0.25,
   },
   {
-    title: "LOT 84 CABOOLTURE",
-    description: "Premiere commercial development with 18,500 m² of industrial warehouse units.",
-    image: project4,
-    status: "completed" as const,
+    title: "34-36 Bell-Are Ave, Northgate",
+    image: northgateImg,
+  },
+  {
+    title: "34-40 Robson St Clontarf",
+    image: zillmereImg,
+  },
+  {
+    title: "13 Wildily Road, Caboolture",
+    image: project2,
+  },
+  {
+    title: "59 Alta Road, Caboolture",
+    image: altaRoadImg,
+  },
+  {
+    title: "535 Zillmere, Zillmere",
+    image: zillmereImg2,
   }
 ];
 
-type Filter = "all" | "current" | "completed";
-
 export default function ProjectsPage() {
-  const [filter, setFilter] = useState<Filter>("all");
-
-  const filtered = filter === "all" ? projects : projects.filter(p => p.status === filter);
-
   return (
     <div className="min-h-screen bg-white font-sans">
       <NavBar />
@@ -87,71 +78,57 @@ export default function ProjectsPage() {
 
       <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="flex items-center gap-8 mb-16">
-            {([
-              { label: "All", value: "all" },
-              { label: "Current", value: "current" },
-              { label: "Completed", value: "completed" },
-            ] as { label: string; value: Filter }[]).map((btn) => (
-              <button
-                key={btn.value}
-                onClick={() => setFilter(btn.value)}
-                className={`text-sm transition-colors duration-300 ${
-                  filter === btn.value
-                    ? "bg-[#C8A24A] text-white px-6 py-2 rounded-full"
-                    : "text-black/60 hover:text-black"
-                }`}
-              >
-                {btn.label}
-              </button>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-1 gap-16 md:gap-20">
-            <AnimatePresence mode="popLayout">
-            {filtered.map((project) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {projects.map((project, index) => (
               <motion.div
-                key={project.title}
-                layout
+                key={`${project.title}-${index}`}
                 initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.8, delay: (index % 2) * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="group cursor-pointer"
               >
-                <div className="relative overflow-hidden h-[50vh] md:h-[70vh]">
-                  <div className="absolute inset-0 bg-black/5 z-10 transition-colors duration-700 group-hover:bg-black/20" />
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
-                  />
+                <div className="relative overflow-hidden h-[35vh] md:h-[40vh]">
+                  <div className="absolute inset-0 bg-black/10 z-10 transition-colors duration-700 group-hover:bg-black/30" />
+                  {project.video ? (
+                    <video
+                      src={project.video}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      ref={(el) => { if (el) { el.muted = true; el.playbackRate = project.playbackRate ?? 0.5; } }}
+                      className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
+                    />
+                  ) : (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
+                    />
+                  )}
                   <div className="absolute inset-0 z-20 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[#0b1526]/15 backdrop-blur-sm">
-                    <div className="p-6 md:p-8">
-                      <span className="text-white text-xs font-bold uppercase tracking-[0.2em] border border-white/50 px-8 py-4">
-                        View Project
-                      </span>
-                    </div>
                     <div className="flex-1 flex items-center justify-center">
-                      <span className="text-white text-2xl md:text-4xl font-serif uppercase tracking-[0.3em] drop-shadow">Brenscot</span>
+                      <span className="text-white text-lg md:text-2xl font-serif uppercase tracking-[0.3em] drop-shadow">Brenscot</span>
+                    </div>
+                    <div className="bg-[#0b1526] text-white text-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] py-4">
+                      View Project
                     </div>
                   </div>
-                </div>
-
-                <div className="pt-6 md:pt-8 flex items-start justify-between">
-                  <div>
-                    <h3 className="text-2xl md:text-4xl font-serif text-black mb-3 uppercase tracking-wide">{project.title}</h3>
-                    <p className="text-black/50 text-sm md:text-base font-serif font-light leading-relaxed max-w-2xl">{project.description}</p>
+                  <div className="absolute bottom-0 right-0 z-30 px-4 md:px-5 pb-3 md:pb-4 text-right transition-opacity duration-300 group-hover:opacity-0">
+                    <h3 className="inline-block text-[10px] font-serif font-semibold text-white tracking-wide uppercase">
+                      {project.title.split(/(\d+(?:-\d+)?)/g).map((part, i) =>
+                        /\d/.test(part) ? (
+                          <span key={i} className="font-sans font-medium tracking-normal tabular-nums">{part}</span>
+                        ) : (
+                          part
+                        )
+                      )}
+                    </h3>
                   </div>
-                  <span className={`text-[10px] uppercase tracking-[0.2em] font-serif px-4 py-1.5 shrink-0 mt-2 ${
-                    project.status === "current" ? "bg-[#C8A24A]/10 text-[#C8A24A]" : "bg-black/5 text-black/40"
-                  }`}>
-                    {project.status}
-                  </span>
                 </div>
               </motion.div>
             ))}
-            </AnimatePresence>
           </div>
         </div>
       </section>
