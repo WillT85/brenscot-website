@@ -3,12 +3,19 @@ import { useState, useEffect, useRef } from 'react';
 import heroImage from '@/assets/images/hero.png';
 import heroVideo from '@assets/brenscot_hero.mp4';
 
+// Persists across client-side navigation but resets on a full page load/refresh,
+// so the intro plays on initial load but is skipped when navigating via the nav.
+let introHasPlayed = false;
+
 export function Hero() {
-  const [introPhase, setIntroPhase] = useState<'intro' | 'black' | 'tagline' | 'done'>('intro');
-  const [showVideo, setShowVideo] = useState(false);
+  const skipIntro = introHasPlayed;
+  const [introPhase, setIntroPhase] = useState<'intro' | 'black' | 'tagline' | 'done'>(skipIntro ? 'done' : 'intro');
+  const [showVideo, setShowVideo] = useState(skipIntro);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    if (skipIntro) return;
+    introHasPlayed = true;
     const toBlack = setTimeout(() => setIntroPhase('black'), 3500);
     const toTagline = setTimeout(() => setIntroPhase('tagline'), 4000);
     const toDone = setTimeout(() => setIntroPhase('done'), 7000);
@@ -19,7 +26,7 @@ export function Hero() {
       clearTimeout(toDone);
       clearTimeout(toVideo);
     };
-  }, []);
+  }, [skipIntro]);
 
   useEffect(() => {
     if (showVideo && videoRef.current) {
