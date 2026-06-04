@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useParams, Link } from 'wouter';
-import { ArrowLeft, MapPin, LandPlot, Ruler, Car, Building2, Flag, Layers } from 'lucide-react';
+import { ArrowLeft, MapPin, LandPlot, Ruler, Car, Building2, Flag, Layers, Hammer, Briefcase } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
@@ -19,16 +19,17 @@ export default function ProjectDetailPage() {
   const galleryMedia = project.gallery ?? (project.image ? [project.image] : []);
 
   const info = project.keyInfo;
-  const infoItems: { icon: LucideIcon; label: string; value?: string }[] = info
-    ? [
-        { icon: LandPlot, label: 'Land area', value: info.landArea },
-        { icon: Ruler, label: 'Floor area', value: info.floorArea },
-        { icon: Car, label: 'Car spaces', value: info.carSpaces },
-        { icon: Layers, label: 'Number of units', value: info.units },
-        { icon: Flag, label: 'Availability', value: info.availability },
-        { icon: Building2, label: 'Construction status', value: project.status === 'ongoing' ? 'On going' : 'Completed' },
-      ].filter((it) => it.value)
-    : [];
+  const infoItems: { icon: LucideIcon; label: string; value: string }[] = [
+    ...(info?.landArea ? [{ icon: LandPlot, label: 'Land area', value: info.landArea }] : []),
+    ...(info?.floorArea ? [{ icon: Ruler, label: 'Floor area', value: info.floorArea }] : []),
+    ...(info?.carSpaces ? [{ icon: Car, label: 'Car spaces', value: info.carSpaces }] : []),
+    ...(info?.units ? [{ icon: Layers, label: 'Number of units', value: info.units }] : []),
+    ...(info?.availability ? [{ icon: Flag, label: 'Availability', value: info.availability }] : []),
+    { icon: Hammer, label: 'Construction status', value: project.status === 'ongoing' ? 'On going' : 'Completed' },
+    { icon: MapPin, label: 'Location', value: project.location },
+    { icon: Briefcase, label: 'Sector', value: 'Industrial & Commercial' },
+    { icon: Building2, label: 'Developer', value: 'Brenscot Builders' },
+  ];
 
   return (
     <div className="min-h-screen bg-white font-sans">
@@ -103,41 +104,20 @@ export default function ProjectDetailPage() {
                 <p className="text-black/60 text-sm md:text-base font-serif font-light leading-relaxed mb-10">
                   {project.description}
                 </p>
-                {infoItems.length > 0 ? (
-                  <div>
-                    <h3 className="text-lg md:text-xl font-serif text-black mb-8">Key property information</h3>
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-8">
-                      {infoItems.map(({ icon: Icon, label, value }) => (
-                        <div key={label} className="flex gap-3">
-                          <Icon className="w-4 h-4 text-[#C8A24A] mt-0.5 shrink-0" strokeWidth={1.5} />
-                          <div>
-                            <span className="block text-[9px] uppercase tracking-[0.2em] text-black/40 mb-1.5">{label}</span>
-                            <span className="text-sm font-serif text-black">{value}</span>
-                          </div>
+                <div>
+                  <h3 className="text-lg md:text-xl font-serif text-black mb-8">Key property information</h3>
+                  <div className="grid grid-cols-2 gap-x-6 gap-y-8">
+                    {infoItems.map(({ icon: Icon, label, value }) => (
+                      <div key={label} className="flex gap-3">
+                        <Icon className="w-4 h-4 text-[#C8A24A] mt-0.5 shrink-0" strokeWidth={1.5} />
+                        <div>
+                          <span className="block text-[9px] uppercase tracking-[0.2em] text-black/40 mb-1.5">{label}</span>
+                          <span className="text-sm font-serif text-black">{value}</span>
                         </div>
-                      ))}
-                    </div>
+                      </div>
+                    ))}
                   </div>
-                ) : (
-                  <div className="space-y-8">
-                    <div>
-                      <span className="block text-[9px] uppercase tracking-[0.2em] text-black/40 mb-2">Location</span>
-                      <span className="text-sm font-serif text-black">{project.location}</span>
-                    </div>
-                    <div>
-                      <span className="block text-[9px] uppercase tracking-[0.2em] text-black/40 mb-2">Developer</span>
-                      <span className="text-sm font-serif text-black">Brenscot Builders</span>
-                    </div>
-                    <div>
-                      <span className="block text-[9px] uppercase tracking-[0.2em] text-black/40 mb-2">Status</span>
-                      <span className="text-sm font-serif text-black capitalize">{project.status === 'ongoing' ? 'On going' : 'Completed'}</span>
-                    </div>
-                    <div>
-                      <span className="block text-[9px] uppercase tracking-[0.2em] text-black/40 mb-2">Sector</span>
-                      <span className="text-sm font-serif text-black">Industrial &amp; Commercial</span>
-                    </div>
-                  </div>
-                )}
+                </div>
                 <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 bg-[#0b1526] text-white text-xs font-bold uppercase tracking-[0.2em] px-8 py-4 mt-10 transition-colors duration-300 hover:bg-[#C8A24A]"
