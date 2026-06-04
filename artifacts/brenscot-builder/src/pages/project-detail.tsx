@@ -36,8 +36,18 @@ export default function ProjectDetailPage() {
       <NavBar />
 
       <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">
-        {!project.video && <div className="absolute inset-0 bg-black/30 z-10" />}
-        {project.video ? (
+        {!project.heroVideo && <div className="absolute inset-0 bg-black/30 z-10" />}
+        {project.heroVideo ? (
+          <video
+            src={project.heroVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+            ref={(el) => { if (el) { el.muted = true; el.playbackRate = project.playbackRate ?? 0.5; } }}
+            className="w-full h-full object-cover"
+          />
+        ) : project.video ? (
           <video
             src={project.video}
             autoPlay
@@ -45,7 +55,7 @@ export default function ProjectDetailPage() {
             muted
             playsInline
             ref={(el) => { if (el) { el.muted = true; el.playbackRate = project.playbackRate ?? 0.5; } }}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover brightness-110 contrast-105"
           />
         ) : project.image ? (
           <img
