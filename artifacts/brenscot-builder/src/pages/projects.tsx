@@ -6,6 +6,7 @@ import project1 from '@assets/image_1776005185036.png';
 import project2 from '@assets/13_02_extt_сс3_Post_Ps_1776005476200.jpg';
 import project3 from '@/assets/images/project-3.png';
 import project4 from '@/assets/images/project-4.png';
+import zillmereAerial from '@assets/Zillmere1png_1780531545133.png';
 
 const projects = [
   {
@@ -17,7 +18,7 @@ const projects = [
   {
     title: "ZILLMERE",
     description: "Industrial logistics facility delivering 41,200 m² of high-performance warehouse space.",
-    image: project3,
+    image: zillmereAerial,
     status: "current" as const,
   },
   {
