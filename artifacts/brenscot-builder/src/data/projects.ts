@@ -7,6 +7,7 @@ import chermsideImg from '@assets/566_Rode_Rd5_1780487252712.png';
 import zillmereImg from '@assets/clontarf_zillmere_trimmed.png';
 import northgateImg from '@assets/northgate_bellaire_trimmed.png';
 import altaRoadImg from '@assets/Screenshot_2026-06-04_070043_1780527659288.png';
+import altaRoadVideo from '@assets/alta_hero_video_1780600100000.mp4';
 import altaG0 from '@assets/alta_clean0_1780600000000.jpg';
 import altaG1 from '@assets/alta_clean1_1780600000000.jpg';
 import altaG2 from '@assets/alta_clean2_1780600000000.jpg';
@@ -102,6 +103,7 @@ export const projects: Project[] = [
     title: "59 Alta Road, Caboolture",
     location: "Caboolture, QLD",
     image: altaRoadImg,
+    video: altaRoadVideo,
     gallery: [altaG0, altaG1, altaG2, altaG4, altaG8, altaG11, altaG6, altaG7, altaG12, altaG10, altaG3, altaG9, altaG5],
     description: "A contemporary industrial estate offering versatile warehouse space designed to support a wide range of business operations.",
     status: "completed",
