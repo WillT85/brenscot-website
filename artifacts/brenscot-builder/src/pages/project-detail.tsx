@@ -124,34 +124,6 @@ export default function ProjectDetailPage() {
         </div>
       </section>
 
-      <section className="pb-20 md:pb-32 bg-white">
-        <div className="container mx-auto px-6 md:px-12">
-          <div
-            onClick={() => { setLocation(`/projects/${next.slug}`); window.scrollTo({ top: 0 }); }}
-            className="group relative overflow-hidden h-[40vh] md:h-[55vh] cursor-pointer"
-          >
-            <div className="absolute inset-0 bg-black/40 z-10 transition-colors duration-700 group-hover:bg-black/50" />
-            {next.image ? (
-              <img
-                src={next.image}
-                alt={next.title}
-                className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105 brightness-110 contrast-105"
-              />
-            ) : (
-              <div className="w-full h-full bg-gradient-to-br from-[#0b1526] to-[#16243d] transition-transform duration-1000 ease-out group-hover:scale-105" />
-            )}
-            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-6">
-              <span className="text-[#C8A24A] text-xs uppercase tracking-[0.3em] mb-4">Next Development</span>
-              <h3 className="text-3xl md:text-5xl font-serif text-white mb-6">{next.title}</h3>
-              <span className="inline-flex items-center gap-2 text-white text-xs font-bold uppercase tracking-[0.2em] border border-white/50 px-8 py-4 transition-colors duration-300 group-hover:bg-[#0b1526] group-hover:border-[#0b1526]">
-                View Project
-                <ArrowRight className="w-4 h-4" />
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );
