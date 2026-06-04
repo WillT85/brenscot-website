@@ -15,6 +15,15 @@ import zillmereImg2 from '@assets/zillmere_aerial_trimmed.png';
 
 export type ProjectStatus = "completed" | "ongoing";
 
+export type KeyInfo = {
+  landArea?: string;
+  floorArea?: string;
+  carSpaces?: string;
+  propertyExtent?: string;
+  tenureType?: string;
+  soldOn?: string;
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -25,6 +34,7 @@ export type Project = {
   playbackRate?: number;
   description: string;
   status: ProjectStatus;
+  keyInfo?: KeyInfo;
 };
 
 export const projects: Project[] = [
@@ -87,6 +97,14 @@ export const projects: Project[] = [
     gallery: [altaRoadImg, altaRoadAerial1, altaRoadAerial2, altaRoadPhoto3, altaRoadPhoto4],
     description: "A contemporary industrial estate offering versatile warehouse space designed to support a wide range of business operations.",
     status: "ongoing",
+    keyInfo: {
+      landArea: "0.63 ha (1.56 acres)",
+      floorArea: "3100 m²",
+      carSpaces: "33",
+      propertyExtent: "Whole",
+      tenureType: "Vacant Possession",
+      soldOn: "24 Jan 2025",
+    },
   },
   {
     slug: "535-zillmere-zillmere",

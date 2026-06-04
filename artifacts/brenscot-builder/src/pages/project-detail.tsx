@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
-import { useParams, useLocation, Link } from 'wouter';
-import { ArrowLeft, ArrowRight, MapPin } from 'lucide-react';
+import { useParams, Link } from 'wouter';
+import { ArrowLeft, MapPin, LandPlot, Ruler, Car, Building2, Flag, CalendarDays } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
-import { allProjects, getProjectBySlug } from '@/data/projects';
+import { getProjectBySlug } from '@/data/projects';
 import NotFound from '@/pages/not-found';
 
 export default function ProjectDetailPage() {
   const params = useParams();
-  const [, setLocation] = useLocation();
   const slug = params.slug ?? '';
   const project = getProjectBySlug(slug);
 
@@ -16,10 +16,19 @@ export default function ProjectDetailPage() {
     return <NotFound />;
   }
 
-  const index = allProjects.findIndex((p) => p.slug === slug);
-  const next = allProjects[(index + 1) % allProjects.length];
-
   const galleryMedia = project.gallery ?? (project.image ? [project.image] : []);
+
+  const info = project.keyInfo;
+  const infoItems: { icon: LucideIcon; label: string; value?: string }[] = info
+    ? [
+        { icon: LandPlot, label: 'Land area', value: info.landArea },
+        { icon: Ruler, label: 'Floor area', value: info.floorArea },
+        { icon: Car, label: 'Car spaces', value: info.carSpaces },
+        { icon: Building2, label: 'Property extent', value: info.propertyExtent },
+        { icon: Flag, label: 'Tenure type', value: info.tenureType },
+        { icon: CalendarDays, label: 'Sold on', value: info.soldOn },
+      ].filter((it) => it.value)
+    : [];
 
   return (
     <div className="min-h-screen bg-white font-sans">
@@ -94,30 +103,47 @@ export default function ProjectDetailPage() {
                 <p className="text-black/60 text-base md:text-lg font-serif font-light leading-relaxed mb-10">
                   {project.description}
                 </p>
-                <div className="space-y-8">
+                {infoItems.length > 0 ? (
                   <div>
-                    <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Location</span>
-                    <span className="text-lg font-serif text-black">{project.location}</span>
+                    <h3 className="text-xl md:text-2xl font-serif text-black mb-8">Key property information</h3>
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-8">
+                      {infoItems.map(({ icon: Icon, label, value }) => (
+                        <div key={label} className="flex gap-3">
+                          <Icon className="w-5 h-5 text-[#C8A24A] mt-0.5 shrink-0" strokeWidth={1.5} />
+                          <div>
+                            <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-1.5">{label}</span>
+                            <span className="text-base font-serif text-black">{value}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div>
-                    <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Developer</span>
-                    <span className="text-lg font-serif text-black">Brenscot Builders</span>
+                ) : (
+                  <div className="space-y-8">
+                    <div>
+                      <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Location</span>
+                      <span className="text-lg font-serif text-black">{project.location}</span>
+                    </div>
+                    <div>
+                      <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Developer</span>
+                      <span className="text-lg font-serif text-black">Brenscot Builders</span>
+                    </div>
+                    <div>
+                      <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Status</span>
+                      <span className="text-lg font-serif text-black capitalize">{project.status === 'ongoing' ? 'On going' : 'Completed'}</span>
+                    </div>
+                    <div>
+                      <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Sector</span>
+                      <span className="text-lg font-serif text-black">Industrial &amp; Commercial</span>
+                    </div>
                   </div>
-                  <div>
-                    <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Status</span>
-                    <span className="text-lg font-serif text-black capitalize">{project.status === 'ongoing' ? 'On going' : 'Completed'}</span>
-                  </div>
-                  <div>
-                    <span className="block text-[10px] uppercase tracking-[0.2em] text-black/40 mb-2">Sector</span>
-                    <span className="text-lg font-serif text-black">Industrial &amp; Commercial</span>
-                  </div>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-2 bg-[#0b1526] text-white text-xs font-bold uppercase tracking-[0.2em] px-8 py-4 mt-4 transition-colors duration-300 hover:bg-[#C8A24A]"
-                  >
-                    Enquire
-                  </Link>
-                </div>
+                )}
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-[#0b1526] text-white text-xs font-bold uppercase tracking-[0.2em] px-8 py-4 mt-10 transition-colors duration-300 hover:bg-[#C8A24A]"
+                >
+                  Enquire
+                </Link>
               </div>
             </div>
           </div>
