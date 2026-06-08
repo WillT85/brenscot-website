@@ -30,6 +30,7 @@ export function Contact() {
                 <h4 className="text-base font-bold uppercase tracking-[0.2em] text-[#C8A24A] mb-4">Contact Us</h4>
                 <p className="text-lg font-light mb-2 hover:opacity-70 transition-opacity cursor-pointer">enquiries@brenscot.com.au</p>
                 <p className="text-lg font-light hover:opacity-70 transition-opacity cursor-pointer">0480 800 077</p>
+                <p className="text-lg font-light mt-2">Meetings by appointment</p>
               </div>
             </div>
           </motion.div>
