@@ -136,7 +136,7 @@ export const projects: Project[] = [
   },
   {
     slug: "34-36-bell-are-ave-northgate",
-    title: "34-36 Bell-Are Ave, Northgate",
+    title: "30-36 Bell-Are Ave, Northgate",
     location: "Northgate, QLD",
     image: northgateImg,
     description: "A modern warehouse and commercial development offering well-connected, high-performance space close to major freight and transport routes.",
