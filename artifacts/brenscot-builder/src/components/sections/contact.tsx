@@ -92,7 +92,7 @@ export function Contact() {
                 type="submit" 
                 className="bg-black text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A] hover:text-[#0b1526] transition-colors w-full sm:w-auto"
               >
-                Submit Inquiry
+                Submit Enquiry
               </button>
             </form>
           </motion.div>
