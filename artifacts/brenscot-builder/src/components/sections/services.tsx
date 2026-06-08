@@ -24,7 +24,7 @@ export function Services() {
     <section id="services" className="py-32 md:py-48 bg-[#0d1a2d] text-white">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl md:mb-4">
             <h2 className="text-5xl md:text-7xl font-serif leading-tight">End to end, <br className="hidden md:block"/>In our control.</h2>
           </div>
           <p className="text-white/60 text-lg leading-relaxed max-w-md md:mb-4">
