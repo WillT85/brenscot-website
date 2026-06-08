@@ -25,7 +25,7 @@ export function Services() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-12">
           <div className="max-w-2xl">
-            <h2 className="text-5xl md:text-7xl font-serif leading-tight">End to end. <br className="hidden md:block"/>In our control.</h2>
+            <h2 className="text-5xl md:text-7xl font-serif leading-tight">End to end, <br className="hidden md:block"/>In our control.</h2>
           </div>
           <p className="text-white/60 text-lg leading-relaxed max-w-md md:mb-4">
             High-quality industrial warehouse developments with precision, reliability, and efficiency. We are committed to building durable, future-ready spaces that support the growth of businesses across Queensland and beyond. Through strong partnerships, expert craftsmanship, and disciplined project delivery, we ensure every development is completed to the highest standard.
