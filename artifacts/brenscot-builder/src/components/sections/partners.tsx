@@ -16,7 +16,7 @@ export function Partners() {
           <p className="text-[#C8A24A] text-2xl md:text-4xl font-light leading-relaxed mb-10">
             Brenscot works hand in hand with <span className="text-[#0b1526] font-normal">Indevelop</span>, our in-house development company.
             <br />
-            <span className="text-lg md:text-2xl">Indevelop identifies and acquires the sites; Brenscot takes it from there — design, approvals and construction through to a completed, ready-to-occupy building.</span>
+            <span className="text-lg md:text-xl">Indevelop identifies and acquires the sites; Brenscot takes it from there — design, approvals and construction through to a completed, ready-to-occupy building.</span>
           </p>
           <p className="text-[#C8A24A] text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto">
             Controlling the full journey from raw land to finished facility gives us certainty over programme, cost and quality that a standalone builder can't match — and it's why we can deliver buildings to suit, ready to lease or purchase.
