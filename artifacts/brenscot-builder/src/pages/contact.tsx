@@ -48,7 +48,7 @@ export default function ContactPage() {
             >
               <h3 className="font-serif text-xl font-bold text-[#C8A24A] mb-4">Contact Us</h3>
               <p className="text-[#0b1526]/70 text-[15px] font-light leading-relaxed">
-                Email :{' '}
+                <span className="font-bold text-[#C8A24A]">Email :</span>{' '}
                 <a
                   href="mailto:enquiries@brenscot.com.au"
                   className="hover:text-[#0b1526] transition-colors"
@@ -57,7 +57,7 @@ export default function ContactPage() {
                 </a>
               </p>
               <p className="text-[#0b1526]/70 text-[15px] font-light leading-relaxed mt-1">
-                Phone number :{' '}
+                <span className="font-bold text-[#C8A24A]">Phone number :</span>{' '}
                 <a
                   href="tel:0480800077"
                   className="hover:text-[#0b1526] transition-colors"
@@ -66,7 +66,7 @@ export default function ContactPage() {
                 </a>
               </p>
 
-              <p className="text-[#0b1526]/70 text-[15px] font-light mt-1">
+              <p className="text-[#C8A24A] text-[15px] font-bold mt-1">
                 Meetings by appointment
               </p>
             </motion.div>
