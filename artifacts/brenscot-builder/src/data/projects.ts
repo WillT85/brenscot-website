@@ -155,7 +155,6 @@ export const projects: Project[] = [
       { label: "Total GFA", value: "1,664 m² (warehouse 1,387 m² + office 277 m²)" },
       { label: "Office", value: "277 m² over two levels (78 ground + 199 level 1)" },
       { label: "Building type", value: "Single freestanding warehouse + two-level office" },
-      { label: "End user", value: "Nomad Fishing Tackle" },
       { label: "Construction", value: "Concrete tilt-panel; Colorbond “Monument Matt” wall cladding; Colorbond “Surfmist” roof; aluminium-framed glazing" },
       { label: "Completed project value", value: "$4,615,000" },
     ],
