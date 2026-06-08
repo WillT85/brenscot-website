@@ -17,8 +17,8 @@ export default function Home() {
         <Projects />
         <Services />
         <About />
-        <Careers />
         <Partners />
+        <Careers />
         <Contact />
       </main>
       <Footer />
