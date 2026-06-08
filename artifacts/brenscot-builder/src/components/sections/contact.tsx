@@ -28,9 +28,9 @@ export function Contact() {
             <div className="space-y-12">
               <div>
                 <h4 className="text-base font-bold uppercase tracking-[0.2em] text-[#C8A24A] mb-4">Contact Us</h4>
-                <p className="text-lg font-light mb-2"><span className="font-bold text-[#C8A24A]">Email :</span> <a href="mailto:enquiries@brenscot.com.au" className="hover:opacity-70 transition-opacity">enquiries@brenscot.com.au</a></p>
-                <p className="text-lg font-light"><span className="font-bold text-[#C8A24A]">Phone number :</span> <a href="tel:0480800077" className="hover:opacity-70 transition-opacity">0480 800 077</a></p>
-                <p className="text-lg font-bold text-[#C8A24A] mt-2">Meetings by appointment</p>
+                <p className="text-lg font-light mb-2"><span className="text-[#C8A24A]">Email :</span> <a href="mailto:enquiries@brenscot.com.au" className="hover:opacity-70 transition-opacity">enquiries@brenscot.com.au</a></p>
+                <p className="text-lg font-light"><span className="text-[#C8A24A]">Phone number :</span> <a href="tel:0480800077" className="hover:opacity-70 transition-opacity">0480 800 077</a></p>
+                <p className="text-lg font-light text-[#C8A24A] mt-2">Meetings by appointment</p>
               </div>
             </div>
           </motion.div>
