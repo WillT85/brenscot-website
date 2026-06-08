@@ -57,24 +57,22 @@ export default function ContactPage() {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="mb-16"
             >
-              <h3 className="font-serif text-xl text-[#0b1526] mb-4">Head Office</h3>
-              <p className="text-[#0b1526]/70 text-[15px] font-light leading-relaxed">
-                Clarke St Hendra
-              </p>
-              <p className="text-[#0b1526]/70 text-[15px] font-light leading-relaxed mb-1">
-                Brisbane QLD 4011
-              </p>
+              <h3 className="font-serif text-xl text-[#0b1526] mb-4">Contact Us</h3>
               <a
-                href="https://maps.google.com/?q=Clarke+St+Hendra+QLD+4011"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#0b1526]/50 text-[15px] font-light underline underline-offset-4 hover:text-[#0b1526] transition-colors"
+                href="mailto:enquiries@brenscot.com.au"
+                className="text-[#0b1526]/70 text-[15px] font-light leading-relaxed hover:text-[#0b1526] transition-colors block"
               >
-                Get Directions
+                enquiries@brenscot.com.au
+              </a>
+              <a
+                href="tel:0480800077"
+                className="text-[#0b1526]/70 text-[15px] font-light leading-relaxed hover:text-[#0b1526] transition-colors block mt-1"
+              >
+                0480 800 077
               </a>
 
               <p className="text-[#0b1526]/70 text-[15px] font-light mt-6">
-                +61 (0)7 3000 1234
+                Meetings by appointment
               </p>
             </motion.div>
 
