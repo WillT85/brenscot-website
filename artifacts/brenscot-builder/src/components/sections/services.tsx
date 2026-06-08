@@ -10,7 +10,7 @@ const services = [
     description: "High-spec tilt-panel and structural steel construction for large-footprint industrial buildings. We keep the critical works under our direct control to maintain schedule and quality."
   },
   {
-    title: "Logistics & Distribution",
+    title: "Industrial Facilities",
     description: "Purpose-built facilities engineered for maximum operational efficiency — dock levellers, hardstand, truck courts, and high-bay racking integration by design."
   },
   {
