@@ -59,12 +59,17 @@ export default function AboutPage() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
+              <span className="text-black/50 font-sans uppercase tracking-[0.2em] text-xs mb-8 block">About Us</span>
+              <h2 className="text-4xl md:text-6xl font-serif text-black mb-10 leading-tight">
+                A Queensland developer-builder, built on control and relationships.
+              </h2>
+
               <div className="space-y-8 text-black/60 text-lg md:text-xl font-light leading-relaxed mb-16">
                 <p>
-                  Brenscot is a Queensland-based commercial construction and property development company specialising in industrial warehouse projects. We focus on delivering high-performance facilities designed to meet the demands of modern logistics, manufacturing, and distribution.
+                  Brenscot is a Queensland-based construction and property development company specialising in industrial warehouse projects — from single freestanding facilities to multi-unit complexes. We design, develop and deliver high-performance buildings for logistics, manufacturing and distribution.
                 </p>
                 <p>
-                  With a commitment to precision, efficiency, and durability, we bring together industry expertise and disciplined project execution to deliver developments that perform—now and into the future.
+                  As a developer-builder, we manage every stage of a project and keep the works that matter under our direct control. We work with a select group of proven subcontractors and consultants — long-term relationships chosen for quality and reliability, not lowest price — so every development performs now and into the future.
                 </p>
               </div>
 
