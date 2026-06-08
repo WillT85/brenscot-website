@@ -48,7 +48,7 @@ export default function PartnersPage() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-3xl mb-16"
           >
-            <span className="text-black/50 font-sans uppercase tracking-[0.3em] text-[10px] mb-6 block">From land to lease, under one roof.</span>
+            <span className="text-black/50 font-sans font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block">From land to lease, under one roof.</span>
             <h2 className="text-4xl md:text-6xl font-serif text-black leading-tight mb-8">
               <span className="text-black">Brenscot</span> works hand in hand with <span className="text-[#C8A24A]">Indevelop</span>, our in-house development company.
             </h2>
