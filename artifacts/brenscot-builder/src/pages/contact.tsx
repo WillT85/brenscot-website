@@ -71,7 +71,7 @@ export default function ContactPage() {
                 0480 800 077
               </a>
 
-              <p className="text-[#0b1526]/70 text-[15px] font-light mt-6">
+              <p className="text-[#0b1526]/70 text-[15px] font-light mt-1">
                 Meetings by appointment
               </p>
             </motion.div>
