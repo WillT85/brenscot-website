@@ -47,18 +47,24 @@ export default function ContactPage() {
               className="mb-16"
             >
               <h3 className="font-serif text-xl font-bold text-[#C8A24A] mb-4">Contact Us</h3>
-              <a
-                href="mailto:enquiries@brenscot.com.au"
-                className="text-[#0b1526]/70 text-[15px] font-light leading-relaxed hover:text-[#0b1526] transition-colors block"
-              >
-                enquiries@brenscot.com.au
-              </a>
-              <a
-                href="tel:0480800077"
-                className="text-[#0b1526]/70 text-[15px] font-light leading-relaxed hover:text-[#0b1526] transition-colors block mt-1"
-              >
-                0480 800 077
-              </a>
+              <p className="text-[#0b1526]/70 text-[15px] font-light leading-relaxed">
+                Email :{' '}
+                <a
+                  href="mailto:enquiries@brenscot.com.au"
+                  className="hover:text-[#0b1526] transition-colors"
+                >
+                  enquiries@brenscot.com.au
+                </a>
+              </p>
+              <p className="text-[#0b1526]/70 text-[15px] font-light leading-relaxed mt-1">
+                Phone number :{' '}
+                <a
+                  href="tel:0480800077"
+                  className="hover:text-[#0b1526] transition-colors"
+                >
+                  0480 800 077
+                </a>
+              </p>
 
               <p className="text-[#0b1526]/70 text-[15px] font-light mt-1">
                 Meetings by appointment

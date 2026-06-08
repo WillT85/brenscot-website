@@ -28,8 +28,8 @@ export function Contact() {
             <div className="space-y-12">
               <div>
                 <h4 className="text-base font-bold uppercase tracking-[0.2em] text-[#C8A24A] mb-4">Contact Us</h4>
-                <p className="text-lg font-light mb-2 hover:opacity-70 transition-opacity cursor-pointer">enquiries@brenscot.com.au</p>
-                <p className="text-lg font-light hover:opacity-70 transition-opacity cursor-pointer">0480 800 077</p>
+                <p className="text-lg font-light mb-2">Email : <a href="mailto:enquiries@brenscot.com.au" className="hover:opacity-70 transition-opacity">enquiries@brenscot.com.au</a></p>
+                <p className="text-lg font-light">Phone number : <a href="tel:0480800077" className="hover:opacity-70 transition-opacity">0480 800 077</a></p>
                 <p className="text-lg font-light mt-2">Meetings by appointment</p>
               </div>
             </div>
