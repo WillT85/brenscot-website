@@ -125,7 +125,7 @@ export default function AboutPage() {
                 William Tobin
               </h2>
               <span className="text-[#C8A24A] text-xs uppercase tracking-[0.2em] font-medium mb-10 block">
-                Chief Executive Officer
+                Managing Director
               </span>
 
               <div className="space-y-6 text-white/50 text-lg font-light leading-relaxed">
