@@ -160,7 +160,7 @@ export const projects: Project[] = [
     location: "Caboolture, QLD",
     image: wildily13Img,
     description: "An industrial development within a thriving growth region, delivering robust, future-ready warehouse and distribution facilities.",
-    status: "completed",
+    status: "ongoing",
   },
   {
     slug: "59-alta-road-caboolture",
@@ -195,7 +195,7 @@ export const extraProjects: Project[] = [
     title: "47 Noble Ave, Northgate",
     location: "Northgate, QLD",
     description: "A modern industrial development delivering high-quality warehouse space within Brisbane's established Northgate industrial precinct.",
-    status: "ongoing",
+    status: "completed",
   },
   {
     slug: "lot-83-37-wildlily-road-caboolture",
