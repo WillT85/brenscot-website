@@ -13,8 +13,9 @@ export function Partners() {
           className="max-w-4xl mx-auto text-center"
         >
           <span className="text-black font-sans uppercase tracking-[0.3em] text-xs md:text-sm mb-8 block">From land to lease, under one roof.</span>
-          <p className="text-[#0b1526] text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto mb-8">
-            <span className="text-[#C8A24A]">Indevelop</span> identifies and acquires the sites; <span className="text-[#C8A24A]">Brenscot</span> takes it from there — design, approvals and construction through to a completed, ready-to-occupy building.
+          <p className="text-[#C8A24A] text-2xl md:text-4xl font-light leading-relaxed mb-4">
+            <span className="text-[#C8A24A]">Brenscot</span> works hand in hand with <span className="text-[#C8A24A] font-normal">Indevelop</span>, our in-house development company.
+            <span className="block text-lg md:text-xl leading-relaxed mt-4 text-[#0b1526]"><span className="text-[#C8A24A]">Indevelop</span> identifies and acquires the sites; <span className="text-[#C8A24A]">Brenscot</span> takes it from there — design, approvals and construction through to a completed, ready-to-occupy building.</span>
           </p>
           <p className="text-[#0b1526] text-lg md:text-xl font-light leading-relaxed max-w-3xl mx-auto">
             Controlling the full journey from raw land to finished facility gives us certainty over programme, cost and quality that a standalone builder can't match — and it's why we can deliver buildings to suit, ready to lease or purchase.
