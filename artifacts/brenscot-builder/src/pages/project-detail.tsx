@@ -115,7 +115,7 @@ export default function ProjectDetailPage() {
                   ))}
                 </div>
                 <div>
-                  <h3 className="text-2xl md:text-3xl font-serif text-black leading-tight mb-8">Key property information</h3>
+                  <h3 className="text-xl md:text-2xl font-serif text-black leading-tight mb-8">Key property information</h3>
                   <div className="grid grid-cols-2 gap-x-6 gap-y-8">
                     {infoItems.map(({ icon: Icon, label, value }) => (
                       <div key={label} className="flex gap-3">
