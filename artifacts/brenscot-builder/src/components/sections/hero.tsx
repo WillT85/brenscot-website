@@ -152,7 +152,7 @@ export function Hero() {
           className="mt-12 flex flex-col items-center gap-8"
         >
           <p className="text-white/80 text-sm md:text-base tracking-[0.2em] uppercase font-medium max-w-xl text-center">
-            Large-scale industrial warehouses that lead from the ground up.
+            Industrial warehouses that lead the market — freestanding or multi-unit, built from the ground up.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 mt-4">

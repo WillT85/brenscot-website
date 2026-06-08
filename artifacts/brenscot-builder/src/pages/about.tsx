@@ -30,7 +30,7 @@ export default function AboutPage() {
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-white/40 text-lg font-light mt-8 max-w-xl"
           >
-            Large-scale industrial warehouses that lead from the ground up.
+            Industrial warehouses that lead the market — freestanding or multi-unit, built from the ground up.
           </motion.p>
         </div>
       </section>

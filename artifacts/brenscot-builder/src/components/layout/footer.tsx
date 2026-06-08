@@ -17,7 +17,7 @@ export function Footer() {
               <span className="text-white/60 text-[10px] tracking-[0.45em] font-light uppercase">BUILDERS</span>
             </div>
             <p className="text-white/40 text-sm font-light leading-relaxed md:whitespace-nowrap">
-              Large-scale industrial warehouses that lead from the ground up.
+              Industrial warehouses that lead the market — freestanding or multi-unit, built from the ground up.
             </p>
           </div>
           
