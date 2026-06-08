@@ -15,7 +15,7 @@ const services = [
   },
   {
     title: "Project Management",
-    description: "End-to-end project delivery oversight with rigorous programme management, transparent reporting, and a commitment to zero-defect handovers."
+    description: "End-to-end project delivery oversight with rigorous programme management, transparent reporting, and a relentless focus on quality through to handover. Our commitment doesn't end there — if an issue arises, we stand behind our work and put it right."
   }
 ];
 
