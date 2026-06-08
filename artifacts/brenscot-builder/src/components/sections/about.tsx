@@ -60,7 +60,7 @@ export function About() {
                   className="flex items-center gap-x-4"
                 >
                   <span className="text-xs font-bold uppercase tracking-[0.2em] text-black/50">{fact}</span>
-                  {index < facts.length - 1 && (
+                  {index < facts.length - 2 && (
                     <span className="text-black/30" aria-hidden="true">·</span>
                   )}
                 </motion.div>
