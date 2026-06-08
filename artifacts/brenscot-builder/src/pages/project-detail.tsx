@@ -105,7 +105,7 @@ export default function ProjectDetailPage() {
               </div>
             </div>
             <div className="lg:col-span-2">
-              <div className="lg:sticky lg:top-28">
+              <div>
                 <h2 className="text-2xl md:text-3xl font-serif text-black leading-tight mb-6">{project.title}</h2>
                 <div className="mb-10 space-y-4">
                   {project.description.split('\n\n').map((para, i) => (
