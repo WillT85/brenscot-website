@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
@@ -6,16 +5,6 @@ import { useToast } from '@/hooks/use-toast';
 
 export default function ContactPage() {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    reason: '',
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,7 +12,7 @@ export default function ContactPage() {
       title: "Inquiry Received",
       description: "Our team will be in touch shortly.",
     });
-    setFormData({ name: '', phone: '', email: '', reason: '' });
+    (e.target as HTMLFormElement).reset();
   };
 
   return (
@@ -81,58 +70,59 @@ export default function ContactPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             >
-              <form onSubmit={handleSubmit} className="space-y-0">
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    placeholder="Name"
-                    className="w-full bg-transparent border-b border-[#0b1526]/15 py-4 text-[15px] font-light text-[#0b1526] focus:outline-none focus:border-[#0b1526]/40 transition-colors placeholder:text-[#0b1526]/35 rounded-none"
-                  />
+              <form onSubmit={handleSubmit} className="space-y-12">
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div className="relative">
+                    <input
+                      type="text"
+                      id="name"
+                      required
+                      placeholder="Full Name *"
+                      className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
+                    />
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="tel"
+                      id="phone"
+                      required
+                      placeholder="Phone Number *"
+                      className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="Phone"
-                    className="w-full bg-transparent border-b border-[#0b1526]/15 py-4 text-[15px] font-light text-[#0b1526] focus:outline-none focus:border-[#0b1526]/40 transition-colors placeholder:text-[#0b1526]/35 rounded-none"
-                  />
-                </div>
-                <div>
+                <div className="relative">
                   <input
                     type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
+                    id="email"
                     required
-                    placeholder="Email"
-                    className="w-full bg-transparent border-b border-[#0b1526]/15 py-4 text-[15px] font-light text-[#0b1526] focus:outline-none focus:border-[#0b1526]/40 transition-colors placeholder:text-[#0b1526]/35 rounded-none"
+                    placeholder="Email Address *"
+                    className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
                   />
                 </div>
-                <div>
+                <div className="relative">
                   <input
                     type="text"
-                    name="reason"
-                    value={formData.reason}
-                    onChange={handleChange}
-                    placeholder="Reason for contact"
-                    className="w-full bg-transparent border-b border-[#0b1526]/15 py-4 text-[15px] font-light text-[#0b1526] focus:outline-none focus:border-[#0b1526]/40 transition-colors placeholder:text-[#0b1526]/35 rounded-none"
+                    id="project-type"
+                    placeholder="Project Type (e.g. Distribution Centre, Cold Storage)"
+                    className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
                   />
                 </div>
-
-                <div className="pt-8">
-                  <button
-                    type="submit"
-                    className="text-xs font-medium uppercase tracking-[0.2em] text-[#0b1526] underline underline-offset-4 hover:text-[#0b1526]/60 transition-colors"
-                  >
-                    Submit
-                  </button>
+                <div className="relative">
+                  <textarea
+                    id="message"
+                    required
+                    rows={4}
+                    placeholder="Project Details *"
+                    className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light resize-none focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
+                  />
                 </div>
+                <button
+                  type="submit"
+                  className="bg-black text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A] hover:text-[#0b1526] transition-colors w-full sm:w-auto"
+                >
+                  Submit Enquiry
+                </button>
               </form>
             </motion.div>
           </div>
