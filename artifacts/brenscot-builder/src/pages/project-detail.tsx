@@ -109,7 +109,7 @@ export default function ProjectDetailPage() {
                 <h2 className="text-2xl md:text-3xl font-serif text-black leading-tight mb-6">{project.title}</h2>
                 <div className="mb-10 space-y-4">
                   {project.description.split('\n\n').map((para, i) => (
-                    <p key={i} className="text-black/80 text-sm md:text-base font-sans font-normal leading-relaxed">
+                    <p key={i} className="text-black/80 text-xs md:text-sm font-sans font-normal leading-relaxed">
                       {para}
                     </p>
                   ))}
