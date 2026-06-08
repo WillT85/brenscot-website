@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import aboutImage from '@/assets/images/about.png';
 
-const stats = [
-  { value: "20+", label: "Years Delivering" },
-  { value: "2.1M+", label: "Square Metres Built" },
-  { value: "$3.8B+", label: "Project Value" }
+const facts = [
+  "Established 2020",
+  "South-East Queensland",
+  "Developer-builder",
+  "Industrial warehouse specialists"
 ];
 
 export function About() {
@@ -48,17 +49,20 @@ export function About() {
               </p>
             </div>
             
-            <div className="grid grid-cols-3 gap-8 pt-12 border-t border-black/10">
-              {stats.map((stat, index) => (
-                <motion.div 
-                  key={stat.label}
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-12 border-t border-black/10">
+              {facts.map((fact, index) => (
+                <motion.div
+                  key={fact}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.4 + (index * 0.1) }}
+                  className="flex items-center gap-x-4"
                 >
-                  <div className="text-3xl md:text-4xl font-serif text-black mb-4">{stat.value}</div>
-                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/50">{stat.label}</div>
+                  <span className="text-xs font-bold uppercase tracking-[0.2em] text-black/50">{fact}</span>
+                  {index < facts.length - 1 && (
+                    <span className="text-black/30" aria-hidden="true">·</span>
+                  )}
                 </motion.div>
               ))}
             </div>
