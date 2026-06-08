@@ -48,15 +48,15 @@ export default function PartnersPage() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-3xl mb-16"
           >
-            <span className="text-black/50 font-sans uppercase tracking-[0.3em] text-[10px] mb-6 block">Trusted Partnership</span>
+            <span className="text-black/50 font-sans uppercase tracking-[0.3em] text-[10px] mb-6 block">From land to lease, under one roof.</span>
             <h2 className="text-4xl md:text-6xl font-serif text-black leading-tight mb-8">
-              Indevelop Pty Ltd
+              <span className="text-black">Brenscot</span> works hand in hand with <span className="text-[#C8A24A]">Indevelop</span>, our in-house development company.
             </h2>
             <p className="text-black/60 text-lg md:text-xl font-light leading-relaxed mb-6">
-              In partnership with <span className="text-black font-normal">Indevelop Pty Ltd</span> — delivering industrial developments with strength and precision.
+              <span className="text-[#C8A24A]">Indevelop</span> identifies and acquires the sites; <span className="text-[#C8A24A]">Brenscot</span> takes it from there — design, approvals and construction through to a completed, ready-to-occupy building.
             </p>
-            <p className="text-black/40 text-base font-light leading-relaxed">
-              This collaboration brings together strategic development expertise and construction precision, strengthening our ability to deliver large-scale industrial warehouse projects with confidence and consistency.
+            <p className="text-black/60 text-lg md:text-xl font-light leading-relaxed">
+              Controlling the full journey from raw land to finished facility gives us certainty over programme, cost and quality that a standalone builder can't match — and it's why we can deliver buildings to suit, ready to lease or purchase.
             </p>
           </motion.div>
         </div>
