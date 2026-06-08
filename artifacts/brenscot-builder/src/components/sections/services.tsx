@@ -11,7 +11,7 @@ const services = [
   },
   {
     title: "Industrial Facilities",
-    description: "Purpose-built facilities engineered for maximum operational efficiency — dock levellers, hardstand, truck courts, and high-bay racking integration by design."
+    description: "Purpose-built distribution centres and manufacturing facilities engineered for maximum operational efficiency — hardstand, truck courts, gantry crane provision and high-bay racking integration by design."
   },
   {
     title: "Project Management",
