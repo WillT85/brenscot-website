@@ -232,6 +232,13 @@ export const extraProjects: Project[] = [
     description: "A premier industrial development providing modern, efficient warehouse units built to the highest standards.",
     status: "ongoing",
   },
+  {
+    slug: "440-progress-rd-wacol",
+    title: "440 Progress Rd, Wacol",
+    location: "Wacol, QLD",
+    description: "A large-scale industrial development in Brisbane's established Wacol logistics precinct, delivering high-clearance warehouse space with excellent access to major freight and transport routes.",
+    status: "ongoing",
+  },
 ];
 
 export const allProjects: Project[] = [...projects, ...extraProjects];
