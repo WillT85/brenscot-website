@@ -29,10 +29,10 @@ export function Services() {
           </div>
           <p className="text-white/60 text-lg leading-relaxed max-w-md md:mb-4">
             We design, develop and build industrial warehouses across South-East Queensland — from single freestanding facilities to multi-unit complexes.
-            <br />
+            <span className="block h-3" aria-hidden="true" />
             We manage every stage ourselves, from initial design and approvals through construction and handover.
-            <br />
-            We keep the works that matter most under our direct control. This gives us tighter control over quality, programme and cost than a typical head contractor can offer.
+            <span className="block h-3" aria-hidden="true" />
+            We keep the works that matter most under our direct control.&ensp;This gives us tighter control over quality, programme and cost than a typical head contractor can offer.
           </p>
         </div>
 
