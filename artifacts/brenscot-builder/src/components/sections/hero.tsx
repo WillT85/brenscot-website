@@ -151,7 +151,7 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
           className="mt-12 flex flex-col items-center gap-8"
         >
-          <p className="text-white/80 text-sm md:text-base tracking-[0.2em] font-normal max-w-xl text-center">
+          <p className="text-white/80 text-sm md:text-base tracking-[0.2em] font-normal text-center md:whitespace-nowrap">
             Industrial warehouses that lead the market — freestanding or multi-unit.
             <br />
             Built from the ground up.
