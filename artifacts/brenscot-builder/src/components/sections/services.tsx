@@ -7,7 +7,7 @@ const services = [
   },
   {
     title: "Industrial Construction",
-    description: "High-spec tilt-panel and structural steel construction for large-footprint industrial buildings. We self-perform critical trades to maintain schedule and quality."
+    description: "High-spec tilt-panel and structural steel construction for large-footprint industrial buildings. We keep the critical works under our direct control to maintain schedule and quality."
   },
   {
     title: "Logistics & Distribution",
