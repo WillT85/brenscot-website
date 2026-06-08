@@ -9,7 +9,7 @@ type Filter = "all" | "completed" | "ongoing";
 
 export default function ProjectsPage() {
   const [, setLocation] = useLocation();
-  const [filter, setFilter] = useState<Filter>("all");
+  const [filter, setFilter] = useState<Filter>("completed");
 
   const filtered = filter === "all" ? allProjects : allProjects.filter((p) => p.status === filter);
 
@@ -42,7 +42,6 @@ export default function ProjectsPage() {
         <div className="container mx-auto px-6 md:px-12">
           <div className="flex items-center gap-8 mb-16">
             {([
-              { label: "All", value: "all" },
               { label: "Completed", value: "completed" },
               { label: "On going", value: "ongoing" },
             ] as { label: string; value: Filter }[]).map((btn) => (
