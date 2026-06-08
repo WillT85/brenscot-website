@@ -57,7 +57,7 @@ export default function ContactPage() {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="mb-16"
             >
-              <h3 className="font-serif text-xl text-[#0b1526] mb-4">Contact Us</h3>
+              <h3 className="font-serif text-xl font-bold text-[#C8A24A] mb-4">Contact Us</h3>
               <a
                 href="mailto:enquiries@brenscot.com.au"
                 className="text-[#0b1526]/70 text-[15px] font-light leading-relaxed hover:text-[#0b1526] transition-colors block"
