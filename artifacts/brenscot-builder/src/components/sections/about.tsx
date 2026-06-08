@@ -41,10 +41,10 @@ export function About() {
             
             <div className="space-y-8 text-black/60 text-lg md:text-xl font-light leading-relaxed mb-16">
               <p>
-                Brenscot is a Queensland-based commercial construction and property development company specialising in industrial warehouse projects. We focus on delivering high-performance facilities designed to meet the demands of modern logistics, manufacturing, and distribution.
+                Brenscot is a Queensland-based construction and property development company specialising in industrial warehouse projects — from single freestanding facilities to multi-unit complexes. We design, develop and deliver high-performance buildings for logistics, manufacturing and distribution.
               </p>
               <p>
-                With a commitment to precision, efficiency, and durability, we bring together industry expertise and disciplined project execution to deliver developments that perform—now and into the future.
+                As a developer-builder, we manage every stage of a project and keep the works that matter under our direct control. We work with a select group of proven subcontractors and consultants — long-term relationships chosen for quality and reliability, not lowest price — so every development performs now and into the future.
               </p>
             </div>
             
