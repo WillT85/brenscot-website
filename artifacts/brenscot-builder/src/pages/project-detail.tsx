@@ -100,9 +100,13 @@ export default function ProjectDetailPage() {
             <div className="lg:col-span-2">
               <div className="lg:sticky lg:top-28">
                 <h2 className="text-2xl md:text-3xl font-serif text-black leading-tight mb-6">{project.title}</h2>
-                <p className="text-black/60 text-sm md:text-base font-serif font-light leading-relaxed mb-10">
-                  {project.description}
-                </p>
+                <div className="mb-10 space-y-4">
+                  {project.description.split('\n\n').map((para, i) => (
+                    <p key={i} className="text-black/60 text-sm md:text-base font-serif font-light leading-relaxed">
+                      {para}
+                    </p>
+                  ))}
+                </div>
                 <div>
                   <h3 className="text-lg md:text-xl font-serif text-black mb-8">Key property information</h3>
                   <div className="grid grid-cols-2 gap-x-6 gap-y-8">
