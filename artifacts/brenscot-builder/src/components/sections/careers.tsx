@@ -78,7 +78,6 @@ export function Careers() {
                     <div className="flex flex-col md:flex-row md:items-center gap-4 flex-1 pr-8">
                       <span className="text-2xl md:text-3xl font-serif font-normal group-hover:text-white/70 transition-colors flex-1">{role.title}</span>
                       <div className="flex gap-4 md:gap-8 text-[10px] uppercase tracking-[0.2em] text-white/50">
-                        <span>{role.location}</span>
                         <span>{role.type}</span>
                       </div>
                     </div>
