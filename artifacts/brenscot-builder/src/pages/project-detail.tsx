@@ -109,7 +109,7 @@ export default function ProjectDetailPage() {
                 <h2 className="text-2xl md:text-3xl font-serif text-black leading-tight mb-6">{project.title}</h2>
                 <div className="mb-10 space-y-4">
                   {project.description.split('\n\n').map((para, i) => (
-                    <p key={i} className="text-black text-xs md:text-sm font-serif font-normal leading-relaxed">
+                    <p key={i} className="text-black/80 text-sm md:text-base font-sans font-normal leading-relaxed">
                       {para}
                     </p>
                   ))}
@@ -122,7 +122,7 @@ export default function ProjectDetailPage() {
                         <Icon className="w-4 h-4 text-[#C8A24A] mt-0.5 shrink-0" strokeWidth={1.5} />
                         <div>
                           <span className="block text-[9px] uppercase tracking-[0.2em] text-black/40 mb-1.5">{label}</span>
-                          <span className="text-sm font-serif text-black">{value}</span>
+                          <span className="text-sm font-sans text-black">{value}</span>
                         </div>
                       </div>
                     ))}
