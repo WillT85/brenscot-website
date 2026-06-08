@@ -27,9 +27,8 @@ export function Contact() {
             
             <div className="space-y-12">
               <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-black/50 mb-4">Head Office</h4>
                 <p className="text-lg font-light leading-relaxed">
-                  Clarke St Hendra, QLD 4011
+                  Meetings by appointment
                 </p>
               </div>
               
