@@ -4,28 +4,28 @@ import { Plus, Minus, ArrowRight } from 'lucide-react';
 
 const openRoles = [
   {
-    title: "Construction Manager – Industrial",
-    type: "Full-time",
+    title: "Site Manager",
+    type: "Full-Time",
     location: "Various Sites, Australia",
-    description: "Lead end-to-end delivery of large-scale warehouse and industrial construction projects valued between $20M–$150M. You will have full programme, cost, and quality ownership and be experienced managing tilt-panel and structural steel construction.",
+    description: "Run the day-to-day on site — coordinating subcontractors, programme and safety to deliver each build to standard and on time.",
   },
   {
-    title: "Senior Estimator",
-    type: "Full-time",
+    title: "Project Manager",
+    type: "Full-Time",
     location: "Head Office / Hybrid",
-    description: "Prepare detailed cost plans and tender submissions for industrial design and construct projects. You will have strong knowledge of civil, structural, and building trades with demonstrated experience in $20M+ industrial project estimating.",
+    description: "Own projects from design through to handover, managing programme, budget, subcontractors and quality end to end.",
   },
   {
-    title: "Site Engineer",
-    type: "Full-time",
+    title: "Contract Administrator",
+    type: "Full-Time",
     location: "Various Sites, Australia",
-    description: "Support project delivery with technical oversight of structural, civil, and services trades on active industrial construction sites. Must be proficient in reading engineering drawings and managing RFI and NCR processes.",
+    description: "Keep projects running commercially — procurement, subcontractor letting, variations, progress claims and cost reporting.",
   },
   {
     title: "Development Manager",
-    type: "Full-time",
+    type: "Full-Time",
     location: "Head Office",
-    description: "Drive new industrial development opportunities from site acquisition through planning, design, and project commencement. Requires experience in industrial or commercial property development and strong relationships with major occupiers and investors.",
+    description: "Drive projects from site acquisition through design and approvals, working across Indevelop and Brenscot to bring developments to life.",
   },
 ];
 
