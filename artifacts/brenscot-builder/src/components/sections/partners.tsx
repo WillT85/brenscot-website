@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export function Partners() {
   return (
-    <section id="partners" className="py-32 bg-white text-[#C8A24A] border-t border-black/5">
+    <section id="partners" className="py-32 bg-[#f4f4f4] text-[#C8A24A] border-t border-black/5">
       <div className="container mx-auto px-6 md:px-12">
 
         <motion.div
