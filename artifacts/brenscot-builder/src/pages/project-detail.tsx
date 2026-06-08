@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useParams, Link } from 'wouter';
-import { ArrowLeft, MapPin, LandPlot, Ruler, Car, Building2, Flag, Layers, Hammer, Briefcase } from 'lucide-react';
+import { ArrowLeft, MapPin, LandPlot, Ruler, Car, Building2, Layers, Hammer, DollarSign, Info } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
@@ -18,17 +18,24 @@ export default function ProjectDetailPage() {
 
   const galleryMedia = project.gallery ?? (project.image ? [project.image] : []);
 
-  const info = project.keyInfo;
+  const iconForLabel = (label: string): LucideIcon => {
+    const l = label.toLowerCase();
+    if (l.includes('site area') || l.includes('land area')) return LandPlot;
+    if (l.includes('gfa') || l.includes('building area') || l.includes('floor')) return Ruler;
+    if (l.includes('car')) return Car;
+    if (l.includes('unit') || l.includes('building') || l.includes('tenanc')) return Layers;
+    if (l.includes('value')) return DollarSign;
+    if (l.includes('office') || l.includes('construction') || l.includes('facade')) return Building2;
+    return Info;
+  };
+
   const infoItems: { icon: LucideIcon; label: string; value: string }[] = [
-    { icon: LandPlot, label: 'Land area', value: info?.landArea || '-' },
-    { icon: Ruler, label: 'Floor area', value: info?.floorArea || '-' },
-    { icon: Car, label: 'Car spaces', value: info?.carSpaces || '-' },
-    { icon: Layers, label: 'Number of units', value: info?.units || '-' },
-    { icon: Flag, label: 'Availability', value: info?.availability || '-' },
+    ...(project.keyInfo ?? []).map((item) => ({
+      icon: iconForLabel(item.label),
+      label: item.label,
+      value: item.value,
+    })),
     { icon: Hammer, label: 'Construction status', value: project.status === 'ongoing' ? 'On going' : 'Completed' },
-    { icon: MapPin, label: 'Location', value: project.location },
-    { icon: Briefcase, label: 'Sector', value: 'Industrial & Commercial' },
-    { icon: Building2, label: 'Developer', value: 'Brenscot Builders' },
   ];
 
   return (
