@@ -83,7 +83,7 @@ export default function ContactPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h3 className="font-serif text-xl text-[#0b1526] mb-8">Contact Us</h3>
+              <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0b1526]/50 mb-8">Contact Us</h3>
 
               <form onSubmit={handleSubmit} className="space-y-0">
                 <div>
