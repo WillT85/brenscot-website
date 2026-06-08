@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const services = [
   {
     title: "Design & Construct",
-    description: "Fully integrated design and build solutions for warehouses, distribution centres, and industrial facilities. One point of contact from concept through to handover."
+    description: "Fully integrated design and build for warehouses, distribution centres and industrial facilities. One point of contact from concept through to handover."
   },
   {
     title: "Industrial Construction",
