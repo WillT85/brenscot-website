@@ -25,9 +25,9 @@ export function Projects() {
             >
               <div className="relative overflow-hidden h-[35vh] md:h-[40vh]">
                 <div className="absolute inset-0 bg-black/10 z-10 transition-colors duration-700 group-hover:bg-black/30" />
-                {project.video ? (
+                {project.homeVideo ?? project.video ? (
                   <video
-                    src={project.video}
+                    src={project.homeVideo ?? project.video}
                     poster={project.image}
                     autoPlay
                     loop
