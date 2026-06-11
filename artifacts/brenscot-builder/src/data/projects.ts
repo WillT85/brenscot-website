@@ -46,6 +46,7 @@ import zillmereImg from '@assets/clontarf_zillmere_trimmed.png';
 import northgateImg from '@assets/northgate_bellaire_trimmed.png';
 import altaRoadImg from '@assets/alta_aerial_trimmed_1780601000000.png';
 import wildily13Img from '@assets/wildily13_aerial_1780601200000.jpg';
+import wildily13Video from '@assets/wildily13_hero_web.mp4';
 import altaRoadVideo from '@assets/alta_hero_video_1780600100000.mp4';
 import altaG0 from '@assets/alta_clean0_1780600000000.jpg';
 import altaG1 from '@assets/alta_clean1_1780600000000.jpg';
@@ -201,6 +202,7 @@ export const projects: Project[] = [
     title: "13 Wildily Road, Caboolture",
     location: "Caboolture, QLD",
     image: wildily13Img,
+    heroVideo: wildily13Video,
     description: "A modern freestanding warehouse and office facility under construction in the Corporate Park East estate at Caboolture, moments from the Bruce Highway. The building offers 1,536 m² of total area on a 2,386 m² site — 1,229 m² of warehouse and 307 m² of office.\n\nIt's designed for easy, efficient industrial use: a portal-frame design with no internal steel columns for a fully clear-span warehouse, two large roller doors (7 m wide × 5.5 m high), a 6 m × 20 m awning, dual driveway access and 17 on-site car parks — all within a fully secure site with two electric sliding gates and a pedestrian gate. The building includes provision for a 10-tonne overhead gantry crane and an office fit-out tailored to the tenant, under flexible 24-hour General Industry zoning.\n\nBrenscot is delivering the project end to end — design, approvals and construction.\n\nEnd project value: $5,250,000",
     status: "ongoing",
     keyInfo: [
