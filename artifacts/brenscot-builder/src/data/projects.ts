@@ -30,6 +30,9 @@ import robertson11 from '@assets/robertson_n11_1780546300000.jpg';
 import robertson12 from '@assets/robertson_n12_1780546300000.jpg';
 import robertson13 from '@assets/robertson_n13_1780546300000.jpg';
 import robertson14 from '@assets/robertson_n14_1780546300000.jpg';
+import robertsonHero from '@assets/robertson_brendale_hero_1781219480243.jpg';
+import robertsonA from '@assets/robertson_brendale_a_1781219491955.jpg';
+import robertsonB from '@assets/robertson_brendale_b_1781219498329.jpg';
 import robson0 from '@assets/image6_1780546725723_trim.jpg';
 import robson1 from '@assets/image3_1780546747690_trim.jpg';
 import robson2 from '@assets/image13_1780546759834_trim.jpg';
@@ -163,7 +166,7 @@ export const projects: Project[] = [
       { label: "Construction", value: "Concrete tilt-panel; Colorbond “Monument Matt” wall cladding; Colorbond “Surfmist” roof; aluminium-framed glazing" },
       { label: "Completed project value", value: "$4,615,000" },
     ],
-    gallery: [robertson11, robertson12, robertson13, robertson14, robertson0, robertson1, robertson2, robertson3, robertson4, robertson5, robertson6, robertson8, robertson9, robertson10],
+    gallery: [robertsonHero, robertsonA, robertsonB, robertson11, robertson12, robertson13, robertson14, robertson0, robertson1, robertson2, robertson3, robertson4, robertson5, robertson6, robertson8, robertson9, robertson10],
   },
   {
     slug: "34-36-bell-are-ave-northgate",

@@ -58,6 +58,9 @@ import robertson3 from "@assets/robertson_n3_1780546300000.jpg";
 import robertson4 from "@assets/robertson_n4_1780546300000.jpg";
 import robertson5 from "@assets/robertson_n5_1780546300000.jpg";
 import robertson6 from "@assets/robertson_n6_1780546300000.jpg";
+import robertsonHero from "@assets/robertson_brendale_hero_1781219480243.jpg";
+import robertsonA from "@assets/robertson_brendale_a_1781219491955.jpg";
+import robertsonB from "@assets/robertson_brendale_b_1781219498329.jpg";
 
 import team1 from "@/assets/images/team-1.png";
 import team2 from "@/assets/images/team-2.png";
@@ -159,8 +162,8 @@ export const projects = [
     value: "$4.6M",
     status: "Completed",
     description: "A freestanding industrial facility purpose-built for Nomad Fishing Tackle on a 2,853 m² site in Brendale — a true design-and-construct project shaped entirely around how the end user works. The building delivers 1,664 m² of floor area: a 1,387 m² warehouse paired with a 277 m² office across two levels. An upgraded slab was engineered to carry an indoor research pool so the team can test their fishing lures on site. The fit-out includes a dedicated research and development area, a soundproof meeting room, a temperature-controlled data room, and a purpose-built packing and dispatch area.",
-    image: robertson0,
-    gallery: [robertson0, robertson1, robertson2, robertson3, robertson4, robertson5, robertson6],
+    image: robertsonHero,
+    gallery: [robertsonHero, robertsonA, robertsonB, robertson0, robertson1, robertson2, robertson3, robertson4, robertson5, robertson6],
     completion: "—"
   }
 ];
