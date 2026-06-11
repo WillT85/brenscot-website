@@ -28,7 +28,6 @@ import rode7 from "@assets/566_Rode_Rd7_1780545705142.png";
 import rode8 from "@assets/566_Rode_Rd1_1780545705142.png";
 import rode9 from "@assets/566_Rode_Rd2_1780545705144.png";
 import rode10 from "@assets/566_Rode_Rd4_1780545705146.png";
-import kingCourtImg from "@assets/image_1776005185036.png";
 import king15G2 from "@assets/king15_g2_1780601600000.jpg";
 import king15G3 from "@assets/king15_g3_1780601600000.jpg";
 import king15G4 from "@assets/king15_g4_1780601600000.jpg";
@@ -114,8 +113,8 @@ export const projects = [
     value: "$13.9M",
     status: "Completed",
     description: "A multi-unit industrial complex of 10 units on a 6,540 m² site at North Lakes, delivering 3,520 m² of building area — 2,530 m² of ground-floor warehouse and office, with a further 990 m² of mezzanine above. Units range from 290 m² to 660 m², each pairing ground-floor warehouse and office space with a mezzanine level. The complex is served by 56 on-site car spaces, generous concrete hardstand and awnings, with a three-tone Colorbond palette giving it a clean, contemporary frontage. Tenants span light industrial, manufacturing, professional services and fitness under one development.",
-    image: kingCourtImg,
-    gallery: [kingCourtImg, king15G2, king15G3, king15G4, king15N1, king15N2, king15N3, king15N4, king15N5, king15N6],
+    image: king15G2,
+    gallery: [king15G2, king15G3, king15G4, king15N1, king15N2, king15N3, king15N4, king15N5, king15N6],
     completion: "—"
   },
   {
