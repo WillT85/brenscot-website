@@ -199,7 +199,7 @@ export const projects: Project[] = [
   },
   {
     slug: "13-wildily-road-caboolture",
-    title: "13 Wildily Road, Caboolture",
+    title: "13 Wildlily Road, Caboolture",
     location: "Caboolture, QLD",
     image: wildily13Img,
     heroVideo: wildily13Video,
