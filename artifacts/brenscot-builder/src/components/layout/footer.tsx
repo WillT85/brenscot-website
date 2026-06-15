@@ -24,6 +24,7 @@ export function Footer() {
           <nav className="flex flex-wrap gap-8 md:gap-12">
             <button onClick={() => scrollTo('projects')} className="text-[10px] uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors">Projects</button>
             <button onClick={() => scrollTo('about')} className="text-[10px] uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors">About</button>
+            <button onClick={() => scrollTo('partners')} className="text-[10px] uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors">Partners</button>
             <button onClick={() => scrollTo('careers')} className="text-[10px] uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors">Careers</button>
             <button onClick={() => scrollTo('contact')} className="text-[10px] uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors">Contact</button>
           </nav>
