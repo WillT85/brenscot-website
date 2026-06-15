@@ -56,6 +56,18 @@ import wildily13CardVideo from '@assets/wildily13_card_web.mp4';
 import altaRoadVideo from '@assets/alta_hero_video_1780600100000.mp4';
 import clontarfVideo from '@assets/clontarf_hero_web.mp4';
 import zillmereVideo from '@assets/zillmere_hero_web.mp4';
+import zillG1 from '@assets/Zillmere_aerial_1781524768889_trim.png';
+import zillG2 from '@assets/image3_1781524768890_trim.jpg';
+import zillG3 from '@assets/image6_1781524768892_trim.jpg';
+import zillG4 from '@assets/image11_1781524768893_trim.jpg';
+import zillG5 from '@assets/image12_1781524768887_trim.jpg';
+import zillG6 from '@assets/image5_1781524768891_trim.jpg';
+import zillG7 from '@assets/image13_1781524768887_trim.jpg';
+import zillG8 from '@assets/image16_1781524768889_trim.jpg';
+import zillG9 from '@assets/image10_1781524768893_trim.jpg';
+import zillG10 from '@assets/image4_1781524768890_trim.jpg';
+import zillG11 from '@assets/image8_1781524768892_trim.jpg';
+import zillG12 from '@assets/image9_1781524768893_trim.jpg';
 import altaG0 from '@assets/alta_clean0_1780600000000.jpg';
 import altaG1 from '@assets/alta_clean1_1780600000000.jpg';
 import altaG2 from '@assets/alta_clean2_1780600000000.jpg';
@@ -253,6 +265,7 @@ export const projects: Project[] = [
     location: "Zillmere, QLD",
     image: zillmereImg2,
     heroVideo: zillmereVideo,
+    gallery: [zillG1, zillG2, zillG3, zillG4, zillG5, zillG6, zillG7, zillG8, zillG9, zillG10, zillG11, zillG12],
     description: "A high-end, architecturally designed warehouse complex under construction on a 10,036 m² site at Zillmere — 35 units across four buildings, delivering around 6,400 m² of building area (4,330 m² ground floor plus 2,066 m² mezzanine). Projected end value: $39,342,859.\n\nThe complex is designed for a broad market — from entry-level units of around 84 m² for growing businesses through to full warehouses of around 425 m² for more established operators, complemented by an on-site recreation area and end-of-trip facilities.\n\nThe site brought real complexity. Reactive soils were overcome by the bulk removal and replacement of fill to eliminate the reactivity, and the foundations rely on a large number of 750 mm-diameter bored piers — completed directly by Brenscot rather than subcontracted out. Beyond the site itself, Brenscot is delivering significant external civil works to Zillmere Rd, including road widening, upgrades to the existing sewer, stormwater and water services, and new footpath and car-parking areas.\n\nControlling civil, piling and construction in-house lets Brenscot manage that complexity from the ground up — design and approvals through to delivery.\n\nProjected end project value: $39,342,859",
     status: "ongoing",
     keyInfo: [
