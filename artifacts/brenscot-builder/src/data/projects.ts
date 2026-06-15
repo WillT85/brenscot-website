@@ -54,6 +54,7 @@ import wildily13G0 from '@assets/Screenshot_2026-06-09_153455_1781216865544.png'
 import wildily13G1 from '@assets/Screenshot_2026-06-09_153527_1781216868986.png';
 import wildily13CardVideo from '@assets/wildily13_card_web.mp4';
 import altaRoadVideo from '@assets/alta_hero_video_1780600100000.mp4';
+import clontarfVideo from '@assets/clontarf_hero_web.mp4';
 import altaG0 from '@assets/alta_clean0_1780600000000.jpg';
 import altaG1 from '@assets/alta_clean1_1780600000000.jpg';
 import altaG2 from '@assets/alta_clean2_1780600000000.jpg';
@@ -189,6 +190,7 @@ export const projects: Project[] = [
     title: "34-40 Robson St Clontarf",
     location: "Clontarf, QLD",
     image: zillmereImg,
+    heroVideo: clontarfVideo,
     description: "A major multi-unit warehouse and workstore development at Clontarf — 38 units across an 8,094 m² site, delivering 4,722 m² of total building area (3,554 m² of ground floor plus 1,168 m² of mezzanine).\n\nThe development offers a genuine mix of uses — self-storage, low-impact (light industrial) and medium-impact (industrial) units, ranging from around 82 m² to 211 m². Mezzanine levels were deliberately raised to maximise the clear height beneath them, making the units ideal for storing larger, taller items such as caravans, boats, trucks and trailers. A high-end amenities facility with showers and toilets completes the development.\n\nThe site itself presented a significant engineering challenge. Sitting beside a creek, it called for screw-pile foundations and perimeter retaining walls to lift the existing ground level by around two metres — considerable earthworks and civil works to create a stable, resilient platform. With civil and construction under one roof, Brenscot controlled that complexity from the ground up, delivering the project end to end from design and approvals through to handover.\n\nEnd project value: $25,004,500",
     status: "completed",
     keyInfo: [
