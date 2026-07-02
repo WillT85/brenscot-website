@@ -53,7 +53,7 @@ import wildily13Video from '@assets/wildily13_hero_web.mp4';
 import wildily13G0 from '@assets/Screenshot_2026-06-09_153455_1781216865544.png';
 import wildily13G1 from '@assets/Screenshot_2026-06-09_153527_1781216868986.png';
 import wildily13CardVideo from '@assets/wildily13_card_web.mp4';
-import wildily13Hero from '@assets/image_1782982350163.png';
+import wildily13Hero from '@assets/wildily13_hero_upscaled.png';
 import altaRoadVideo from '@assets/alta_hero_video_1780600100000.mp4';
 import clontarfVideo from '@assets/clontarf_hero_web.mp4';
 import zillmereVideo from '@assets/zillmere_hero_web.mp4';
