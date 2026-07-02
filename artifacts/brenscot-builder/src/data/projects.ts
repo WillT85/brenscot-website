@@ -267,7 +267,7 @@ export const projects: Project[] = [
     location: "Zillmere, QLD",
     image: zillmereImg2,
     heroVideo: zillmereVideo,
-    gallery: [zillG1, zillG2, zillG3, zillG4, zillG5, zillG6, zillG7, zillG8, zillG9, zillG10, zillG11, zillG12],
+    gallery: [zillmereVideo, zillG1, zillG2, zillG3, zillG4, zillG5, zillG6, zillG7, zillG8, zillG9, zillG10, zillG11, zillG12],
     description: "A high-end, architecturally designed warehouse complex under construction on a 10,036 m² site at Zillmere — 35 units across four buildings, delivering around 6,400 m² of building area (4,330 m² ground floor plus 2,066 m² mezzanine). Projected end value: $39,342,859.\n\nThe complex is designed for a broad market — from entry-level units of around 84 m² for growing businesses through to full warehouses of around 425 m² for more established operators, complemented by an on-site recreation area and end-of-trip facilities.\n\nThe site brought real complexity. Reactive soils were overcome by the bulk removal and replacement of fill to eliminate the reactivity, and the foundations rely on a large number of 750 mm-diameter bored piers — completed directly by Brenscot rather than subcontracted out. Beyond the site itself, Brenscot is delivering significant external civil works to Zillmere Rd, including road widening, upgrades to the existing sewer, stormwater and water services, and new footpath and car-parking areas.\n\nControlling civil, piling and construction in-house lets Brenscot manage that complexity from the ground up — design and approvals through to delivery.\n\nProjected end project value: $39,342,859",
     status: "ongoing",
     keyInfo: [
