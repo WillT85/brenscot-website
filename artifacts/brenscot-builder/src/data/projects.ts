@@ -53,6 +53,7 @@ import wildily13Video from '@assets/wildily13_hero_web.mp4';
 import wildily13G0 from '@assets/Screenshot_2026-06-09_153455_1781216865544.png';
 import wildily13G1 from '@assets/Screenshot_2026-06-09_153527_1781216868986.png';
 import wildily13CardVideo from '@assets/wildily13_card_web.mp4';
+import wildily13Hero from '@assets/image_1782982350163.png';
 import altaRoadVideo from '@assets/alta_hero_video_1780600100000.mp4';
 import clontarfVideo from '@assets/clontarf_hero_web.mp4';
 import zillmereVideo from '@assets/zillmere_hero_web.mp4';
@@ -116,6 +117,7 @@ export type Project = {
   video?: string; // shared media: shown on cards (home + Projects) AND detail hero
   homeVideo?: string; // homepage Projects section card only
   heroVideo?: string; // detail-page hero only; never shown on cards
+  heroImage?: string; // detail-page hero only; overrides heroVideo/image for the hero
   playbackRate?: number;
   description: string;
   status: ProjectStatus;
@@ -224,7 +226,7 @@ export const projects: Project[] = [
     title: "13 Wildlily Road, Caboolture",
     location: "Caboolture, QLD",
     image: wildily13Img,
-    heroVideo: wildily13Video,
+    heroImage: wildily13Hero,
     homeVideo: wildily13CardVideo,
     gallery: [wildily13Video, wildily13G0, wildily13G1],
     description: "A modern freestanding warehouse and office facility under construction in the Corporate Park East estate at Caboolture, moments from the Bruce Highway. The building offers 1,536 m² of total area on a 2,386 m² site — 1,229 m² of warehouse and 307 m² of office.\n\nIt's designed for easy, efficient industrial use: a portal-frame design with no internal steel columns for a fully clear-span warehouse, two large roller doors (7 m wide × 5.5 m high), a 6 m × 20 m awning, dual driveway access and 17 on-site car parks — all within a fully secure site with two electric sliding gates and a pedestrian gate. The building includes provision for a 10-tonne overhead gantry crane and an office fit-out tailored to the tenant, under flexible 24-hour General Industry zoning.\n\nBrenscot is delivering the project end to end — design, approvals and construction.\n\nEnd project value: $5,250,000",

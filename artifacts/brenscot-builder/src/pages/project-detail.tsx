@@ -43,7 +43,13 @@ export default function ProjectDetailPage() {
       <NavBar />
 
       <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">
-        {project.heroVideo || project.video ? (
+        {project.heroImage ? (
+          <img
+            src={project.heroImage}
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
+        ) : project.heroVideo || project.video ? (
           <video
             src={project.heroVideo ?? project.video}
             autoPlay
