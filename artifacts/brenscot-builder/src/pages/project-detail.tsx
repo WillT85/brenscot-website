@@ -94,14 +94,27 @@ export default function ProjectDetailPage() {
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
             <div className="lg:col-span-3">
               <div className="space-y-6">
-                {galleryMedia.map((src, i) => (
-                  <img
-                    key={i}
-                    src={src}
-                    alt={`${project.title} — view ${i + 1}`}
-                    className="w-full object-cover brightness-110 contrast-105"
-                  />
-                ))}
+                {galleryMedia.map((src, i) =>
+                  /\.(mp4|webm)(\?|$)/i.test(src) ? (
+                    <video
+                      key={i}
+                      src={src}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      ref={(el) => { if (el) { el.muted = true; el.playbackRate = project.playbackRate ?? 0.5; } }}
+                      className="w-full object-cover"
+                    />
+                  ) : (
+                    <img
+                      key={i}
+                      src={src}
+                      alt={`${project.title} — view ${i + 1}`}
+                      className="w-full object-cover brightness-110 contrast-105"
+                    />
+                  ),
+                )}
               </div>
             </div>
             <div className="lg:col-span-2">

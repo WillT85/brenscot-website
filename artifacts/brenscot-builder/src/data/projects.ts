@@ -226,7 +226,7 @@ export const projects: Project[] = [
     image: wildily13Img,
     heroVideo: wildily13Video,
     homeVideo: wildily13CardVideo,
-    gallery: [wildily13G0, wildily13G1],
+    gallery: [wildily13Video, wildily13G0, wildily13G1],
     description: "A modern freestanding warehouse and office facility under construction in the Corporate Park East estate at Caboolture, moments from the Bruce Highway. The building offers 1,536 m² of total area on a 2,386 m² site — 1,229 m² of warehouse and 307 m² of office.\n\nIt's designed for easy, efficient industrial use: a portal-frame design with no internal steel columns for a fully clear-span warehouse, two large roller doors (7 m wide × 5.5 m high), a 6 m × 20 m awning, dual driveway access and 17 on-site car parks — all within a fully secure site with two electric sliding gates and a pedestrian gate. The building includes provision for a 10-tonne overhead gantry crane and an office fit-out tailored to the tenant, under flexible 24-hour General Industry zoning.\n\nBrenscot is delivering the project end to end — design, approvals and construction.\n\nEnd project value: $5,250,000",
     status: "ongoing",
     keyInfo: [
