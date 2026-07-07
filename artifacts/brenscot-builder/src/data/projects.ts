@@ -55,6 +55,9 @@ import wildily13G1 from '@assets/Screenshot_2026-06-09_153527_1781216868986.png'
 import wildily13CardVideo from '@assets/wildily13_card_web.mp4';
 import wildily13Hero from '@assets/wildily13_hero_hires.jpg';
 import altaRoadVideo from '@assets/alta_hero_video_1780600100000.mp4';
+import progress440G1 from '@assets/progress440_g1.jpg';
+import progress440G2 from '@assets/progress440_g2.jpg';
+import progress440G3 from '@assets/progress440_g3.jpg';
 import clontarfVideo from '@assets/clontarf_hero_web.mp4';
 import zillmereVideo from '@assets/zillmere_hero_web.mp4';
 import zillG1 from '@assets/Zillmere_aerial_1781524768889_trim.png';
@@ -374,6 +377,8 @@ export const extraProjects: Project[] = [
     slug: "440-progress-rd-wacol",
     title: "440 Progress Rd, Wacol",
     location: "Wacol, QLD",
+    image: progress440G1,
+    gallery: [progress440G1, progress440G3, progress440G2],
     description: "A substantial industrial warehouse development under construction in the established Wacol industrial precinct — five large warehouse units totalling 7,608 m² of building area, with a projected end value of $32,713,282.\n\nThe units are sized for established and growing operators, ranging from around 1,441 m² to 1,557 m² each. Every unit pairs a large warehouse (roughly 1,090–1,240 m²) with a two-level office — ground-floor and mezzanine — giving occupiers substantial, self-contained industrial premises in one of Brisbane's key logistics locations.\n\nThe site has demanded significant civil engineering. Brenscot is building large retaining walls along the eastern boundary and retaining the neighbouring property's wall on the western side, alongside extensive earthworks to fill and level the site. The works also include a large stormwater filtration and detention system and close coordination with Energex for a pad-mount transformer — complexity Brenscot manages directly through its in-house control of civil works.\n\nBrenscot is delivering the project end to end — design, approvals and construction.\n\nProjected end project value: $32,713,282",
     status: "ongoing",
     keyInfo: [
