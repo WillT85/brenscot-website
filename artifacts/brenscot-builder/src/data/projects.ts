@@ -1,5 +1,5 @@
 import project1 from '@assets/image_1776005185036.png';
-import nobleHero from '@assets/47-Noble-Ave-Northgate-1_1783554511132.jpg';
+import nobleHero from '@assets/image_1783554888844.png';
 import project2 from '@assets/13_02_extt_сс3_Post_Ps_1776005476200.jpg';
 import project3 from '@/assets/images/project-3.png';
 import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
@@ -295,6 +295,7 @@ export const extraProjects: Project[] = [
     title: "47 Noble Ave, Northgate",
     location: "Northgate, QLD",
     image: nobleHero,
+    imagePosition: 'center 75%',
     heroImage: nobleHero,
     description: "A high-end, architecturally designed industrial building delivered for a bespoke end user on a tight inner-city site at Northgate.\n\nThe standout challenge was the site itself. Three large 1,650 mm-diameter stormwater pipes crossed the land, and the building had to be engineered to bridge them — while a compact footprint demanded precise construction programming and trade coordination from start to finish. The outcome is a striking, contemporary industrial building that makes outstanding use of a constrained site, with warehouse space below and quality office accommodation above.\n\nA cantilevered upper-level office, a feature balcony framed by a honeycomb screen, timber-lined eaves and full-height glazing give the building a genuinely high-end presence — a world away from a standard industrial shed. It's a project that shows Brenscot's strength on complex, space-constrained sites: design, engineering, approvals and construction managed end to end, with very little room for error.\n\nCompleted project value: $1,250,000",
     status: "completed",
