@@ -5,8 +5,6 @@ import { SubmitContactBody, SubmitContactResponse } from "@workspace/api-zod";
 const router: IRouter = Router();
 
 const ENQUIRIES_EMAIL = "enquiries@brenscot.com.au";
-const FROM_ADDRESS =
-  process.env.CONTACT_FROM_ADDRESS ?? "Brenscot Website <onboarding@resend.dev>";
 
 function escapeHtml(value: string): string {
   return value
@@ -15,6 +13,39 @@ function escapeHtml(value: string): string {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
+}
+
+function encodeHeaderValue(value: string): string {
+  const sanitized = value.replace(/[\r\n]+/g, " ").trim();
+  if (/^[\x20-\x7e]*$/.test(sanitized)) {
+    return sanitized;
+  }
+  return `=?UTF-8?B?${Buffer.from(sanitized, "utf8").toString("base64")}?=`;
+}
+
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const RATE_LIMIT_MAX = 5;
+const submissionLog = new Map<string, number[]>();
+
+function isRateLimited(key: string): boolean {
+  const now = Date.now();
+  const timestamps = (submissionLog.get(key) ?? []).filter(
+    (t) => now - t < RATE_LIMIT_WINDOW_MS,
+  );
+  if (timestamps.length >= RATE_LIMIT_MAX) {
+    submissionLog.set(key, timestamps);
+    return true;
+  }
+  timestamps.push(now);
+  submissionLog.set(key, timestamps);
+  if (submissionLog.size > 1000) {
+    for (const [k, v] of submissionLog) {
+      if (v.every((t) => now - t >= RATE_LIMIT_WINDOW_MS)) {
+        submissionLog.delete(k);
+      }
+    }
+  }
+  return false;
 }
 
 router.post("/contact", async (req, res): Promise<void> => {
@@ -27,6 +58,27 @@ router.post("/contact", async (req, res): Promise<void> => {
 
   const { name, phone, email, projectType, message } = parsed.data;
 
+  const rateKey = req.ip ?? "unknown";
+  if (isRateLimited(rateKey)) {
+    req.log.warn({ rateKey }, "Contact form rate limit exceeded");
+    res.status(429).json({
+      error: "Too many enquiries sent. Please wait a few minutes and try again.",
+    });
+    return;
+  }
+
+  const text = [
+    "New Website Enquiry",
+    "",
+    `Name: ${name}`,
+    `Phone: ${phone}`,
+    `Email: ${email}`,
+    ...(projectType ? [`Project Type: ${projectType}`] : []),
+    "",
+    "Project Details:",
+    message,
+  ].join("\n");
+
   const html = `
     <h2>New Website Enquiry</h2>
     <p><strong>Name:</strong> ${escapeHtml(name)}</p>
@@ -37,26 +89,47 @@ router.post("/contact", async (req, res): Promise<void> => {
     <p>${escapeHtml(message).replace(/\n/g, "<br/>")}</p>
   `;
 
+  const boundary = `brenscot-${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
+  const mime = [
+    `To: ${ENQUIRIES_EMAIL}`,
+    `Reply-To: ${encodeHeaderValue(email)}`,
+    `Subject: ${encodeHeaderValue(`Website Enquiry from ${name}`)}`,
+    "MIME-Version: 1.0",
+    `Content-Type: multipart/alternative; boundary="${boundary}"`,
+    "",
+    `--${boundary}`,
+    'Content-Type: text/plain; charset="UTF-8"',
+    "Content-Transfer-Encoding: base64",
+    "",
+    Buffer.from(text, "utf8").toString("base64"),
+    `--${boundary}`,
+    'Content-Type: text/html; charset="UTF-8"',
+    "Content-Transfer-Encoding: base64",
+    "",
+    Buffer.from(html, "utf8").toString("base64"),
+    `--${boundary}--`,
+  ].join("\r\n");
+
   try {
-    // Resend integration via Replit connectors proxy
+    // Gmail integration via Replit connectors proxy (google-mail connection)
     const connectors = new ReplitConnectors();
-    const response = await connectors.proxy("resend", "/emails", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from: FROM_ADDRESS,
-        to: [ENQUIRIES_EMAIL],
-        reply_to: email,
-        subject: `Website Enquiry from ${name}`,
-        html,
-      }),
-    });
+    const response = await connectors.proxy(
+      "google-mail",
+      "/gmail/v1/users/me/messages/send",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          raw: Buffer.from(mime, "utf8").toString("base64url"),
+        }),
+      },
+    );
 
     if (!response.ok) {
       const detail = await response.text();
       req.log.error(
         { status: response.status, detail },
-        "Resend rejected contact email",
+        "Gmail rejected contact email",
       );
       res.status(502).json({
         error: "We couldn't send your enquiry right now. Please email us directly.",

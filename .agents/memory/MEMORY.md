@@ -2,3 +2,4 @@
 - [Image baked-in borders](image-baked-in-borders.md) — "not edge-to-edge" in an object-cover card usually means a frame baked into the image file; sample edge pixels, then `magick -trim`.
 - [Card vs hero media separation](brenscot-card-hero-media.md) — per-page hero media must not leak into shared project cards; use a detail-only field, keep cards on the shared field.
 - [Play-once intro / sessionStorage flag](intro-once-per-session.md) — don't recompute a persisted "already played" flag each render and use it as a useEffect dep; capture once via useState initializer + empty deps or timers get cleared mid-animation.
+- [Contact email provider](contact-email-provider.md) — Brenscot form sends via Gmail connector; Resend key was never valid, M365 Outlook blocked by org admin consent.
