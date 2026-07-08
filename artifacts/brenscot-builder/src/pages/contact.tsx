@@ -7,6 +7,7 @@ import { useToast } from '@/hooks/use-toast';
 export default function ContactPage() {
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,11 +34,8 @@ export default function ContactPage() {
         throw new Error(data?.error ?? 'Something went wrong.');
       }
 
-      toast({
-        title: "Inquiry Received",
-        description: "Our team will be in touch shortly.",
-      });
       form.reset();
+      setSubmitted(true);
     } catch (err) {
       toast({
         title: "Unable to send enquiry",
@@ -108,6 +106,35 @@ export default function ContactPage() {
               </p>
             </motion.div>
 
+            {submitted ? (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="border border-black/10 bg-[#f8f6f1] px-8 py-12 md:px-12 md:py-16"
+              >
+                <h2 className="font-serif text-3xl md:text-4xl text-[#0b1526] mb-4">
+                  Thank You
+                </h2>
+                <p className="text-[#0b1526]/70 text-lg font-light leading-relaxed mb-2">
+                  Your enquiry has been received.
+                </p>
+                <p className="text-[#0b1526]/60 text-[15px] font-light leading-relaxed mb-10 max-w-md">
+                  Our team will review your project details and be in touch shortly. For urgent
+                  matters, call us on{' '}
+                  <a href="tel:0480800077" className="text-[#C8A24A] hover:text-[#0b1526] transition-colors">
+                    0480 800 077
+                  </a>.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setSubmitted(false)}
+                  className="bg-black text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A] hover:text-[#0b1526] transition-colors w-full sm:w-auto"
+                >
+                  Send Another Enquiry
+                </button>
+              </motion.div>
+            ) : (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -174,6 +201,7 @@ export default function ContactPage() {
                 </button>
               </form>
             </motion.div>
+            )}
           </div>
         </div>
       </main>
