@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
@@ -5,14 +6,50 @@ import { useToast } from '@/hooks/use-toast';
 
 export default function ContactPage() {
   const { toast } = useToast();
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Inquiry Received",
-      description: "Our team will be in touch shortly.",
-    });
-    (e.target as HTMLFormElement).reset();
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const projectType = String(formData.get('projectType') ?? '').trim();
+
+    setSubmitting(true);
+    try {
+      const res = await fetch(`${import.meta.env.BASE_URL}api/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: String(formData.get('name') ?? '').trim(),
+          phone: String(formData.get('phone') ?? '').trim(),
+          email: String(formData.get('email') ?? '').trim(),
+          ...(projectType ? { projectType } : {}),
+          message: String(formData.get('message') ?? '').trim(),
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error ?? 'Something went wrong.');
+      }
+
+      toast({
+        title: "Inquiry Received",
+        description: "Our team will be in touch shortly.",
+      });
+      form.reset();
+    } catch (err) {
+      toast({
+        title: "Unable to send enquiry",
+        description:
+          err instanceof Error
+            ? err.message
+            : "Please try again or email us directly at enquiries@brenscot.com.au.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -82,6 +119,7 @@ export default function ContactPage() {
                     <input
                       type="text"
                       id="name"
+                      name="name"
                       required
                       placeholder="Full Name *"
                       className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
@@ -91,6 +129,7 @@ export default function ContactPage() {
                     <input
                       type="tel"
                       id="phone"
+                      name="phone"
                       required
                       placeholder="Phone Number *"
                       className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
@@ -101,6 +140,7 @@ export default function ContactPage() {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     required
                     placeholder="Email Address *"
                     className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
@@ -110,6 +150,7 @@ export default function ContactPage() {
                   <input
                     type="text"
                     id="project-type"
+                    name="projectType"
                     placeholder="Project Type (e.g. Distribution Centre, Cold Storage)"
                     className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
                   />
@@ -117,6 +158,7 @@ export default function ContactPage() {
                 <div className="relative">
                   <textarea
                     id="message"
+                    name="message"
                     required
                     rows={4}
                     placeholder="Project Details *"
@@ -125,9 +167,10 @@ export default function ContactPage() {
                 </div>
                 <button
                   type="submit"
-                  className="bg-black text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A] hover:text-[#0b1526] transition-colors w-full sm:w-auto"
+                  disabled={submitting}
+                  className="bg-black text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A] hover:text-[#0b1526] transition-colors w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit Enquiry
+                  {submitting ? "Sending..." : "Submit Enquiry"}
                 </button>
               </form>
             </motion.div>

@@ -8,6 +8,32 @@
 import * as zod from "zod";
 
 /**
+ * Sends the contact form enquiry via email
+ * @summary Submit contact enquiry
+ */
+export const submitContactBodyNameMax = 200;
+
+export const submitContactBodyPhoneMax = 50;
+
+export const submitContactBodyEmailMax = 320;
+
+export const submitContactBodyProjectTypeMax = 300;
+
+export const submitContactBodyMessageMax = 5000;
+
+export const SubmitContactBody = zod.object({
+  name: zod.string().min(1).max(submitContactBodyNameMax),
+  phone: zod.string().min(1).max(submitContactBodyPhoneMax),
+  email: zod.string().email().max(submitContactBodyEmailMax),
+  projectType: zod.string().max(submitContactBodyProjectTypeMax).optional(),
+  message: zod.string().min(1).max(submitContactBodyMessageMax),
+});
+
+export const SubmitContactResponse = zod.object({
+  success: zod.boolean(),
+});
+
+/**
  * Returns server health status
  * @summary Health check
  */
