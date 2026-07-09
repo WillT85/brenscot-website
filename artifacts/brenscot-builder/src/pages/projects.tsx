@@ -105,7 +105,7 @@ export default function ProjectsPage() {
                       View Project
                     </div>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 z-30 px-4 md:px-5 pb-3 md:pb-4 pt-6 text-right transition-opacity duration-300 group-hover:opacity-0 bg-gradient-to-t from-white/80 via-white/50 to-transparent backdrop-blur-[2px]">
+                  <div className="absolute bottom-0 left-0 right-0 z-30 px-4 md:px-5 pb-3 md:pb-4 pt-3 text-right transition-opacity duration-300 group-hover:opacity-0 bg-gradient-to-t from-white/85 via-white/60 to-transparent">
                     <h3 className="inline-block text-[10px] font-serif font-bold text-black tracking-wide uppercase">
                       {project.title.split(/(\d+(?:-\d+)?)/g).map((part, i) =>
                         /\d/.test(part) ? (
