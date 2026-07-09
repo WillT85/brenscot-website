@@ -12,6 +12,7 @@ import noble9 from '@assets/47-Noble-Ave-Northgate-9_1783555333324.jpg';
 import noble10 from '@assets/47-Noble-Ave-Northgate-10_1783555333325.jpg';
 import noble11 from '@assets/47-Noble-Ave-Northgate-11_1783555333325.jpg';
 import noble12 from '@assets/47-Noble-Ave-Northgate-12_1783555333325.jpg';
+import lot83Card from '@assets/image_1783557997193.png';
 import project2 from '@assets/13_02_extt_сс3_Post_Ps_1776005476200.jpg';
 import project3 from '@/assets/images/project-3.png';
 import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
@@ -324,6 +325,8 @@ export const extraProjects: Project[] = [
     slug: "lot-83-37-wildlily-road-caboolture",
     title: "Lot 83, 37 Wildlily Road, Caboolture",
     location: "Caboolture, QLD",
+    image: lot83Card,
+    imagePosition: '35% center',
     description: "A freestanding warehouse and office facility under construction in the Wildlily Road estate at Caboolture, delivering 1,685 m² of building area — a 1,385 m² warehouse and 300 m² of office over two levels.\n\nThe building is configured for efficient industrial use, with 19 on-site car parks, awnings and roller-shutter access, and a dedicated pad-mount transformer for power. The office is fire-separated from the warehouse — an approach Brenscot uses to keep fire compartments efficient and reduce ongoing costs for the occupier. It's built in concrete tilt-panel, finished in a modern Colorbond-matched palette of Monument, Surfmist and Gully with a Zincalume metal roof.\n\nBrenscot is delivering the project end to end — design, approvals and construction.\n\nProjected end project value: $6,571,500",
     status: "ongoing",
     keyInfo: [
