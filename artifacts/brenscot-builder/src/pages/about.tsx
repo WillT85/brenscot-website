@@ -108,11 +108,14 @@ export default function AboutPage() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="relative h-[60vh] lg:h-[80vh] w-full bg-white/5 flex items-center justify-center overflow-hidden"
             >
-              <img
-                src={williamTobin}
-                alt="William Tobin, Managing Director"
-                className="w-full h-full object-cover object-top"
-              />
+              <div className="flex items-center justify-center w-full h-full p-8">
+                <img
+                  src={williamTobin}
+                  alt="William Tobin, Managing Director"
+                  className="rounded-sm shadow-2xl"
+                  style={{ width: '221px', height: '210px', objectFit: 'cover' }}
+                />
+              </div>
             </motion.div>
 
             <motion.div
