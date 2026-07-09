@@ -19,6 +19,7 @@ import lot82Card from '@assets/image_1783584920886.png';
 import lot82Hero from '@assets/Screenshot_2026-07-09_074409_1783585116961.png';
 import lot82G1 from '@assets/download_1783585312502.png';
 import lot82G2 from '@assets/Screenshot_2026-07-09_074409_1783585312503.png';
+import lot84Img from '@assets/image_1783585768239.png';
 import project2 from '@assets/13_02_extt_сс3_Post_Ps_1776005476200.jpg';
 import project3 from '@/assets/images/project-3.png';
 import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
@@ -403,6 +404,8 @@ export const extraProjects: Project[] = [
     slug: "lot-84-mcnaught-road-caboolture",
     title: "Lot 84, Mcnaught Road, Caboolture",
     location: "Caboolture, QLD",
+    image: lot84Img,
+    heroImage: lot84Img,
     description: "A premier industrial development providing modern, efficient warehouse units built to the highest standards.",
     status: "ongoing",
   },
