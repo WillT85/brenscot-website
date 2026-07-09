@@ -1,6 +1,17 @@
 import project1 from '@assets/image_1776005185036.png';
 import nobleCard from '@assets/image_1783554888844.png';
 import nobleHero from '@assets/image_1783555151704.png';
+import noble2 from '@assets/47-Noble-Ave-Northgate-2_1783555333326.jpg';
+import noble3 from '@assets/47-Noble-Ave-Northgate-3_1783555333326.jpg';
+import noble4 from '@assets/47-Noble-Ave-Northgate-4_1783555333326.jpg';
+import noble5 from '@assets/47-Noble-Ave-Northgate-5_1783555333326.jpg';
+import noble6 from '@assets/47-Noble-Ave-Northgate-6_1783555333327.jpg';
+import noble7 from '@assets/47-Noble-Ave-Northgate-7_1783555333327.jpg';
+import noble8 from '@assets/47-Noble-Ave-Northgate-8_1783555333327.jpg';
+import noble9 from '@assets/47-Noble-Ave-Northgate-9_1783555333324.jpg';
+import noble10 from '@assets/47-Noble-Ave-Northgate-10_1783555333325.jpg';
+import noble11 from '@assets/47-Noble-Ave-Northgate-11_1783555333325.jpg';
+import noble12 from '@assets/47-Noble-Ave-Northgate-12_1783555333325.jpg';
 import project2 from '@assets/13_02_extt_сс3_Post_Ps_1776005476200.jpg';
 import project3 from '@/assets/images/project-3.png';
 import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
@@ -298,6 +309,7 @@ export const extraProjects: Project[] = [
     image: nobleCard,
     imagePosition: 'center 75%',
     heroImage: nobleHero,
+    gallery: [noble2, noble3, noble4, noble5, noble6, noble7, noble8, noble9, noble10, noble11, noble12],
     description: "A high-end, architecturally designed industrial building delivered for a bespoke end user on a tight inner-city site at Northgate.\n\nThe standout challenge was the site itself. Three large 1,650 mm-diameter stormwater pipes crossed the land, and the building had to be engineered to bridge them — while a compact footprint demanded precise construction programming and trade coordination from start to finish. The outcome is a striking, contemporary industrial building that makes outstanding use of a constrained site, with warehouse space below and quality office accommodation above.\n\nA cantilevered upper-level office, a feature balcony framed by a honeycomb screen, timber-lined eaves and full-height glazing give the building a genuinely high-end presence — a world away from a standard industrial shed. It's a project that shows Brenscot's strength on complex, space-constrained sites: design, engineering, approvals and construction managed end to end, with very little room for error.\n\nCompleted project value: $1,250,000",
     status: "completed",
     keyInfo: [
