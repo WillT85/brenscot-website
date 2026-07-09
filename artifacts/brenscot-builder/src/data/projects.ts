@@ -14,6 +14,7 @@ import noble11 from '@assets/47-Noble-Ave-Northgate-11_1783555333325.jpg';
 import noble12 from '@assets/47-Noble-Ave-Northgate-12_1783555333325.jpg';
 import lot83Card from '@assets/image_1783557997193.png';
 import lot80Img from '@assets/image_1783583484817.png';
+import lot80Hero from '@assets/image_1783584149957.png';
 import project2 from '@assets/13_02_extt_сс3_Post_Ps_1776005476200.jpg';
 import project3 from '@/assets/images/project-3.png';
 import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
@@ -345,7 +346,7 @@ export const extraProjects: Project[] = [
     title: "Lot 80, 25 Wildlily Road, Caboolture",
     location: "Caboolture, QLD",
     image: lot80Img,
-    heroImage: lot80Img,
+    heroImage: lot80Hero,
     description: "A freestanding warehouse and office facility under construction in the Wildlily Road estate at Caboolture — around 1,936 m² of total building area on a 3,133 m² site, comprising a 1,636 m² warehouse and 300 m² of office over two levels.\n\nThe building offers practical industrial space with 22 on-site car parks, a 6 m awning and roller-door access. Built in concrete tilt-panel with a Colorbond finish, it carries the clean, modern look consistent across Brenscot's developments.\n\nBrenscot is delivering the project end to end — design, approvals and construction.\n\nProjected end project value: $7,550,400",
     status: "ongoing",
     keyInfo: [
