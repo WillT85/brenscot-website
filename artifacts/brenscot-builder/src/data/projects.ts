@@ -327,6 +327,7 @@ export const extraProjects: Project[] = [
     location: "Caboolture, QLD",
     image: lot83Card,
     imagePosition: '35% center',
+    heroImage: lot83Card,
     description: "A freestanding warehouse and office facility under construction in the Wildlily Road estate at Caboolture, delivering 1,685 m² of building area — a 1,385 m² warehouse and 300 m² of office over two levels.\n\nThe building is configured for efficient industrial use, with 19 on-site car parks, awnings and roller-shutter access, and a dedicated pad-mount transformer for power. The office is fire-separated from the warehouse — an approach Brenscot uses to keep fire compartments efficient and reduce ongoing costs for the occupier. It's built in concrete tilt-panel, finished in a modern Colorbond-matched palette of Monument, Surfmist and Gully with a Zincalume metal roof.\n\nBrenscot is delivering the project end to end — design, approvals and construction.\n\nProjected end project value: $6,571,500",
     status: "ongoing",
     keyInfo: [
