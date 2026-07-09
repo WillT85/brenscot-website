@@ -20,6 +20,7 @@ import lot82Hero from '@assets/Screenshot_2026-07-09_074409_1783585116961.png';
 import lot82G1 from '@assets/download_1783585312502.png';
 import lot82G2 from '@assets/Screenshot_2026-07-09_074409_1783585312503.png';
 import lot84Img from '@assets/image_1783585768239.png';
+import lot74Img from '@assets/Screenshot_2026-07-09_163338_1783586084871.png';
 import project2 from '@assets/13_02_extt_сс3_Post_Ps_1776005476200.jpg';
 import project3 from '@/assets/images/project-3.png';
 import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
@@ -369,6 +370,8 @@ export const extraProjects: Project[] = [
     slug: "lot-74-18-barr-road-caboolture",
     title: "Lot 74, 18 Barr Road, Caboolture",
     location: "Caboolture, QLD",
+    image: lot74Img,
+    heroImage: lot74Img,
     description: "A modern freestanding warehouse and office facility under construction at Caboolture. The building offers 1,458 m² of total area on a 2,507 m² site — 1,170 m² of warehouse and 288 m² of office across two levels.\n\nDesigned for practical industrial use, the facility includes a 10-tonne overhead gantry crane, 17 on-site car parks, concrete hardstand, an awning and roller-shutter access. Built in concrete tilt-panel with a Colorbond “Monument” and “Surfmist” palette and a Zincalume metal roof, it carries the clean, modern look consistent across Brenscot's industrial developments.\n\nBrenscot is delivering the project end to end — design, approvals and construction.",
     status: "ongoing",
     keyInfo: [
