@@ -106,7 +106,7 @@ export default function ProjectsPage() {
                     </div>
                   </div>
                   <div className="absolute bottom-0 right-0 z-30 px-4 md:px-5 pb-3 md:pb-4 text-right transition-opacity duration-300 group-hover:opacity-0">
-                    <h3 className="inline-block text-[10px] font-serif font-semibold text-white tracking-wide uppercase">
+                    <h3 className="inline-block text-[10px] font-serif font-semibold text-[#0b1526] tracking-wide uppercase">
                       {project.title.split(/(\d+(?:-\d+)?)/g).map((part, i) =>
                         /\d/.test(part) ? (
                           <span key={i} className="font-sans font-medium tracking-normal tabular-nums">{part}</span>
