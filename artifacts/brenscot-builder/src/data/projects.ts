@@ -15,7 +15,7 @@ import noble12 from '@assets/47-Noble-Ave-Northgate-12_1783555333325.jpg';
 import lot83Card from '@assets/image_1783557997193.png';
 import lot80Img from '@assets/image_1783584543771.png';
 import lot80Hero from '@assets/image_1783584149957.png';
-import lot82Card from '@assets/Screenshot_2026-07-09_074341_1783584607143.png';
+import lot82Card from '@assets/image_1783584920886.png';
 import project2 from '@assets/13_02_extt_сс3_Post_Ps_1776005476200.jpg';
 import project3 from '@/assets/images/project-3.png';
 import project1Video from '@assets/Moving_Photo_1780474811282.mp4';
