@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import aboutImage from '@/assets/images/about.png';
-
+import williamTobin from '@assets/Copy_of_Make_Hair_Look_Fuller_1783582710051.jpg';
 
 const facts = [
   "Established 2020",
@@ -108,11 +108,11 @@ export default function AboutPage() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="relative h-[60vh] lg:h-[80vh] w-full bg-white/5 flex items-center justify-center overflow-hidden"
             >
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="w-48 h-48 rounded-full bg-white/10 flex items-center justify-center">
-                  <span className="text-white/30 font-serif text-6xl">WT</span>
-                </div>
-              </div>
+              <img
+                src={williamTobin}
+                alt="William Tobin, Managing Director"
+                className="w-full h-full object-cover object-center"
+              />
             </motion.div>
 
             <motion.div
