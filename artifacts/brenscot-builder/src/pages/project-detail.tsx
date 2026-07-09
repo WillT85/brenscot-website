@@ -117,7 +117,8 @@ export default function ProjectDetailPage() {
                       key={i}
                       src={src}
                       alt={`${project.title} — view ${i + 1}`}
-                      className="w-full object-cover brightness-110 contrast-105"
+                      className="w-full max-h-[600px] object-cover brightness-110 contrast-105"
+                      style={!project.gallery && project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
                     />
                   ),
                 )}
