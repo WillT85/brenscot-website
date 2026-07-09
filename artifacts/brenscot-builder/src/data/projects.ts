@@ -133,6 +133,7 @@ export type Project = {
   location: string;
   image?: string;
   imagePosition?: string; // CSS object-position for the card image (default centered)
+  imageScale?: number; // CSS scale transform for the card image (default 1, <1 zooms out)
   gallery?: string[];
   video?: string; // shared media: shown on cards (home + Projects) AND detail hero
   homeVideo?: string; // homepage Projects section card only
@@ -381,6 +382,7 @@ export const extraProjects: Project[] = [
     title: "Lot 82, 33 Wildlily Road, Caboolture",
     location: "Caboolture, QLD",
     image: lot82Card,
+    imageScale: 0.75,
     heroImage: lot82Card,
     description: "A freestanding warehouse and office facility under construction in the Wildlily Road estate at Caboolture — 2,127 m² of total building area on a 3,494 m² site, comprising a 1,822 m² warehouse and 305 m² of office over two levels.\n\nThe building provides generous, practical industrial space with 24 on-site car parks, a 6 m awning, roller-shutter access and provision for a pad-mount transformer. Built in concrete tilt-panel with a Colorbond finish, it carries the clean, modern look consistent across Brenscot's developments.\n\nBrenscot is delivering the project end to end — design, approvals and construction.\n\nProjected end project value: $8,295,300",
     status: "ongoing",
