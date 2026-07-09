@@ -130,13 +130,16 @@ export default function AboutPage() {
 
               <div className="space-y-6 text-white/50 text-lg font-light leading-relaxed">
                 <p>
-                  With over two decades of experience in commercial construction and industrial development, William Tobin founded Brenscot Builders with a clear vision — to deliver large-scale warehouse projects with uncompromising precision and quality.
+                  When you build industrial property, you're building something that has to work hard for decades — not just look good at handover.
                 </p>
                 <p>
-                  Under his leadership, Brenscot has grown into one of South-East Queensland's most trusted industrial developers, delivering millions of square metres of high-performance facilities for logistics, manufacturing, and distribution clients.
+                  That's the standard I hold every Brenscot project to. We go beyond code minimums where it matters: the slab designs, the drainage, the structural detailing, the materials that determine whether a warehouse is still performing at year thirty. These aren't the decisions anyone sees on day one. They're the ones that matter most on day ten thousand.
                 </p>
                 <p>
-                  William's hands-on approach and deep understanding of the construction lifecycle ensure every project is executed with discipline, efficiency, and a commitment to exceeding client expectations.
+                  With more than two decades in commercial construction and industrial development, I've seen the difference between buildings that were built to sell and buildings that were built to last. Brenscot exists to deliver the second kind.
+                </p>
+                <p>
+                  If you're looking for a warehouse built by people who sweat the details you'll never see — we should talk.
                 </p>
               </div>
             </motion.div>
