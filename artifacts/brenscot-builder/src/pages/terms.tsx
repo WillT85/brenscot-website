@@ -75,9 +75,9 @@ const sections: { heading: string; body: (string | { items: string[] })[] }[] = 
       'If you have any questions about these Terms, please contact us at:',
       { items: [
         'Brenscot Builders Pty Ltd',
-        'Clarke St, Hendra, Brisbane QLD 4011',
-        'Phone: +61 (0)7 3000 1234',
         'Email: enquiries@brenscot.com.au',
+        'Phone: 0480 800 077',
+        'Meetings by appointment',
       ]},
     ],
   },
