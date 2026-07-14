@@ -239,3 +239,9 @@ id = "iOr_MWFOBIWc4ISSQJUnD"
 uri = "file://attached_assets/stock_images/wood-ceiling_3.jpg"
 type = "image"
 title = "interior wooden ceiling panels modern building looking up warm brown angular architectural detail"
+
+[[outputs]]
+id = "7OOz_LPky7Q5E7z89tSBE"
+uri = "file://indevelop-standalone.zip"
+type = "unspecified"
+title = "Indevelop Website - Standalone Project"
