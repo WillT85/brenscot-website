@@ -98,13 +98,21 @@ export default function AboutPage() {
 
       <section className="py-20 md:py-32 bg-[#0b1526]">
         <div className="container mx-auto px-6 md:px-12">
-          <div className="max-w-3xl">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="relative h-[60vh] lg:h-[80vh] w-full bg-white/5"
+            />
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             >
               <span className="text-white/30 font-sans uppercase tracking-[0.3em] text-[10px] mb-6 block">Leadership</span>
               <h2 className="text-4xl md:text-6xl font-serif text-white mb-4 leading-tight">
