@@ -27,6 +27,7 @@ export const SubmitContactBody = zod.object({
   email: zod.string().email().max(submitContactBodyEmailMax),
   projectType: zod.string().max(submitContactBodyProjectTypeMax).optional(),
   message: zod.string().min(1).max(submitContactBodyMessageMax),
+  recaptchaToken: zod.string().min(1),
 });
 
 export const SubmitContactResponse = zod.object({

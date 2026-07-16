@@ -56,7 +56,31 @@ router.post("/contact", async (req, res): Promise<void> => {
     return;
   }
 
-  const { name, phone, email, projectType, message } = parsed.data;
+  const { name, phone, email, projectType, message, recaptchaToken } = parsed.data;
+
+  // Verify reCAPTCHA token
+  const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
+  if (!recaptchaSecret) {
+    req.log.error("RECAPTCHA_SECRET_KEY is not set");
+    res.status(500).json({ error: "Server configuration error." });
+    return;
+  }
+  try {
+    const verifyRes = await fetch(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${encodeURIComponent(recaptchaSecret)}&response=${encodeURIComponent(recaptchaToken)}`,
+      { method: "POST" },
+    );
+    const verifyData = await verifyRes.json() as { success: boolean; "error-codes"?: string[] };
+    if (!verifyData.success) {
+      req.log.warn({ errorCodes: verifyData["error-codes"] }, "reCAPTCHA verification failed");
+      res.status(400).json({ error: "reCAPTCHA verification failed. Please try again." });
+      return;
+    }
+  } catch (err) {
+    req.log.error({ err }, "reCAPTCHA verification request failed");
+    res.status(502).json({ error: "Could not verify reCAPTCHA. Please try again." });
+    return;
+  }
 
   const rateKey = req.ip ?? "unknown";
   if (isRateLimited(rateKey)) {

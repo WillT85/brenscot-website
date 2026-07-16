@@ -1,19 +1,33 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { motion } from 'framer-motion';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { useToast } from '@/hooks/use-toast';
 
+const SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY as string;
+
 export default function ContactPage() {
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const projectType = String(formData.get('projectType') ?? '').trim();
+
+    const recaptchaToken = recaptchaRef.current?.getValue();
+    if (!recaptchaToken) {
+      toast({
+        title: "Please complete the reCAPTCHA",
+        description: "Tick the 'I'm not a robot' box before submitting.",
+        variant: "destructive",
+      });
+      return;
+    }
 
     setSubmitting(true);
     try {
@@ -26,6 +40,7 @@ export default function ContactPage() {
           email: String(formData.get('email') ?? '').trim(),
           ...(projectType ? { projectType } : {}),
           message: String(formData.get('message') ?? '').trim(),
+          recaptchaToken,
         }),
       });
 
@@ -35,8 +50,10 @@ export default function ContactPage() {
       }
 
       form.reset();
+      recaptchaRef.current?.reset();
       setSubmitted(true);
     } catch (err) {
+      recaptchaRef.current?.reset();
       toast({
         title: "Unable to send enquiry",
         description:
@@ -84,23 +101,16 @@ export default function ContactPage() {
               <h3 className="font-serif text-xl font-bold text-[#C8A24A] mb-4">Contact Us</h3>
               <p className="text-[#0b1526]/70 text-[15px] font-light leading-relaxed">
                 <span className="text-[#C8A24A]">Email :</span>{' '}
-                <a
-                  href="mailto:enquiries@brenscot.com.au"
-                  className="hover:text-[#0b1526] transition-colors"
-                >
+                <a href="mailto:enquiries@brenscot.com.au" className="hover:text-[#0b1526] transition-colors">
                   enquiries@brenscot.com.au
                 </a>
               </p>
               <p className="text-[#0b1526]/70 text-[15px] font-light leading-relaxed mt-1">
                 <span className="text-[#C8A24A]">Phone number :</span>{' '}
-                <a
-                  href="tel:0480800077"
-                  className="hover:text-[#0b1526] transition-colors"
-                >
+                <a href="tel:0480800077" className="hover:text-[#0b1526] transition-colors">
                   0480 800 077
                 </a>
               </p>
-
               <p className="text-[#C8A24A] text-[15px] font-light mt-1">
                 Meetings by appointment
               </p>
@@ -135,72 +145,73 @@ export default function ContactPage() {
                 </button>
               </motion.div>
             ) : (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <form onSubmit={handleSubmit} className="space-y-12">
-                <div className="grid md:grid-cols-2 gap-12">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <form onSubmit={handleSubmit} className="space-y-12">
+                  <div className="grid md:grid-cols-2 gap-12">
+                    <div className="relative">
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        placeholder="Full Name *"
+                        className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
+                      />
+                    </div>
+                    <div className="relative">
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        required
+                        placeholder="Phone Number *"
+                        className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
+                      />
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      placeholder="Email Address *"
+                      className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
+                    />
+                  </div>
                   <div className="relative">
                     <input
                       type="text"
-                      id="name"
-                      name="name"
-                      required
-                      placeholder="Full Name *"
+                      id="project-type"
+                      name="projectType"
+                      placeholder="Project Type (e.g. Distribution Centre, Cold Storage)"
                       className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
                     />
                   </div>
                   <div className="relative">
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
+                    <textarea
+                      id="message"
+                      name="message"
                       required
-                      placeholder="Phone Number *"
-                      className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
+                      rows={4}
+                      placeholder="Project Details *"
+                      className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light resize-none focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
                     />
                   </div>
-                </div>
-                <div className="relative">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    placeholder="Email Address *"
-                    className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
-                  />
-                </div>
-                <div className="relative">
-                  <input
-                    type="text"
-                    id="project-type"
-                    name="projectType"
-                    placeholder="Project Type (e.g. Distribution Centre, Cold Storage)"
-                    className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
-                  />
-                </div>
-                <div className="relative">
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={4}
-                    placeholder="Project Details *"
-                    className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light resize-none focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="bg-black text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A] hover:text-[#0b1526] transition-colors w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {submitting ? "Sending..." : "Submit Enquiry"}
-                </button>
-              </form>
-            </motion.div>
+                  <ReCAPTCHA ref={recaptchaRef} sitekey={SITE_KEY} />
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="bg-black text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A] hover:text-[#0b1526] transition-colors w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {submitting ? "Sending..." : "Submit Enquiry"}
+                  </button>
+                </form>
+              </motion.div>
             )}
           </div>
         </div>

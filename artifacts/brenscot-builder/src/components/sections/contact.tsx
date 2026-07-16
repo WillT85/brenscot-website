@@ -1,17 +1,31 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { motion } from 'framer-motion';
 import { useToast } from '@/hooks/use-toast';
+
+const SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY as string;
 
 export function Contact() {
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const projectType = String(formData.get('projectType') ?? '').trim();
+
+    const recaptchaToken = recaptchaRef.current?.getValue();
+    if (!recaptchaToken) {
+      toast({
+        title: "Please complete the reCAPTCHA",
+        description: "Tick the 'I'm not a robot' box before submitting.",
+        variant: "destructive",
+      });
+      return;
+    }
 
     setSubmitting(true);
     try {
@@ -24,6 +38,7 @@ export function Contact() {
           email: String(formData.get('email') ?? '').trim(),
           ...(projectType ? { projectType } : {}),
           message: String(formData.get('message') ?? '').trim(),
+          recaptchaToken,
         }),
       });
 
@@ -33,8 +48,10 @@ export function Contact() {
       }
 
       form.reset();
+      recaptchaRef.current?.reset();
       setSubmitted(true);
     } catch (err) {
+      recaptchaRef.current?.reset();
       toast({
         title: "Unable to send enquiry",
         description:
@@ -52,14 +69,14 @@ export function Contact() {
     <section id="contact" className="py-32 md:py-48 bg-white text-black">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid lg:grid-cols-2 gap-24 lg:gap-16">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <h2 className="text-5xl md:text-7xl font-serif mb-12 leading-tight">Let's discuss <br/>your project.</h2>
-            
+
             <div className="space-y-12">
               <div>
                 <h4 className="text-base font-bold uppercase tracking-[0.2em] text-[#C8A24A] mb-4">Contact Us</h4>
@@ -70,7 +87,7 @@ export function Contact() {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -108,56 +125,57 @@ export function Contact() {
               <form onSubmit={handleSubmit} className="space-y-12">
                 <div className="grid md:grid-cols-2 gap-12">
                   <div className="relative">
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       id="name"
                       name="name"
-                      required 
+                      required
                       placeholder="Full Name *"
-                      className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none" 
+                      className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
                     />
                   </div>
                   <div className="relative">
-                    <input 
-                      type="tel" 
+                    <input
+                      type="tel"
                       id="phone"
                       name="phone"
-                      required 
+                      required
                       placeholder="Phone Number *"
-                      className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none" 
+                      className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
                     />
                   </div>
                 </div>
                 <div className="relative">
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     id="email"
                     name="email"
-                    required 
+                    required
                     placeholder="Email Address *"
-                    className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none" 
+                    className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
                   />
                 </div>
                 <div className="relative">
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     id="project-type"
                     name="projectType"
                     placeholder="Project Type (e.g. Distribution Centre, Cold Storage)"
-                    className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none" 
+                    className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
                   />
                 </div>
                 <div className="relative">
-                  <textarea 
+                  <textarea
                     id="message"
                     name="message"
-                    required 
-                    rows={4} 
+                    required
+                    rows={4}
                     placeholder="Project Details *"
-                    className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light resize-none focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none" 
+                    className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light resize-none focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
                   />
                 </div>
-                <button 
+                <ReCAPTCHA ref={recaptchaRef} sitekey={SITE_KEY} />
+                <button
                   type="submit"
                   disabled={submitting}
                   className="bg-black text-white px-12 py-5 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A] hover:text-[#0b1526] transition-colors w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"

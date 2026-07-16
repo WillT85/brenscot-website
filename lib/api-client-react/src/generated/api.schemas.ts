@@ -25,6 +25,8 @@ export interface ContactInput {
    * @maxLength 5000
    */
   message: string;
+  /** @minLength 1 */
+  recaptchaToken: string;
 }
 
 export interface ContactResult {
