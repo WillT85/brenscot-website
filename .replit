@@ -50,3 +50,8 @@ externalPort = 4200
 
 [nix]
 channel = "stable-25_05"
+
+[userenv]
+
+[userenv.shared]
+VITE_RECAPTCHA_SITE_KEY = "6LfMQ1YtAAAAAHNdsDPZA7GFZAYNXvCoRN89oj4_"
