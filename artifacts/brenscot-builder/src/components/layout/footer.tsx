@@ -31,7 +31,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-white/30 gap-6">
-          <div>&copy; {new Date().getFullYear()} Brenscot Builder.</div>
+          <div>&copy; {new Date().getFullYear()} Brenscot Builders.</div>
           <div className="flex gap-8">
             <a href={`${import.meta.env.BASE_URL}privacy-policy`} className="hover:text-white transition-colors cursor-pointer">Privacy</a>
             <a href={`${import.meta.env.BASE_URL}terms-conditions`} className="hover:text-white transition-colors cursor-pointer">Terms</a>
