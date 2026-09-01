@@ -48,11 +48,11 @@ export function Projects() {
                   <div className="flex-1 flex items-center justify-center">
                     <span className="text-white text-lg md:text-2xl font-serif uppercase tracking-[0.3em] drop-shadow">Brenscot</span>
                   </div>
-                  <div className="bg-[#0b1526] text-white text-center py-3 md:py-4">
-                    <span className="block text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">
+                  <div className="bg-[#0b1526] text-white text-center py-2 md:py-3">
+                    <span className="block text-[9px] md:text-[10px] font-bold uppercase tracking-[0.18em]">
                       View Project
                     </span>
-                    <span className="block mt-1 text-[8px] md:text-[9px] font-normal normal-case tracking-[0.08em] text-white/65">
+                    <span className="block mt-0.5 text-[8px] md:text-[9px] font-normal normal-case tracking-[0.06em] text-white/65">
                       {project.title}
                     </span>
                   </div>
