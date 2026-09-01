@@ -101,8 +101,13 @@ export default function ProjectsPage() {
                     <div className="flex-1 flex items-center justify-center">
                       <span className="text-white text-lg md:text-2xl font-serif uppercase tracking-[0.3em] drop-shadow">Brenscot</span>
                     </div>
-                    <div className="bg-[#0b1526] text-white text-center text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] py-4">
-                      View Project
+                    <div className="bg-[#0b1526] text-white text-center py-3 md:py-4">
+                      <span className="block text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]">
+                        View Project
+                      </span>
+                      <span className="block mt-1 text-[8px] md:text-[9px] font-normal normal-case tracking-[0.08em] text-white/65">
+                        {project.title}
+                      </span>
                     </div>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 z-30 px-4 md:px-5 pb-3 md:pb-4 pt-3 text-right transition-opacity duration-300 group-hover:opacity-0 bg-gradient-to-t from-white/85 via-white/60 to-transparent">
