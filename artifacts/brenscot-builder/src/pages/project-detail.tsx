@@ -1,6 +1,7 @@
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useParams, Link } from 'wouter';
-import { ArrowLeft, MapPin, LandPlot, Ruler, Car, Building2, Layers, Hammer, DollarSign, Info } from 'lucide-react';
+import { ArrowLeft, MapPin, LandPlot, Ruler, Car, Building2, Layers, Hammer, DollarSign, Info, ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
@@ -11,12 +12,27 @@ export default function ProjectDetailPage() {
   const params = useParams();
   const slug = params.slug ?? '';
   const project = getProjectBySlug(slug);
+  const [activeMediaIndex, setActiveMediaIndex] = useState(0);
+
+  useEffect(() => {
+    setActiveMediaIndex(0);
+  }, [slug]);
 
   if (!project) {
     return <NotFound />;
   }
 
   const galleryMedia = project.gallery ?? (project.image ? [project.image] : []);
+  const activeMedia = galleryMedia[activeMediaIndex] ?? galleryMedia[0];
+  const isVideo = (src: string) => /\.(mp4|webm)(\?|$)/i.test(src);
+
+  const showPreviousMedia = () => {
+    setActiveMediaIndex((current) => current === 0 ? galleryMedia.length - 1 : current - 1);
+  };
+
+  const showNextMedia = () => {
+    setActiveMediaIndex((current) => current === galleryMedia.length - 1 ? 0 : current + 1);
+  };
 
   const iconForLabel = (label: string): LucideIcon => {
     const l = label.toLowerCase();
@@ -99,31 +115,93 @@ export default function ProjectDetailPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
             <div className="lg:col-span-3">
-              <div
-                aria-label={`${project.title} pictures and videos`}
-                className="space-y-6 lg:max-h-[72vh] lg:overflow-y-auto lg:pr-3 lg:overscroll-contain lg:scroll-smooth"
-              >
-                {galleryMedia.map((src, i) =>
-                  /\.(mp4|webm)(\?|$)/i.test(src) ? (
+              <div aria-label={`${project.title} pictures and videos`} className="space-y-5">
+                <div className="relative overflow-hidden bg-[#eef0f1]">
+                  {activeMedia && isVideo(activeMedia) ? (
                     <video
-                      key={i}
-                      src={src}
+                      key={activeMedia}
+                      src={activeMedia}
                       autoPlay
                       loop
                       muted
                       playsInline
-                      ref={(el) => { if (el) { el.muted = true; el.playbackRate = project.playbackRate ?? 0.5; } }}
-                      className="w-full object-cover"
+                      ref={(el) => { if (el) { el.muted = true; el.playbackRate = project.playbackRate ?? 0.5; el.play().catch(() => {}); } }}
+                      className="w-full aspect-[4/3] object-cover"
                     />
-                  ) : (
+                  ) : activeMedia ? (
                     <img
-                      key={i}
-                      src={src}
-                      alt={`${project.title} — view ${i + 1}`}
-                      className="w-full max-h-[600px] object-cover brightness-110 contrast-105"
+                      key={activeMedia}
+                      src={activeMedia}
+                      alt={`${project.title} — view ${activeMediaIndex + 1}`}
+                      className="w-full aspect-[4/3] object-cover brightness-110 contrast-105"
                       style={!project.gallery && project.imagePosition ? { objectPosition: project.imagePosition } : undefined}
                     />
-                  ),
+                  ) : (
+                    <div className="flex aspect-[4/3] items-center justify-center text-xs uppercase tracking-[0.2em] text-black/40">
+                      No media available
+                    </div>
+                  )}
+
+                  {galleryMedia.length > 1 && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={showPreviousMedia}
+                        aria-label="Previous project media"
+                        className="absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#0b1526] shadow-sm transition-colors hover:bg-white"
+                      >
+                        <ChevronLeft className="h-5 w-5" strokeWidth={1.5} />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={showNextMedia}
+                        aria-label="Next project media"
+                        className="absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-[#0b1526] shadow-sm transition-colors hover:bg-white"
+                      >
+                        <ChevronRight className="h-5 w-5" strokeWidth={1.5} />
+                      </button>
+                    </>
+                  )}
+                </div>
+
+                {galleryMedia.length > 1 && (
+                  <div className="flex gap-3 overflow-x-auto pb-3 pr-1" aria-label="Choose project media">
+                    {galleryMedia.map((src, i) => (
+                      <button
+                        key={`${src}-${i}`}
+                        type="button"
+                        onClick={() => setActiveMediaIndex(i)}
+                        aria-label={`Show project media ${i + 1}`}
+                        aria-pressed={i === activeMediaIndex}
+                        className={`relative aspect-[4/3] w-24 shrink-0 overflow-hidden border-2 transition-opacity md:w-28 ${
+                          i === activeMediaIndex ? 'border-[#C8A24A] opacity-100' : 'border-transparent opacity-65 hover:opacity-100'
+                        }`}
+                      >
+                        {isVideo(src) ? (
+                          <video
+                            src={src}
+                            muted
+                            playsInline
+                            preload="metadata"
+                            className="h-full w-full object-cover"
+                          />
+                        ) : (
+                          <img
+                            src={src}
+                            alt=""
+                            className="h-full w-full object-cover"
+                          />
+                        )}
+                        {isVideo(src) && (
+                          <span className="absolute inset-0 flex items-center justify-center bg-black/15">
+                            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-[#0b1526]">
+                              <Play className="ml-0.5 h-3 w-3 fill-current" />
+                            </span>
+                          </span>
+                        )}
+                      </button>
+                    ))}
+                  </div>
                 )}
               </div>
             </div>
