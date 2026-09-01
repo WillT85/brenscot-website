@@ -99,7 +99,10 @@ export default function ProjectDetailPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20">
             <div className="lg:col-span-3">
-              <div className="space-y-6">
+              <div
+                aria-label={`${project.title} pictures and videos`}
+                className="space-y-6 lg:max-h-[72vh] lg:overflow-y-auto lg:pr-3 lg:overscroll-contain lg:scroll-smooth"
+              >
                 {galleryMedia.map((src, i) =>
                   /\.(mp4|webm)(\?|$)/i.test(src) ? (
                     <video
