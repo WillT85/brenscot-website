@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
+import { SeoHead } from '@/seo/SeoHead';
+import { getStaticPage } from '@/seo/config';
 
 const sections: { heading: string; body: (string | { sub: string; items: string[] })[] }[] = [
   {
@@ -140,9 +142,12 @@ const sections: { heading: string; body: (string | { sub: string; items: string[
   },
 ];
 
+const privacySeo = getStaticPage('/privacy-policy')!;
+
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-white font-sans">
+      <SeoHead {...privacySeo} />
       <NavBar lightBackground />
 
       <section className="relative pt-40 pb-16 md:pt-48 md:pb-20 overflow-hidden bg-[#0b1526]">

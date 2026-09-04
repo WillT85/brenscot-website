@@ -7,10 +7,15 @@ import { Careers } from '@/components/sections/careers';
 import { Partners } from '@/components/sections/partners';
 import { Contact } from '@/components/sections/contact';
 import { Footer } from '@/components/layout/footer';
+import { SeoHead } from '@/seo/SeoHead';
+import { getStaticPage } from '@/seo/config';
+
+const homeSeo = getStaticPage('/')!;
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-background font-sans">
+      <SeoHead {...homeSeo} />
       <NavBar />
       <main>
         <Hero />

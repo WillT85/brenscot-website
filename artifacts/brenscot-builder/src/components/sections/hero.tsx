@@ -36,11 +36,19 @@ export function Hero() {
     }
   }, [showVideo]);
 
-  const scrollToProjects = () => {
+  const scrollToProjects = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) {
+      return;
+    }
+    event.preventDefault();
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scrollToContact = () => {
+  const scrollToContact = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) {
+      return;
+    }
+    event.preventDefault();
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -158,18 +166,20 @@ export function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 mt-4">
-            <button 
+            <a
+              href="#projects"
               onClick={scrollToProjects}
               className="bg-[#C8A24A] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A]/85 transition-colors"
             >
               View Projects
-            </button>
-            <button 
+            </a>
+            <a
+              href="/contact"
               onClick={scrollToContact}
               className="border border-[#C8A24A] text-[#C8A24A] px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A] hover:text-white transition-colors"
             >
               Contact Us
-            </button>
+            </a>
           </div>
         </motion.div>
 

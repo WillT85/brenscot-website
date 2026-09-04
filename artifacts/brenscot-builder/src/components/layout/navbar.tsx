@@ -1,11 +1,30 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useLocation } from 'wouter';
+import { Link, useLocation } from 'wouter';
+
+const navLinks: { name: string; href: string; id: string }[] = [
+  { name: 'Home', href: '/', id: 'top' },
+  { name: 'Projects', href: '/projects', id: 'projects' },
+  { name: 'About', href: '/about', id: 'about' },
+  { name: 'Careers', href: '/#careers', id: 'careers' },
+  { name: 'Partners', href: '/partners', id: 'partners' },
+  { name: 'Contact Us', href: '/contact', id: 'contact' },
+];
+
+function navClassName(name: string, useDark: boolean) {
+  return `text-xs font-medium uppercase tracking-[0.2em] transition-colors whitespace-nowrap ${
+    name === 'Contact Us'
+      ? 'bg-[#C8A24A] text-white px-6 py-3 hover:bg-[#C8A24A]/85'
+      : useDark
+        ? 'text-[#0b1526] hover:text-[#C8A24A]'
+        : 'text-[#C8A24A] hover:text-[#C8A24A]/60'
+  }`;
+}
 
 export function NavBar({ lightBackground = false }: { lightBackground?: boolean }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [location, setLocation] = useLocation();
+  const [location] = useLocation();
   const useDark = isScrolled || lightBackground;
 
   useEffect(() => {
@@ -16,43 +35,23 @@ export function NavBar({ lightBackground = false }: { lightBackground?: boolean 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navigate = (link: { name: string; id: string; href?: string }) => {
-    setMobileMenuOpen(false);
-    if (link.href) {
-      setLocation(link.href);
-      window.scrollTo({ top: 0 });
-      return;
-    }
-    if (location !== '/') {
-      setLocation('/');
-      setTimeout(() => {
-        if (link.id === 'top') {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-          const element = document.getElementById(link.id);
-          if (element) element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-      return;
-    }
-    if (link.id === 'top') {
+  const closeMenu = () => setMobileMenuOpen(false);
+
+  const handleHomeClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    closeMenu();
+    if (location === '/') {
+      event.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      return;
-    }
-    const element = document.getElementById(link.id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  const navLinks = [
-    { name: 'Home', id: 'top' },
-    { name: 'Projects', id: 'projects', href: '/projects' },
-    { name: 'About', id: 'about', href: '/about' },
-    { name: 'Careers', id: 'careers' },
-    { name: 'Partners', id: 'partners', href: '/partners' },
-    { name: 'Contact Us', id: 'contact', href: '/contact' },
-  ];
+  const handleCareersClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    closeMenu();
+    if (location === '/') {
+      event.preventDefault();
+      document.getElementById('careers')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <header
@@ -65,40 +64,51 @@ export function NavBar({ lightBackground = false }: { lightBackground?: boolean 
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <div
-          className="cursor-pointer flex-shrink-0"
-          onClick={() => navigate({ name: 'Home', id: 'top' })}
+        <Link
+          href="/"
+          onClick={handleHomeClick}
+          className="flex-shrink-0"
           data-testid="logo-home"
+          aria-label="Brenscot Builders home"
         >
           <div className="flex flex-col items-center leading-none select-none">
             <span className={`font-serif text-2xl md:text-3xl font-bold tracking-[0.05em] transition-colors duration-500 ${useDark ? 'text-[#0b1526]' : 'text-white'}`}>BRENSCOT</span>
             <span className={`text-[9px] md:text-[10px] tracking-[0.45em] font-light uppercase mt-0.5 transition-colors duration-500 ${useDark ? 'text-[#0b1526]/60' : 'text-white/80'}`}>BUILDERS</span>
           </div>
-        </div>
+        </Link>
 
         <nav className="hidden lg:flex items-center gap-6 xl:gap-12">
-          {navLinks.map((link) => (
-            <button
-              key={link.name}
-              onClick={() => navigate(link)}
-              data-testid={`nav-${link.id}`}
-              className={`text-xs font-medium uppercase tracking-[0.2em] transition-colors whitespace-nowrap ${
-                link.name === 'Contact Us'
-                  ? 'bg-[#C8A24A] text-white px-6 py-3 hover:bg-[#C8A24A]/85'
-                  : useDark
-                    ? 'text-[#0b1526] hover:text-[#C8A24A]'
-                    : 'text-[#C8A24A] hover:text-[#C8A24A]/60'
-              }`}
-            >
-              {link.name}
-            </button>
-          ))}
+          {navLinks.map((link) =>
+            link.id === 'careers' ? (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={handleCareersClick}
+                data-testid={`nav-${link.id}`}
+                className={navClassName(link.name, useDark)}
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={link.href === '/' ? handleHomeClick : closeMenu}
+                data-testid={`nav-${link.id}`}
+                className={navClassName(link.name, useDark)}
+              >
+                {link.name}
+              </Link>
+            )
+          )}
         </nav>
 
         <button
+          type="button"
           className={`lg:hidden p-2 transition-colors duration-500 ${useDark ? 'text-[#0b1526]' : 'text-white'}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           data-testid="button-mobile-menu"
+          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -108,20 +118,34 @@ export function NavBar({ lightBackground = false }: { lightBackground?: boolean 
         <div className={`lg:hidden absolute top-full left-0 right-0 border-b py-6 px-6 flex flex-col gap-2 shadow-2xl ${
           useDark ? 'bg-white border-black/10' : 'bg-[#0a0a0a] border-white/10'
         }`}>
-          {navLinks.map((link) => (
-            <button
-              key={link.name}
-              onClick={() => navigate(link)}
-              data-testid={`mobile-nav-${link.id}`}
-              className={`text-left py-4 text-xs font-medium transition-colors uppercase tracking-[0.2em] border-b last:border-none ${
-                useDark
-                  ? 'text-[#0b1526] hover:text-[#C8A24A] border-black/5'
-                  : 'text-[#C8A24A] hover:text-[#C8A24A]/60 border-white/5'
-              }`}
-            >
-              {link.name}
-            </button>
-          ))}
+          {navLinks.map((link) => {
+            const className = `text-left py-4 text-xs font-medium transition-colors uppercase tracking-[0.2em] border-b last:border-none ${
+              useDark
+                ? 'text-[#0b1526] hover:text-[#C8A24A] border-black/5'
+                : 'text-[#C8A24A] hover:text-[#C8A24A]/60 border-white/5'
+            }`;
+            return link.id === 'careers' ? (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={handleCareersClick}
+                data-testid={`mobile-nav-${link.id}`}
+                className={className}
+              >
+                {link.name}
+              </a>
+            ) : (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={link.href === '/' ? handleHomeClick : closeMenu}
+                data-testid={`mobile-nav-${link.id}`}
+                className={className}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
       )}
     </header>

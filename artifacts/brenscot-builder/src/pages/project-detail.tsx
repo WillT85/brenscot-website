@@ -7,6 +7,8 @@ import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { getProjectBySlug } from '@/data/projects';
 import NotFound from '@/pages/not-found';
+import { SeoHead } from '@/seo/SeoHead';
+import { projectPageSeo } from '@/seo/config';
 
 export default function ProjectDetailPage() {
   const params = useParams();
@@ -21,6 +23,9 @@ export default function ProjectDetailPage() {
   if (!project) {
     return <NotFound />;
   }
+
+  const seo = projectPageSeo(project);
+  const ogImage = project.heroImage ?? project.image;
 
   const galleryMedia = project.gallery ?? (project.image ? [project.image] : []);
   const activeMedia = galleryMedia[activeMediaIndex] ?? galleryMedia[0];
@@ -56,6 +61,7 @@ export default function ProjectDetailPage() {
 
   return (
     <div className="min-h-screen bg-white font-sans">
+      <SeoHead {...seo} ogImage={ogImage} />
       <NavBar />
 
       <section className="relative h-[70vh] md:h-[85vh] overflow-hidden">

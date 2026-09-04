@@ -4,8 +4,11 @@ import { motion } from 'framer-motion';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { useToast } from '@/hooks/use-toast';
+import { SeoHead } from '@/seo/SeoHead';
+import { getStaticPage } from '@/seo/config';
 
 const SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY as string;
+const contactSeo = getStaticPage('/contact')!;
 
 export default function ContactPage() {
   const { toast } = useToast();
@@ -69,6 +72,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SeoHead {...contactSeo} />
       <NavBar lightBackground />
 
       <main className="pt-32 md:pt-44 pb-32 md:pb-48">

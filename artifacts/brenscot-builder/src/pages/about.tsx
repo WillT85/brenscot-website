@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import aboutImage from '@/assets/images/about.png';
+import { SeoHead } from '@/seo/SeoHead';
+import { getStaticPage } from '@/seo/config';
 
 const facts = [
   "Established 2020",
@@ -9,9 +11,12 @@ const facts = [
   "Developer-builder"
 ];
 
+const aboutSeo = getStaticPage('/about')!;
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white font-sans">
+      <SeoHead {...aboutSeo} />
       <NavBar />
 
       <section className="pt-40 pb-20 md:pt-48 md:pb-32 bg-[#0b1526]">
