@@ -1,10 +1,15 @@
 import { motion } from 'framer-motion';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
+import { SeoHead } from '@/seo/SeoHead';
+import { getStaticPage } from '@/seo/config';
+
+const partnersSeo = getStaticPage('/partners')!;
 
 export default function PartnersPage() {
   return (
     <div className="min-h-screen bg-white font-sans">
+      <SeoHead {...partnersSeo} />
       <NavBar />
 
       <section className="pt-40 pb-20 md:pt-48 md:pb-32 bg-[#0b1526]">

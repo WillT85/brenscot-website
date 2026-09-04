@@ -1,10 +1,8 @@
 import { motion } from 'framer-motion';
-import { useLocation } from 'wouter';
+import { Link } from 'wouter';
 import { projects } from '@/data/projects';
 
 export function Projects() {
-  const [, setLocation] = useLocation();
-
   return (
     <section id="projects" className="py-20 md:py-32 bg-white">
       <div className="container mx-auto px-6 md:px-12 mb-16">
@@ -20,9 +18,8 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, delay: (index % 2) * 0.1, ease: [0.16, 1, 0.3, 1] }}
-              onClick={() => { setLocation(`/projects/${project.slug}`); window.scrollTo({ top: 0 }); }}
-              className="group cursor-pointer"
             >
+              <Link href={`/projects/${project.slug}`} className="group block cursor-pointer">
               <div className="relative overflow-hidden h-[35vh] md:h-[40vh]">
                 <div className="absolute inset-0 bg-black/10 z-10 transition-colors duration-700 group-hover:bg-black/30" />
                 {project.homeVideo ?? project.video ? (
@@ -69,17 +66,18 @@ export function Projects() {
                   </h3>
                 </div>
               </div>
+              </Link>
             </motion.div>
           ))}
         </div>
 
         <div className="mt-16 text-center">
-          <button
-            onClick={() => { setLocation('/projects'); window.scrollTo({ top: 0 }); }}
-            className="text-xs font-medium uppercase tracking-[0.2em] border border-[#0b1526] text-[#0b1526] bg-transparent px-10 py-4 hover:bg-[#0b1526] hover:text-[#C8A24A] transition-colors duration-300"
+          <Link
+            href="/projects"
+            className="inline-block text-xs font-medium uppercase tracking-[0.2em] border border-[#0b1526] text-[#0b1526] bg-transparent px-10 py-4 hover:bg-[#0b1526] hover:text-[#C8A24A] transition-colors duration-300"
           >
             View more Developments
-          </button>
+          </Link>
         </div>
       </div>
     </section>

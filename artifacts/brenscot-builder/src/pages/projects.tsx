@@ -1,20 +1,24 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLocation } from 'wouter';
+import { Link } from 'wouter';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { allProjects } from '@/data/projects';
+import { SeoHead } from '@/seo/SeoHead';
+import { getStaticPage } from '@/seo/config';
 
 type Filter = "all" | "completed" | "ongoing";
 
+const projectsSeo = getStaticPage('/projects')!;
+
 export default function ProjectsPage() {
-  const [, setLocation] = useLocation();
   const [filter, setFilter] = useState<Filter>("completed");
 
   const filtered = filter === "all" ? allProjects : allProjects.filter((p) => p.status === filter);
 
   return (
     <div className="min-h-screen bg-white font-sans">
+      <SeoHead {...projectsSeo} />
       <NavBar />
 
       <section className="pt-40 pb-20 md:pt-48 md:pb-32 bg-[#0b1526]">
@@ -69,9 +73,8 @@ export default function ProjectsPage() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.6, delay: (index % 2) * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                onClick={() => { setLocation(`/projects/${project.slug}`); window.scrollTo({ top: 0 }); }}
-                className="group cursor-pointer"
               >
+                <Link href={`/projects/${project.slug}`} className="group block cursor-pointer">
                 <div className="relative overflow-hidden h-[35vh] md:h-[40vh]">
                   <div className="absolute inset-0 bg-black/10 z-10 transition-colors duration-700 group-hover:bg-black/30" />
                   {project.homeVideo ?? project.video ? (
@@ -122,6 +125,7 @@ export default function ProjectsPage() {
                     </h3>
                   </div>
                 </div>
+                </Link>
               </motion.div>
             ))}
             </AnimatePresence>

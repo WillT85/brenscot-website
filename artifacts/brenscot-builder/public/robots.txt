@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brenscot.com.au/sitemap.xml

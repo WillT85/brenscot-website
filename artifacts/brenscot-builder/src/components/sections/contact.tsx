@@ -174,7 +174,7 @@ export function Contact() {
                     className="w-full bg-transparent border-b border-black/20 pb-4 text-lg font-light resize-none focus:outline-none focus:border-black transition-colors placeholder:text-black/30 rounded-none"
                   />
                 </div>
-                <ReCAPTCHA ref={recaptchaRef} sitekey={SITE_KEY} />
+                {SITE_KEY ? <ReCAPTCHA ref={recaptchaRef} sitekey={SITE_KEY} /> : null}
                 <button
                   type="submit"
                   disabled={submitting}
