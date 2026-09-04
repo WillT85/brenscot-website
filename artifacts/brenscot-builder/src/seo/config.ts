@@ -170,7 +170,7 @@ export function webPageJsonLd(page: PageSeo) {
     "@type": "WebPage",
     name: page.title,
     description: page.description,
-    url: absoluteUrl(page.path),
+    url: absoluteUrl(page.path === "/404" ? "/" : page.path),
     isPartOf: {
       "@type": "WebSite",
       name: SITE_NAME,

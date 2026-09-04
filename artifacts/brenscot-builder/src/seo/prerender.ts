@@ -81,9 +81,44 @@ export function seoPrerenderPlugin(projectsFile: string): Plugin {
 
   return {
     name: "brenscot-seo-prerender",
-    apply: "build",
+    config(_cfg, env) {
+      if (env.isPreview) {
+        return { appType: "mpa" };
+      }
+      return undefined;
+    },
     configResolved(config) {
       outDir = config.build.outDir;
+    },
+    configurePreviewServer(server) {
+      const root = server.config.build.outDir || outDir;
+      server.middlewares.use((req, res, next) => {
+        if (req.method !== "GET" && req.method !== "HEAD") {
+          return next();
+        }
+        const raw = req.url ?? "/";
+        const [pathname, search] = raw.split("?");
+        if (!pathname || pathname === "/") {
+          return next();
+        }
+        if (path.posix.basename(pathname).includes(".")) {
+          return next();
+        }
+        const cleaned = pathname.replace(/\/$/, "");
+        const htmlFile = path.join(root, cleaned.replace(/^\//, ""), "index.html");
+        if (fs.existsSync(htmlFile)) {
+          req.url = `${cleaned}/index.html${search ? `?${search}` : ""}`;
+          return next();
+        }
+        const notFound = path.join(root, "404.html");
+        if (fs.existsSync(notFound)) {
+          res.statusCode = 404;
+          res.setHeader("Content-Type", "text/html; charset=utf-8");
+          res.end(fs.readFileSync(notFound));
+          return;
+        }
+        next();
+      });
     },
     closeBundle() {
       const indexPath = path.join(outDir, "index.html");
