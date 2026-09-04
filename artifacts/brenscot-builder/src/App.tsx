@@ -12,6 +12,9 @@ import PartnersPage from "@/pages/partners";
 import ContactPage from "@/pages/contact";
 import PrivacyPage from "@/pages/privacy";
 import TermsPage from "@/pages/terms";
+import WarehouseBuildersBrisbanePage from "@/pages/warehouse-builders-brisbane";
+import DesignAndConstructWarehousePage from "@/pages/design-and-construct-warehouse-brisbane";
+import ProcessPage from "@/pages/process";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +42,9 @@ function Router() {
       <RouteEffects />
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/warehouse-builders-brisbane" component={WarehouseBuildersBrisbanePage} />
+        <Route path="/design-and-construct-warehouse-brisbane" component={DesignAndConstructWarehousePage} />
+        <Route path="/process" component={ProcessPage} />
         <Route path="/projects" component={ProjectsPage} />
         <Route path="/projects/:slug" component={ProjectDetailPage} />
         <Route path="/about" component={AboutPage} />

@@ -5,6 +5,7 @@ import { Projects } from '@/components/sections/projects';
 import { About } from '@/components/sections/about';
 import { Careers } from '@/components/sections/careers';
 import { Partners } from '@/components/sections/partners';
+import { Pathways } from '@/components/sections/pathways';
 import { Contact } from '@/components/sections/contact';
 import { Footer } from '@/components/layout/footer';
 import { SeoHead } from '@/seo/SeoHead';
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero />
         <Projects />
         <Services />
+        <Pathways />
         <About />
         <Partners />
         <Careers />
