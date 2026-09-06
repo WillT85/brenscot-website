@@ -33,6 +33,30 @@ from = "/about/"
 to = "/about/index.html"
 
 [[services.production.rewrites]]
+from = "/process"
+to = "/process/index.html"
+
+[[services.production.rewrites]]
+from = "/process/"
+to = "/process/index.html"
+
+[[services.production.rewrites]]
+from = "/warehouse-builders-brisbane"
+to = "/warehouse-builders-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/warehouse-builders-brisbane/"
+to = "/warehouse-builders-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/design-and-construct-warehouse-brisbane"
+to = "/design-and-construct-warehouse-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/design-and-construct-warehouse-brisbane/"
+to = "/design-and-construct-warehouse-brisbane/index.html"
+
+[[services.production.rewrites]]
 from = "/projects"
 to = "/projects/index.html"
 

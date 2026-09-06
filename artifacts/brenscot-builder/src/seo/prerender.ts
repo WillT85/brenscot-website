@@ -13,13 +13,21 @@ export function extractProjectRecords(source: string): {
   slug: string;
   title: string;
   location: string;
+  area?: string;
 }[] {
-  const records: { slug: string; title: string; location: string }[] = [];
-  const re =
-    /slug:\s*"([^"]+)"\s*,\s*title:\s*"([^"]+)"\s*,\s*location:\s*"([^"]+)"/g;
-  let match: RegExpExecArray | null;
-  while ((match = re.exec(source))) {
-    records.push({ slug: match[1], title: match[2], location: match[3] });
+  const records: { slug: string; title: string; location: string; area?: string }[] = [];
+  const chunks = source.split(/slug:\s*"/).slice(1);
+  for (const chunk of chunks) {
+    const slug = chunk.match(/^([^"]+)"/)?.[1];
+    const title = chunk.match(/title:\s*"([^"]+)"/)?.[1];
+    const location = chunk.match(/location:\s*"([^"]+)"/)?.[1];
+    if (!slug || !title || !location) {
+      continue;
+    }
+    const area = chunk.match(
+      /label:\s*"[^"]*(?:GFA|building area|lettable)[^"]*"\s*,\s*value:\s*"([^"]+)"/i,
+    )?.[1];
+    records.push(area ? { slug, title, location, area } : { slug, title, location });
   }
   return records;
 }
@@ -42,7 +50,16 @@ function renderSitemap(paths: string[]): string {
     .map((routePath) => {
       const loc =
         routePath === "/" ? `${SITE_ORIGIN}/` : `${SITE_ORIGIN}${routePath}`;
-      const priority = routePath === "/" ? "1.0" : routePath.startsWith("/projects/") ? "0.7" : "0.8";
+      const priority =
+        routePath === "/"
+          ? "1.0"
+          : routePath === "/warehouse-builders-brisbane" ||
+              routePath === "/design-and-construct-warehouse-brisbane" ||
+              routePath === "/process"
+            ? "0.9"
+            : routePath.startsWith("/projects/")
+              ? "0.7"
+              : "0.8";
       return `  <url>
     <loc>${loc}</loc>
     <lastmod>${lastmod}</lastmod>

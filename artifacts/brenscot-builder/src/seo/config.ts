@@ -19,6 +19,24 @@ export const STATIC_PAGES: PageSeo[] = [
       "Brisbane industrial warehouse developer-builder. We acquire land, secure approvals, then build to sell or lease — and deliver design-and-construct turnkey for landowners, up to about 10,000m², across Brisbane and SEQ.",
   },
   {
+    path: "/warehouse-builders-brisbane",
+    title: "Warehouse Builders Brisbane | Developer-Builder | Brenscot",
+    description:
+      "Brisbane warehouse builders focused on the northside and SEQ. Brenscot is a developer-builder — acquire, approve, build, sell or lease — and delivers design-and-construct for landowners, up to about 10,000m². Not tender general contracting.",
+  },
+  {
+    path: "/design-and-construct-warehouse-brisbane",
+    title: "Design and Construct Warehouse Brisbane | Brenscot",
+    description:
+      "Design-and-construct turnkey for landowners in Brisbane and SEQ: design, approvals and construction through to a finished warehouse, typically up to about 10,000m². One team — not a construct-only tender.",
+  },
+  {
+    path: "/process",
+    title: "Our Process | Warehouse Developer-Builder Brisbane | Brenscot",
+    description:
+      "How Brenscot delivers industrial warehouses: Indevelop acquires the site or you bring the land, then design, approvals, tilt-panel and steel construction, handover, and sell or lease.",
+  },
+  {
     path: "/projects",
     title: "Industrial Warehouse Projects | Brisbane & SEQ | Brenscot",
     description:
@@ -109,15 +127,21 @@ export function projectPageSeo(project: {
   title: string;
   location: string;
   description?: string;
+  area?: string;
+  keyInfo?: { label: string; value: string }[];
 }): PageSeo {
-  const fallback = `${project.title} in ${project.location} — industrial warehouse developed and built by Brenscot in Brisbane and South East Queensland.`;
-  const fromCopy = project.description
-    ? truncateMeta(project.description.split("\n\n")[0] ?? project.description)
-    : fallback;
+  const suburb = project.location.replace(/,?\s*QLD\.?$/i, "").trim();
+  const rawArea =
+    project.area ??
+    project.keyInfo?.find((item) => /gfa|building area|lettable/i.test(item.label))?.value;
+  const area = rawArea?.match(/[\d,]+\s*m²/)?.[0] ?? rawArea;
+  const areaBit = area ? ` — ${area}` : "";
   return {
     path: `/projects/${project.slug}`,
-    title: `${project.title} | ${project.location} | Brenscot`,
-    description: fromCopy.length < 80 ? fallback : fromCopy,
+    title: `${project.title} | ${suburb} warehouse | Brenscot`,
+    description: truncateMeta(
+      `${project.title} in ${project.location}${areaBit}. Industrial warehouse developed and built by Brenscot in Brisbane and South East Queensland.`,
+    ),
   };
 }
 

@@ -5,6 +5,7 @@ import { Link, useLocation } from 'wouter';
 const navLinks: { name: string; href: string; id: string }[] = [
   { name: 'Home', href: '/', id: 'top' },
   { name: 'Projects', href: '/projects', id: 'projects' },
+  { name: 'Process', href: '/process', id: 'process' },
   { name: 'About', href: '/about', id: 'about' },
   { name: 'Careers', href: '/#careers', id: 'careers' },
   { name: 'Partners', href: '/partners', id: 'partners' },
@@ -77,7 +78,7 @@ export function NavBar({ lightBackground = false }: { lightBackground?: boolean 
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-12">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-10">
           {navLinks.map((link) =>
             link.id === 'careers' ? (
               <a
