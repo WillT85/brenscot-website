@@ -53,8 +53,8 @@ const branches = [
   {
     title: "Investors and agents",
     body: "Indevelop acquires the site; Brenscot builds; the completed warehouse is sold or leased. Commercial agents who bring land or occupier relationships work with us on that path — not as a tender panel for construct-only jobs.",
-    href: "/partners",
-    cta: "Work with us",
+    href: "/for-commercial-agents",
+    cta: "For commercial agents",
   },
 ];
 

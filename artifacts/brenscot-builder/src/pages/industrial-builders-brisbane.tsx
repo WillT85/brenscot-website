@@ -29,8 +29,8 @@ const paths = [
   {
     title: "Indevelop — land to lease",
     body: "Indevelop acquires the site. Brenscot designs, approves and constructs. The completed warehouse or multi-unit facility is sold or leased. Commercial agents who bring land or occupier relationships work with us on this path.",
-    href: "/partners",
-    cta: "Investors & agents",
+    href: "/industrial-developer-builder-brisbane",
+    cta: "Developer-builder",
   },
   {
     title: "Your land — design and construct",
@@ -93,12 +93,12 @@ const audiences = [
   {
     title: "Investors",
     body: "Indevelop acquires; Brenscot builds; the completed facility is sold or leased.",
-    href: "/partners",
+    href: "/industrial-developer-builder-brisbane",
   },
   {
     title: "Commercial agents",
     body: "Bring land or occupier relationships. We work the development or D&C path — not as a construct-only panel.",
-    href: "/partners",
+    href: "/for-commercial-agents",
   },
 ];
 

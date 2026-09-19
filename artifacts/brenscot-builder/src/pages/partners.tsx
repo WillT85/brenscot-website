@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'wouter';
 import { NavBar } from '@/components/layout/navbar';
 import { Footer } from '@/components/layout/footer';
 import { SeoHead } from '@/seo/SeoHead';
@@ -51,6 +52,21 @@ export default function PartnersPage() {
             </p>
             <p className="text-black/60 text-lg md:text-xl font-light leading-relaxed">
               Controlling the full journey from raw land to finished facility gives us certainty over programme, cost and quality that a standalone builder can't match — and it's why we can deliver buildings to suit, ready to lease or purchase.
+            </p>
+            <p className="text-black/60 text-lg md:text-xl font-light leading-relaxed mt-6">
+              Commercial agents introducing land or occupiers should start at{" "}
+              <Link href="/for-commercial-agents" className="text-[#C8A24A] hover:underline">
+                for commercial agents
+              </Link>
+              . The delivery model is{" "}
+              <Link href="/industrial-developer-builder-brisbane" className="text-[#C8A24A] hover:underline">
+                industrial developer-builder Brisbane
+              </Link>
+              , with the wider positioning on{" "}
+              <Link href="/industrial-builders-brisbane" className="text-[#C8A24A] hover:underline">
+                industrial builders Brisbane
+              </Link>
+              .
             </p>
           </motion.div>
         </div>
