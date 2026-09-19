@@ -236,7 +236,7 @@ export default function ProjectDetailPage() {
                   </div>
                 </div>
                 <Link
-                  href="/contact"
+                  href="/contact#enquiry"
                   className="inline-flex items-center gap-2 bg-[#0b1526] text-white text-xs font-bold uppercase tracking-[0.2em] px-8 py-4 mt-10 transition-colors duration-300 hover:bg-[#C8A24A]"
                 >
                   Enquire Now

@@ -44,12 +44,12 @@ export function Hero() {
     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scrollToContact = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const scrollToEnquiry = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) {
       return;
     }
     event.preventDefault();
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('enquiry')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -179,8 +179,8 @@ export function Hero() {
               View Projects
             </a>
             <a
-              href="/contact"
-              onClick={scrollToContact}
+              href="/contact#enquiry"
+              onClick={scrollToEnquiry}
               className="border border-[#C8A24A] text-[#C8A24A] px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A] hover:text-white transition-colors"
             >
               Contact Us
