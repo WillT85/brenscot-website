@@ -41,7 +41,7 @@ export type LanderSpec = {
 const QBCC_FAQ: FaqItem = {
   question: "Are you QBCC licensed?",
   answer:
-    "QBCC licence: [to be confirmed]. Licence details are available on request — we do not publish a licence number on this page.",
+    "Yes. Brenscot Builders Pty Ltd holds QBCC licence 15213515 (Builder – Open).",
 };
 
 const TENDER_FAQ: FaqItem = {

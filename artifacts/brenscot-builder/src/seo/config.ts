@@ -61,7 +61,7 @@ export const INDUSTRIAL_BUILDERS_FAQS: FaqItem[] = [
   {
     question: "Are you QBCC licensed?",
     answer:
-      "QBCC licence: [to be confirmed]. Licence details are available on request — we do not publish a licence number on this page.",
+      "Yes. Brenscot Builders Pty Ltd holds QBCC licence 15213515 (Builder – Open).",
   },
 ];
 
@@ -267,13 +267,18 @@ export function organizationJsonLd() {
     image: absoluteAsset(DEFAULT_OG_IMAGE),
     logo: `${SITE_ORIGIN}/favicon.png`,
     description:
-      "Brisbane industrial warehouse developer-builder. Brenscot acquires land, secures approvals and builds warehouses to sell or lease, and delivers design-and-construct turnkey for landowners across Brisbane and South East Queensland.",
+      "Brisbane industrial warehouse developer-builder, QBCC 15213515. Brenscot acquires land, secures approvals and builds warehouses to sell or lease, and delivers design-and-construct turnkey for landowners across Brisbane and South East Queensland.",
+    identifier: {
+      "@type": "PropertyValue",
+      name: "QBCC",
+      value: "15213515",
+    },
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Clarke Street",
-      addressLocality: "Hendra",
+      streetAddress: "Suite 2C, 134 Racecourse Rd",
+      addressLocality: "Ascot",
       addressRegion: "QLD",
-      postalCode: "4011",
+      postalCode: "4007",
       addressCountry: "AU",
     },
     areaServed: [
