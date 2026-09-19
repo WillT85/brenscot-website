@@ -5,10 +5,12 @@ export function PageHero({
   title,
   children,
   eyebrow,
+  actions,
 }: {
   title: ReactNode;
   children?: ReactNode;
   eyebrow?: string;
+  actions?: ReactNode;
 }) {
   return (
     <section className="pt-40 pb-20 md:pt-48 md:pb-32 bg-[#0b1526]">
@@ -39,6 +41,16 @@ export function PageHero({
             className="text-white/40 text-lg font-light mt-8 max-w-2xl leading-relaxed"
           >
             {children}
+          </motion.div>
+        ) : null}
+        {actions ? (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col sm:flex-row gap-4 mt-10"
+          >
+            {actions}
           </motion.div>
         ) : null}
       </div>

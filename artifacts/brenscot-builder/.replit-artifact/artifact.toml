@@ -41,6 +41,14 @@ from = "/process/"
 to = "/process/index.html"
 
 [[services.production.rewrites]]
+from = "/industrial-builders-brisbane"
+to = "/industrial-builders-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/industrial-builders-brisbane/"
+to = "/industrial-builders-brisbane/index.html"
+
+[[services.production.rewrites]]
 from = "/warehouse-builders-brisbane"
 to = "/warehouse-builders-brisbane/index.html"
 
@@ -55,6 +63,46 @@ to = "/design-and-construct-warehouse-brisbane/index.html"
 [[services.production.rewrites]]
 from = "/design-and-construct-warehouse-brisbane/"
 to = "/design-and-construct-warehouse-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/industrial-developer-builder-brisbane"
+to = "/industrial-developer-builder-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/industrial-developer-builder-brisbane/"
+to = "/industrial-developer-builder-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/warehouse-builders-north-brisbane"
+to = "/warehouse-builders-north-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/warehouse-builders-north-brisbane/"
+to = "/warehouse-builders-north-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/tilt-panel-warehouse-brisbane"
+to = "/tilt-panel-warehouse-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/tilt-panel-warehouse-brisbane/"
+to = "/tilt-panel-warehouse-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/for-commercial-agents"
+to = "/for-commercial-agents/index.html"
+
+[[services.production.rewrites]]
+from = "/for-commercial-agents/"
+to = "/for-commercial-agents/index.html"
+
+[[services.production.rewrites]]
+from = "/developments"
+to = "/developments/index.html"
+
+[[services.production.rewrites]]
+from = "/developments/"
+to = "/developments/index.html"
 
 [[services.production.rewrites]]
 from = "/projects"

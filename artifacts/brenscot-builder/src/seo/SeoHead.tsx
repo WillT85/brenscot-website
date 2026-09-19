@@ -4,8 +4,7 @@ import {
   SITE_NAME,
   absoluteAsset,
   absoluteUrl,
-  organizationJsonLd,
-  webPageJsonLd,
+  pageJsonLdGraph,
   type PageSeo,
 } from "./config";
 
@@ -45,11 +44,11 @@ function upsertJsonLd(id: string, data: unknown) {
   el.textContent = JSON.stringify(data);
 }
 
-export function SeoHead({ path, title, description, robots, ogImage }: SeoHeadProps) {
+export function SeoHead({ path, title, description, robots, ogImage, faqs }: SeoHeadProps) {
   useEffect(() => {
     const url = path === "/404" ? `${absoluteUrl("/")}` : absoluteUrl(path);
     const image = absoluteAsset(ogImage ?? DEFAULT_OG_IMAGE);
-    const page: PageSeo = { path, title, description, robots };
+    const page: PageSeo = { path, title, description, robots, faqs };
 
     document.title = title;
     upsertMeta("name", "description", description);
@@ -71,8 +70,8 @@ export function SeoHead({ path, title, description, robots, ogImage }: SeoHeadPr
     upsertMeta("name", "twitter:title", title);
     upsertMeta("name", "twitter:description", description);
     upsertMeta("name", "twitter:image", image);
-    upsertJsonLd("ld", [organizationJsonLd(), webPageJsonLd(page)]);
-  }, [path, title, description, robots, ogImage]);
+    upsertJsonLd("ld", pageJsonLdGraph(page));
+  }, [path, title, description, robots, ogImage, faqs]);
 
   return null;
 }

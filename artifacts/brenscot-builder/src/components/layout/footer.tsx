@@ -2,9 +2,15 @@ import { Link } from 'wouter';
 
 const footerLinks = [
   { name: 'Projects', href: '/projects' },
+  { name: 'Developments', href: '/developments' },
   { name: 'Process', href: '/process' },
+  { name: 'Industrial builders', href: '/industrial-builders-brisbane' },
+  { name: 'Developer-builder', href: '/industrial-developer-builder-brisbane' },
   { name: 'Warehouse builders', href: '/warehouse-builders-brisbane' },
+  { name: 'North Brisbane', href: '/warehouse-builders-north-brisbane' },
   { name: 'Design and construct', href: '/design-and-construct-warehouse-brisbane' },
+  { name: 'Tilt-panel', href: '/tilt-panel-warehouse-brisbane' },
+  { name: 'For agents', href: '/for-commercial-agents' },
   { name: 'About', href: '/about' },
   { name: 'Careers', href: '/#careers' },
   { name: 'Partners', href: '/partners' },
@@ -26,7 +32,7 @@ export function Footer() {
             </p>
           </div>
           
-          <nav className="flex flex-wrap gap-8 md:gap-12">
+          <nav className="flex flex-wrap gap-x-8 gap-y-4 md:gap-x-10 max-w-3xl">
             {footerLinks.map((link) =>
               link.href.startsWith('/#') ? (
                 <a

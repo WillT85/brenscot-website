@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import { NavBar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PageHero } from "@/components/layout/page-hero";
+import { TrustStrip } from "@/components/layout/trust-strip";
+import { LanderFaq } from "@/components/layout/lander-faq";
 import { SeoHead } from "@/seo/SeoHead";
 import { getStaticPage } from "@/seo/config";
 
@@ -31,16 +33,11 @@ export default function DesignAndConstructWarehousePage() {
 
       <PageHero
         eyebrow="For landowners"
-        title={
-          <>
-            Design and construct
-            <br />
-            warehouse Brisbane.
-          </>
-        }
+        title={seo.h1 ?? "Design and construct warehouse Brisbane — turnkey for landowners"}
       >
-        Turnkey design, approvals and construction for landowners who already hold a site. One team from concept through to a finished industrial warehouse — typically up to about 10,000m² — in Brisbane and SEQ.
+        {seo.lead}
       </PageHero>
+      <TrustStrip />
 
       <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12">
@@ -55,7 +52,15 @@ export default function DesignAndConstructWarehousePage() {
               If you own industrial land in Brisbane or SEQ and want a warehouse built on it, Brenscot can take the project from design through approvals and construction to handover. That is design-and-construct turnkey — not a construct-only tender against other builders.
             </p>
             <p className="text-black/60 text-lg font-light leading-relaxed">
-              Where you do not yet hold a site, the other path is our developer-builder model: Indevelop acquires the land, Brenscot builds, and the completed warehouse is sold or leased. Commercial agents who bring land or occupier deals work with us on both paths.
+              Where you do not yet hold a site, the other path is our developer-builder model: Indevelop acquires the land, Brenscot builds, and the completed warehouse is sold or leased. See{" "}
+              <Link href="/industrial-builders-brisbane" className="text-[#C8A24A] hover:underline">
+                industrial builders Brisbane
+              </Link>{" "}
+              or{" "}
+              <Link href="/for-commercial-agents" className="text-[#C8A24A] hover:underline">
+                for commercial agents
+              </Link>
+              .
             </p>
           </div>
 
@@ -80,8 +85,14 @@ export default function DesignAndConstructWarehousePage() {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
-              href="/warehouse-builders-brisbane"
+              href="/industrial-builders-brisbane"
               className="inline-flex items-center justify-center bg-[#C8A24A] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A]/85 transition-colors"
+            >
+              Industrial builders
+            </Link>
+            <Link
+              href="/warehouse-builders-brisbane"
+              className="inline-flex items-center justify-center border border-[#0b1526] text-[#0b1526] px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#0b1526] hover:text-[#C8A24A] transition-colors"
             >
               Warehouse builders Brisbane
             </Link>
@@ -100,6 +111,8 @@ export default function DesignAndConstructWarehousePage() {
           </div>
         </div>
       </section>
+
+      <LanderFaq faqs={seo.faqs ?? []} />
 
       <Footer />
     </div>

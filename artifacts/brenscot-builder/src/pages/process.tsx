@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import { NavBar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PageHero } from "@/components/layout/page-hero";
+import { TrustStrip } from "@/components/layout/trust-strip";
+import { LanderFaq } from "@/components/layout/lander-faq";
 import { SeoHead } from "@/seo/SeoHead";
 import { getStaticPage } from "@/seo/config";
 
@@ -51,8 +53,8 @@ const branches = [
   {
     title: "Investors and agents",
     body: "Indevelop acquires the site; Brenscot builds; the completed warehouse is sold or leased. Commercial agents who bring land or occupier relationships work with us on that path — not as a tender panel for construct-only jobs.",
-    href: "/partners",
-    cta: "Work with us",
+    href: "/for-commercial-agents",
+    cta: "For commercial agents",
   },
 ];
 
@@ -64,16 +66,11 @@ export default function ProcessPage() {
 
       <PageHero
         eyebrow="How a project runs"
-        title={
-          <>
-            Our
-            <br />
-            process.
-          </>
-        }
+        title={seo.h1 ?? "How Brenscot delivers industrial warehouses"}
       >
-        Site acquire through Indevelop, or your land. Then design, approvals, construction, handover, and sell or lease. The same chain, two ways in.
+        {seo.lead}
       </PageHero>
+      <TrustStrip />
 
       <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12">
@@ -123,16 +120,24 @@ export default function ProcessPage() {
             ))}
           </div>
 
-          <div className="mt-20">
+          <div className="mt-20 flex flex-col sm:flex-row gap-4">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center bg-[#C8A24A] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A]/85 transition-colors"
             >
               Start a conversation
             </Link>
+            <Link
+              href="/industrial-builders-brisbane"
+              className="inline-flex items-center justify-center border border-[#0b1526] text-[#0b1526] px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#0b1526] hover:text-[#C8A24A] transition-colors"
+            >
+              Industrial builders
+            </Link>
           </div>
         </div>
       </section>
+
+      <LanderFaq faqs={seo.faqs ?? []} />
 
       <Footer />
     </div>
