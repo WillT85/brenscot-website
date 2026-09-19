@@ -1,3 +1,5 @@
+import { LANDERS, landerBlocks, DC_FAQS, PROCESS_FAQS, WAREHOUSE_FAQS } from "./lander-copy";
+
 export const SITE_ORIGIN = "https://brenscot.com.au";
 export const SITE_NAME = "Brenscot Builders";
 export const DEFAULT_OG_IMAGE = "/opengraph.jpg";
@@ -9,12 +11,20 @@ export type FaqItem = {
   answer: string;
 };
 
+export type SeoBodyBlock = {
+  heading: string;
+  paragraphs: string[];
+};
+
 export type PageSeo = {
   path: string;
   title: string;
   description: string;
   robots?: string;
   faqs?: FaqItem[];
+  h1?: string;
+  lead?: string;
+  blocks?: SeoBodyBlock[];
 };
 
 export const INDUSTRIAL_BUILDERS_FAQS: FaqItem[] = [
@@ -51,16 +61,38 @@ export const INDUSTRIAL_BUILDERS_FAQS: FaqItem[] = [
   {
     question: "Are you QBCC licensed?",
     answer:
-      "Brenscot is a Queensland industrial builder. QBCC licence details are available on request — we do not publish a licence number on this page.",
+      "QBCC licence: [to be confirmed]. Licence details are available on request — we do not publish a licence number on this page.",
   },
 ];
+
+export const P0_LANDER_PATHS = [
+  "/industrial-builders-brisbane",
+  "/warehouse-builders-brisbane",
+  "/design-and-construct-warehouse-brisbane",
+  "/process",
+  "/industrial-developer-builder-brisbane",
+  "/warehouse-builders-north-brisbane",
+  "/tilt-panel-warehouse-brisbane",
+  "/for-commercial-agents",
+  "/developments",
+] as const;
 
 export const STATIC_PAGES: PageSeo[] = [
   {
     path: "/",
-    title: "Brenscot | Brisbane Industrial Warehouse Developer-Builder",
+    title: "Industrial Warehouse Developer-Builder Brisbane | Brenscot",
     description:
-      "Brisbane industrial warehouse developer-builder. We acquire land, secure approvals, then build to sell or lease — and deliver design-and-construct turnkey for landowners, up to about 10,000m², across Brisbane and SEQ.",
+      "Brenscot designs, develops and builds industrial warehouses across Brisbane & SEQ — Indevelop land to lease, or turnkey D&C for landowners, typically up to ~10,000 m². Northside strength.",
+    h1: "Brisbane industrial warehouse developer-builder",
+    lead: "Brenscot designs, develops and builds industrial warehouses across Brisbane and SEQ — Indevelop land to lease, or turnkey D&C for landowners, typically up to about 10,000m². Northside strength. Not a tender general contractor.",
+    blocks: [
+      {
+        heading: "Developer-builder, or design and construct",
+        paragraphs: [
+          "Indevelop acquires land and Brenscot constructs warehouses to sell or lease, or we deliver turnkey design-and-construct for landowners who already hold a site.",
+        ],
+      },
+    ],
   },
   {
     path: "/industrial-builders-brisbane",
@@ -68,25 +100,52 @@ export const STATIC_PAGES: PageSeo[] = [
     description:
       "Industrial builders Brisbane for warehouses & multi-unit facilities — developer-builder and turnkey design-and-construct tailored to your requirements. Northside & SEQ. Not a tender GC.",
     faqs: INDUSTRIAL_BUILDERS_FAQS,
+    h1: "Industrial builders Brisbane — bespoke design, develop & construct",
+    lead: "We are industrial developer-builders and turnkey D&C partners for client-specific warehouses — not a cheap general contractor chasing competitive tenders.",
+    blocks: INDUSTRIAL_BUILDERS_FAQS.map((item) => ({
+      heading: item.question,
+      paragraphs: [item.answer],
+    })),
   },
   {
     path: "/warehouse-builders-brisbane",
     title: "Warehouse Builders Brisbane | Developer-Builder | Brenscot",
     description:
-      "Brisbane warehouse builders focused on the northside and SEQ. Brenscot is a developer-builder — acquire, approve, build, sell or lease — and delivers design-and-construct for landowners, up to about 10,000m². Not tender general contracting.",
+      "Warehouse builders Brisbane for industrial facilities — developer-builder via Indevelop, or turnkey D&C on your land, typically up to ~10,000 m². Northside strength. Not a tender GC.",
+    faqs: WAREHOUSE_FAQS,
+    h1: "Warehouse builders Brisbane — develop, design and construct",
+    lead: "Brenscot is a Brisbane industrial warehouse developer-builder — not a tender general contractor. We develop and build warehouses to sell or lease, and we deliver design-and-construct turnkey for landowners.",
+    blocks: WAREHOUSE_FAQS.map((item) => ({ heading: item.question, paragraphs: [item.answer] })),
   },
   {
     path: "/design-and-construct-warehouse-brisbane",
-    title: "Design and Construct Warehouse Brisbane | Brenscot",
+    title: "Design and Construct Warehouse Brisbane | Turnkey D&C | Brenscot",
     description:
-      "Design-and-construct turnkey for landowners in Brisbane and SEQ: design, approvals and construction through to a finished warehouse, typically up to about 10,000m². One team — not a construct-only tender.",
+      "Turnkey design-and-construct warehouse Brisbane for landowners — design, approvals and construction to handover, typically up to ~10,000 m². One team. Not construct-only tender.",
+    faqs: DC_FAQS,
+    h1: "Design and construct warehouse Brisbane — turnkey for landowners",
+    lead: "Turnkey design, approvals and construction for landowners who already hold a site. One team from concept through to a finished industrial warehouse — typically up to about 10,000m² — in Brisbane and SEQ.",
+    blocks: DC_FAQS.map((item) => ({ heading: item.question, paragraphs: [item.answer] })),
   },
   {
     path: "/process",
-    title: "Our Process | Warehouse Developer-Builder Brisbane | Brenscot",
+    title: "Our Process | Industrial Warehouse Developer-Builder | Brenscot",
     description:
-      "How Brenscot delivers industrial warehouses: Indevelop acquires the site or you bring the land, then design, approvals, tilt-panel and steel construction, handover, and sell or lease.",
+      "How Brenscot delivers industrial warehouses in Brisbane & SEQ: Indevelop land to lease, or your land as turnkey D&C — design, approvals, tilt-panel and steel, handover.",
+    faqs: PROCESS_FAQS,
+    h1: "How Brenscot delivers industrial warehouses",
+    lead: "Site acquire through Indevelop, or your land. Then design, approvals, construction, handover, and sell or lease. The same chain, two ways in.",
+    blocks: PROCESS_FAQS.map((item) => ({ heading: item.question, paragraphs: [item.answer] })),
   },
+  ...LANDERS.map((lander) => ({
+    path: lander.path,
+    title: lander.title,
+    description: lander.description,
+    faqs: lander.faqs,
+    h1: lander.h1,
+    lead: lander.lead,
+    blocks: landerBlocks(lander),
+  })),
   {
     path: "/projects",
     title: "Industrial Warehouse Projects | Brisbane & SEQ | Brenscot",
@@ -323,5 +382,34 @@ export function applySeoHead(html: string, page: PageSeo, options?: { ogImage?: 
     return `${before}${block}${after}`;
   }
   return html.replace("</head>", `${block}\n  </head>`);
+}
+
+export function renderSeoBodyHtml(page: PageSeo): string {
+  if (!page.h1) {
+    return "";
+  }
+  const sections = [
+    `<h1>${escapeHtml(page.h1)}</h1>`,
+    page.lead ? `<p>${escapeHtml(page.lead)}</p>` : "",
+    ...(page.blocks ?? []).map(
+      (block) =>
+        `<section><h2>${escapeHtml(block.heading)}</h2>${block.paragraphs
+          .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+          .join("")}</section>`,
+    ),
+  ].filter(Boolean);
+  return `<main data-seo-prerender="body">${sections.join("\n")}</main>`;
+}
+
+export function applySeoPage(html: string, page: PageSeo, options?: { ogImage?: string }): string {
+  const withHead = applySeoHead(html, page, options);
+  const body = renderSeoBodyHtml(page);
+  if (!body) {
+    return withHead;
+  }
+  if (withHead.includes('<div id="root"></div>')) {
+    return withHead.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
+  }
+  return withHead.replace('<div id="root">', `<div id="root">${body}`);
 }
 

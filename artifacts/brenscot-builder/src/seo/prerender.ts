@@ -3,9 +3,11 @@ import path from "node:path";
 import type { Plugin } from "vite";
 import {
   NOT_FOUND_SEO,
+  P0_LANDER_PATHS,
   SITE_ORIGIN,
   STATIC_PAGES,
   applySeoHead,
+  applySeoPage,
   projectPageSeo,
 } from "./config";
 
@@ -53,10 +55,7 @@ function renderSitemap(paths: string[]): string {
       const priority =
         routePath === "/"
           ? "1.0"
-          : routePath === "/industrial-builders-brisbane" ||
-              routePath === "/warehouse-builders-brisbane" ||
-              routePath === "/design-and-construct-warehouse-brisbane" ||
-              routePath === "/process"
+          : (P0_LANDER_PATHS as readonly string[]).includes(routePath)
             ? "0.9"
             : routePath.startsWith("/projects/")
               ? "0.7"
@@ -150,10 +149,10 @@ export function seoPrerenderPlugin(projectsFile: string): Plugin {
       const projects = extractProjectRecords(projectSource);
       const home = STATIC_PAGES.find((page) => page.path === "/")!;
 
-      writeFile(indexPath, applySeoHead(template, home));
+      writeFile(indexPath, applySeoPage(template, home));
 
       for (const page of STATIC_PAGES.filter((item) => item.path !== "/")) {
-        writeFile(routeToFile(outDir, page.path), applySeoHead(template, page));
+        writeFile(routeToFile(outDir, page.path), applySeoPage(template, page));
       }
 
       for (const project of projects) {

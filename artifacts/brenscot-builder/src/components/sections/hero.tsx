@@ -124,7 +124,10 @@ export function Hero() {
 
       <div className="relative z-10 container mx-auto px-6 md:px-12 flex flex-col items-center justify-center text-center mt-20">
         
-        <h1 className="text-white font-serif uppercase leading-[0.85] text-[11vw] md:text-[9vw] font-bold tracking-tighter flex flex-col items-center">
+        <p
+          aria-hidden="true"
+          className="text-white font-serif uppercase leading-[0.85] text-[11vw] md:text-[9vw] font-bold tracking-tighter flex flex-col items-center"
+        >
           <span className="flex pb-[0.08em]">
             {"BRENSCOT".split("").map((letter, i) => (
               <motion.span
@@ -151,7 +154,7 @@ export function Hero() {
               </motion.span>
             ))}
           </span>
-        </h1>
+        </p>
 
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -159,9 +162,11 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
           className="mt-12 flex flex-col items-center gap-8"
         >
-          <p className="text-white/80 text-sm md:text-base tracking-[0.2em] font-normal text-center md:whitespace-nowrap">
+          <h1 className="text-white font-serif text-2xl md:text-4xl lg:text-5xl leading-tight text-center max-w-4xl">
+            Brisbane industrial warehouse developer-builder
+          </h1>
+          <p className="text-white/80 text-sm md:text-base tracking-[0.2em] font-normal text-center max-w-3xl">
             Industrial warehouses that lead the market — freestanding or multi-unit.
-            <br />
             Built from the ground up.
           </p>
           

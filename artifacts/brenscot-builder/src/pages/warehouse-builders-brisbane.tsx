@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import { NavBar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PageHero } from "@/components/layout/page-hero";
+import { TrustStrip } from "@/components/layout/trust-strip";
+import { LanderFaq } from "@/components/layout/lander-faq";
 import { SeoHead } from "@/seo/SeoHead";
 import { getStaticPage } from "@/seo/config";
 
@@ -31,16 +33,11 @@ export default function WarehouseBuildersBrisbanePage() {
 
       <PageHero
         eyebrow="Industrial warehouses"
-        title={
-          <>
-            Warehouse builders
-            <br />
-            Brisbane.
-          </>
-        }
+        title={seo.h1 ?? "Warehouse builders Brisbane — develop, design and construct"}
       >
-        Brenscot is a Brisbane industrial warehouse developer-builder — not a tender general contractor. We develop and build warehouses to sell or lease, and we deliver design-and-construct turnkey for landowners.
+        {seo.lead}
       </PageHero>
+      <TrustStrip />
 
       <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12">
@@ -62,7 +59,15 @@ export default function WarehouseBuildersBrisbanePage() {
                 Brenscot is not set up for competitive tender or construct-only general contracting. The work we take on is development we control, or design-and-construct we run end to end with the landowner.
               </p>
               <p className="text-black/60 text-lg font-light leading-relaxed">
-                That is the difference landowners, investors and commercial agents come to us for: one team, from site through to a warehouse ready to occupy, sell or lease.
+                That is the difference landowners, investors and commercial agents come to us for: one team, from site through to a warehouse ready to occupy, sell or lease. See also{" "}
+                <Link href="/industrial-builders-brisbane" className="text-[#C8A24A] hover:underline">
+                  industrial builders Brisbane
+                </Link>{" "}
+                and{" "}
+                <Link href="/warehouse-builders-north-brisbane" className="text-[#C8A24A] hover:underline">
+                  warehouse builders North Brisbane
+                </Link>
+                .
               </p>
             </motion.div>
 
@@ -111,6 +116,8 @@ export default function WarehouseBuildersBrisbanePage() {
           </div>
         </div>
       </section>
+
+      <LanderFaq faqs={seo.faqs ?? []} />
 
       <Footer />
     </div>

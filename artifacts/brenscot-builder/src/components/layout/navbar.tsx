@@ -5,6 +5,7 @@ import { Link, useLocation } from 'wouter';
 const navLinks: { name: string; href: string; id: string }[] = [
   { name: 'Home', href: '/', id: 'top' },
   { name: 'Projects', href: '/projects', id: 'projects' },
+  { name: 'Developments', href: '/developments', id: 'developments' },
   { name: 'Process', href: '/process', id: 'process' },
   { name: 'Industrial', href: '/industrial-builders-brisbane', id: 'industrial' },
   { name: 'About', href: '/about', id: 'about' },

@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import { NavBar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PageHero } from "@/components/layout/page-hero";
+import { TrustStrip } from "@/components/layout/trust-strip";
+import { LanderFaq } from "@/components/layout/lander-faq";
 import { SeoHead } from "@/seo/SeoHead";
 import { getStaticPage } from "@/seo/config";
 
@@ -64,16 +66,11 @@ export default function ProcessPage() {
 
       <PageHero
         eyebrow="How a project runs"
-        title={
-          <>
-            Our
-            <br />
-            process.
-          </>
-        }
+        title={seo.h1 ?? "How Brenscot delivers industrial warehouses"}
       >
-        Site acquire through Indevelop, or your land. Then design, approvals, construction, handover, and sell or lease. The same chain, two ways in.
+        {seo.lead}
       </PageHero>
+      <TrustStrip />
 
       <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12">
@@ -139,6 +136,8 @@ export default function ProcessPage() {
           </div>
         </div>
       </section>
+
+      <LanderFaq faqs={seo.faqs ?? []} />
 
       <Footer />
     </div>

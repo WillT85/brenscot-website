@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { NavBar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PageHero } from "@/components/layout/page-hero";
+import { TrustStrip } from "@/components/layout/trust-strip";
 import { SeoHead } from "@/seo/SeoHead";
 import { getStaticPage } from "@/seo/config";
 import { getProjectBySlug } from "@/data/projects";
@@ -137,19 +138,7 @@ export default function IndustrialBuildersBrisbanePage() {
         We are industrial developer-builders and turnkey D&C partners for client-specific warehouses — not a cheap general contractor chasing competitive tenders.
       </PageHero>
 
-      <section className="bg-[#081220] border-y border-white/10">
-        <div className="container mx-auto px-6 md:px-12 py-6 md:py-8">
-          <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[10px] uppercase tracking-[0.2em] text-white/55">
-            <li>Established 2020</li>
-            <li>Northside &amp; SEQ</li>
-            <li>
-              Up to about <span className="normal-case tracking-normal">10,000m²</span>
-            </li>
-            <li>Developer-builder</li>
-            <li>QBCC licensed</li>
-          </ul>
-        </div>
-      </section>
+      <TrustStrip />
 
       <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-6 md:px-12">
@@ -297,7 +286,11 @@ export default function IndustrialBuildersBrisbanePage() {
                 Industrial warehouses here are typically concrete tilt-panel and structural steel. Critical works stay with Brenscot; selected trades are people we already trust.
               </p>
               <p className="text-white/55 text-lg font-light leading-relaxed mb-10">
-                Tilt-panel and structural steel sit in the same delivery chain as design and approvals. See{" "}
+                Tilt-panel and structural steel sit in the same delivery chain as design and approvals. Read{" "}
+                <Link href="/tilt-panel-warehouse-brisbane" className="text-[#C8A24A] hover:underline">
+                  tilt-panel warehouse Brisbane
+                </Link>
+                ,{" "}
                 <Link href="/process" className="text-[#C8A24A] hover:underline">
                   our process
                 </Link>
@@ -307,8 +300,8 @@ export default function IndustrialBuildersBrisbanePage() {
                 </Link>
                 .
               </p>
-              <Link href="/process" className={goldOutlineCtaClass}>
-                See the process
+              <Link href="/tilt-panel-warehouse-brisbane" className={goldOutlineCtaClass}>
+                Tilt-panel warehouses
               </Link>
             </div>
           </div>
@@ -478,6 +471,9 @@ export default function IndustrialBuildersBrisbanePage() {
             </Link>
             <Link href="/warehouse-builders-brisbane" className={goldOutlineCtaClass}>
               Warehouse builders
+            </Link>
+            <Link href="/for-commercial-agents" className={goldOutlineCtaClass}>
+              For agents
             </Link>
           </div>
         </div>

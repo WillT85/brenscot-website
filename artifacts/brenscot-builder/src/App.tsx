@@ -16,6 +16,13 @@ import IndustrialBuildersBrisbanePage from "@/pages/industrial-builders-brisbane
 import WarehouseBuildersBrisbanePage from "@/pages/warehouse-builders-brisbane";
 import DesignAndConstructWarehousePage from "@/pages/design-and-construct-warehouse-brisbane";
 import ProcessPage from "@/pages/process";
+import {
+  DevelopmentsPage,
+  ForCommercialAgentsPage,
+  IndustrialDeveloperBuilderPage,
+  TiltPanelWarehouseBrisbanePage,
+  WarehouseBuildersNorthBrisbanePage,
+} from "@/pages/seo-landers";
 
 const queryClient = new QueryClient();
 
@@ -44,9 +51,14 @@ function Router() {
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/industrial-builders-brisbane" component={IndustrialBuildersBrisbanePage} />
+        <Route path="/industrial-developer-builder-brisbane" component={IndustrialDeveloperBuilderPage} />
         <Route path="/warehouse-builders-brisbane" component={WarehouseBuildersBrisbanePage} />
+        <Route path="/warehouse-builders-north-brisbane" component={WarehouseBuildersNorthBrisbanePage} />
         <Route path="/design-and-construct-warehouse-brisbane" component={DesignAndConstructWarehousePage} />
+        <Route path="/tilt-panel-warehouse-brisbane" component={TiltPanelWarehouseBrisbanePage} />
         <Route path="/process" component={ProcessPage} />
+        <Route path="/for-commercial-agents" component={ForCommercialAgentsPage} />
+        <Route path="/developments" component={DevelopmentsPage} />
         <Route path="/projects" component={ProjectsPage} />
         <Route path="/projects/:slug" component={ProjectDetailPage} />
         <Route path="/about" component={AboutPage} />

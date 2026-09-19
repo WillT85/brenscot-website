@@ -1,32 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-
-const pathways = [
-  {
-    href: "/industrial-builders-brisbane",
-    title: "Industrial builders Brisbane",
-    description:
-      "Developer-builder and bespoke turnkey D&C for client-specific warehouses and multi-unit facilities. Northside and SEQ — not a tender general contractor.",
-  },
-  {
-    href: "/warehouse-builders-brisbane",
-    title: "Warehouse builders Brisbane",
-    description:
-      "Developer-builder for industrial warehouses in Brisbane and the northside — acquire, approve, build, then sell or lease. Design-and-construct for landowners, up to about 10,000m².",
-  },
-  {
-    href: "/design-and-construct-warehouse-brisbane",
-    title: "Design and construct",
-    description:
-      "Turnkey design, approvals and construction for landowners who already hold a site. One team from concept through to a finished warehouse.",
-  },
-  {
-    href: "/process",
-    title: "Our process",
-    description:
-      "How a Brenscot project actually runs: site (Indevelop or your land), design, approvals, tilt-panel and steel construction, handover, then sell or lease.",
-  },
-];
+import { PATHWAY_CARDS } from "@/seo/lander-copy";
 
 export function Pathways() {
   return (
@@ -41,14 +15,14 @@ export function Pathways() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
-          {pathways.map((item, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+          {PATHWAY_CARDS.map((item, index) => (
             <motion.div
               key={item.href}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.7, delay: index * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.7, delay: (index % 3) * 0.08, ease: [0.16, 1, 0.3, 1] }}
             >
               <Link
                 href={item.href}
