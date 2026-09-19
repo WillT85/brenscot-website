@@ -3,6 +3,7 @@ import { Link } from 'wouter';
 const footerLinks = [
   { name: 'Projects', href: '/projects' },
   { name: 'Process', href: '/process' },
+  { name: 'Industrial builders', href: '/industrial-builders-brisbane' },
   { name: 'Warehouse builders', href: '/warehouse-builders-brisbane' },
   { name: 'Design and construct', href: '/design-and-construct-warehouse-brisbane' },
   { name: 'About', href: '/about' },

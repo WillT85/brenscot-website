@@ -6,6 +6,7 @@ const navLinks: { name: string; href: string; id: string }[] = [
   { name: 'Home', href: '/', id: 'top' },
   { name: 'Projects', href: '/projects', id: 'projects' },
   { name: 'Process', href: '/process', id: 'process' },
+  { name: 'Industrial', href: '/industrial-builders-brisbane', id: 'industrial' },
   { name: 'About', href: '/about', id: 'about' },
   { name: 'Careers', href: '/#careers', id: 'careers' },
   { name: 'Partners', href: '/partners', id: 'partners' },

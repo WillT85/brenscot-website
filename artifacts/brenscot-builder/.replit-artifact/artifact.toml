@@ -41,6 +41,14 @@ from = "/process/"
 to = "/process/index.html"
 
 [[services.production.rewrites]]
+from = "/industrial-builders-brisbane"
+to = "/industrial-builders-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/industrial-builders-brisbane/"
+to = "/industrial-builders-brisbane/index.html"
+
+[[services.production.rewrites]]
 from = "/warehouse-builders-brisbane"
 to = "/warehouse-builders-brisbane/index.html"
 

@@ -12,6 +12,7 @@ import PartnersPage from "@/pages/partners";
 import ContactPage from "@/pages/contact";
 import PrivacyPage from "@/pages/privacy";
 import TermsPage from "@/pages/terms";
+import IndustrialBuildersBrisbanePage from "@/pages/industrial-builders-brisbane";
 import WarehouseBuildersBrisbanePage from "@/pages/warehouse-builders-brisbane";
 import DesignAndConstructWarehousePage from "@/pages/design-and-construct-warehouse-brisbane";
 import ProcessPage from "@/pages/process";
@@ -42,6 +43,7 @@ function Router() {
       <RouteEffects />
       <Switch>
         <Route path="/" component={Home} />
+        <Route path="/industrial-builders-brisbane" component={IndustrialBuildersBrisbanePage} />
         <Route path="/warehouse-builders-brisbane" component={WarehouseBuildersBrisbanePage} />
         <Route path="/design-and-construct-warehouse-brisbane" component={DesignAndConstructWarehousePage} />
         <Route path="/process" component={ProcessPage} />

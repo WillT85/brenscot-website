@@ -53,7 +53,8 @@ function renderSitemap(paths: string[]): string {
       const priority =
         routePath === "/"
           ? "1.0"
-          : routePath === "/warehouse-builders-brisbane" ||
+          : routePath === "/industrial-builders-brisbane" ||
+              routePath === "/warehouse-builders-brisbane" ||
               routePath === "/design-and-construct-warehouse-brisbane" ||
               routePath === "/process"
             ? "0.9"

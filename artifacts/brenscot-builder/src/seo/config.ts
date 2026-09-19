@@ -4,12 +4,56 @@ export const DEFAULT_OG_IMAGE = "/opengraph.jpg";
 export const SEO_HEAD_START = "<!--seo-head-start-->";
 export const SEO_HEAD_END = "<!--seo-head-end-->";
 
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
 export type PageSeo = {
   path: string;
   title: string;
   description: string;
   robots?: string;
+  faqs?: FaqItem[];
 };
+
+export const INDUSTRIAL_BUILDERS_FAQS: FaqItem[] = [
+  {
+    question: "What does industrial builder mean at Brenscot?",
+    answer:
+      "Brenscot is a developer-builder and turnkey design-and-construct partner for client-specific warehouses and multi-unit industrial facilities in Brisbane and SEQ. We are not a cheap general contractor chasing competitive tenders.",
+  },
+  {
+    question: "Do you take competitive tenders or construct-only work?",
+    answer:
+      "No. We do not bid construct-only competitive tenders. The work we take on is development we originate with Indevelop, or design-and-construct we run end to end with the landowner.",
+  },
+  {
+    question: "What if I already own the land?",
+    answer:
+      "If you hold industrial land in Brisbane or SEQ, we deliver turnkey design-and-construct — design and approvals through construction and handover. Typical buildings are up to about 10,000m².",
+  },
+  {
+    question: "What if I do not have a site yet?",
+    answer:
+      "Indevelop, our in-house development company, can acquire the land. Brenscot then designs, approves and constructs. The completed warehouse is sold or leased.",
+  },
+  {
+    question: "What size and type of buildings do you deliver?",
+    answer:
+      "Client-specific freestanding warehouses and multi-unit facilities, typically up to about 10,000m², with a focus on Brisbane’s northside and the wider SEQ industrial market.",
+  },
+  {
+    question: "Which Brisbane precincts do you work in?",
+    answer:
+      "Work is centred on Brisbane’s northside and SEQ, including Brendale, North Lakes, Caboolture, Zillmere, Northgate, Geebung and Eagle Farm.",
+  },
+  {
+    question: "Are you QBCC licensed?",
+    answer:
+      "Brenscot is a Queensland industrial builder. QBCC licence details are available on request — we do not publish a licence number on this page.",
+  },
+];
 
 export const STATIC_PAGES: PageSeo[] = [
   {
@@ -17,6 +61,13 @@ export const STATIC_PAGES: PageSeo[] = [
     title: "Brenscot | Brisbane Industrial Warehouse Developer-Builder",
     description:
       "Brisbane industrial warehouse developer-builder. We acquire land, secure approvals, then build to sell or lease — and deliver design-and-construct turnkey for landowners, up to about 10,000m², across Brisbane and SEQ.",
+  },
+  {
+    path: "/industrial-builders-brisbane",
+    title: "Industrial Builders Brisbane | Bespoke D&C | Brenscot",
+    description:
+      "Industrial builders Brisbane for warehouses & multi-unit facilities — developer-builder and turnkey design-and-construct tailored to your requirements. Northside & SEQ. Not a tender GC.",
+    faqs: INDUSTRIAL_BUILDERS_FAQS,
   },
   {
     path: "/warehouse-builders-brisbane",
@@ -204,11 +255,34 @@ export function webPageJsonLd(page: PageSeo) {
   };
 }
 
+export function faqPageJsonLd(faqs: FaqItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+export function pageJsonLdGraph(page: PageSeo) {
+  const graph: object[] = [organizationJsonLd(), webPageJsonLd(page)];
+  if (page.faqs?.length) {
+    graph.push(faqPageJsonLd(page.faqs));
+  }
+  return graph;
+}
+
 export function renderSeoHeadHtml(page: PageSeo, options?: { ogImage?: string }): string {
   const url = absoluteUrl(page.path === "/404" ? "/" : page.path);
   const canonical = page.path === "/404" ? `${SITE_ORIGIN}/` : url;
   const image = absoluteAsset(options?.ogImage ?? DEFAULT_OG_IMAGE);
-  const jsonLd = [organizationJsonLd(), webPageJsonLd(page)];
+  const jsonLd = pageJsonLdGraph(page);
   const robots = page.robots
     ? `    <meta name="robots" content="${escapeHtml(page.robots)}" />\n`
     : "";

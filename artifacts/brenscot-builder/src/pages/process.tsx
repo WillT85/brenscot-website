@@ -123,12 +123,18 @@ export default function ProcessPage() {
             ))}
           </div>
 
-          <div className="mt-20">
+          <div className="mt-20 flex flex-col sm:flex-row gap-4">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center bg-[#C8A24A] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A]/85 transition-colors"
             >
               Start a conversation
+            </Link>
+            <Link
+              href="/industrial-builders-brisbane"
+              className="inline-flex items-center justify-center border border-[#0b1526] text-[#0b1526] px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#0b1526] hover:text-[#C8A24A] transition-colors"
+            >
+              Industrial builders
             </Link>
           </div>
         </div>

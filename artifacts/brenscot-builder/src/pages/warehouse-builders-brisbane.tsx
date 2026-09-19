@@ -85,8 +85,14 @@ export default function WarehouseBuildersBrisbanePage() {
 
           <div className="flex flex-col sm:flex-row gap-4 mt-20">
             <Link
-              href="/design-and-construct-warehouse-brisbane"
+              href="/industrial-builders-brisbane"
               className="inline-flex items-center justify-center bg-[#C8A24A] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A]/85 transition-colors"
+            >
+              Industrial builders
+            </Link>
+            <Link
+              href="/design-and-construct-warehouse-brisbane"
+              className="inline-flex items-center justify-center border border-[#0b1526] text-[#0b1526] px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#0b1526] hover:text-[#C8A24A] transition-colors"
             >
               Design and construct
             </Link>

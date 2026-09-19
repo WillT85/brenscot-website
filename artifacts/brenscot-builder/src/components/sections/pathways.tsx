@@ -3,6 +3,12 @@ import { Link } from "wouter";
 
 const pathways = [
   {
+    href: "/industrial-builders-brisbane",
+    title: "Industrial builders Brisbane",
+    description:
+      "Developer-builder and bespoke turnkey D&C for client-specific warehouses and multi-unit facilities. Northside and SEQ — not a tender general contractor.",
+  },
+  {
     href: "/warehouse-builders-brisbane",
     title: "Warehouse builders Brisbane",
     description:
@@ -35,7 +41,7 @@ export function Pathways() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-x-8 gap-y-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
           {pathways.map((item, index) => (
             <motion.div
               key={item.href}
