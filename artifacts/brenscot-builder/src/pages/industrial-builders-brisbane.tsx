@@ -142,7 +142,9 @@ export default function IndustrialBuildersBrisbanePage() {
           <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[10px] uppercase tracking-[0.2em] text-white/55">
             <li>Established 2020</li>
             <li>Northside &amp; SEQ</li>
-            <li>Typically ≤ ~10,000m²</li>
+            <li>
+              Up to about <span className="normal-case tracking-normal">10,000m²</span>
+            </li>
             <li>Developer-builder</li>
             <li>QBCC licensed</li>
           </ul>
@@ -295,11 +297,11 @@ export default function IndustrialBuildersBrisbanePage() {
                 Industrial warehouses here are typically concrete tilt-panel and structural steel. Critical works stay with Brenscot; selected trades are people we already trust.
               </p>
               <p className="text-white/55 text-lg font-light leading-relaxed mb-10">
-                There is no separate tilt-panel lander yet. The construction sequence sits in{" "}
+                Tilt-panel and structural steel sit in the same delivery chain as design and approvals. See{" "}
                 <Link href="/process" className="text-[#C8A24A] hover:underline">
                   our process
                 </Link>
-                , and the finished buildings are on{" "}
+                , or the finished buildings on{" "}
                 <Link href="/projects" className="text-[#C8A24A] hover:underline">
                   projects
                 </Link>
