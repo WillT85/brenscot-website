@@ -74,13 +74,13 @@ function FieldSelect({
         required={required}
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className={selectClass}
+        className={`${selectClass} ${value ? "text-[#0b1526]" : "text-black/30"}`}
       >
         <option value="" disabled>
           Select
         </option>
         {options.map((option) => (
-          <option key={option.value} value={option.value}>
+          <option key={option.value} value={option.value} className="text-[#0b1526]">
             {option.label}
           </option>
         ))}
