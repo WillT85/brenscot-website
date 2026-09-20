@@ -135,7 +135,7 @@ const sections: { heading: string; body: (string | { sub: string; items: string[
       { sub: '', items: [
         'Email: enquiries@brenscot.com.au',
         'Phone: +61 (0)7 3000 1234',
-        'Post: Attn: Privacy Officer, Brenscot Builders, Clarke St, Hendra, Brisbane QLD 4011',
+        'Post: Attn: Privacy Officer, Brenscot Builders, Suite 2C, 134 Racecourse Rd, Ascot QLD 4007',
       ]},
       '13.2 You can find out more information about the Privacy Act and the Australian Privacy Principles from the Office of the Australian Information Commissioner at www.oaic.gov.au (email: enquiries@oaic.gov.au).',
     ],
