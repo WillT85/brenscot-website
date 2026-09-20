@@ -134,7 +134,7 @@ const sections: { heading: string; body: (string | { sub: string; items: string[
       '13.1 If you feel that your privacy has not been respected or that Brenscot has conducted itself inconsistently with this Privacy Policy, the Australian Privacy Principles, a registered APP Code, and/or the Privacy Act in respect of your Personal Information, or for any other queries, problems, complaints, or communication in relation to this Privacy Policy, please contact us in any of the following ways:',
       { sub: '', items: [
         'Email: enquiries@brenscot.com.au',
-        'Phone: +61 (0)7 3000 1234',
+        'Phone: 0480 800 077',
         'Post: Attn: Privacy Officer, Brenscot Builders, Suite 2C, 134 Racecourse Rd, Ascot QLD 4007',
       ]},
       '13.2 You can find out more information about the Privacy Act and the Australian Privacy Principles from the Office of the Australian Information Commissioner at www.oaic.gov.au (email: enquiries@oaic.gov.au).',
