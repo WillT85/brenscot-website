@@ -211,7 +211,7 @@ export const projects: Project[] = [
     gallery: [robertsonHero, robertsonA, robertsonB, robertson11, robertson12, robertson13, robertson14, robertson0, robertson1, robertson2, robertson3, robertson4, robertson5, robertson6, robertson8, robertson9, robertson10],
   },
   {
-    slug: "34-36-bell-are-ave-northgate",
+    slug: "30-36-bell-are-ave-northgate",
     title: "30-36 Bell-Are Ave, Northgate",
     location: "Northgate, QLD",
     image: northgateImg,
@@ -248,7 +248,7 @@ export const projects: Project[] = [
     gallery: [robson0, robson1, robson2, robson3, robson4, robson5, robson6, robson7, robson8, robson9, robson10, robson11],
   },
   {
-    slug: "13-wildily-road-caboolture",
+    slug: "13-wildlily-road-caboolture",
     title: "13 Wildlily Road, Caboolture",
     location: "Caboolture, QLD",
     image: wildily13Img,
