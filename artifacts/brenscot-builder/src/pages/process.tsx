@@ -122,7 +122,7 @@ export default function ProcessPage() {
 
           <div className="mt-20 flex flex-col sm:flex-row gap-4">
             <Link
-              href="/contact"
+              href="/contact#enquiry"
               className="inline-flex items-center justify-center bg-[#C8A24A] text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#C8A24A]/85 transition-colors"
             >
               Start a conversation

@@ -126,7 +126,7 @@ export default function IndustrialBuildersBrisbanePage() {
         }
         actions={
           <>
-            <Link href="/contact" className={primaryCtaClass}>
+            <Link href="/contact#enquiry" className={primaryCtaClass}>
               Enquire
             </Link>
             <Link href="/process" className={goldOutlineCtaClass}>
@@ -463,7 +463,7 @@ export default function IndustrialBuildersBrisbanePage() {
             Developer-builder or turnkey D&amp;C — Brisbane northside and SEQ. If the brief is a competitive construct-only tender, we are not the right builder.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/contact" className={primaryCtaClass}>
+            <Link href="/contact#enquiry" className={primaryCtaClass}>
               Enquire
             </Link>
             <Link href="/projects" className={goldOutlineCtaClass}>

@@ -197,7 +197,7 @@ export const LANDERS: LanderSpec[] = [
     h1: "Industrial developer-builder Brisbane — from land to lease",
     lead: "Indevelop acquires the site. Brenscot designs, approves and constructs. The completed warehouse is sold or leased. That is developer-builder — not a cheap general contractor chasing competitive tenders.",
     heroCtas: [
-      { href: "/contact", label: "Enquire", variant: "primary" },
+      { href: "/contact#enquiry", label: "Enquire", variant: "primary" },
       { href: "/industrial-builders-brisbane", label: "Industrial builders", variant: "gold" },
     ],
     sections: [
@@ -252,7 +252,7 @@ export const LANDERS: LanderSpec[] = [
     finalLead:
       "Developer-builder for Brisbane northside and SEQ. If the brief is a competitive construct-only tender, we are not the right builder.",
     finalCtas: [
-      { href: "/contact", label: "Enquire", variant: "primary" },
+      { href: "/contact#enquiry", label: "Enquire", variant: "primary" },
       { href: "/partners", label: "Investors & agents", variant: "gold" },
       { href: "/developments", label: "Developments", variant: "gold" },
     ],
@@ -266,7 +266,7 @@ export const LANDERS: LanderSpec[] = [
     h1: "Warehouse builders North Brisbane — northside industrial",
     lead: "Brenscot is a northside-preferring industrial warehouse developer-builder. We develop and build to sell or lease, and we deliver turnkey D&C for landowners — not a cheap tender GC.",
     heroCtas: [
-      { href: "/contact", label: "Enquire", variant: "primary" },
+      { href: "/contact#enquiry", label: "Enquire", variant: "primary" },
       { href: "/warehouse-builders-brisbane", label: "Warehouse builders Brisbane", variant: "gold" },
     ],
     sections: [
@@ -311,7 +311,7 @@ export const LANDERS: LanderSpec[] = [
     finalHeading: "Talk to us about a northside warehouse.",
     finalLead: "North Brisbane and SEQ. Developer-builder or turnkey D&C — not competitive construct-only work.",
     finalCtas: [
-      { href: "/contact", label: "Enquire", variant: "primary" },
+      { href: "/contact#enquiry", label: "Enquire", variant: "primary" },
       { href: "/industrial-builders-brisbane", label: "Industrial builders", variant: "gold" },
       { href: "/projects", label: "All projects", variant: "gold" },
     ],
@@ -325,7 +325,7 @@ export const LANDERS: LanderSpec[] = [
     h1: "Tilt-panel warehouse Brisbane — construction we control",
     lead: "Industrial warehouses here are typically concrete tilt-panel and structural steel. Critical works stay with Brenscot. That construction sits inside developer-builder or turnkey D&C — not a cheap construct-only tender.",
     heroCtas: [
-      { href: "/contact", label: "Enquire", variant: "primary" },
+      { href: "/contact#enquiry", label: "Enquire", variant: "primary" },
       { href: "/process", label: "Our process", variant: "gold" },
     ],
     sections: [
@@ -367,7 +367,7 @@ export const LANDERS: LanderSpec[] = [
     finalLead:
       "Construction we control, inside developer-builder or D&C. Not a construct-only tender package.",
     finalCtas: [
-      { href: "/contact", label: "Enquire", variant: "primary" },
+      { href: "/contact#enquiry", label: "Enquire", variant: "primary" },
       { href: "/industrial-builders-brisbane", label: "Industrial builders", variant: "gold" },
       { href: "/projects", label: "Projects", variant: "gold" },
     ],
@@ -381,7 +381,7 @@ export const LANDERS: LanderSpec[] = [
     h1: "For commercial agents — land and occupier introductions",
     lead: "Bring land or an occupier who wants a client-specific warehouse. We work the Indevelop land-to-lease path or landowner D&C. We are not a cheap general contractor on a tender list.",
     heroCtas: [
-      { href: "/contact", label: "Talk to us", variant: "primary" },
+      { href: "/contact#enquiry", label: "Talk to us", variant: "primary" },
       { href: "/partners", label: "Investors & partners", variant: "gold" },
     ],
     sections: [
@@ -418,7 +418,7 @@ export const LANDERS: LanderSpec[] = [
     finalHeading: "Bring a site or an occupier.",
     finalLead: "Northside and SEQ industrial. Developer-builder or D&C — not a tender panel.",
     finalCtas: [
-      { href: "/contact", label: "Enquire", variant: "primary" },
+      { href: "/contact#enquiry", label: "Enquire", variant: "primary" },
       { href: "/process", label: "Our process", variant: "gold" },
       { href: "/developments", label: "Developments", variant: "gold" },
     ],
@@ -480,7 +480,7 @@ export const LANDERS: LanderSpec[] = [
     finalLead: "Completed and current industrial warehouse developments across Brisbane and SEQ.",
     finalCtas: [
       { href: "/projects", label: "All projects", variant: "primary" },
-      { href: "/contact", label: "Enquire", variant: "gold" },
+      { href: "/contact#enquiry", label: "Enquire", variant: "gold" },
       { href: "/warehouse-builders-brisbane", label: "Warehouse builders", variant: "gold" },
     ],
   },

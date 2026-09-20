@@ -30,15 +30,24 @@ function RouteEffects() {
   const [location] = useLocation();
 
   useEffect(() => {
-    const id = window.location.hash.replace(/^#/, "");
-    if (id) {
-      const timer = window.setTimeout(() => {
+    const scrollToHash = () => {
+      const id = window.location.hash.replace(/^#/, "");
+      if (!id) {
+        return;
+      }
+      window.setTimeout(() => {
         document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
       }, 80);
-      return () => window.clearTimeout(timer);
+    };
+
+    if (window.location.hash) {
+      scrollToHash();
+    } else {
+      window.scrollTo({ top: 0 });
     }
-    window.scrollTo({ top: 0 });
-    return undefined;
+
+    window.addEventListener("hashchange", scrollToHash);
+    return () => window.removeEventListener("hashchange", scrollToHash);
   }, [location]);
 
   return null;
