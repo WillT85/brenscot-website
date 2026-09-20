@@ -16,8 +16,15 @@ export function extractProjectRecords(source: string): {
   title: string;
   location: string;
   area?: string;
+  description?: string;
 }[] {
-  const records: { slug: string; title: string; location: string; area?: string }[] = [];
+  const records: {
+    slug: string;
+    title: string;
+    location: string;
+    area?: string;
+    description?: string;
+  }[] = [];
   const chunks = source.split(/slug:\s*"/).slice(1);
   for (const chunk of chunks) {
     const slug = chunk.match(/^([^"]+)"/)?.[1];
@@ -29,7 +36,14 @@ export function extractProjectRecords(source: string): {
     const area = chunk.match(
       /label:\s*"[^"]*(?:GFA|building area|lettable)[^"]*"\s*,\s*value:\s*"([^"]+)"/i,
     )?.[1];
-    records.push(area ? { slug, title, location, area } : { slug, title, location });
+    const description = chunk.match(/description:\s*"((?:[^"\\]|\\.)*)"/)?.[1];
+    records.push({
+      slug,
+      title,
+      location,
+      ...(area ? { area } : {}),
+      ...(description ? { description } : {}),
+    });
   }
   return records;
 }
@@ -157,7 +171,7 @@ export function seoPrerenderPlugin(projectsFile: string): Plugin {
 
       for (const project of projects) {
         const page = projectPageSeo(project);
-        writeFile(routeToFile(outDir, page.path), applySeoHead(template, page));
+        writeFile(routeToFile(outDir, page.path), applySeoPage(template, page));
       }
 
       const sitemapPaths = [

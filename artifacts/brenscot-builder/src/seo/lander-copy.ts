@@ -192,7 +192,7 @@ export const LANDERS: LanderSpec[] = [
     path: "/industrial-developer-builder-brisbane",
     title: "Industrial Developer-Builder Brisbane | Land to Lease | Brenscot",
     description:
-      "Industrial developer-builder Brisbane — Indevelop acquires, Brenscot designs and constructs warehouses and multi-unit facilities to sell or lease. Northside & SEQ. Not a tender GC.",
+      "Industrial developer-builder in Brisbane. Indevelop acquires the land; Brenscot designs and builds warehouses and multi-unit facilities to sell or lease.",
     eyebrow: "Indevelop + Brenscot",
     h1: "Industrial developer-builder Brisbane — from land to lease",
     lead: "Indevelop acquires the site. Brenscot designs, approves and constructs. The completed warehouse is sold or leased. That is developer-builder — not a cheap general contractor chasing competitive tenders.",
@@ -261,7 +261,7 @@ export const LANDERS: LanderSpec[] = [
     path: "/warehouse-builders-north-brisbane",
     title: "Warehouse Builders North Brisbane | Northside Industrial | Brenscot",
     description:
-      "Warehouse builders North Brisbane for northside industrial precincts — Brendale, North Lakes, Zillmere, Northgate, Geebung, Caboolture. Developer-builder and turnkey D&C, not a tender GC.",
+      "Warehouse builders for North Brisbane: Brendale, North Lakes, Zillmere, Northgate, Geebung and Caboolture. Developer-builder and turnkey design and construct.",
     eyebrow: "Northside industrial",
     h1: "Warehouse builders North Brisbane — northside industrial",
     lead: "Brenscot is a northside-preferring industrial warehouse developer-builder. We develop and build to sell or lease, and we deliver turnkey D&C for landowners — not a cheap tender GC.",
@@ -303,7 +303,7 @@ export const LANDERS: LanderSpec[] = [
           "24-robertson-st-brendale",
           "15-king-court-north-lakes",
           "535-zillmere-zillmere",
-          "34-36-bell-are-ave-northgate",
+          "30-36-bell-are-ave-northgate",
         ],
       },
     ],
@@ -320,7 +320,7 @@ export const LANDERS: LanderSpec[] = [
     path: "/tilt-panel-warehouse-brisbane",
     title: "Tilt Panel Warehouse Brisbane | Steel & Precast | Brenscot",
     description:
-      "Tilt-panel warehouse Brisbane — concrete tilt-panel and structural steel construction under Brenscot control, as developer-builder or turnkey D&C. Not a cheap tender GC.",
+      "Tilt-panel warehouses in Brisbane. Concrete tilt-panel and structural steel construction by Brenscot, as developer-builder or turnkey design and construct.",
     eyebrow: "Tilt-panel and steel",
     h1: "Tilt-panel warehouse Brisbane — construction we control",
     lead: "Industrial warehouses here are typically concrete tilt-panel and structural steel. Critical works stay with Brenscot. That construction sits inside developer-builder or turnkey D&C — not a cheap construct-only tender.",
@@ -376,7 +376,7 @@ export const LANDERS: LanderSpec[] = [
     path: "/for-commercial-agents",
     title: "For Commercial Agents | Industrial Warehouse Introducers | Brenscot",
     description:
-      "Commercial agents: introduce land or occupiers to Brenscot for Brisbane industrial warehouses. Developer-builder and turnkey D&C — not a construct-only tender panel.",
+      "Commercial agents: introduce land or occupiers to Brenscot for Brisbane industrial warehouses. Developer-builder and turnkey design and construct.",
     eyebrow: "Investors and agents",
     h1: "For commercial agents — land and occupier introductions",
     lead: "Bring land or an occupier who wants a client-specific warehouse. We work the Indevelop land-to-lease path or landowner D&C. We are not a cheap general contractor on a tender list.",
@@ -427,7 +427,7 @@ export const LANDERS: LanderSpec[] = [
     path: "/developments",
     title: "Industrial Warehouse Developments Brisbane | Brenscot",
     description:
-      "Industrial warehouse developments across Brisbane & SEQ by Brenscot — developer-built and design-and-construct facilities, typically up to ~10,000 m². Northside strength.",
+      "Industrial warehouse developments across Brisbane and SEQ by Brenscot: developer-built and design and construct facilities, available to buy or lease.",
     eyebrow: "Developments",
     h1: "Industrial warehouse developments Brisbane",
     lead: "Developer-built warehouses and multi-unit facilities — Indevelop land to lease, or turnkey D&C on a client’s land. Not tendered general contracting.",
