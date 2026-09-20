@@ -144,9 +144,144 @@ to = "/terms-conditions/index.html"
 from = "/terms-conditions/"
 to = "/terms-conditions/index.html"
 
+# Explicit project routes. The previous wildcard rule (/projects/*) returned HTTP 404 in production.
+# When a project is added to src/data/projects.ts, add its two rules here.
 [[services.production.rewrites]]
-from = "/projects/*"
-to = "/projects/*/index.html"
+from = "/projects/15-king-court-north-lakes"
+to = "/projects/15-king-court-north-lakes/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/15-king-court-north-lakes/"
+to = "/projects/15-king-court-north-lakes/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/566-rode-rd-chermside"
+to = "/projects/566-rode-rd-chermside/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/566-rode-rd-chermside/"
+to = "/projects/566-rode-rd-chermside/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/24-robertson-st-brendale"
+to = "/projects/24-robertson-st-brendale/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/24-robertson-st-brendale/"
+to = "/projects/24-robertson-st-brendale/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/30-36-bell-are-ave-northgate"
+to = "/projects/30-36-bell-are-ave-northgate/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/30-36-bell-are-ave-northgate/"
+to = "/projects/30-36-bell-are-ave-northgate/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/34-40-robson-st-clontarf"
+to = "/projects/34-40-robson-st-clontarf/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/34-40-robson-st-clontarf/"
+to = "/projects/34-40-robson-st-clontarf/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/13-wildlily-road-caboolture"
+to = "/projects/13-wildlily-road-caboolture/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/13-wildlily-road-caboolture/"
+to = "/projects/13-wildlily-road-caboolture/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/59-alta-road-caboolture"
+to = "/projects/59-alta-road-caboolture/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/59-alta-road-caboolture/"
+to = "/projects/59-alta-road-caboolture/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/535-zillmere-zillmere"
+to = "/projects/535-zillmere-zillmere/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/535-zillmere-zillmere/"
+to = "/projects/535-zillmere-zillmere/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/47-noble-ave-northgate"
+to = "/projects/47-noble-ave-northgate/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/47-noble-ave-northgate/"
+to = "/projects/47-noble-ave-northgate/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/lot-83-37-wildlily-road-caboolture"
+to = "/projects/lot-83-37-wildlily-road-caboolture/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/lot-83-37-wildlily-road-caboolture/"
+to = "/projects/lot-83-37-wildlily-road-caboolture/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/lot-80-25-wildlily-road-caboolture"
+to = "/projects/lot-80-25-wildlily-road-caboolture/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/lot-80-25-wildlily-road-caboolture/"
+to = "/projects/lot-80-25-wildlily-road-caboolture/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/lot-74-18-barr-road-caboolture"
+to = "/projects/lot-74-18-barr-road-caboolture/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/lot-74-18-barr-road-caboolture/"
+to = "/projects/lot-74-18-barr-road-caboolture/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/lot-82-33-wildlily-road-caboolture"
+to = "/projects/lot-82-33-wildlily-road-caboolture/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/lot-82-33-wildlily-road-caboolture/"
+to = "/projects/lot-82-33-wildlily-road-caboolture/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/lot-84-mcnaught-road-caboolture"
+to = "/projects/lot-84-mcnaught-road-caboolture/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/lot-84-mcnaught-road-caboolture/"
+to = "/projects/lot-84-mcnaught-road-caboolture/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/440-progress-rd-wacol"
+to = "/projects/440-progress-rd-wacol/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/440-progress-rd-wacol/"
+to = "/projects/440-progress-rd-wacol/index.html"
+
+# Old misspelt slugs kept working (canonical tag points to the corrected URL).
+[[services.production.rewrites]]
+from = "/projects/34-36-bell-are-ave-northgate"
+to = "/projects/30-36-bell-are-ave-northgate/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/34-36-bell-are-ave-northgate/"
+to = "/projects/30-36-bell-are-ave-northgate/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/13-wildily-road-caboolture"
+to = "/projects/13-wildlily-road-caboolture/index.html"
+
+[[services.production.rewrites]]
+from = "/projects/13-wildily-road-caboolture/"
+to = "/projects/13-wildlily-road-caboolture/index.html"
 
 [services.env]
 PORT = "25883"
