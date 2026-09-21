@@ -17,11 +17,11 @@ const meaning = [
   },
   {
     title: "Bespoke turnkey D&C",
-    body: "If you already hold land, we deliver turnkey design-and-construct tailored to your requirements: design and approvals through construction and handover. Buildings typically up to about 10,000m².",
+    body: "If you already hold land, we deliver turnkey design-and-construct tailored to your requirements: design and approvals through construction and handover.",
   },
   {
-    title: "Not a tender general contractor",
-    body: "We are not set up to chase cheap competitive tenders or construct-only work. The projects we take on are developments we control, or design-and-construct we run end to end with the client.",
+    title: "How we take on work",
+    body: "The projects we take on are developments we control, or design-and-construct we run end to end with the client. We do not bid construct-only competitive tenders.",
   },
 ];
 
@@ -55,7 +55,7 @@ const requirements = [
   },
   {
     title: "Freestanding or multi-unit",
-    body: "A single client-specific warehouse, or a multi-unit complex planned for a mix of occupiers — typically up to about 10,000m².",
+    body: "A single client-specific warehouse, or a multi-unit complex planned for a mix of occupiers.",
   },
 ];
 
@@ -135,7 +135,7 @@ export default function IndustrialBuildersBrisbanePage() {
           </>
         }
       >
-        We are industrial developer-builders and turnkey D&C partners for client-specific warehouses — not a cheap general contractor chasing competitive tenders.
+        We are industrial developer-builders and turnkey D&C partners for client-specific warehouses across Brisbane and SEQ.
       </PageHero>
 
       <TrustStrip />
@@ -154,7 +154,7 @@ export default function IndustrialBuildersBrisbanePage() {
                 What industrial builder means here
               </span>
               <h2 className="text-4xl md:text-5xl font-serif text-black leading-tight mb-8">
-                Client-specific warehouses — not a cheap tender GC.
+                Client-specific warehouses, delivered end to end.
               </h2>
               <p className="text-black/60 text-lg font-light leading-relaxed mb-6">
                 “Industrial builder” is a wide search. On this site it means a Queensland developer-builder and bespoke turnkey design-and-construct partner for warehouses and multi-unit facilities — Brisbane and SEQ, with a northside preference.
@@ -266,7 +266,7 @@ export default function IndustrialBuildersBrisbanePage() {
                 Why not competitive tender
               </span>
               <h2 className="text-4xl md:text-5xl font-serif leading-tight mb-8">
-                We are not a cheap general contractor.
+                We originate the work. We do not bid it.
               </h2>
               <p className="text-white/55 text-lg font-light leading-relaxed mb-6">
                 Competitive tender construct-only work asks a builder to price someone else’s documents against a field of other builders. That is not how Brenscot is set up.

@@ -54,13 +54,13 @@ export const WAREHOUSE_FAQS: FaqItem[] = [
   {
     question: "What kind of warehouse builder is Brenscot?",
     answer:
-      "A Brisbane developer-builder: Indevelop acquires land, Brenscot designs, approves and constructs, then the warehouse is sold or leased. We also deliver turnkey D&C if you already hold the land. We are not a tender general contractor.",
+      "A Brisbane developer-builder: Indevelop acquires land, Brenscot designs, approves and constructs, then the warehouse is sold or leased. We also deliver turnkey D&C if you already hold the land.",
   },
   TENDER_FAQ,
   {
     question: "What size warehouses do you build?",
     answer:
-      "Client-specific freestanding warehouses and multi-unit facilities, typically up to about 10,000m², with a northside Brisbane and SEQ focus.",
+      "Client-specific freestanding warehouses and multi-unit facilities, with a northside Brisbane and SEQ focus.",
   },
   {
     question: "Where in Brisbane do you work?",
@@ -74,7 +74,7 @@ export const DC_FAQS: FaqItem[] = [
   {
     question: "What does design-and-construct mean here?",
     answer:
-      "Turnkey delivery on land you already hold: design and approvals through construction and handover, typically up to about 10,000m². One team — not a construct-only tender against other builders.",
+      "Turnkey delivery on land you already hold: design and approvals through construction and handover. One team from concept to completion.",
   },
   {
     question: "What if I do not have a site yet?",
@@ -109,12 +109,12 @@ export const DEVELOPER_FAQS: FaqItem[] = [
   {
     question: "Is this the same as a general contractor?",
     answer:
-      "No. A tender GC prices someone else’s documents. We originate the development, or we run end-to-end D&C with the landowner. We do not chase cheap competitive tenders.",
+      "No. A general contractor on a tender prices someone else’s documents. We originate the development, or we run end-to-end D&C with the landowner. We do not bid construct-only competitive tenders.",
   },
   {
     question: "Can I still use you if I already own the land?",
     answer:
-      "Yes — that is turnkey design-and-construct, not the Indevelop acquire path. Typical buildings up to about 10,000m².",
+      "Yes — that is turnkey design-and-construct, not the Indevelop acquire path.",
   },
   QBCC_FAQ,
 ];
@@ -128,7 +128,7 @@ export const NORTH_FAQS: FaqItem[] = [
   {
     question: "What kind of warehouses do you build on the northside?",
     answer:
-      "Client-specific freestanding warehouses and multi-unit facilities, typically up to about 10,000m², as developer-builder or turnkey D&C.",
+      "Client-specific freestanding warehouses and multi-unit facilities, as developer-builder or turnkey D&C.",
   },
   TENDER_FAQ,
   QBCC_FAQ,
@@ -143,12 +143,12 @@ export const TILT_FAQS: FaqItem[] = [
   {
     question: "Is tilt-panel offered as construct-only?",
     answer:
-      "No. Tilt-panel and steel sit inside developer-builder or turnkey D&C — not as a cheap construct-only tender package.",
+      "No. Tilt-panel and steel sit inside developer-builder or turnkey D&C. We do not offer it as a construct-only tender package.",
   },
   {
     question: "What size tilt-panel buildings do you deliver?",
     answer:
-      "Typically up to about 10,000m², freestanding or multi-unit, Brisbane northside and SEQ.",
+      "Freestanding or multi-unit, Brisbane northside and SEQ.",
   },
   QBCC_FAQ,
 ];
@@ -162,12 +162,12 @@ export const AGENTS_FAQS: FaqItem[] = [
   {
     question: "Do you pay introductions on competitive tenders?",
     answer:
-      "No. If the brief is a cheap construct-only tender, we are not the right builder. Bring land or an occupier who wants a client-specific warehouse.",
+      "No. If the brief is a construct-only competitive tender, we are not the right builder. Bring land or an occupier who wants a client-specific warehouse.",
   },
   {
     question: "Where do you prefer sites?",
     answer:
-      "Brisbane northside and SEQ industrial precincts, typically for buildings up to about 10,000m².",
+      "Brisbane northside and SEQ industrial precincts.",
   },
   QBCC_FAQ,
 ];
@@ -195,7 +195,7 @@ export const LANDERS: LanderSpec[] = [
       "Industrial developer-builder in Brisbane. Indevelop acquires the land; Brenscot designs and builds warehouses and multi-unit facilities to sell or lease.",
     eyebrow: "Indevelop + Brenscot",
     h1: "Industrial developer-builder Brisbane — from land to lease",
-    lead: "Indevelop acquires the site. Brenscot designs, approves and constructs. The completed warehouse is sold or leased. That is developer-builder — not a cheap general contractor chasing competitive tenders.",
+    lead: "Indevelop acquires the site. Brenscot designs, approves and constructs. The completed warehouse is sold or leased. That is developer-builder.",
     heroCtas: [
       { href: "/contact", label: "Enquire", variant: "primary" },
       { href: "/industrial-builders-brisbane", label: "Industrial builders", variant: "gold" },
@@ -205,7 +205,7 @@ export const LANDERS: LanderSpec[] = [
         eyebrow: "What developer-builder means",
         heading: "One journey from raw land to a finished warehouse.",
         paragraphs: [
-          "The preferred model is acquire land, secure approvals, build, then sell or lease. Indevelop finds and buys the site; Brenscot takes design, approvals and construction — typically up to about 10,000m², with a northside Brisbane and SEQ focus.",
+          "The preferred model is acquire land, secure approvals, build, then sell or lease. Indevelop finds and buys the site; Brenscot takes design, approvals and construction, with a northside Brisbane and SEQ focus.",
           "If you already hold land, the other path is turnkey design-and-construct. Neither path is construct-only tender work.",
         ],
         cards: [
@@ -224,7 +224,7 @@ export const LANDERS: LanderSpec[] = [
         ],
       },
       {
-        eyebrow: "Not a tender GC",
+        eyebrow: "How we take on work",
         heading: "We originate the work — we do not bid it.",
         tone: "dark",
         paragraphs: [
@@ -264,7 +264,7 @@ export const LANDERS: LanderSpec[] = [
       "Warehouse builders for North Brisbane: Brendale, North Lakes, Zillmere, Northgate, Geebung and Caboolture. Developer-builder and turnkey design and construct.",
     eyebrow: "Northside industrial",
     h1: "Warehouse builders North Brisbane — northside industrial",
-    lead: "Brenscot is a northside-preferring industrial warehouse developer-builder. We develop and build to sell or lease, and we deliver turnkey D&C for landowners — not a cheap tender GC.",
+    lead: "Brenscot is a northside-preferring industrial warehouse developer-builder. We develop and build to sell or lease, and we deliver turnkey D&C for landowners.",
     heroCtas: [
       { href: "/contact", label: "Enquire", variant: "primary" },
       { href: "/warehouse-builders-brisbane", label: "Warehouse builders Brisbane", variant: "gold" },
@@ -274,7 +274,7 @@ export const LANDERS: LanderSpec[] = [
         eyebrow: "North Brisbane",
         heading: "Precincts we actually work in.",
         paragraphs: [
-          "Work is centred on Brisbane’s northside and the wider SEQ industrial market. Typical buildings up to about 10,000m² — freestanding or multi-unit.",
+          "Work is centred on Brisbane’s northside and the wider SEQ industrial market. Freestanding or multi-unit.",
         ],
         precincts: ["Brendale", "North Lakes", "Caboolture", "Zillmere", "Northgate", "Geebung", "Eagle Farm"],
       },
@@ -323,7 +323,7 @@ export const LANDERS: LanderSpec[] = [
       "Tilt-panel warehouses in Brisbane. Concrete tilt-panel and structural steel construction by Brenscot, as developer-builder or turnkey design and construct.",
     eyebrow: "Tilt-panel and steel",
     h1: "Tilt-panel warehouse Brisbane — construction we control",
-    lead: "Industrial warehouses here are typically concrete tilt-panel and structural steel. Critical works stay with Brenscot. That construction sits inside developer-builder or turnkey D&C — not a cheap construct-only tender.",
+    lead: "Industrial warehouses here are typically concrete tilt-panel and structural steel. Critical works stay with Brenscot. That construction sits inside developer-builder or turnkey D&C.",
     heroCtas: [
       { href: "/contact", label: "Enquire", variant: "primary" },
       { href: "/process", label: "Our process", variant: "gold" },
@@ -379,7 +379,7 @@ export const LANDERS: LanderSpec[] = [
       "Commercial agents: introduce land or occupiers to Brenscot for Brisbane industrial warehouses. Developer-builder and turnkey design and construct.",
     eyebrow: "Investors and agents",
     h1: "For commercial agents — land and occupier introductions",
-    lead: "Bring land or an occupier who wants a client-specific warehouse. We work the Indevelop land-to-lease path or landowner D&C. We are not a cheap general contractor on a tender list.",
+    lead: "Bring land or an occupier who wants a client-specific warehouse. We work the Indevelop land-to-lease path or landowner D&C.",
     heroCtas: [
       { href: "/contact", label: "Talk to us", variant: "primary" },
       { href: "/partners", label: "Investors & partners", variant: "gold" },
@@ -389,7 +389,7 @@ export const LANDERS: LanderSpec[] = [
         eyebrow: "How agents work with us",
         heading: "Introduce the site or the occupier — not a tender.",
         paragraphs: [
-          "Commercial agents who bring land or occupier relationships work with Brenscot on developer-builder and design-and-construct. Typical buildings up to about 10,000m², northside Brisbane and SEQ.",
+          "Commercial agents who bring land or occupier relationships work with Brenscot on developer-builder and design-and-construct, northside Brisbane and SEQ.",
           "If the instruction is “get three construct-only prices”, we are not the right call.",
         ],
         cards: [
@@ -516,7 +516,7 @@ export const PATHWAY_CARDS = [
     href: "/industrial-builders-brisbane",
     title: "Industrial builders Brisbane",
     description:
-      "Developer-builder and bespoke turnkey D&C for client-specific warehouses and multi-unit facilities. Northside and SEQ — not a tender general contractor.",
+      "Developer-builder and bespoke turnkey D&C for client-specific warehouses and multi-unit facilities. Northside and SEQ.",
   },
   {
     href: "/industrial-developer-builder-brisbane",
@@ -528,7 +528,7 @@ export const PATHWAY_CARDS = [
     href: "/warehouse-builders-brisbane",
     title: "Warehouse builders Brisbane",
     description:
-      "Developer-builder for industrial warehouses in Brisbane and the northside — acquire, approve, build, then sell or lease. D&C for landowners, up to about 10,000m².",
+      "Developer-builder for industrial warehouses in Brisbane and the northside — acquire, approve, build, then sell or lease. D&C for landowners.",
   },
   {
     href: "/warehouse-builders-north-brisbane",
@@ -558,7 +558,7 @@ export const PATHWAY_CARDS = [
     href: "/for-commercial-agents",
     title: "For commercial agents",
     description:
-      "Introduce land or occupiers. We work developer-builder and D&C — not as a cheap construct-only tender panel.",
+      "Introduce land or occupiers. We work developer-builder and D&C.",
   },
   {
     href: "/developments",

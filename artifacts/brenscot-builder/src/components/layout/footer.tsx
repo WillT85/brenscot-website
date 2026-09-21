@@ -11,6 +11,7 @@ const footerLinks = [
   { name: 'Design and construct', href: '/design-and-construct-warehouse-brisbane' },
   { name: 'Tilt-panel', href: '/tilt-panel-warehouse-brisbane' },
   { name: 'For agents', href: '/for-commercial-agents' },
+  { name: 'Insights', href: '/insights' },
   { name: 'About', href: '/about' },
   { name: 'Careers', href: '/#careers' },
   { name: 'Partners', href: '/partners' },
