@@ -17,7 +17,7 @@ const points = [
   },
   {
     title: "Design and construct for landowners",
-    body: "If you already hold land, we deliver turnkey design-and-construct: design and approvals through construction and handover. Buildings up to about 10,000m².",
+    body: "If you already hold land, we deliver turnkey design-and-construct: design and approvals through construction and handover.",
   },
   {
     title: "Brisbane, with a northside focus",

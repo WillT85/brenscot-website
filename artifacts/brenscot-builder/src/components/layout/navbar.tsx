@@ -8,6 +8,7 @@ const navLinks: { name: string; href: string; id: string }[] = [
   { name: 'Developments', href: '/developments', id: 'developments' },
   { name: 'Process', href: '/process', id: 'process' },
   { name: 'Industrial', href: '/industrial-builders-brisbane', id: 'industrial' },
+  { name: 'Insights', href: '/insights', id: 'insights' },
   { name: 'About', href: '/about', id: 'about' },
   { name: 'Careers', href: '/#careers', id: 'careers' },
   { name: 'Partners', href: '/partners', id: 'partners' },
@@ -15,9 +16,9 @@ const navLinks: { name: string; href: string; id: string }[] = [
 ];
 
 function navClassName(name: string, useDark: boolean) {
-  return `text-xs font-medium uppercase tracking-[0.2em] transition-colors whitespace-nowrap ${
+  return `text-xs font-medium uppercase tracking-[0.12em] 2xl:tracking-[0.2em] transition-colors whitespace-nowrap ${
     name === 'Contact Us'
-      ? 'bg-[#C8A24A] text-white px-6 py-3 hover:bg-[#C8A24A]/85'
+      ? 'bg-[#C8A24A] text-white px-4 2xl:px-6 py-3 hover:bg-[#C8A24A]/85'
       : useDark
         ? 'text-[#0b1526] hover:text-[#C8A24A]'
         : 'text-[#C8A24A] hover:text-[#C8A24A]/60'
@@ -80,7 +81,7 @@ export function NavBar({ lightBackground = false }: { lightBackground?: boolean 
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-10">
+        <nav className="hidden xl:flex items-center gap-5 2xl:gap-10">
           {navLinks.map((link) =>
             link.id === 'careers' ? (
               <a
@@ -108,7 +109,7 @@ export function NavBar({ lightBackground = false }: { lightBackground?: boolean 
 
         <button
           type="button"
-          className={`lg:hidden p-2 transition-colors duration-500 ${useDark ? 'text-[#0b1526]' : 'text-white'}`}
+          className={`xl:hidden p-2 transition-colors duration-500 ${useDark ? 'text-[#0b1526]' : 'text-white'}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           data-testid="button-mobile-menu"
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
@@ -118,7 +119,7 @@ export function NavBar({ lightBackground = false }: { lightBackground?: boolean 
       </div>
 
       {mobileMenuOpen && (
-        <div className={`lg:hidden absolute top-full left-0 right-0 border-b py-6 px-6 flex flex-col gap-2 shadow-2xl ${
+        <div className={`xl:hidden absolute top-full left-0 right-0 border-b py-6 px-6 flex flex-col gap-2 shadow-2xl ${
           useDark ? 'bg-white border-black/10' : 'bg-[#0a0a0a] border-white/10'
         }`}>
           {navLinks.map((link) => {

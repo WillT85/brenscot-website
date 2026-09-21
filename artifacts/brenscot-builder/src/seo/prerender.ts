@@ -8,8 +8,11 @@ import {
   STATIC_PAGES,
   applySeoHead,
   applySeoPage,
+  insightPageSeo,
   projectPageSeo,
 } from "./config";
+import { INSIGHTS } from "../data/insights-index";
+import { INSIGHT_HTML } from "../data/insights-content";
 
 export function extractProjectRecords(source: string): {
   slug: string;
@@ -71,7 +74,7 @@ function renderSitemap(paths: string[]): string {
           ? "1.0"
           : (P0_LANDER_PATHS as readonly string[]).includes(routePath)
             ? "0.9"
-            : routePath.startsWith("/projects/")
+            : routePath.startsWith("/projects/") || routePath.startsWith("/insights/")
               ? "0.7"
               : "0.8";
       return `  <url>
@@ -174,17 +177,28 @@ export function seoPrerenderPlugin(projectsFile: string): Plugin {
         writeFile(routeToFile(outDir, page.path), applySeoPage(template, page));
       }
 
+      for (const insight of INSIGHTS) {
+        const html = INSIGHT_HTML[insight.slug];
+        if (!html) {
+          this.error(`SEO prerender: no content for insight ${insight.slug}`);
+          return;
+        }
+        const page = insightPageSeo(insight, html);
+        writeFile(routeToFile(outDir, page.path), applySeoPage(template, page));
+      }
+
       const sitemapPaths = [
         ...STATIC_PAGES.filter((page) => page.path !== "/privacy-policy" && page.path !== "/terms-conditions").map(
           (page) => page.path,
         ),
         ...projects.map((project) => `/projects/${project.slug}`),
+        ...INSIGHTS.map((insight) => `/insights/${insight.slug}`),
       ];
       writeFile(path.join(outDir, "sitemap.xml"), renderSitemap(sitemapPaths));
       writeFile(path.join(outDir, "404.html"), renderNotFoundHtml(template));
 
       this.info(
-        `SEO prerender: ${STATIC_PAGES.length} pages + ${projects.length} projects, sitemap, 404.html`,
+        `SEO prerender: ${STATIC_PAGES.length} pages + ${projects.length} projects + ${INSIGHTS.length} insights, sitemap, 404.html`,
       );
     },
   };

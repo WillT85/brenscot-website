@@ -3,7 +3,6 @@ export const QBCC_LICENCE = "QBCC 15213515";
 const defaultItems = [
   "Established 2020",
   "Northside & SEQ",
-  "Up to about 10,000m²",
   "Developer-builder",
   QBCC_LICENCE,
 ];
@@ -15,13 +14,7 @@ export function TrustStrip({ items = defaultItems }: { items?: string[] }) {
         <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[10px] uppercase tracking-[0.2em] text-white/55">
           {items.map((item) => (
             <li key={item}>
-              {item.includes("10,000") ? (
-                <>
-                  Up to about <span className="normal-case tracking-normal">10,000m²</span>
-                </>
-              ) : (
-                item
-              )}
+              {item}
             </li>
           ))}
         </ul>

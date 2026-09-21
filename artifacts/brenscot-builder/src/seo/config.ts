@@ -1,4 +1,5 @@
 import { LANDERS, landerBlocks, DC_FAQS, PROCESS_FAQS, WAREHOUSE_FAQS } from "./lander-copy";
+import { INSIGHTS, type InsightMeta } from "../data/insights-index";
 
 export const SITE_ORIGIN = "https://brenscot.com.au";
 export const SITE_NAME = "Brenscot Builders";
@@ -25,13 +26,17 @@ export type PageSeo = {
   h1?: string;
   lead?: string;
   blocks?: SeoBodyBlock[];
+  /** Trusted, pre-rendered HTML appended to the prerendered body (insights articles). */
+  bodyHtml?: string;
+  /** Present on insights articles; adds Article structured data. */
+  article?: { datePublished: string; dateModified: string };
 };
 
 export const INDUSTRIAL_BUILDERS_FAQS: FaqItem[] = [
   {
     question: "What does industrial builder mean at Brenscot?",
     answer:
-      "Brenscot is a developer-builder and turnkey design-and-construct partner for client-specific warehouses and multi-unit industrial facilities in Brisbane and SEQ. We are not a cheap general contractor chasing competitive tenders.",
+      "Brenscot is a developer-builder and turnkey design-and-construct partner for client-specific warehouses and multi-unit industrial facilities in Brisbane and SEQ.",
   },
   {
     question: "Do you take competitive tenders or construct-only work?",
@@ -41,7 +46,7 @@ export const INDUSTRIAL_BUILDERS_FAQS: FaqItem[] = [
   {
     question: "What if I already own the land?",
     answer:
-      "If you hold industrial land in Brisbane or SEQ, we deliver turnkey design-and-construct — design and approvals through construction and handover. Typical buildings are up to about 10,000m².",
+      "If you hold industrial land in Brisbane or SEQ, we deliver turnkey design-and-construct — design and approvals through construction and handover.",
   },
   {
     question: "What if I do not have a site yet?",
@@ -51,7 +56,7 @@ export const INDUSTRIAL_BUILDERS_FAQS: FaqItem[] = [
   {
     question: "What size and type of buildings do you deliver?",
     answer:
-      "Client-specific freestanding warehouses and multi-unit facilities, typically up to about 10,000m², with a focus on Brisbane’s northside and the wider SEQ industrial market.",
+      "Client-specific freestanding warehouses and multi-unit facilities, with a focus on Brisbane’s northside and the wider SEQ industrial market.",
   },
   {
     question: "Which Brisbane precincts do you work in?",
@@ -84,7 +89,7 @@ export const STATIC_PAGES: PageSeo[] = [
     description:
       "Brenscot designs, develops and builds industrial warehouses across Brisbane and SEQ. Buy or lease a new building, or design and construct on your land.",
     h1: "Brisbane industrial warehouse developer-builder",
-    lead: "Brenscot designs, develops and builds industrial warehouses across Brisbane and SEQ — Indevelop land to lease, or turnkey D&C for landowners, typically up to about 10,000m². Northside strength. Not a tender general contractor.",
+    lead: "Brenscot designs, develops and builds industrial warehouses across Brisbane and SEQ — Indevelop land to lease, or turnkey D&C for landowners. Northside strength.",
     blocks: [
       {
         heading: "Developer-builder, or design and construct",
@@ -101,7 +106,7 @@ export const STATIC_PAGES: PageSeo[] = [
       "Industrial builders in Brisbane for warehouses and multi-unit facilities. Developer-builder and turnkey design and construct across the northside and SEQ.",
     faqs: INDUSTRIAL_BUILDERS_FAQS,
     h1: "Industrial builders Brisbane — bespoke design, develop & construct",
-    lead: "We are industrial developer-builders and turnkey D&C partners for client-specific warehouses — not a cheap general contractor chasing competitive tenders.",
+    lead: "We are industrial developer-builders and turnkey D&C partners for client-specific warehouses across Brisbane and SEQ.",
     blocks: INDUSTRIAL_BUILDERS_FAQS.map((item) => ({
       heading: item.question,
       paragraphs: [item.answer],
@@ -114,7 +119,7 @@ export const STATIC_PAGES: PageSeo[] = [
       "Warehouse builders in Brisbane. Brenscot develops and builds industrial warehouses to sell or lease, or delivers turnkey design and construct on your land.",
     faqs: WAREHOUSE_FAQS,
     h1: "Warehouse builders Brisbane — develop, design and construct",
-    lead: "Brenscot is a Brisbane industrial warehouse developer-builder — not a tender general contractor. We develop and build warehouses to sell or lease, and we deliver design-and-construct turnkey for landowners.",
+    lead: "Brenscot is a Brisbane industrial warehouse developer-builder. We develop and build warehouses to sell or lease, and we deliver design-and-construct turnkey for landowners.",
     blocks: WAREHOUSE_FAQS.map((item) => ({ heading: item.question, paragraphs: [item.answer] })),
   },
   {
@@ -124,7 +129,7 @@ export const STATIC_PAGES: PageSeo[] = [
       "Turnkey design and construct warehouses in Brisbane for landowners. One team for design, approvals and construction through to handover.",
     faqs: DC_FAQS,
     h1: "Design and construct warehouse Brisbane — turnkey for landowners",
-    lead: "Turnkey design, approvals and construction for landowners who already hold a site. One team from concept through to a finished industrial warehouse — typically up to about 10,000m² — in Brisbane and SEQ.",
+    lead: "Turnkey design, approvals and construction for landowners who already hold a site. One team from concept through to a finished industrial warehouse in Brisbane and SEQ.",
     blocks: DC_FAQS.map((item) => ({ heading: item.question, paragraphs: [item.answer] })),
   },
   {
@@ -177,6 +182,20 @@ export const STATIC_PAGES: PageSeo[] = [
       "Enquire about industrial warehouse development or design and construct in Brisbane and SEQ. Email enquiries@brenscot.com.au or call 0480 800 077.",
     h1: "Contact Brenscot Builders",
     lead: "Enquire about industrial warehouse development or design and construct in Brisbane and South East Queensland. Email enquiries@brenscot.com.au or call 0480 800 077.",
+  },
+  {
+    path: "/insights",
+    title: "Industrial Warehouse Insights for SEQ | Brenscot Builders",
+    description:
+      "Plain-English guides to designing, approving and building industrial warehouses in Brisbane and South East Queensland, from Brenscot Builders.",
+    h1: "Industrial warehouse insights",
+    lead: "Plain-English guides to designing, approving and building industrial warehouses in Brisbane and South East Queensland, written by Brenscot Builders and checked against the National Construction Code and Queensland legislation.",
+    blocks: [
+      {
+        heading: "Articles",
+        paragraphs: INSIGHTS.map((item) => `${item.h1}. ${item.description}`),
+      },
+    ],
   },
   {
     path: "/privacy-policy",
@@ -271,6 +290,37 @@ export function projectPageSeo(project: {
   };
 }
 
+export function insightPageSeo(insight: InsightMeta, bodyHtml?: string): PageSeo {
+  return {
+    path: `/insights/${insight.slug}`,
+    title: insight.title,
+    description: insight.description,
+    h1: insight.h1,
+    lead: `By ${SITE_NAME} | Last reviewed ${insight.reviewed}`,
+    article: { datePublished: insight.datePublished, dateModified: insight.dateModified },
+    ...(bodyHtml ? { bodyHtml } : {}),
+  };
+}
+
+export function articleJsonLd(page: PageSeo) {
+  if (!page.article) {
+    return undefined;
+  }
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: page.h1 ?? page.title,
+    description: page.description,
+    image: absoluteAsset(DEFAULT_OG_IMAGE),
+    datePublished: page.article.datePublished,
+    dateModified: page.article.dateModified,
+    inLanguage: "en-AU",
+    mainEntityOfPage: absoluteUrl(page.path),
+    author: { "@type": "Organization", name: SITE_NAME, url: `${SITE_ORIGIN}/` },
+    publisher: { "@id": `${SITE_ORIGIN}/#organization` },
+  };
+}
+
 export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
@@ -359,6 +409,9 @@ export function breadcrumbJsonLd(page: PageSeo) {
   if (page.path.startsWith("/projects/")) {
     trail.push({ name: "Projects", path: "/projects" });
   }
+  if (page.path.startsWith("/insights/")) {
+    trail.push({ name: "Insights", path: "/insights" });
+  }
   trail.push({ name, path: page.path });
   return {
     "@context": "https://schema.org",
@@ -377,6 +430,10 @@ export function pageJsonLdGraph(page: PageSeo) {
   const breadcrumb = breadcrumbJsonLd(page);
   if (breadcrumb) {
     graph.push(breadcrumb);
+  }
+  const article = articleJsonLd(page);
+  if (article) {
+    graph.push(article);
   }
   if (page.faqs?.length) {
     graph.push(faqPageJsonLd(page.faqs));
@@ -400,7 +457,7 @@ export function renderSeoHeadHtml(page: PageSeo, options?: { ogImage?: string })
     robots.trimEnd(),
     `    <link rel="canonical" href="${escapeHtml(canonical)}" />`,
     `    <meta property="og:locale" content="en_AU" />`,
-    `    <meta property="og:type" content="website" />`,
+    `    <meta property="og:type" content="${page.article ? "article" : "website"}" />`,
     `    <meta property="og:site_name" content="${escapeHtml(SITE_NAME)}" />`,
     `    <meta property="og:title" content="${escapeHtml(page.title)}" />`,
     `    <meta property="og:description" content="${escapeHtml(page.description)}" />`,
@@ -444,6 +501,7 @@ export function renderSeoBodyHtml(page: PageSeo): string {
           .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
           .join("")}</section>`,
     ),
+    page.bodyHtml ?? "",
   ].filter(Boolean);
   return `<main data-seo-prerender="body">${sections.join("\n")}</main>`;
 }

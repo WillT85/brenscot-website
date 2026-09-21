@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -24,6 +24,14 @@ import {
   WarehouseBuildersNorthBrisbanePage,
 } from "@/pages/seo-landers";
 
+// Insights pages carry the full article text, so they load as a separate chunk.
+const InsightsIndexPage = lazy(() =>
+  import("@/pages/insights").then((module) => ({ default: module.InsightsIndexPage })),
+);
+const InsightArticlePage = lazy(() =>
+  import("@/pages/insights").then((module) => ({ default: module.InsightArticlePage })),
+);
+
 const queryClient = new QueryClient();
 
 function RouteEffects() {
@@ -48,6 +56,7 @@ function Router() {
   return (
     <>
       <RouteEffects />
+      <Suspense fallback={<div className="min-h-screen bg-[#0b1526]" />}>
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/industrial-builders-brisbane" component={IndustrialBuildersBrisbanePage} />
@@ -61,6 +70,8 @@ function Router() {
         <Route path="/developments" component={DevelopmentsPage} />
         <Route path="/projects" component={ProjectsPage} />
         <Route path="/projects/:slug" component={ProjectDetailPage} />
+        <Route path="/insights" component={InsightsIndexPage} />
+        <Route path="/insights/:slug" component={InsightArticlePage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/partners" component={PartnersPage} />
         <Route path="/contact" component={ContactPage} />
@@ -68,6 +79,7 @@ function Router() {
         <Route path="/terms-conditions" component={TermsPage} />
         <Route component={NotFound} />
       </Switch>
+      </Suspense>
     </>
   );
 }
