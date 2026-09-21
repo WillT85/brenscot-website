@@ -286,3 +286,84 @@ to = "/projects/13-wildlily-road-caboolture/index.html"
 [services.env]
 PORT = "25883"
 BASE_PATH = "/"
+
+# Insights hub and articles. When an article is added to src/data/insights-index.ts, add its two rules here.
+[[services.production.rewrites]]
+from = "/insights"
+to = "/insights/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/"
+to = "/insights/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/developer-builder-vs-construct-only-builder"
+to = "/insights/developer-builder-vs-construct-only-builder/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/developer-builder-vs-construct-only-builder/"
+to = "/insights/developer-builder-vs-construct-only-builder/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/design-and-construct-vs-tender"
+to = "/insights/design-and-construct-vs-tender/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/design-and-construct-vs-tender/"
+to = "/insights/design-and-construct-vs-tender/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/turnkey-industrial-development-brisbane"
+to = "/insights/turnkey-industrial-development-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/turnkey-industrial-development-brisbane/"
+to = "/insights/turnkey-industrial-development-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-construction-cost-drivers-brisbane"
+to = "/insights/warehouse-construction-cost-drivers-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-construction-cost-drivers-brisbane/"
+to = "/insights/warehouse-construction-cost-drivers-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-awnings-fire-compartment-volume"
+to = "/insights/warehouse-awnings-fire-compartment-volume/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-awnings-fire-compartment-volume/"
+to = "/insights/warehouse-awnings-fire-compartment-volume/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-retaining-walls-types"
+to = "/insights/warehouse-retaining-walls-types/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-retaining-walls-types/"
+to = "/insights/warehouse-retaining-walls-types/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-fire-services-hydrants-sprinklers"
+to = "/insights/warehouse-fire-services-hydrants-sprinklers/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-fire-services-hydrants-sprinklers/"
+to = "/insights/warehouse-fire-services-hydrants-sprinklers/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-insulation-condensation-section-j"
+to = "/insights/warehouse-insulation-condensation-section-j/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-insulation-condensation-section-j/"
+to = "/insights/warehouse-insulation-condensation-section-j/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/asbestos-hazardous-materials-industrial-upgrades"
+to = "/insights/asbestos-hazardous-materials-industrial-upgrades/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/asbestos-hazardous-materials-industrial-upgrades/"
+to = "/insights/asbestos-hazardous-materials-industrial-upgrades/index.html"
