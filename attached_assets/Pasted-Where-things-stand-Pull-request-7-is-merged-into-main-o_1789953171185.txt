@@ -1,0 +1,18 @@
+Where things stand
+Pull request #7 is merged into main on GitHub (WillT85/brenscot-website). It fixes the project pages that Google was seeing as "page not found", shortens the meta descriptions, corrects two misspelt project URLs, adds structured data, removes every reference to Clarke St Hendra, sets the Ascot address as postal only and fixes the phone number in the privacy policy.
+Pull request #8 is built and tested but is not on GitHub yet. It adds a new Insights section with the first nine articles, adds Insights to the menu and footer, and removes the "up to about 10,000 m2" and "not a tender GC" wording from the whole site. It needs one drag-and-drop upload to GitHub, which is step 1 below.
+What I need you to do, in this order
+Raise pull request #8. Open the handover folder, then attachments, then 2026-09-20-pr8-upload, and follow the file 2026-09-20-pr8-description-and-upload-steps.md exactly. In short: sign in to GitHub, open https://github.com/WillT85/brenscot-website/upload/main, drag the "artifacts" folder onto the page, check it lists 17 files, choose "Create a new branch", name it claude/insights-articles, and create the pull request using the description in that file. Do this before anything else is merged. Do not merge it. If GitHub won't let your login do this, tell me and I'll do it.
+Tell me when it's up. I'll review it, have Claude check it matches what was tested, and merge it.
+Confirm which Replit project actually publishes brenscot.com.au. In Replit, check which project has the brenscot.com.au domain attached and which GitHub repository it is connected to. I believe it's your Brenscot-Construction-Hub project, but the code suggests it was built from WillT85/brenscot-website. Let me know what you find before republishing.
+Once I've merged #8, pull main into that Replit project, check the latest commit says "Merge pull request #8", and republish.
+Check the live site: Then resubmit the sitemap in Google Search Console.
+https://brenscot.com.au/projects/15-king-court-north-lakes loads and returns status 200 (check with httpstatus.io)
+https://brenscot.com.au/insights and at least one article load, and the top menu fits on a laptop screen
+No reference to Hendra on the contact, privacy or home pages
+Phone is 0480 800 077 everywhere, including the privacy policy
+"10,000" no longer appears on the home page
+https://brenscot.com.au/sitemap.xml includes the /insights/ articles
+Claim the Google Business Profile for Brenscot Builders and link it to will@brenscot.com.au as the primary owner, with you as a manager. Set it up as a service-area business so the address isn't listed: choose "I deliver goods and services to my customers", leave the address hidden, and set the service areas to Brisbane, Moreton Bay and South East Queensland. Category: General contractor. Phone: 0480 800 077. Website: https://brenscot.com.au. Check with me first on whether a Google account exists for will@brenscot.com.au, because I may need to create it. Let me know which verification method Google offers.
+Compress the website images and videos. The home page is 11.7 MB and the 47 Noble Ave photos are 3.4 to 5 MB each. Targets are under 200 KB per image and under about 3 MB per hero video. Do this on a new branch in Replit and open a pull request for me to approve. Don't merge it yourself.
+Going forward, whenever a project is added to the website, two rewrite rules need adding to artifact.toml or Google will see the new page as "not found". The handover explains where.
