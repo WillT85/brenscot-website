@@ -44,11 +44,11 @@ function upsertJsonLd(id: string, data: unknown) {
   el.textContent = JSON.stringify(data);
 }
 
-export function SeoHead({ path, title, description, robots, ogImage, faqs }: SeoHeadProps) {
+export function SeoHead({ path, title, description, robots, ogImage, faqs, h1, article }: SeoHeadProps) {
   useEffect(() => {
     const url = path === "/404" ? `${absoluteUrl("/")}` : absoluteUrl(path);
     const image = absoluteAsset(ogImage ?? DEFAULT_OG_IMAGE);
-    const page: PageSeo = { path, title, description, robots, faqs };
+    const page: PageSeo = { path, title, description, robots, faqs, h1, article };
 
     document.title = title;
     upsertMeta("name", "description", description);
@@ -59,7 +59,7 @@ export function SeoHead({ path, title, description, robots, ogImage, faqs }: Seo
     }
     upsertLink("canonical", url);
     upsertMeta("property", "og:locale", "en_AU");
-    upsertMeta("property", "og:type", "website");
+    upsertMeta("property", "og:type", article ? "article" : "website");
     upsertMeta("property", "og:site_name", SITE_NAME);
     upsertMeta("property", "og:title", title);
     upsertMeta("property", "og:description", description);
@@ -71,7 +71,7 @@ export function SeoHead({ path, title, description, robots, ogImage, faqs }: Seo
     upsertMeta("name", "twitter:description", description);
     upsertMeta("name", "twitter:image", image);
     upsertJsonLd("ld", pageJsonLdGraph(page));
-  }, [path, title, description, robots, ogImage, faqs]);
+  }, [path, title, description, robots, ogImage, faqs, h1, article]);
 
   return null;
 }

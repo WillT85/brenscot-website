@@ -215,3 +215,26 @@
     pointer-events: none;
   }
 }
+/* Insights articles */
+.insight-prose .insight-table {
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+.insight-prose .insight-table table {
+  margin: 0;
+  min-width: 36rem;
+  font-size: 0.95rem;
+}
+.insight-prose .insight-table th {
+  background: #0b1526;
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  vertical-align: bottom;
+}
+.insight-prose .insight-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  vertical-align: top;
+}

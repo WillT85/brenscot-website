@@ -286,3 +286,332 @@ to = "/projects/13-wildlily-road-caboolture/index.html"
 [services.env]
 PORT = "25883"
 BASE_PATH = "/"
+
+# Insights hub and articles. When an article is added to src/data/insights-index.ts, add its two rules here.
+[[services.production.rewrites]]
+from = "/insights"
+to = "/insights/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/"
+to = "/insights/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/developer-builder-vs-construct-only-builder"
+to = "/insights/developer-builder-vs-construct-only-builder/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/developer-builder-vs-construct-only-builder/"
+to = "/insights/developer-builder-vs-construct-only-builder/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/design-and-construct-vs-tender"
+to = "/insights/design-and-construct-vs-tender/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/design-and-construct-vs-tender/"
+to = "/insights/design-and-construct-vs-tender/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/turnkey-industrial-development-brisbane"
+to = "/insights/turnkey-industrial-development-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/turnkey-industrial-development-brisbane/"
+to = "/insights/turnkey-industrial-development-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/how-long-to-build-a-warehouse-queensland"
+to = "/insights/how-long-to-build-a-warehouse-queensland/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/how-long-to-build-a-warehouse-queensland/"
+to = "/insights/how-long-to-build-a-warehouse-queensland/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-construction-cost-drivers-brisbane"
+to = "/insights/warehouse-construction-cost-drivers-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-construction-cost-drivers-brisbane/"
+to = "/insights/warehouse-construction-cost-drivers-brisbane/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/ncc-type-a-b-c-construction-warehouses"
+to = "/insights/ncc-type-a-b-c-construction-warehouses/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/ncc-type-a-b-c-construction-warehouses/"
+to = "/insights/ncc-type-a-b-c-construction-warehouses/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/tilt-panel-vs-dado-vs-steel-cladding"
+to = "/insights/tilt-panel-vs-dado-vs-steel-cladding/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/tilt-panel-vs-dado-vs-steel-cladding/"
+to = "/insights/tilt-panel-vs-dado-vs-steel-cladding/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-fire-walls-fire-compartments-ncc"
+to = "/insights/warehouse-fire-walls-fire-compartments-ncc/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-fire-walls-fire-compartments-ncc/"
+to = "/insights/warehouse-fire-walls-fire-compartments-ncc/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-awnings-fire-compartment-volume"
+to = "/insights/warehouse-awnings-fire-compartment-volume/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-awnings-fire-compartment-volume/"
+to = "/insights/warehouse-awnings-fire-compartment-volume/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-footings-foundations-seq"
+to = "/insights/warehouse-footings-foundations-seq/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-footings-foundations-seq/"
+to = "/insights/warehouse-footings-foundations-seq/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-retaining-walls-types"
+to = "/insights/warehouse-retaining-walls-types/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-retaining-walls-types/"
+to = "/insights/warehouse-retaining-walls-types/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/industrial-hardstand-concrete-vs-asphalt"
+to = "/insights/industrial-hardstand-concrete-vs-asphalt/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/industrial-hardstand-concrete-vs-asphalt/"
+to = "/insights/industrial-hardstand-concrete-vs-asphalt/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-stormwater-management-seq"
+to = "/insights/warehouse-stormwater-management-seq/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-stormwater-management-seq/"
+to = "/insights/warehouse-stormwater-management-seq/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-fire-services-hydrants-sprinklers"
+to = "/insights/warehouse-fire-services-hydrants-sprinklers/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-fire-services-hydrants-sprinklers/"
+to = "/insights/warehouse-fire-services-hydrants-sprinklers/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-clear-height-doors-truck-access"
+to = "/insights/warehouse-clear-height-doors-truck-access/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-clear-height-doors-truck-access/"
+to = "/insights/warehouse-clear-height-doors-truck-access/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-insulation-condensation-section-j"
+to = "/insights/warehouse-insulation-condensation-section-j/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-insulation-condensation-section-j/"
+to = "/insights/warehouse-insulation-condensation-section-j/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/solar-on-warehouse-roofs-new-vs-existing"
+to = "/insights/solar-on-warehouse-roofs-new-vs-existing/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/solar-on-warehouse-roofs-new-vs-existing/"
+to = "/insights/solar-on-warehouse-roofs-new-vs-existing/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/asbestos-hazardous-materials-industrial-upgrades"
+to = "/insights/asbestos-hazardous-materials-industrial-upgrades/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/asbestos-hazardous-materials-industrial-upgrades/"
+to = "/insights/asbestos-hazardous-materials-industrial-upgrades/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-building-certification-queensland"
+to = "/insights/warehouse-building-certification-queensland/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-building-certification-queensland/"
+to = "/insights/warehouse-building-certification-queensland/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/industrial-unit-community-titles-plan-sealing-qld"
+to = "/insights/industrial-unit-community-titles-plan-sealing-qld/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/industrial-unit-community-titles-plan-sealing-qld/"
+to = "/insights/industrial-unit-community-titles-plan-sealing-qld/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/storage-and-trade-units-buy-vs-rent-seq"
+to = "/insights/storage-and-trade-units-buy-vs-rent-seq/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/storage-and-trade-units-buy-vs-rent-seq/"
+to = "/insights/storage-and-trade-units-buy-vs-rent-seq/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/buying-industrial-land-due-diligence-seq"
+to = "/insights/buying-industrial-land-due-diligence-seq/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/buying-industrial-land-due-diligence-seq/"
+to = "/insights/buying-industrial-land-due-diligence-seq/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/infrastructure-charges-brisbane-moreton-bay"
+to = "/insights/infrastructure-charges-brisbane-moreton-bay/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/infrastructure-charges-brisbane-moreton-bay/"
+to = "/insights/infrastructure-charges-brisbane-moreton-bay/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-power-supply-energex-connection"
+to = "/insights/warehouse-power-supply-energex-connection/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-power-supply-energex-connection/"
+to = "/insights/warehouse-power-supply-energex-connection/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/brendale-industrial-precinct-guide"
+to = "/insights/brendale-industrial-precinct-guide/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/brendale-industrial-precinct-guide/"
+to = "/insights/brendale-industrial-precinct-guide/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/narangba-industrial-precinct-guide"
+to = "/insights/narangba-industrial-precinct-guide/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/narangba-industrial-precinct-guide/"
+to = "/insights/narangba-industrial-precinct-guide/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/how-to-choose-an-industrial-builder"
+to = "/insights/how-to-choose-an-industrial-builder/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/how-to-choose-an-industrial-builder/"
+to = "/insights/how-to-choose-an-industrial-builder/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-racking-fire-requirements"
+to = "/insights/warehouse-racking-fire-requirements/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-racking-fire-requirements/"
+to = "/insights/warehouse-racking-fire-requirements/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/what-tenants-look-for-in-a-warehouse"
+to = "/insights/what-tenants-look-for-in-a-warehouse/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/what-tenants-look-for-in-a-warehouse/"
+to = "/insights/what-tenants-look-for-in-a-warehouse/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-office-fitout-design"
+to = "/insights/warehouse-office-fitout-design/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-office-fitout-design/"
+to = "/insights/warehouse-office-fitout-design/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-parking-access-amenities"
+to = "/insights/warehouse-parking-access-amenities/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-parking-access-amenities/"
+to = "/insights/warehouse-parking-access-amenities/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/industrial-next-to-residential-amenity"
+to = "/insights/industrial-next-to-residential-amenity/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/industrial-next-to-residential-amenity/"
+to = "/insights/industrial-next-to-residential-amenity/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-outgoings-running-costs"
+to = "/insights/warehouse-outgoings-running-costs/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-outgoings-running-costs/"
+to = "/insights/warehouse-outgoings-running-costs/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/buy-lease-or-build-a-warehouse"
+to = "/insights/buy-lease-or-build-a-warehouse/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/buy-lease-or-build-a-warehouse/"
+to = "/insights/buy-lease-or-build-a-warehouse/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/speculative-build-vs-pre-commitment"
+to = "/insights/speculative-build-vs-pre-commitment/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/speculative-build-vs-pre-commitment/"
+to = "/insights/speculative-build-vs-pre-commitment/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/industrial-shed-vs-engineered-warehouse"
+to = "/insights/industrial-shed-vs-engineered-warehouse/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/industrial-shed-vs-engineered-warehouse/"
+to = "/insights/industrial-shed-vs-engineered-warehouse/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/industrial-agents-guide-to-development"
+to = "/insights/industrial-agents-guide-to-development/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/industrial-agents-guide-to-development/"
+to = "/insights/industrial-agents-guide-to-development/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/building-classifications-ncc-explained"
+to = "/insights/building-classifications-ncc-explained/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/building-classifications-ncc-explained/"
+to = "/insights/building-classifications-ncc-explained/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-mezzanine-200m2-rule-access"
+to = "/insights/warehouse-mezzanine-200m2-rule-access/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/warehouse-mezzanine-200m2-rule-access/"
+to = "/insights/warehouse-mezzanine-200m2-rule-access/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/caboolture-industrial-precinct-guide"
+to = "/insights/caboolture-industrial-precinct-guide/index.html"
+
+[[services.production.rewrites]]
+from = "/insights/caboolture-industrial-precinct-guide/"
+to = "/insights/caboolture-industrial-precinct-guide/index.html"
