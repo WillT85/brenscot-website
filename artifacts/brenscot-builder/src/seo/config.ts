@@ -295,6 +295,21 @@ export function projectPageSeo(project: {
   };
 }
 
+/**
+ * Prerendered call to action appended to every insight article's body HTML.
+ * The visible page renders this as a styled section from the React template; this
+ * mirrors it into the server HTML so crawlers and non-JS clients see the contact
+ * path and the internal links to /contact and /process.
+ */
+const INSIGHT_CTA_HTML = [
+  "<h2>Planning an industrial warehouse?</h2>",
+  "<p>Talk to Brenscot about your site or your requirements. Call ",
+  '<a href="tel:+61480800077">0480 800 077</a>, email ',
+  '<a href="mailto:enquiries@brenscot.com.au">enquiries@brenscot.com.au</a>, ',
+  'or <a href="/contact">start an enquiry</a>. You can also read ',
+  '<a href="/process">how we work</a>.</p>',
+].join("");
+
 export function insightPageSeo(insight: InsightMeta, bodyHtml?: string): PageSeo {
   return {
     path: `/insights/${insight.slug}`,
@@ -303,7 +318,7 @@ export function insightPageSeo(insight: InsightMeta, bodyHtml?: string): PageSeo
     h1: insight.h1,
     lead: `By ${SITE_NAME} | Last reviewed ${insight.reviewed}`,
     article: { datePublished: insight.datePublished, dateModified: insight.dateModified },
-    ...(bodyHtml ? { bodyHtml } : {}),
+    ...(bodyHtml ? { bodyHtml: bodyHtml + INSIGHT_CTA_HTML } : {}),
   };
 }
 
