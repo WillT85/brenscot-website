@@ -13,7 +13,7 @@ const navLinks: { name: string; href: string; id: string }[] = [
 ];
 
 function navClassName(name: string, useDark: boolean) {
-  return `text-xs font-medium uppercase tracking-[0.2em] transition-colors whitespace-nowrap ${
+  return `text-xs ${name === 'Contact Us' ? 'font-medium' : 'font-bold'} uppercase tracking-[0.2em] transition-colors whitespace-nowrap ${
     name === 'Contact Us'
       ? 'bg-[#C8A24A] text-white px-6 py-3 hover:bg-[#C8A24A]/85'
       : useDark
