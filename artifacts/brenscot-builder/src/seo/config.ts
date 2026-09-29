@@ -190,12 +190,17 @@ export const STATIC_PAGES: PageSeo[] = [
       "Plain-English guides to designing, approving and building industrial warehouses in Brisbane and South East Queensland, from Brenscot Builders.",
     h1: "Industrial warehouse insights",
     lead: "Plain-English guides to designing, approving and building industrial warehouses in Brisbane and South East Queensland, written by Brenscot Builders and checked against the National Construction Code and Queensland legislation.",
-    blocks: [
-      {
-        heading: "Articles",
-        paragraphs: INSIGHTS.map((item) => `${item.h1}. ${item.description}`),
-      },
-    ],
+    bodyHtml: Array.from(new Set(INSIGHTS.map((item) => item.category)))
+      .map((category) => {
+        const items = INSIGHTS.filter((item) => item.category === category)
+          .map(
+            (item) =>
+              `<li><a href="/insights/${item.slug}">${item.h1}</a>. ${item.description}</li>`,
+          )
+          .join("");
+        return `<h2>${category}</h2><ul>${items}</ul>`;
+      })
+      .join(""),
   },
   {
     path: "/privacy-policy",
