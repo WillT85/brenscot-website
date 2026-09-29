@@ -46,7 +46,7 @@ const steps = [
 const branches = [
   {
     title: "Landowners",
-    body: "You hold the land. Brenscot delivers design-and-construct turnkey — design, approvals, tilt-panel and steel construction, handover. Typical buildings up to about 10,000m², Brisbane and SEQ, with a northside focus.",
+    body: "You hold the land. Brenscot delivers design-and-construct turnkey — design, approvals, tilt-panel and steel construction, handover. Brisbane and SEQ, with a northside focus.",
     href: "/design-and-construct-warehouse-brisbane",
     cta: "Design and construct",
   },
